@@ -3,10 +3,14 @@ import { useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
 import Link from '../Link'
+import Divider from '../../Divider/Divider'
+import CTWhiteLogo from "../../Icons/logo-white.svg"
+import FooterGroupLinks from './FooterGroupLinks'
+
 import "./index.scss"
 
 function Footer() {
-  
+
   const footer = useStaticQuery(graphql`
     query footer {
       menuFooter:datoCmsNavigation(codeId: {eq: "footer_menu"}){
@@ -31,34 +35,28 @@ function Footer() {
 
   return (
     <footer id="main-footer">
-      <div className="container">
-        <div className="row">
-          
-          {
-             footer.menuFooter.navigationItems.map(item => {          
-              return( 
-                <div className="col-lg-4" key={item.id}>
-                  { item.label && (<h3>{item.label}</h3>) }
-                  { item.mainLink && (<Link to={item.mainLink} className={item.isButton ? 'btn' : ''}>{item.label ? item.label : item.mainLink.label }</Link>)}
-                  { item.links && item.links.length > 0 && (<ul>
-                    {
-                   
-                      item.links.map(link => (<li key={link.id}><Link to={link}>{link.label}</Link></li>))
-                    }
-                  </ul>) }
-
-                </div> )
-             }) 
-          }
+      <div className="container mb-4">
+        <div className="row footer-ct-logo">
+          <img src={CTWhiteLogo} />
         </div>
-      </div> 
-      <div className="container">
+
+        {/* Menu navigation items */}
+        <div className="row ct-footer-links-container">
+          {footer.menuFooter.navigationItems.map((item, index) => <FooterGroupLinks key={index} item={item} />)}
+        </div>
+
+        <Divider />
+      </div>
+
+
+      <div className="container mt-5">
         <div className="row justify-content-between align-items-center">
-          <div className="col-lg-3">
-            <img src={footer.certified.image.url} alt="" />
-          </div>
-          <div className="col">
-            <div className="row">
+
+          {/* Legal items */}
+          <div className="col-lg-8 ct-footer-certified-container">
+            <img src={footer.certified.image.url} alt="Civitech Certified B Corporation" />
+
+            <div className='row w-100'>
               <div className="col">{footer.copyright.value}</div>
               {
                 footer.menuLegal.navigationItems.map(item => {
@@ -66,17 +64,19 @@ function Footer() {
                 })
               }
             </div>
-            
           </div>
-          <div className="col-lg-3">
+
+          {/* Social icons */}
+          <div className="col-lg-4 ct-footer-social-icons-container">
             <ul>
               {
                 footer.social.navigationItems.map(item => {
-                  return( <li key={item.id}><Link to={item.mainLink} target="_blank"><img src={item.icon.url}/></Link></li> )
-                }) 
+                  return (<li key={item.id}><Link to={item.mainLink} target="_blank"><img src={item.icon.url} /></Link></li>)
+                })
               }
             </ul>
           </div>
+
         </div>
       </div>
     </footer>
