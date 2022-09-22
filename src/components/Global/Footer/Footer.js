@@ -48,27 +48,26 @@ function Footer() {
         <Divider />
       </div>
 
-
       <div className="container mt-5">
-        <div className="row justify-content-between align-items-center">
+        <div className="row align-items-center">
 
-          {/* Legal items */}
-          <div className="col-lg-8 ct-footer-certified-container">
-            <img src={footer.certified.image.url} alt="Civitech Certified B Corporation" />
+          <div className="col-sm-6 col-lg-2">
+            <img src={footer.certified.image.url} alt="" />
+          </div>
 
-            <div className='row w-100'>
+          <div className="col-sm-6 col-lg-6 mt-md-0">
+            <div className="row">
               <div className="col">{footer.copyright.value}</div>
               {
                 footer.menuLegal.navigationItems.map(item => {
-                  return (<div className="col" key={item.id}><Link to={item.mainLink}>{item.label}</Link></div>)
+                  return (<div className="col-md col-sm-12" key={item.id}><Link to={item.mainLink}>{item.label}</Link></div>)
                 })
               }
             </div>
           </div>
 
-          {/* Social icons */}
-          <div className="col-lg-4 ct-footer-social-icons-container">
-            <ul>
+          <div className="col-lg col-sm-12 ct-footer-social-icons-container pt-5 pt-lg-0">
+            <ul className="justify-content-lg-end justify-content-sm-start">
               {
                 footer.social.navigationItems.map(item => {
                   return (<li key={item.id}><Link to={item.mainLink} target="_blank"><img src={item.icon.url} /></Link></li>)
@@ -76,7 +75,6 @@ function Footer() {
               }
             </ul>
           </div>
-
         </div>
       </div>
     </footer>

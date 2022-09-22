@@ -3,7 +3,7 @@ import Divider from '../../Divider/Divider';
 import Link from '../Link';
 
 const FooterGroupLinks = ({ item }) => (
-    <div className="col-md col-sm-6 ct-footer-links" key={item.id}>
+    <div className="col-md col-sm-6 mb-4 mb-md-0 ct-footer-links" key={item.id}>
         {item.label && (
             <>
                 <h3>{item.label}</h3>
