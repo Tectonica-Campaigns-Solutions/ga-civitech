@@ -1,0 +1,45 @@
+{
+  "name": "civitech-gatsby-theme",
+  "private": true,
+  "description": "Civitech theme",
+  "version": "0.1.0",
+  "author": "Marcel Safont <marcel@tectonica.co>",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "gatsby": "^4.22.0",
+    "gatsby-plugin-image": "^2.23.0",
+    "gatsby-plugin-manifest": "^4.22.0",
+    "gatsby-plugin-sass": "^5.22.0",
+    "gatsby-plugin-sharp": "^4.23.0",
+    "gatsby-source-datocms": "^4.0.4",
+    "gatsby-source-filesystem": "^4.23.0",
+    "gatsby-transformer-sharp": "^4.23.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "sass": "^1.54.8"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
