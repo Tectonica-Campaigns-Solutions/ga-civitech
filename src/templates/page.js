@@ -1,13 +1,13 @@
 import * as React from "react"
 import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import SeoDatoCms from "../components/SeoDatoCms"
 import Blocks from "../components/Blocks"
 
 const Page = ({ data: { page } }) => {
   return (
   <Layout>
-    <Seo title="Home" />
+    <SeoDatoCms seo={page.seo} />
     <div className="container">
       <div className="row">
         <div className="col">
@@ -19,18 +19,15 @@ const Page = ({ data: { page } }) => {
   </Layout>
 )}
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
 
 export default Page
 
 export const PageQuery = graphql`
   query PageById($id: String) {
       page: datoCmsPage(id: { eq: $id }) {
+        seo: seoMetaTags {
+          ...GatsbyDatoCmsSeoMetaTags
+        }
         id
         title
         slug

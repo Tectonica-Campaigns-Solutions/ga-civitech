@@ -35,8 +35,7 @@ function Footer() {
         <div className="row">
           
           {
-             footer.menuFooter.navigationItems.map(item => {    
-              console.log(item)         
+             footer.menuFooter.navigationItems.map(item => {          
               return( 
                 <div className="col-lg-4" key={item.id}>
                   { item.label && (<h3>{item.label}</h3>) }

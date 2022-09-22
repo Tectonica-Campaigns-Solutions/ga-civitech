@@ -2,7 +2,6 @@ import React from 'react'
 import "./index.scss"
 
 function GridStat({block}) {
-  console.log(block)
   return (
     <div className="grid-stats">
       <div className="container">
