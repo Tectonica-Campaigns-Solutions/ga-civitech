@@ -1,15 +1,10 @@
 // ! Order Matters
 // Bootstrap always bellow reset
 
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap');
-
 //BASICS
 @import "foundation/reset";
 @import "helpers/bootstrap";
-
-// TODO: Get corrects fonts
-// @import "foundation/typography";
-
+@import "foundation/typography";
 @import "foundation/colors";
 @import "foundation/buttons";
 
