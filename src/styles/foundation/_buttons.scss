@@ -1,6 +1,16 @@
 // Button Styles
 .btn {
+  transition: 0.15s ease-in-out all;
   
+  padding: 9px 22px;
+  border-radius: 24px;
+  border: 2px solid var(--ct-blue);
+
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
 
   @media screen and (max-width: 767px) {
     // width: 100%;
@@ -19,11 +29,11 @@
 
 // Primary Button Styles
 .btn.btn-primary {
-  background-color: var(--psa-magenta);
-  border: none;
+  background-color: var(--ct-blue);
 
   &:hover {
-    background-color: #cf3339;
+    color: var(--ct-blue) !important;
+    background-color: var(--ct-white);
   }
 }
 
