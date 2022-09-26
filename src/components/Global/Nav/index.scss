@@ -98,6 +98,8 @@
   }
 
   &.sticky-nav {
+    transition: 0.45s ease-in-out;
+    position: fixed;
     top: 0;
     height: 65px;
     background: #fff;

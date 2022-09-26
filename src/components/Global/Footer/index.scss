@@ -22,6 +22,18 @@
 
   .ct-footer-links-container {
     margin-bottom: 84px;
+
+    & div:last-child {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    @media screen and (max-width: 767px) {
+      & div:last-child{
+        display: block;
+      }
+    }
   }
   
   .ct-footer-links {

@@ -1,7 +1,9 @@
 import React from 'react'
 import Cta from '../Cta/Cta'
 
-function Hero({ctas}) {
+import "./index.scss";
+
+function Hero({ ctas }) {
   return (
     <div className="hero">
       <div className="container">
