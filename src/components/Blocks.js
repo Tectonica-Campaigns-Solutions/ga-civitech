@@ -14,7 +14,7 @@ export default function Blocks({blocks}) {
             case 'DatoCmsGridStat':
               return <GridStat block={block} key={block.id}/>
             case 'DatoCmsTab':
-              return <Tabs block={[{"title": "title"}, {"title":"title"}]} key={block.id}/>
+              return <Tabs block={block.items} key={block.id}/>
             default:
               return ''
           }

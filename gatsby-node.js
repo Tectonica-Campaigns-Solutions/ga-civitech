@@ -1,43 +1,18 @@
 const path = require(`path`);
 
-// const createPages = async (graphql, actions ) => {
-//   // 1. Get template
-//   const pageTemplate = path.resolve('./src/templates/Page.js')
-//   // 2. Query all Pages
-//   const { data } = await graphql(`
-//     query {
-//       pages: allDatoCmsPage {
-//         nodes {
-//           title
-//           slug
-//           blocks{
-//             __typename
-//           }
-//         }
-//       }
-//     }
-//   `);
-
-//   // 3. Loop through Pages and create a page
-//   data.pages.nodes.forEach((node) => {
-//     actions.createPage({
-//       path: `/${node.slug}`,
-//       component: pageTemplate,
-//     })
-//   });
-// }
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
     const templates = {
       page: path.resolve('./src/templates/page.js'),
+      post: path.resolve('./src/templates/post.js'),
     }
     resolve(
       graphql(
         `
           {
-            allDatoCmsPage{
+            pages:allDatoCmsPage{
               nodes{
                 title
                 slug
@@ -45,6 +20,13 @@ exports.createPages = ({ graphql, actions }) => {
                 blocks{
                   __typename
                 }
+              }
+            }
+            posts:allDatoCmsPost{
+              nodes{
+                title
+                slug
+                id
               }
             }
           }
@@ -56,7 +38,8 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // create the pages
-        const pages = result.data.allDatoCmsPage.nodes
+        const pages = result.data.pages.nodes
+        const posts = result.data.posts.nodes
 
         for (page of pages) {
           createPage({
@@ -65,6 +48,16 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               slug:page.slug,
               id: page.id,
+            },
+          })
+        }
+        for (post of posts) {
+          createPage({
+            path: `/post/${post.slug}`,
+            component: templates.post,
+            context: {
+              slug:post.slug,
+              id: post.id,
             },
           })
         }

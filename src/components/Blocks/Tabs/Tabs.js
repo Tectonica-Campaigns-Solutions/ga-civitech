@@ -9,7 +9,7 @@ function Tabs({block}) {
           <div className="d-flex">
             { block.length > 0 && 
               block.map(item => {
-                return (<div>{item.title}</div>)
+                return (<Tab title={item.title}/>)
               })
             }
           </div>
