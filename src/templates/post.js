@@ -4,6 +4,7 @@ import { StructuredText } from "react-datocms";
 import Layout from "../components/Layout"
 import SeoDatoCms from "../components/SeoDatoCms"
 import { GatsbyImage } from "gatsby-plugin-image"
+import formatDate from '../utils';
 
 const Post = ({ data: { post } }) => {
   return (
@@ -16,7 +17,10 @@ const Post = ({ data: { post } }) => {
               <GatsbyImage image={post.image?.gatsbyImageData} alt={post.image?.alt} />
             </div>
             <div className="col-lg-6">
-              <h1>{ post.title }</h1>
+              <div className="info">
+                { formatDate(post.meta.createdAt) } | { post.topic.name }
+              </div>
+              <h1>{ post.title }</h1> 
               { post.summary }
             </div>
           </div>
@@ -27,6 +31,12 @@ const Post = ({ data: { post } }) => {
           <div className="col-lg-7">
             
             <StructuredText data={post.content.value}/>
+            <div className="tags">
+              {
+                post.tags.length > 0 && post.tags.map(item => (<div>{item.name }</div>))
+              }
+
+            </div>
           </div>
           <div className="col-lg-5">
             Related
@@ -45,6 +55,9 @@ export const PostQuery = graphql`
         seo: seoMetaTags {
           ...GatsbyDatoCmsSeoMetaTags
         }
+        meta{
+          createdAt
+        }
         id
         title
         slug
@@ -56,6 +69,16 @@ export const PostQuery = graphql`
           alt
         }
         summary
+        topic{
+          ...on DatoCmsTag{
+            name
+          }
+        }
+        tags{
+          ...on DatoCmsTag{
+            name
+          }
+        }
       } 
   }
 `

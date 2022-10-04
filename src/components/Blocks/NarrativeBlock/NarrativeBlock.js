@@ -5,7 +5,6 @@ import React from "react"
 import "./index.scss"
 
 export default function NarrativeBlock({ block }) {
-  console.log(block)
   return ( 
   <div className={`component-narrative-block ${block.backgroundColor}`}>
     <div className="container pt-4 pb-4">
