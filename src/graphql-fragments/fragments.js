@@ -40,6 +40,13 @@ export const DatoCMS = graphql`
   fragment BlockTab on DatoCmsTab{
     __typename
     id
+    items{
+      id
+      ... on DatoCmsTabItem{
+        title
+        titleTab
+      }
+    }
   }
   fragment Navigation on DatoCmsNavigation{
     title

@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Tab() {
+function Tab({title}) {
   return (
-    <div>Tab</div>
+    <div>{title}</div>
   )
 }
 
