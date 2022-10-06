@@ -1,0 +1,31 @@
+.shortcut {
+  background-color: var(--ct-white);
+  padding: 20px 75px 23px 31px;
+
+  h4 {
+    font-family: "Laca";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 31px !important;
+    line-height: 120% !important;
+    color: var(--ct-dark-blue);
+  }
+
+  p {
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--ct-dark-blue);
+  }
+
+  a {
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--ct-blue) !important;
+  }
+}

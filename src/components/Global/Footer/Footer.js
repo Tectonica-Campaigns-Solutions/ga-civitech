@@ -32,7 +32,7 @@ function Footer() {
       }
     }
   `)
-  console.log(footer)
+
   return (
     <footer id="main-footer">
       <div className="container mb-4">
@@ -42,7 +42,6 @@ function Footer() {
 
         {/* Menu navigation items */}
         <div className="row ct-footer-links-container">
-         
           {footer.menuFooter.navigationItems.map((item, index) => <FooterGroupLinks key={index} item={item} />)}
         </div>
 

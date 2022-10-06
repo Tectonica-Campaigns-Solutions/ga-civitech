@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-export default function Cta({url, label, target=null}) {
+export default function Cta({ url, label, target = null, isPrimary = false }) {
   return (
     <div>
-      <Link to={url}>{label}</Link>
+      <Link className={`btn ${isPrimary ? "btn-primary" : ""}`} to={url}>{label}</Link>
     </div>
   )
 }

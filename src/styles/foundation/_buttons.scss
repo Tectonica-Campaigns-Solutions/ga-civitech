@@ -1,12 +1,13 @@
 // Button Styles
 .btn {
   transition: 0.15s ease-in-out all;
-  
+
+  color: var(--ct-blue);
   padding: 9px 22px;
   border-radius: 24px;
   border: 2px solid var(--ct-blue);
 
-  font-family: 'Public Sans';
+  font-family: "Public Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -29,6 +30,7 @@
 
 // Primary Button Styles
 .btn.btn-primary {
+  color: var(--ct-white);
   background-color: var(--ct-blue);
 
   &:hover {
