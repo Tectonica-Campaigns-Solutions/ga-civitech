@@ -32,7 +32,7 @@ function Hero({ ctas, title, content, image, shortcuts }) {
             <span>{content}</span>
             <div className="ctas-block">
               {
-                ctas?.map(cta => <Cta key={cta.id} url={cta.slug} label={cta.title} isPrimary={cta.isPrimary} />)
+                ctas?.map((cta, index) => <Cta key={index} url={cta.slug} label={cta.title} isPrimary={cta.isPrimary} />)
               }
             </div>
           </div>
@@ -46,16 +46,17 @@ function Hero({ ctas, title, content, image, shortcuts }) {
         </div>
 
         <div className="row mt-5 mb-5 shortcuts-container">
-          <div class="col-lg-12">
+          <div className="col-lg-12">
             {/* TODO: Get title from DatoCMS? */}
             <h4>WHO WE SERVE</h4>
           </div>
 
           {
-            shortcuts && shortcuts.length > 0 && shortcuts.map(item => {
+            shortcuts && shortcuts.length > 0 && shortcuts.map((item, index) => {
               return (
-                <div class="col-lg-4">
+                <div className="col-lg-4">
                   <Shortcut
+                    key={index}
                     title={item.title}
                     description={item.description}
                     btnLabel={item.btnLabel}
