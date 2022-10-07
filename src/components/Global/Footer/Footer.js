@@ -30,6 +30,12 @@ function Footer() {
       copyright: datoCmsGlobalSetting(codeId: {eq: "copyright_footer"}){
         value
       }
+      logoFooter: datoCmsGlobalSetting(codeId: {eq: "logo_footer_white"}) {
+        value
+        image {
+          url			
+        }
+      }
     }
   `)
 
@@ -37,7 +43,7 @@ function Footer() {
     <footer id="main-footer">
       <div className="container mb-4">
         <div className="row footer-ct-logo">
-          <img src={CTWhiteLogo} />
+          <img src={footer.logoFooter.image.url} />
         </div>
 
         {/* Menu navigation items */}
