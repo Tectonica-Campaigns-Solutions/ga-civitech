@@ -57,7 +57,7 @@ function Footer() {
       <div className="container mt-5">
         <div className="row align-items-center">
 
-          <div className="col-sm-6 col-lg-2">
+          <div className="col-sm-6 col-lg-2 logo-container">
             <img src={footer.certified.image.url} alt="" />
           </div>
 
