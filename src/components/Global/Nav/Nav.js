@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
 import Link from "../Link"
 import logo from "../../Icons/logo.svg"
+
 import "./index.scss"
 
 const LinkItem = ({ link, label, isButton }) => {
   return (
     <li className="nav-item">
-      <Link to={link} className={isButton ? 'btn' : ''}>
+      <Link to={link} className={isButton ? 'btn btn-primary' : ''}>
         {label}
       </Link>
     </li>
@@ -36,7 +37,7 @@ const DropdownItem = ({ link, label, children }) => {
         id="languageSelector"
         aria-expanded="false"
         data-bs-toggle="dropdown"
-        
+
       >
         {label}
       </Link>
@@ -70,6 +71,7 @@ export default function Nav({ navData, path }) {
       setScrollPosition(position)
     }
   }
+
   // Use effect for sticky nav
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -86,14 +88,16 @@ export default function Nav({ navData, path }) {
     setExpanded(!expanded)
   }
 
+  const isHome = !path || path === "/" || path === "/home";
+
   return (
     <nav
       className={`
-        navbar navbar-expand-lg 
+        navbar navbar-expand-lg
         ===PATH IS==>${path}
-        ${path === "/" || path === "/home" ? "home-nav" : null} 
+        ${isHome ? "home-nav" : ''} 
         ${expanded && "expanded"} 
-        ${(scrollPosition > 75 && (path === "/" || path === "/home")) ? "sticky-nav" : null}
+        ${(scrollPosition > 75 && isHome) ? "sticky-nav" : ''}
       `}
     >
       <Link className="navbar-brand" to={'/'}>
@@ -111,23 +115,23 @@ export default function Nav({ navData, path }) {
         onClick={() => handleNavClick()}
       >
         <span
-          className={` ${expanded ? "open-toggle " : null} navbar-toggler-icon`}
+          className={` ${expanded ? "open-toggle " : ''} navbar-toggler-icon`}
         ></span>
       </button>
 
       <div
-        className={` ${expanded ? "show" : null} collapse navbar-collapse`}
+        className={` ${expanded ? "show" : ''} collapse navbar-collapse`}
         id="navNav"
       >
         <ul className="navbar-nav mr-auto">
           {
-          navLinks?.map(link =>
-            link.links.length === 0 ? (
-              <LinkItem key={link.mainLink.id} link={ link.mainLink } label={link.label} isButton={link.isButton} />
-            ) : (
-              <DropdownItem key={link.mainLink.id} link={link.mainLink } label={link.label} children={link.links} />
-            )
-          )}
+            navLinks?.map(link =>
+              link.links.length === 0 ? (
+                <LinkItem key={link.mainLink.id} link={link.mainLink} label={link.label} isButton={link.isButton} />
+              ) : (
+                <DropdownItem key={link.mainLink.id} link={link.mainLink} label={link.label} children={link.links} />
+              )
+            )}
         </ul>
       </div>
     </nav>

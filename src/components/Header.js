@@ -15,11 +15,11 @@ const Header = ({ siteTitle }) => {
   `)
   return (
     <header>
-      <Nav navData={mainMenu}/> 
+      <Nav navData={mainMenu} />
     </header>
-        
-    )
-  }
+
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

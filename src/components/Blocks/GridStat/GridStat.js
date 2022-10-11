@@ -1,15 +1,15 @@
 import React from 'react'
 import "./index.scss"
 
-function GridStat({block}) {
+function GridStat({ block }) {
   return (
     <div className="grid-stats">
       <div className="container">
         <div className="row">
           {
-            block?.stats.map(item => {
+            block?.stats.map((item, index) => {
               return (
-                <div className="col-lg-4">
+                <div className="col-lg-4" key={index}>
                   <img src={item.icon.url} alt="" />
                   {item.title}
                   {item.text}
@@ -17,7 +17,7 @@ function GridStat({block}) {
               )
             })
           }
-          
+
         </div>
       </div>
     </div>

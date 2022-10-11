@@ -30,19 +30,24 @@ function Footer() {
       copyright: datoCmsGlobalSetting(codeId: {eq: "copyright_footer"}){
         value
       }
+      logoFooter: datoCmsGlobalSetting(codeId: {eq: "logo_footer_white"}) {
+        value
+        image {
+          url			
+        }
+      }
     }
   `)
-  console.log(footer)
+
   return (
     <footer id="main-footer">
       <div className="container mb-4">
         <div className="row footer-ct-logo">
-          <img src={CTWhiteLogo} />
+          <img src={footer.logoFooter.image.url} />
         </div>
 
         {/* Menu navigation items */}
         <div className="row ct-footer-links-container">
-         
           {footer.menuFooter.navigationItems.map((item, index) => <FooterGroupLinks key={index} item={item} />)}
         </div>
 
@@ -52,7 +57,7 @@ function Footer() {
       <div className="container mt-5">
         <div className="row align-items-center">
 
-          <div className="col-sm-6 col-lg-2">
+          <div className="col-sm-6 col-lg-2 logo-container">
             <img src={footer.certified.image.url} alt="" />
           </div>
 
