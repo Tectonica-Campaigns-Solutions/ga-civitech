@@ -50,6 +50,9 @@ export const HomeQuery = graphql`
         ... on DatoCmsTab{
           ...BlockTab
         }
+        ... on DatoCmsTextHubspotForm{
+          ... BlockTextHubspot
+        }
       }
     }
   }

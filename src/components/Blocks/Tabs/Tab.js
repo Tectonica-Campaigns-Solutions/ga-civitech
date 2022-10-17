@@ -1,8 +1,14 @@
 import React from 'react'
+import "./index.scss"
 
-function Tab({title}) {
+function Tab({item}) {
+  const testimonial = item.testimonial
   return (
-    <div>{title}</div>
+    <div className="tab-content">
+      { testimonial?.quote}
+      { testimonial?.author}
+    </div>
+    
   )
 }
 

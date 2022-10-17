@@ -37,6 +37,19 @@ export const DatoCMS = graphql`
       }
     }
   }
+  fragment BlockTextHubspot on DatoCmsTextHubspotForm{
+    __typename
+    id
+    text
+    title
+    hubspot{
+      ... on DatoCmsHubspot{
+        formId
+        region
+        portalId
+      }
+    }
+  }
   fragment BlockTab on DatoCmsTab{
     __typename
     id
@@ -45,6 +58,12 @@ export const DatoCMS = graphql`
       ... on DatoCmsTabItem{
         title
         titleTab
+        testimonial{
+          ... on DatoCmsTestimonial{
+            quote
+            author
+          }
+        }
       }
     }
   }
