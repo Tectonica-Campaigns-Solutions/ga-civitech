@@ -62,6 +62,9 @@ export const DatoCMS = graphql`
           ... on DatoCmsTestimonial{
             quote
             author
+            image{
+              gatsbyImageData(width:300, height:400)
+            }
           }
         }
       }
