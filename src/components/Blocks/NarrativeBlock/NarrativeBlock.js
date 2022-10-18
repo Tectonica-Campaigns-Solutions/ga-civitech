@@ -1,8 +1,8 @@
 import React from "react";
-import Cta from "../../Global/Cta/Cta";
+import CtaList from "../../Global/Cta/CtaList";
 import ImageWrapper from "../../Slider/ImageWrapper";
 
-import "./index.scss"
+import "./index.scss";
 
 export default function NarrativeBlock({ block }) {
   const hasImages = block.image?.length > 0;
@@ -19,12 +19,7 @@ export default function NarrativeBlock({ block }) {
             <p>{block.textContent}</p>
 
             <div className="ctas-block">
-              {
-                block.ctas?.map(cta => {
-                  console.log(cta)
-                  return (<Cta key={cta.id} url={cta.link.content ? cta.link.content.slug : cta.link.url} label={cta.title ? cta.title : cta.link.content.label} />)
-                })
-              }
+              <CtaList ctas={block.ctas} />
             </div>
           </div>
 
