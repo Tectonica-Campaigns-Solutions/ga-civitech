@@ -1,6 +1,41 @@
-.logos-block{
-  padding:70px 0;
-  .logos-list{
-    margin-top:40px;
+.logos-block {
+  padding: 70px 0;
+
+  h2 {
+    font-family: "Laca";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 39px;
+    line-height: 120%;
+    text-align: center;
+    color: var(--ct-dark-blue);
+    margin-bottom: 40px;
+  }
+
+  .intro {
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 130%;
+    text-align: center;
+    color: var(--ct-dark-blue);
+    opacity: 0.7;
+    margin-bottom: 70px;
+    max-width: 1050px;
+  }
+
+  .logos-list {
+    margin-bottom: 50px;
+
+    a {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .ctas {
+    display: flex;
+    justify-content: center;
   }
 }

@@ -91,6 +91,7 @@ export const DatoCMS = graphql`
     }
     ctas{
       title
+      isButton
       link{
         ... on DatoCmsGlobalLink{
           label
