@@ -1,7 +1,6 @@
-import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
-import CTSlider from "../../Slider/CTSlider"
-import Cta from "../../Global/Cta/Cta"
+import React from "react";
+import Cta from "../../Global/Cta/Cta";
+import ImageWrapper from "../../Slider/ImageWrapper";
 
 import "./index.scss"
 
@@ -20,28 +19,20 @@ export default function NarrativeBlock({ block }) {
             <p>{block.textContent}</p>
 
             <div className="ctas-block">
-            {
-              block.ctas?.map(cta => {
-                console.log(cta)
-                return (<Cta key={cta.id} url={cta.link.content ? cta.link.content.slug : cta.link.url } label={cta.title ? cta.title : cta.link.content.label}/>)
-              })
-            }
-          </div>
+              {
+                block.ctas?.map(cta => {
+                  console.log(cta)
+                  return (<Cta key={cta.id} url={cta.link.content ? cta.link.content.slug : cta.link.url} label={cta.title ? cta.title : cta.link.content.label} />)
+                })
+              }
+            </div>
           </div>
 
-          {Array.isArray(block.image) && hasImages ? (
+          {block.image && (
             <div className={`${block.alignment === 'center' ? "col-lg-12" : "col-lg-5"} ${block.alignment === "right" ? "offset-lg-1" : ""}`}>
-              <CTSlider>
-                {block.image.map(img => (
-                  <GatsbyImage image={img.gatsbyImageData} alt={img.alt} />
-                ))}
-              </CTSlider>
+              <ImageWrapper image={block.image} />
             </div>
-          ) : block.image ? (
-            <div className={`${block.alignment === 'center' ? "col-lg-12" : "col-lg-5"} ${block.alignment === "right" ? "offset-lg-1" : ""}`}>
-              <GatsbyImage image={block.image?.gatsbyImageData} alt={block.image?.alt} />
-            </div>
-          ) : null}
+          )}
 
         </div>
       </div>

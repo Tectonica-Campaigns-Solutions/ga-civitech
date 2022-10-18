@@ -1,7 +1,7 @@
 import React from 'react'
 import Cta from '../Cta/Cta'
-import { GatsbyImage } from "gatsby-plugin-image"
 import Shortcut from '../Shortcut/Shortcut';
+import ImageWrapper from '../../Slider/ImageWrapper';
 
 import "./index.scss";
 
@@ -22,14 +22,9 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
           </div>
 
           {
-            image &&  (
+            image && (
               <div className="col-lg-6">
-                {
-                  image.map(item => (
-                    <GatsbyImage image={item?.gatsbyImageData} alt={item?.alt} />
-                  ))
-                }
-               
+                <ImageWrapper image={image} />
               </div>
             )
           }
@@ -38,7 +33,6 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
         {shortcuts && shortcuts.length > 0 &&
           <div className="row mt-5 mb-5 shortcuts-container">
             <div className="col-lg-12">
-              {/* TODO: Get title from DatoCMS? */}
               <h4>{titleShortcuts}</h4>
             </div>
 
