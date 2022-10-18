@@ -1,0 +1,23 @@
+.text-hubspot-form {
+  padding: 140px 0 100px 0;
+  background-color: var(--ct-dark-blue);
+
+  h2 {
+    font-family: "Laca";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 100%;
+    color: var(--ct-white);
+    margin-bottom: 25px;
+  }
+
+  p {
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 130%;
+    color: var(--ct-white);
+  }
+}

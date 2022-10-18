@@ -1,11 +1,18 @@
-
 :root {
-    --ct-yellow: #FFAA2D;
-    --ct-dark-blue: #003366;
-    --ct-blue: #0066FF;
-    --ct-white: #FFFFFF;
-    --ct-black: #000000;
-    --ct-light-blue: #70D4FC;
-    --ct-light-gray: #F8F9FB;
-    --ct-gray-dark: #686987;
+  --ct-yellow: #ffaa2d;
+  --ct-dark-blue: #003366;
+  --ct-blue: #0066ff;
+  --ct-white: #ffffff;
+  --ct-black: #000000;
+  --ct-light-blue: #70d4fc;
+  --ct-light-gray: #f8f9fb;
+  --ct-gray-dark: #686987;
+}
+
+.blue {
+  background-color: #70d4fc;
+}
+
+.dark-blue {
+  background-color: #0066ff;
 }

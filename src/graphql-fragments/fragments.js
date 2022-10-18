@@ -5,6 +5,7 @@ export const DatoCMS = graphql`
     __typename
     id
     title
+    pretitle
     alignment
     textContent
     backgroundColor
@@ -103,4 +104,3 @@ export const DatoCMS = graphql`
   }
           
 `
- 
