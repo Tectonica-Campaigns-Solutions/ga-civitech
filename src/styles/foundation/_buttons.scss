@@ -25,6 +25,9 @@
 
   &:hover {
     text-decoration: none;
+    color: var(--ct-white);
+    border-color: var(--ct-dark-blue);
+    background-color: var(--ct-dark-blue);
   }
 }
 
@@ -34,8 +37,8 @@
   background-color: var(--ct-blue);
 
   &:hover {
-    color: var(--ct-blue) !important;
-    background-color: var(--ct-white);
+    border-color: var(--ct-dark-blue);
+    background-color: var(--ct-dark-blue);
   }
 }
 

@@ -36,6 +36,7 @@ function Hero({ ctas, title, content, image, shortcuts }) {
               }
             </div>
           </div>
+
           {
             image && (
               <div className="col-lg-6">
@@ -45,29 +46,30 @@ function Hero({ ctas, title, content, image, shortcuts }) {
           }
         </div>
 
-        <div className="row mt-5 mb-5 shortcuts-container">
-          <div className="col-lg-12">
-            {/* TODO: Get title from DatoCMS? */}
-            <h4>WHO WE SERVE</h4>
+        {shortcuts && shortcuts.length > 0 &&
+          <div className="row mt-5 mb-5 shortcuts-container">
+            <div className="col-lg-12">
+              {/* TODO: Get title from DatoCMS? */}
+              <h4>WHO WE SERVE</h4>
+            </div>
+
+            {
+              shortcuts.map((item, index) => {
+                return (
+                  <div className="col-lg-4">
+                    <Shortcut
+                      key={index}
+                      title={item.title}
+                      description={item.description}
+                      btnLabel={item.btnLabel}
+                      btnUrl={item.btnUrl}
+                    />
+                  </div>
+                )
+              })
+            }
           </div>
-
-          {
-            shortcuts && shortcuts.length > 0 && shortcuts.map((item, index) => {
-              return (
-                <div className="col-lg-4">
-                  <Shortcut
-                    key={index}
-                    title={item.title}
-                    description={item.description}
-                    btnLabel={item.btnLabel}
-                    btnUrl={item.btnUrl}
-                  />
-                </div>
-              )
-            })
-          }
-
-        </div>
+        }
       </div>
     </div>
   )

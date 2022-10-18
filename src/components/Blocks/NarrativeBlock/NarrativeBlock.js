@@ -6,13 +6,19 @@ import Cta from "../../Global/Cta/Cta"
 import "./index.scss"
 
 export default function NarrativeBlock({ block }) {
+  const hasImages = block.image?.length > 0;
+  const hasImageAndCentered = hasImages && block.alignment === 'center';
+
   return (
     <div className={`component-narrative-block ${block.backgroundColor}`}>
       <div className="container pt-4 pb-4">
-        <div className={`row ${block.alignment === 'right' ? 'flex-row-reverse' : ''}`}>
-          <div className="col-lg-6">
+        <div className={`row ${block.alignment === 'left' ? 'flex-row-reverse' : ''}`}>
+
+          <div className={`${hasImageAndCentered || !hasImages ? "col-lg-12 text-center" : "col-lg-6"} ${block.alignment === "left" ? "offset-lg-1" : ""}`}>
+            <h3>{block.pretitle}</h3>
             <h2>{block.title}</h2>
-            {block.textContent}
+            <p>{block.textContent}</p>
+
             {/* <div className="ctas-block">
             {
               block.ctas?.map(cta => <Cta key={cta.id} url={cta.link.content.slug} label={cta.title}/>)
@@ -20,8 +26,8 @@ export default function NarrativeBlock({ block }) {
           </div> */}
           </div>
 
-          {Array.isArray(block.image) && block.image.length > 0 ? (
-            <div className="col-lg-6">
+          {Array.isArray(block.image) && hasImages ? (
+            <div className={`${block.alignment === 'center' ? "col-lg-12" : "col-lg-5"} ${block.alignment === "right" ? "offset-lg-1" : ""}`}>
               <CTSlider>
                 {block.image.map(img => (
                   <GatsbyImage image={img.gatsbyImageData} alt={img.alt} />
@@ -29,7 +35,7 @@ export default function NarrativeBlock({ block }) {
               </CTSlider>
             </div>
           ) : block.image ? (
-            <div className="col-lg-6">
+            <div className={`${block.alignment === 'center' ? "col-lg-12" : "col-lg-5"} ${block.alignment === "right" ? "offset-lg-1" : ""}`}>
               <GatsbyImage image={block.image?.gatsbyImageData} alt={block.image?.alt} />
             </div>
           ) : null}
