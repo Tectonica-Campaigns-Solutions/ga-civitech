@@ -19,11 +19,14 @@ export default function NarrativeBlock({ block }) {
             <h2>{block.title}</h2>
             <p>{block.textContent}</p>
 
-            {/* <div className="ctas-block">
+            <div className="ctas-block">
             {
-              block.ctas?.map(cta => <Cta key={cta.id} url={cta.link.content.slug} label={cta.title}/>)
+              block.ctas?.map(cta => {
+                console.log(cta)
+                return (<Cta key={cta.id} url={cta.link.content ? cta.link.content.slug : cta.link.url } label={cta.title ? cta.title : cta.link.content.label}/>)
+              })
             }
-          </div> */}
+          </div>
           </div>
 
           {Array.isArray(block.image) && hasImages ? (

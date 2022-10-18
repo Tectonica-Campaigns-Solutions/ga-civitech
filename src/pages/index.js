@@ -9,7 +9,7 @@ import Hero from "../components/Global/Hero/Hero"
 const IndexPage = ({ data: { page } }) => (
   <Layout>
     <SeoDatoCms seo={page.seo} />
-    <Hero ctas={page.ctas} title={page.title} content={page.contentText} image={page.heroImage} shortcuts={page.shortcuts}/>
+    <Hero ctas={page.ctas} title={page.title} content={page.contentText} image={page.heroImage} shortcuts={page.shortcuts} titleShortcuts={page.titleShortcuts}/>
     <Blocks blocks={page.blocks}></Blocks>
   </Layout>
 )
@@ -28,8 +28,10 @@ export const HomeQuery = graphql`
       shortcuts{
 				... on DatoCmsPage{
 					title
+          slug
         }
       }
+      titleShortcuts
       heroImage{
         gatsbyImageData(width:500, height:500)
         alt
@@ -52,6 +54,9 @@ export const HomeQuery = graphql`
         }
         ... on DatoCmsTextHubspotForm{
           ... BlockTextHubspot
+        }
+        ... on DatoCmsLogosBlock{
+          ... BlockLogos
         }
       }
     }

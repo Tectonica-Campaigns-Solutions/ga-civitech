@@ -5,23 +5,7 @@ import Shortcut from '../Shortcut/Shortcut';
 
 import "./index.scss";
 
-function Hero({ ctas, title, content, image, shortcuts }) {
-
-  // TODO: Just for testing purposes
-  content = "Civitech builds the technology infrastructure that helps Democratic political candidates win, progressive social causes succeed, and local governments better serve their community to create a fairer, more equitable democracy.";
-  ctas = [{ slug: "/", title: "Explore our Solutions", isPrimary: false }, { slug: "/", title: "Let’s talk", isPrimary: true }];
-  shortcuts = [
-    {
-      title: "Advocacy and Non Profits", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", btnLabel: "Learn more ›", btnUrl: "/"
-    },
-    {
-      title: "Campaigns and Candidates", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", btnLabel: "Learn more ›", btnUrl: "/"
-    },
-    {
-      title: "PACs and Party Committees", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", btnLabel: "Learn more ›", btnUrl: "/"
-    }
-  ];
-
+function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
 
   return (
     <div className="hero pt-5 pb-3">
@@ -38,9 +22,14 @@ function Hero({ ctas, title, content, image, shortcuts }) {
           </div>
 
           {
-            image && (
+            image &&  (
               <div className="col-lg-6">
-                <GatsbyImage image={image?.gatsbyImageData} alt={image?.alt} />
+                {
+                  image.map(item => (
+                    <GatsbyImage image={item?.gatsbyImageData} alt={item?.alt} />
+                  ))
+                }
+               
               </div>
             )
           }
@@ -50,7 +39,7 @@ function Hero({ ctas, title, content, image, shortcuts }) {
           <div className="row mt-5 mb-5 shortcuts-container">
             <div className="col-lg-12">
               {/* TODO: Get title from DatoCMS? */}
-              <h4>WHO WE SERVE</h4>
+              <h4>{titleShortcuts}</h4>
             </div>
 
             {
@@ -60,9 +49,9 @@ function Hero({ ctas, title, content, image, shortcuts }) {
                     <Shortcut
                       key={index}
                       title={item.title}
-                      description={item.description}
-                      btnLabel={item.btnLabel}
-                      btnUrl={item.btnUrl}
+                      description=""
+                      btnLabel="Learn more"
+                      btnUrl={item.slug}
                     />
                   </div>
                 )

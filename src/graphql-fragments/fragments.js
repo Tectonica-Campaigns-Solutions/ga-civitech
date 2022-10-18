@@ -15,12 +15,13 @@ export const DatoCMS = graphql`
     }
     ctas{
       title
-      id
       link{
-        ...on DatoCmsGlobalLink{
-					content{
-						...on DatoCmsPage{
-							slug
+        ... on DatoCmsGlobalLink{
+          label
+          url
+          content{
+            ... on DatoCmsPage{
+              slug
             }
           }
         }
@@ -65,6 +66,37 @@ export const DatoCMS = graphql`
             author
             image{
               gatsbyImageData(width:300, height:400)
+            }
+          }
+        }
+      }
+    }
+  }
+  fragment BlockLogos on DatoCmsLogosBlock{
+    __typename
+    id
+    title
+    intro
+    backgroundColor
+    logos{
+      ... on DatoCmsLogo{
+        id
+        name
+        url
+        icon{
+          gatsbyImageData
+        }
+      }
+    }
+    ctas{
+      title
+      link{
+        ... on DatoCmsGlobalLink{
+          label
+          url
+          content{
+            ... on DatoCmsPage{
+              slug
             }
           }
         }
