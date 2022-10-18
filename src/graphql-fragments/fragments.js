@@ -32,6 +32,7 @@ export const DatoCMS = graphql`
   fragment BlockGridStat on DatoCmsGridStat{
     __typename
     id
+    title
     stats{
       title
       text
