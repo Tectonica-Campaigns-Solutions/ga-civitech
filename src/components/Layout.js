@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* <TopMessage /> */}
+      <TopMessage />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>{children}</main>
       <Footer />
