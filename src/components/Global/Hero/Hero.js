@@ -1,12 +1,11 @@
 import React from 'react'
-import Cta from '../Cta/Cta'
+import CtaList from '../Cta/CtaList'
 import Shortcut from '../Shortcut/Shortcut';
 import ImageWrapper from '../../Slider/ImageWrapper';
 
 import "./index.scss";
 
 function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
-
   return (
     <div className="hero pt-5 pb-3">
       <div className="container">
@@ -15,9 +14,7 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
             <h1>{title}</h1>
             <span>{content}</span>
             <div className="ctas-block">
-              {
-                ctas?.map((cta, index) => <Cta key={index} url={cta.slug} label={cta.title} isPrimary={cta.isPrimary} />)
-              }
+              <CtaList ctas={ctas} />
             </div>
           </div>
 
