@@ -3,8 +3,8 @@ import { graphql } from 'gatsby'
 import { StructuredText } from "react-datocms";
 import Layout from "../components/Layout"
 import SeoDatoCms from "../components/SeoDatoCms"
-import { GatsbyImage } from "gatsby-plugin-image"
 import formatDate from '../utils';
+import GlobalImage from '../components/Global/GlobalImage/GlobalImage';
 
 const Post = ({ data: { post } }) => {
   return (
@@ -14,14 +14,14 @@ const Post = ({ data: { post } }) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <GatsbyImage image={post.image?.gatsbyImageData} alt={post.image?.alt} />
+              <GlobalImage image={post.image} />
             </div>
             <div className="col-lg-6">
               <div className="info">
-                { formatDate(post.meta.createdAt) } | { post.topic.name }
+                {formatDate(post.meta.createdAt)} | {post.topic.name}
               </div>
-              <h1>{ post.title }</h1> 
-              { post.summary }
+              <h1>{post.title}</h1>
+              {post.summary}
             </div>
           </div>
         </div>
@@ -29,11 +29,11 @@ const Post = ({ data: { post } }) => {
       <div className="container">
         <div className="row">
           <div className="col-lg-7">
-            
-            <StructuredText data={post.content.value}/>
+
+            <StructuredText data={post.content.value} />
             <div className="tags">
               {
-                post.tags.length > 0 && post.tags.map(item => (<div>{item.name }</div>))
+                post.tags.length > 0 && post.tags.map(item => (<div>{item.name}</div>))
               }
 
             </div>
