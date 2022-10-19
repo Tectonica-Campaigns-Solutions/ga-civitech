@@ -28,7 +28,7 @@ function Tab({ item }) {
           </div>
         </div>
 
-        <div className="col-lg-8 d-flex flex-column">
+        <div className="col-lg-8 d-flex flex-column tab-information">
           <div className='flex-grow-1'>
             <h2>{item.title}</h2>
             <div className='description'
