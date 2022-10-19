@@ -10,7 +10,7 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
     <div className="hero pt-5 pb-3">
       <div className="container">
         <div className="row align-items-center pt-5">
-          <div className="col-lg-6">
+          <div className="col-lg-6 mb-5 mb-lg-0">
             <h1>{title}</h1>
             <span>{content}</span>
             {
@@ -36,7 +36,7 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
             {
               shortcuts.map((item, index) => {
                 return (
-                  <div className="col-lg-4">
+                  <div className="col-lg-4 mb-3">
                     <Shortcut
                       key={index}
                       title={item.title}

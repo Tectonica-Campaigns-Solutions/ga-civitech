@@ -9,7 +9,7 @@ function Logos({ block }) {
     <div className={`logos-block ${block.backgroundColor}`}>
       <div className="container">
         <h2>{block.title}</h2>
-        <div className="container intro">
+        <div className="intro">
           {block.intro}
         </div>
 
@@ -31,7 +31,7 @@ function Logos({ block }) {
 
         {
           block.ctas && (
-            <div className="ctas">
+            <div className="logos-ctas">
               <CtaList ctas={block.ctas} />
             </div>
           )
