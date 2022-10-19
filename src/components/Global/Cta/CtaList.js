@@ -1,6 +1,8 @@
 import React from "react";
 import Cta from "./Cta";
 
+import "./index.scss";
+
 const CtaList = ({ ctas }) => {
     return (
         <div className="ctas">
