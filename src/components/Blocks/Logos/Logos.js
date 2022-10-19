@@ -28,10 +28,13 @@ function Logos({ block }) {
             </div>
           )
         }
-
-        <div className="ctas">
-          <CtaList ctas={block.ctas} />
-        </div>
+        {
+          block.ctas && (
+            <div className="ctas">
+              <CtaList ctas={block.ctas} />
+            </div>
+          )
+        }
       </div>
     </div>
   )
