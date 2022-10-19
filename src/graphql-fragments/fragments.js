@@ -57,17 +57,52 @@ export const DatoCMS = graphql`
   fragment BlockTab on DatoCmsTab{
     __typename
     id
+    backgroundColor
     items{
       id
       ... on DatoCmsTabItem{
         title
         titleTab
+        description
+        intro
+        headline
+        text
         testimonial{
           ... on DatoCmsTestimonial{
             quote
             author
             image{
-              gatsbyImageData(width:300, height:400)
+              gatsbyImageData(width:400, height:500)
+            }
+          }
+        }
+        ctas{
+          title
+          isButton
+          link{
+            ... on DatoCmsGlobalLink{
+              label
+              url
+              content{
+                ... on DatoCmsPage{
+                  slug
+                }
+              }
+            }
+          }
+        }
+        links{
+          title
+          isButton
+          link{
+            ... on DatoCmsGlobalLink{
+              label
+              url
+              content{
+                ... on DatoCmsPage{
+                  slug
+                }
+              }
             }
           }
         }
