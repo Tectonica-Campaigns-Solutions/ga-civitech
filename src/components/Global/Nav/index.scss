@@ -150,7 +150,7 @@
         margin-right: 2.5rem;
 
         a {
-          font-family: "Public Sans";
+          font-family: 'Public Sans';
           font-style: normal;
           font-weight: 400;
           font-size: 20px;
@@ -183,7 +183,7 @@
           }
         }
       }
-      [aria-current]:not([aria-current="false"]) {
+      [aria-current]:not([aria-current='false']) {
         color: var(--psa-magenta) !important;
       }
     }
@@ -210,7 +210,7 @@ span.navbar-toggler-icon {
   transition: 0.25s ease-in-out;
   &:before,
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     height: 4px;
     background-color: #001e61;
@@ -239,7 +239,7 @@ span.navbar-toggler-icon {
     }
     &:after {
       background-color: #ffff;
-      content: "";
+      content: '';
       opacity: 1;
       top: 0px;
       bottom: unset;
@@ -305,5 +305,13 @@ span.navbar-toggler-icon {
     background-color: transparent !important;
     border: none;
     text-align: center;
+  }
+}
+
+.top-message-container {
+  + header {
+    nav {
+      top: 50px;
+    }
   }
 }

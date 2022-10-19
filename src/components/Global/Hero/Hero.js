@@ -14,11 +14,7 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
             <h1>{title}</h1>
             <span>{content}</span>
             {
-              ctas && (
-                <div className="ctas">
-                  <CtaList ctas={ctas} />
-                </div>
-              )
+              ctas && <CtaList ctas={ctas} />
             }
           </div>
 

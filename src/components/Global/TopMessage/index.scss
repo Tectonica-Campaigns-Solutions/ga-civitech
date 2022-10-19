@@ -1,14 +1,21 @@
 .top-message-container {
+  height: 50px;
   padding: 9px 102px;
   text-align: center;
   color: var(--ct-dark-blue);
   background-color: #f9dd87;
 
   h1 {
-    font-family: "Public Sans";
+    font-family: 'Public Sans';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .close-btn {
+    cursor: pointer;
   }
 }
