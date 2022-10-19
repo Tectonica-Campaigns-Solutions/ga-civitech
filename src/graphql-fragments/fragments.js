@@ -15,6 +15,7 @@ export const DatoCMS = graphql`
     }
     ctas{
       title
+      isButton
       link{
         ... on DatoCmsGlobalLink{
           label
@@ -31,6 +32,7 @@ export const DatoCMS = graphql`
   fragment BlockGridStat on DatoCmsGridStat{
     __typename
     id
+    title
     stats{
       title
       text
@@ -90,6 +92,7 @@ export const DatoCMS = graphql`
     }
     ctas{
       title
+      isButton
       link{
         ... on DatoCmsGlobalLink{
           label
@@ -134,5 +137,4 @@ export const DatoCMS = graphql`
       }
     }
   }
-          
 `

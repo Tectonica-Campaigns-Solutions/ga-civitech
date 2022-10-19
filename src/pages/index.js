@@ -9,7 +9,7 @@ import Hero from "../components/Global/Hero/Hero"
 const IndexPage = ({ data: { page } }) => (
   <Layout>
     <SeoDatoCms seo={page.seo} />
-    <Hero ctas={page.ctas} title={page.title} content={page.contentText} image={page.heroImage} shortcuts={page.shortcuts} titleShortcuts={page.titleShortcuts}/>
+    <Hero ctas={page.ctas} title={page.title} content={page.contentText} image={page.heroImage} shortcuts={page.shortcuts} titleShortcuts={page.titleShortcuts} />
     <Blocks blocks={page.blocks}></Blocks>
   </Layout>
 )
