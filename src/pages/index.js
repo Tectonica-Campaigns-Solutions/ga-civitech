@@ -37,9 +37,18 @@ export const HomeQuery = graphql`
         alt
       }
       ctas{
-        ... on DatoCmsPage{
-          slug
-          title
+        title
+        isButton
+        link{
+          ... on DatoCmsGlobalLink{
+            label
+            url
+            content{
+              ... on DatoCmsPage{
+                slug
+              }
+            }
+          }
         }
       }
       blocks{
