@@ -6,6 +6,9 @@ function GridStat({ block }) {
     <div className="grid-stats">
       <div className="container">
         <h2>{block.title}</h2>
+        <div
+          dangerouslySetInnerHTML={{__html: block.text}}
+        />
 
         <div className="row gy-5">
           {

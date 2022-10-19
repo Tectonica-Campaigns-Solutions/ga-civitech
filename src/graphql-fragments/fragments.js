@@ -33,6 +33,7 @@ export const DatoCMS = graphql`
     __typename
     id
     title
+    text
     stats{
       title
       text
