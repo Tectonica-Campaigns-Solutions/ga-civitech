@@ -1,5 +1,5 @@
 import React from 'react';
-import CtaList from '../../Global/Cta/CtaList';
+import ToolsetCta from './ToolsetCta';
 
 import "./index.scss";
 
@@ -13,8 +13,13 @@ function Toolset({ toolset }) {
         dangerouslySetInnerHTML={{ __html: toolset.description }}
       />
 
-      <CtaList ctas={toolset.links} />
-
+      {toolset.links && toolset.links.length && (
+        <div className='links-ctas'>
+          {toolset.links.map(link => (
+            <ToolsetCta cta={link} />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

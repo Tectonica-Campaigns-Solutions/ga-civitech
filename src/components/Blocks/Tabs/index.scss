@@ -135,4 +135,18 @@
     color: var(--ct-dark-blue);
     margin-bottom: 10px;
   }
+
+  .links-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+
+    .link-cta {
+      color: var(--ct-white);
+      text-align: center;
+      padding: 5px 10px;
+      background: var(--ct-blue);
+      border-radius: 4px;
+    }
+  }
 }
