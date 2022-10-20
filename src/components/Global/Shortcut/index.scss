@@ -1,18 +1,20 @@
 .shortcut {
+  position: relative;
   background-color: var(--ct-white);
   padding: 20px 75px 23px 31px;
+  transition: all 0.4s ease-out;
 
   h4 {
-    font-family: "Laca";
+    font-family: 'Laca';
     font-style: normal;
     font-weight: 600;
-    font-size: 31px !important;
-    line-height: 120% !important;
+    font-size: 31px;
+    line-height: 120%;
     color: var(--ct-dark-blue);
   }
 
   p {
-    font-family: "Public Sans";
+    font-family: 'Public Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -21,11 +23,37 @@
   }
 
   a {
-    font-family: "Public Sans";
+    font-family: 'Public Sans';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 20px;
     line-height: 150%;
-    color: var(--ct-blue) !important;
+    color: var(--ct-blue);
+  }
+
+  &:hover {
+    background-color: var(--ct-blue);
+
+    h4,
+    p,
+    a {
+      color: var(--ct-white);
+    }
+  }
+
+  .arrows {
+    position: absolute;
+    top: -7px;
+    right: -5px;
+
+    img:nth-child(1) {
+      position: relative;
+      left: 20px;
+    }
+
+    img:nth-child(2) {
+      position: relative;
+      left: 5px;
+    }
   }
 }
