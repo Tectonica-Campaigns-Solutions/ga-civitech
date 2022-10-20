@@ -32,9 +32,12 @@ function Tab({ item }) {
           <div className='flex-grow-1'>
             <h2>{item.title}</h2>
             <div className='description'
-              dangerouslySetInnerHTML={{ __html: item.description }}
+              dangerouslySetInnerHTML={{ __html: item.text }}
             />
-            <CtaList ctas={item.ctas} />
+
+            {item.ctas && item.ctas.length > 0 && (
+              <CtaList ctas={item.ctas} />
+            )}
           </div>
 
           <Toolset toolset={item} />
