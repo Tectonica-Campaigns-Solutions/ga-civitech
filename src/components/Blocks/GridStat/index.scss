@@ -41,20 +41,38 @@
     h3 {
       font-family: 'Laca';
       font-style: normal;
+      color: var(--ct-dark-blue);
+      margin-bottom: 13px;
+    }
+
+    .sm-title {
       font-weight: 600;
       font-size: 49px;
       line-height: 100%;
-      color: var(--ct-dark-blue);
-      margin-bottom: 13px;
+    }
+
+    .lg-title {
+      font-weight: 700;
+      font-size: 61px;
+      line-height: 100%;
     }
 
     span {
       font-family: 'Public Sans';
       font-style: normal;
+      color: var(--ct-dark-blue);
+    }
+
+    .sm-text {
       font-weight: 400;
       font-size: 20px;
       line-height: 150%;
-      color: var(--ct-dark-blue);
+    }
+
+    .lg-text {
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 130%;
     }
   }
 }

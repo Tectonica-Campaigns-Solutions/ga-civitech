@@ -22,8 +22,8 @@ function GridStat({ block }) {
                   <GlobalImage image={item.icon} />
                 </div>
 
-                <h3>{item.title}</h3>
-                <span>{item.text}</span>
+                <h3 className={`${gridSizeGreaterThan3 ? "sm-title" : "lg-title"}`}>{item.title}</h3>
+                <span className={`${gridSizeGreaterThan3 ? "sm-text" : "lg-text"}`}>{item.text}</span>
               </div>
             ))
           }
