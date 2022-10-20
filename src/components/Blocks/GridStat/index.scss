@@ -20,14 +20,22 @@
     justify-content: center;
 
     .stat-image {
-      width: 102px;
-      height: 102px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       background-color: var(--ct-dark-blue);
       margin-bottom: 35px;
+    }
+
+    .stat-image.sm-img {
+      width: 102px;
+      height: 102px;
+    }
+
+    .stat-image.lg-img {
+      width: 152px;
+      height: 152px;
     }
 
     h3 {
