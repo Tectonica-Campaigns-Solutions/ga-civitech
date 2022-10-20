@@ -29,7 +29,7 @@
   }
 
   .shortcuts-container {
-    h4 {
+    h3 {
       font-family: 'Public Sans';
       font-style: normal;
       font-weight: 700;
@@ -38,6 +38,7 @@
       letter-spacing: 0.05em;
       color: var(--ct-dark-blue);
       margin-bottom: 25px;
+      text-transform: uppercase;
     }
   }
 }

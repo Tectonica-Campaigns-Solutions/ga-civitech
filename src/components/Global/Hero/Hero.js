@@ -30,7 +30,7 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
         {shortcuts && shortcuts.length > 0 &&
           <div className="row mt-5 mb-5 shortcuts-container">
             <div className="col-lg-12">
-              <h4>{titleShortcuts}</h4>
+              <h3>{titleShortcuts}</h3>
             </div>
 
             {
