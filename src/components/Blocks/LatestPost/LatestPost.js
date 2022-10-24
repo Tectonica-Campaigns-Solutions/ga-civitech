@@ -1,51 +1,54 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import GlobalImage from "../../Global/GlobalImage/GlobalImage";
+import Cta from "../../Global/Cta/Cta";
+import PostCard from "./PostCard";
 
-const LatestPost = ({block}) => {
+import "./index.scss";
+
+const LatestPost = ({ block }) => {
   return <StaticQuery
-      query={graphql`
+    query={graphql`
               query latestPost {
                   allDatoCmsPost {
-                      nodes{
+                      nodes {
                         title
-                        image{
+                        image {
                           gatsbyImageData
                         }
-                        tags{
-                          ... on DatoCmsTag{
+                        tags {
+                          ... on DatoCmsTag {
                             name
                           }
+                        }
+                        meta {
+                         publishedAt
                         }
                       }
                   }
               }
       `}
-      render={data => {
-       return (
-          <div className={`row ${block.backgroundColor}`}>
-            <h2>{block.title}</h2>
-            {
-              data.allDatoCmsPost.nodes.map(item => {
-                return (
-                  <>
-                  <div className="tags">
-                    { item.tags.map(tag => {
-                      return (
-                        <span>{tag.name}</span>
-                      )
-                    })}
-                  </div>
-                     <GlobalImage image={item.image} />
-                     <div>{item.title }</div>
-                  </>
-                  
-                )
-              })
-            }
+    render={data => {
+      return (
+        <div className={`latest-posts-container ${block.backgroundColor}`}>
+          <div className={`container`}>
+            <div className="title-section">
+              <h2>{block.title}</h2>
+
+              {/* TODO: Remove hardcoded CTA */}
+              <Cta label={'Read all'} isButton />
+            </div>
+
+            <div className="row">
+              {data.allDatoCmsPost.nodes.map(item => (
+                <div className="col-lg-4 mb-lg-0 mb-md-5">
+                  <PostCard item={item} />
+                </div>
+              ))}
+            </div>
           </div>
-        )
-      }}
+        </div>
+      )
+    }}
   />;
 }
 

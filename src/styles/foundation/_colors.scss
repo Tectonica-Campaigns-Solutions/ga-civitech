@@ -12,9 +12,13 @@
 }
 
 .blue {
-  background-color: #70d4fc;
+  background-color: var(--ct-light-blue);
 }
 
 .dark-blue {
   background-color: #0066ff;
+}
+
+.light-blue {
+  background-color: var(--ct-light-blue);
 }
