@@ -67,6 +67,9 @@ export const HomeQuery = graphql`
         ... on DatoCmsLogosBlock{
           ... BlockLogos
         }
+        ... on DatoCmsLatestPost{
+          ... BlockLatestPost
+        }
       }
     }
   }

@@ -42,6 +42,11 @@ export const DatoCMS = graphql`
       }
     }
   }
+  fragment BlockLatestPost on DatoCmsLatestPost{
+    __typename
+    title
+    backgroundColor
+  }
   fragment BlockTextHubspot on DatoCmsTextHubspotForm{
     __typename
     id
