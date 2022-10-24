@@ -40,7 +40,7 @@ const LatestPost = ({ block }) => {
 
             <div className="row">
               {data.allDatoCmsPost.nodes.map(item => (
-                <div className="col-lg-4 mb-lg-0 mb-md-5">
+                <div className="col-lg-4 mb-lg-0 mb-5">
                   <PostCard item={item} />
                 </div>
               ))}
