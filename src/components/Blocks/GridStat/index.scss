@@ -1,9 +1,9 @@
 .grid-stats {
-  background-color: #70d4fc;
+  background-color: var(--ct-light-red);
   padding: 40px 0 120px 0;
 
   h2 {
-    font-family: "Laca";
+    font-family: 'Laca';
     font-style: normal;
     font-weight: 600;
     font-size: 39px;
@@ -20,8 +20,6 @@
     justify-content: center;
 
     .stat-image {
-      width: 102px;
-      height: 102px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -30,23 +28,51 @@
       margin-bottom: 35px;
     }
 
+    .stat-image.sm-img {
+      width: 102px;
+      height: 102px;
+    }
+
+    .stat-image.lg-img {
+      width: 152px;
+      height: 152px;
+    }
+
     h3 {
-      font-family: "Laca";
+      font-family: 'Laca';
       font-style: normal;
-      font-weight: 600;
-      font-size: 49px;
-      line-height: 100%;
       color: var(--ct-dark-blue);
       margin-bottom: 13px;
     }
 
+    .sm-title {
+      font-weight: 600;
+      font-size: 49px;
+      line-height: 100%;
+    }
+
+    .lg-title {
+      font-weight: 700;
+      font-size: 61px;
+      line-height: 100%;
+    }
+
     span {
-      font-family: "Public Sans";
+      font-family: 'Public Sans';
       font-style: normal;
+      color: var(--ct-dark-blue);
+    }
+
+    .sm-text {
       font-weight: 400;
       font-size: 20px;
       line-height: 150%;
-      color: var(--ct-dark-blue);
+    }
+
+    .lg-text {
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 130%;
     }
   }
 }

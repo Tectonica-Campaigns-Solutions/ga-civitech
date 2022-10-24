@@ -18,13 +18,7 @@ export default function NarrativeBlock({ block }) {
             <h2>{block.title}</h2>
             <p>{block.textContent}</p>
 
-            {
-              block.ctas && (
-                <div className="ctas">
-                  <CtaList ctas={block.ctas} />
-                </div>
-              )
-            }
+            {block.ctas && block.ctas.length > 0 && <CtaList ctas={block.ctas} />}
           </div>
 
           {block.image && (

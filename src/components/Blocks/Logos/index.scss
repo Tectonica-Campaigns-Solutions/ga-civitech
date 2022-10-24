@@ -1,28 +1,28 @@
 .logos-block {
   padding: 70px 0;
+  text-align: center;
 
   h2 {
-    font-family: "Laca";
+    font-family: 'Laca';
     font-style: normal;
     font-weight: 600;
     font-size: 39px;
     line-height: 120%;
-    text-align: center;
     color: var(--ct-dark-blue);
     margin-bottom: 40px;
   }
 
   .intro {
-    font-family: "Public Sans";
+    font-family: 'Public Sans';
     font-style: normal;
     font-weight: 500;
     font-size: 25px;
     line-height: 130%;
-    text-align: center;
     color: var(--ct-dark-blue);
     opacity: 0.7;
-    margin-bottom: 70px;
     max-width: 1050px;
+    margin: 0 auto;
+    margin-bottom: 70px;
   }
 
   .logos-list {
@@ -34,7 +34,7 @@
     }
   }
 
-  .ctas {
+  .logos-ctas {
     display: flex;
     justify-content: center;
   }

@@ -1,10 +1,8 @@
 import React from 'react'
 import { useStaticQuery } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
 import Link from '../Link'
 import Divider from '../../Divider/Divider'
-import CTWhiteLogo from "../../Icons/logo-white.svg"
 import FooterGroupLinks from './FooterGroupLinks'
 
 import "./index.scss"

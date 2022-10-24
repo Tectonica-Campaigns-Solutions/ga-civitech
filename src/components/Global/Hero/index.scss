@@ -3,7 +3,7 @@
   background-color: rgba(112, 212, 252, 0.2);
 
   h1 {
-    font-family: "Laca";
+    font-family: 'Laca';
     font-style: normal;
     font-weight: 700;
     font-size: 61px;
@@ -13,23 +13,24 @@
   }
 
   span {
-    font-family: "Public Sans";
+    display: block;
+    font-family: 'Public Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;
     color: var(--ct-dark-blue);
+    margin-bottom: 30px;
   }
 
   .ctas-block {
-    margin-top: 31px;
     display: flex;
     gap: 31px;
   }
 
   .shortcuts-container {
-    h4 {
-      font-family: "Public Sans";
+    h3 {
+      font-family: 'Public Sans';
       font-style: normal;
       font-weight: 700;
       font-size: 16px;
@@ -37,6 +38,7 @@
       letter-spacing: 0.05em;
       color: var(--ct-dark-blue);
       margin-bottom: 25px;
+      text-transform: uppercase;
     }
   }
 }

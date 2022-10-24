@@ -1,15 +1,15 @@
 import React from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
 import CTSlider from "../Slider/CTSlider";
+import GlobalImage from "../Global/GlobalImage/GlobalImage";
 
 export default function ImageWrapper({ image }) {
     if (Array.isArray(image) && image.length > 0) {
         return (
             <CTSlider>
-                {image.map(img => <GatsbyImage image={img.gatsbyImageData} alt={img.alt} />)}
+                {image.map(img => <GlobalImage image={img} />)}
             </CTSlider>
         );
     }
 
-    return <GatsbyImage image={image.gatsbyImageData} alt={image?.alt} />;
+    return <GlobalImage image={image} />
 }
