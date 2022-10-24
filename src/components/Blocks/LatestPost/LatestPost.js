@@ -9,7 +9,7 @@ const LatestPost = ({ block }) => {
   return <StaticQuery
     query={graphql`
               query latestPost {
-                  allDatoCmsPost {
+                  allDatoCmsPost(limit: 3) {
                       nodes {
                         title
                         image {
