@@ -15,7 +15,7 @@ const PostCard = ({ item }) => {
                 <span className="date">{formatDate(item.meta.publishedAt)}</span>
 
                 {/* TODO: Limit tags? */}
-                {item.tags.map(tag => (<span className="tag">{tag.name}</span>))}
+                {item.tag.length > 0 && item.tags.map(tag => (<span className="tag">{tag.name}</span>))}
             </div>
 
             <h3>{item.title}</h3>
