@@ -5,8 +5,6 @@ import GlobalImage from "../../Global/GlobalImage/GlobalImage";
 import "./index.scss";
 
 const PostCard = ({ item }) => {
-    console.log('Post: ', item.tags);
-
     return (
         <div className="post-card">
             <div className="image">

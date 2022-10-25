@@ -18,7 +18,7 @@ const Post = ({ data: { post } }) => {
             </div>
             <div className="col-lg-6">
               <div className="info">
-                {formatDate(post.meta.createdAt)} | {post.topic.name}
+                {formatDate(post.meta.createdAt)} | {post?.topic ? post.topic.name : ''}
               </div>
               <h1>{post.title}</h1>
               {post.summary}
@@ -33,7 +33,7 @@ const Post = ({ data: { post } }) => {
             <StructuredText data={post.content.value} />
             <div className="tags">
               {
-                post.tags.length > 0 && post.tags.map(item => (<div>{item.name}</div>))
+                post.tags && post.tags.length > 0 && post.tags.map(item => (<div>{item.name}</div>))
               }
 
             </div>
