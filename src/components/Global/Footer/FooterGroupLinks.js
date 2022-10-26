@@ -2,24 +2,40 @@ import React from 'react';
 import Divider from '../../Divider/Divider';
 import Link from '../Link';
 
-const FooterGroupLinks = ({ item }) => (
-    <div className="col-md col-sm-6 mb-4 mb-md-0 ct-footer-links" key={item.id}>
-        {item.label && (
-            <>
-                <h3>{item.label}</h3>
-                <Divider />
-            </>
-        )}
+const FooterGroupLinks = ({ item }) => {
+  const isButton = item.isButton;
 
-        {item.mainLink && (<Link to={item.mainLink} className={item.isButton ? 'btn btn-primary' : ''}>{item.label ? item.label : item.mainLink.label}</Link>)}
+  return (
+    <div
+      className={`col-md col-sm-6 mb-4 mb-md-0 ct-footer-links ${
+        isButton ? 'd-flex justify-content-lg-end justify-content-sm-start align-items-start' : ''
+      }`}
+      key={item.id}
+    >
+      {item.label && (
+        <>
+          <h3>{item.label}</h3>
+          <Divider />
+        </>
+      )}
 
-        {item.links && item.links.length > 0 && (<ul>
-            {
+      {item.mainLink && (
+        <Link to={item.mainLink} className={isButton ? 'btn btn-primary' : ''}>
+          {item.label ? item.label : item.mainLink.label}
+        </Link>
+      )}
 
-                item.links.map(link => (<li key={link.id}><Link to={link}>{link.label}</Link></li>))
-            }
-        </ul>)}
+      {item.links && item.links.length > 0 && (
+        <ul>
+          {item.links.map(link => (
+            <li key={link.id}>
+              <Link to={link}>{link.label}</Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
-)
+  );
+};
 
 export default FooterGroupLinks;
