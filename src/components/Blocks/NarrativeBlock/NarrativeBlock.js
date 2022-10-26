@@ -30,7 +30,7 @@ export default function NarrativeBlock({ block }) {
                 block.alignment === 'right' ? 'offset-lg-1' : ''
               }`}
             >
-              <ImageWrapper image={block.image} />
+              <ImageWrapper image={block.image} objectFit="contain" />
             </div>
           )}
         </div>
