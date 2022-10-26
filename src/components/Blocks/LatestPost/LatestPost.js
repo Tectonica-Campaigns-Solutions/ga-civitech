@@ -21,7 +21,7 @@ const LatestPost = ({ block }) => {
                           }
                         }
                         meta {
-                         publishedAt
+                         publishedAt(formatString: "MMMM D, YYYY")
                         }
                       }
                   }
