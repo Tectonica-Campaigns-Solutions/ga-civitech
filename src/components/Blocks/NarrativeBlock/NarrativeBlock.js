@@ -19,7 +19,8 @@ export default function NarrativeBlock({ block }) {
           >
             <h3>{block.pretitle}</h3>
             <h2>{block.title}</h2>
-            <p>{block.textContent}</p>
+
+            <p dangerouslySetInnerHTML={{ __html: block.textContent }} />
 
             {block.ctas && block.ctas.length > 0 && <CtaList ctas={block.ctas} />}
           </div>
