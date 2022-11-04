@@ -3,7 +3,7 @@ import CTSlider from '../Slider/CTSlider';
 import GlobalImage from '../Global/GlobalImage/GlobalImage';
 
 export default function ImageWrapper({ image, ...props }) {
-  if (Array.isArray(image) && image.length > 0) {
+  if (image.length > 1) {
     return (
       <CTSlider>
         {image.map(img => (
@@ -13,5 +13,5 @@ export default function ImageWrapper({ image, ...props }) {
     );
   }
 
-  return <GlobalImage image={image} {...props} />;
+  return <GlobalImage image={image[0]} {...props} />;
 }
