@@ -20,10 +20,20 @@ const TopMessage = () => {
     }
   `);
 
-  const [toggleMessage, setToggleMessage] = useState(data.datoCmsTopMessage.statusTopMessage || false);
-  const handleToggleMessage = () => setToggleMessage(toggleMessage => !toggleMessage);
+  const [toggleTopMessage, setToggleTopMessage] = useState(data.datoCmsTopMessage.statusTopMessage || false);
 
-  if (!toggleMessage) {
+  const showTopMessageAccordingSession = sessionStorage.getItem('show_top_message')
+    ? sessionStorage.getItem('show_top_message') == 'true'
+    : true;
+
+  const handleToggleTopMessage = () => {
+    setToggleTopMessage(toggleMessage => {
+      sessionStorage.setItem('show_top_message', !toggleMessage);
+      return !toggleMessage;
+    });
+  };
+
+  if (!toggleTopMessage || !showTopMessageAccordingSession) {
     return <></>;
   }
 
@@ -35,7 +45,7 @@ const TopMessage = () => {
           <h1>{data.datoCmsTopMessage.message}</h1>
         </span>
 
-        <div className="close-btn" onClick={handleToggleMessage}>
+        <div className="close-btn" onClick={handleToggleTopMessage}>
           <img src={closeButton} />
         </div>
       </div>
