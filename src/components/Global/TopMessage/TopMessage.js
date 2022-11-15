@@ -23,10 +23,6 @@ const TopMessage = () => {
   const [toggleTopMessage, setToggleTopMessage] = useState(data.datoCmsTopMessage.statusTopMessage || false);
   const [showTopMessageAccordingSession, setShowTopMessageAccordingSession] = useState(true);
 
-  // const showTopMessageAccordingSession = sessionStorage.getItem('show_top_message')
-  //   ? sessionStorage.getItem('show_top_message') == 'true'
-  //   : true;
-
   useEffect(() => {
     if (sessionStorage.getItem('show_top_message')) {
       setShowTopMessageAccordingSession(sessionStorage.getItem('show_top_message') == 'true');
