@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import "./index.scss";
+import './index.scss';
 
 function TextHubsportForm({ block }) {
-
-  const formId = block.hubspot.formId
-  const region = block.hubspot.region
-  const portalId = block.hubspot.portalId
+  const formId = block.hubspot.formId;
+  const region = block.hubspot.region;
+  const portalId = block.hubspot.portalId;
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -19,8 +18,8 @@ function TextHubsportForm({ block }) {
           region: region,
           portalId: portalId,
           formId: formId,
-          target: '#hubspotForm'
-        })
+          target: '#hubspotForm',
+        });
       }
     });
   }, [formId, region, portalId]);
@@ -31,7 +30,7 @@ function TextHubsportForm({ block }) {
         <div className="row gy-3">
           <div className="col-lg-5">
             <h2>{block.title}</h2>
-            <p>{block.text}</p>
+            <p dangerouslySetInnerHTML={{ __html: block.text }} />
           </div>
 
           <div className="col-lg-4 offset-lg-1">
@@ -40,7 +39,7 @@ function TextHubsportForm({ block }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default TextHubsportForm
+export default TextHubsportForm;

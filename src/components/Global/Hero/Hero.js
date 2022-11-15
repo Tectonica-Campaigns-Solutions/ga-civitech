@@ -1,9 +1,9 @@
-import React from 'react'
-import CtaList from '../Cta/CtaList'
+import React from 'react';
+import CtaList from '../Cta/CtaList';
 import Shortcut from '../Shortcut/Shortcut';
 import ImageWrapper from '../../Slider/ImageWrapper';
 
-import "./index.scss";
+import './index.scss';
 
 function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
   return (
@@ -13,46 +13,34 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
           <div className="col-lg-6 mb-5 mb-lg-0">
             <h1>{title}</h1>
             <span>{content}</span>
-            {
-              ctas && <CtaList ctas={ctas} />
-            }
+            {ctas && <CtaList ctas={ctas} />}
           </div>
 
-          {
-            image && (
-              <div className="col-lg-6">
-                <ImageWrapper image={image} />
-              </div>
-            )
-          }
+          {image && (
+            <div className="col-lg-6">
+              <ImageWrapper image={image} objectFit="contain" />
+            </div>
+          )}
         </div>
 
-        {shortcuts && shortcuts.length > 0 &&
+        {shortcuts && shortcuts.length > 0 && (
           <div className="row mt-5 mb-5 shortcuts-container">
             <div className="col-lg-12">
               <h3>{titleShortcuts}</h3>
             </div>
 
-            {
-              shortcuts.map((item, index) => {
-                return (
-                  <div className="col-lg-4 mb-3">
-                    <Shortcut
-                      key={index}
-                      title={item.title}
-                      description=""
-                      btnLabel="Learn more"
-                      btnUrl={item.slug}
-                    />
-                  </div>
-                )
-              })
-            }
+            {shortcuts.map((item, index) => {
+              return (
+                <div className="col-lg-4 mb-3">
+                  <Shortcut key={index} title={item.title} description="" btnLabel="Learn more" btnUrl={item.slug} />
+                </div>
+              );
+            })}
           </div>
-        }
+        )}
       </div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

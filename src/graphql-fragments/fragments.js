@@ -1,7 +1,7 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const DatoCMS = graphql`
-  fragment BlockNarrativeBlock on DatoCmsNarrativeBlock{
+  fragment BlockNarrativeBlock on DatoCmsNarrativeBlock {
     __typename
     id
     title
@@ -9,19 +9,19 @@ export const DatoCMS = graphql`
     alignment
     textContent
     backgroundColor
-    image{
-      gatsbyImageData(width:500, height:500)
+    image {
+      gatsbyImageData(width: 500, height: 500)
       alt
     }
-    ctas{
+    ctas {
       title
       isButton
-      link{
-        ... on DatoCmsGlobalLink{
+      link {
+        ... on DatoCmsGlobalLink {
           label
           url
-          content{
-            ... on DatoCmsPage{
+          content {
+            ... on DatoCmsPage {
               slug
             }
           }
@@ -29,83 +29,83 @@ export const DatoCMS = graphql`
       }
     }
   }
-  fragment BlockGridStat on DatoCmsGridStat{
+  fragment BlockGridStat on DatoCmsGridStat {
     __typename
     id
     title
     text
-    stats{
+    stats {
       title
       text
-      icon{
+      icon {
         url
       }
     }
   }
-  fragment BlockLatestPost on DatoCmsLatestPost{
+  fragment BlockLatestPost on DatoCmsLatestPost {
     __typename
     title
     backgroundColor
   }
-  fragment BlockTextHubspot on DatoCmsTextHubspotForm{
+  fragment BlockTextHubspot on DatoCmsTextHubspotForm {
     __typename
     id
     text
     title
-    hubspot{
-      ... on DatoCmsHubspot{
+    hubspot {
+      ... on DatoCmsHubspot {
         formId
         region
         portalId
       }
     }
   }
-  fragment BlockTab on DatoCmsTab{
+  fragment BlockTab on DatoCmsTab {
     __typename
     id
     backgroundColor
-    items{
+    items {
       id
-      ... on DatoCmsTabItem{
+      ... on DatoCmsTabItem {
         title
         titleTab
         description
         intro
         headline
         text
-        testimonial{
-          ... on DatoCmsTestimonial{
+        testimonial {
+          ... on DatoCmsTestimonial {
             quote
             author
-            image{
-              gatsbyImageData(width:400, height:500)
+            image {
+              gatsbyImageData(width: 400, height: 500)
             }
           }
         }
-        ctas{
+        ctas {
           title
           isButton
-          link{
-            ... on DatoCmsGlobalLink{
+          link {
+            ... on DatoCmsGlobalLink {
               label
               url
-              content{
-                ... on DatoCmsPage{
+              content {
+                ... on DatoCmsPage {
                   slug
                 }
               }
             }
           }
         }
-        links{
+        links {
           title
           isButton
-          link{
-            ... on DatoCmsGlobalLink{
+          link {
+            ... on DatoCmsGlobalLink {
               label
               url
-              content{
-                ... on DatoCmsPage{
+              content {
+                ... on DatoCmsPage {
                   slug
                 }
               }
@@ -115,31 +115,31 @@ export const DatoCMS = graphql`
       }
     }
   }
-  fragment BlockLogos on DatoCmsLogosBlock{
+  fragment BlockLogos on DatoCmsLogosBlock {
     __typename
     id
     title
     intro
     backgroundColor
-    logos{
-      ... on DatoCmsLogo{
+    logos {
+      ... on DatoCmsLogo {
         id
         name
         url
-        icon{
+        icon {
           gatsbyImageData
         }
       }
     }
-    ctas{
+    ctas {
       title
       isButton
-      link{
-        ... on DatoCmsGlobalLink{
+      link {
+        ... on DatoCmsGlobalLink {
           label
           url
-          content{
-            ... on DatoCmsPage{
+          content {
+            ... on DatoCmsPage {
               slug
             }
           }
@@ -147,35 +147,35 @@ export const DatoCMS = graphql`
       }
     }
   }
-  fragment Navigation on DatoCmsNavigation{
+  fragment Navigation on DatoCmsNavigation {
     title
-    navigationItems{
+    navigationItems {
       id
       label
       isButton
-      icon{
+      icon {
         url
       }
-      mainLink{
+      mainLink {
         id
         url
         label
-        content{
-          ...on DatoCmsPage{
+        content {
+          ... on DatoCmsPage {
             slug
           }
         }
       }
-      links{
+      links {
         id
         url
         label
-        content{
-          ...on DatoCmsPage{
+        content {
+          ... on DatoCmsPage {
             slug
           }
         }
       }
     }
   }
-`
+`;
