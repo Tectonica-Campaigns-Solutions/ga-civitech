@@ -1,5 +1,5 @@
-const formatDate = (val) => {
-  return new Date(val).toDateString()
-}
+const formatDate = val => {
+  return new Date(val).toDateString();
+};
 
-export default formatDate
+export default formatDate;

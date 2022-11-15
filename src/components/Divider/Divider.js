@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import "./index.scss"
+import './index.scss';
 
-const Divider = () => (
-    <hr className="ct-divider" />
-)
+const Divider = () => <hr className="ct-divider" />;
 
 export default Divider;

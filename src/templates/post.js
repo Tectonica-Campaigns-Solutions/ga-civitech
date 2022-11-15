@@ -1,8 +1,8 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { StructuredText } from "react-datocms";
-import Layout from "../components/Layout"
-import SeoDatoCms from "../components/SeoDatoCms"
+import React from 'react';
+import { graphql } from 'gatsby';
+import { StructuredText } from 'react-datocms';
+import Layout from '../components/Layout';
+import SeoDatoCms from '../components/SeoDatoCms';
 import formatDate from '../utils';
 import GlobalImage from '../components/Global/GlobalImage/GlobalImage';
 
@@ -29,56 +29,50 @@ const Post = ({ data: { post } }) => {
       <div className="container">
         <div className="row">
           <div className="col-lg-7">
-
             <StructuredText data={post.content.value} />
             <div className="tags">
-              {
-                post.tags && post.tags.length > 0 && post.tags.map(item => (<div>{item.name}</div>))
-              }
-
+              {post.tags && post.tags.length > 0 && post.tags.map(item => <div>{item.name}</div>)}
             </div>
           </div>
-          <div className="col-lg-5">
-            Related
-          </div>
+          <div className="col-lg-5">Related</div>
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;
 
 export const PostQuery = graphql`
   query PostById($id: String) {
-      post: datoCmsPost(id: { eq: $id }) {
-        seo: seoMetaTags {
-          ...GatsbyDatoCmsSeoMetaTags
+    post: datoCmsPost(id: { eq: $id }) {
+      seo: seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
+      meta {
+        createdAt
+      }
+      id
+      title
+      slug
+      content {
+        value
+      }
+      image {
+        gatsbyImageData(width: 600, height: 400)
+        alt
+      }
+      summary
+      topic {
+        ... on DatoCmsTag {
+          name
         }
-        meta{
-          createdAt
+      }
+      tags {
+        ... on DatoCmsTag {
+          name
         }
-        id
-        title
-        slug
-        content{
-          value
-        }
-        image{
-          gatsbyImageData(width:600, height:400)
-          alt
-        }
-        summary
-        topic{
-          ...on DatoCmsTag{
-            name
-          }
-        }
-        tags{
-          ...on DatoCmsTag{
-            name
-          }
-        }
-      } 
+      }
+    }
   }
-`
+`;

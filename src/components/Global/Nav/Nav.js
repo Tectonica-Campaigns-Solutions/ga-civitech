@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
-import Link from "../Link"
-import logo from "../../Icons/logo.svg"
+import React, { useState, useEffect } from 'react';
+import Link from '../Link';
+import logo from '../../Icons/logo.svg';
 
-import "./index.scss"
+import './index.scss';
 
 const LinkItem = ({ link, label, isButton }) => {
   return (
@@ -11,38 +11,27 @@ const LinkItem = ({ link, label, isButton }) => {
         {label}
       </Link>
     </li>
-  )
-}
+  );
+};
 
 const DropdownItem = ({ link, label, children }) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const mouseEnter = () => {
-    setDropdownOpen(true)
-  }
+    setDropdownOpen(true);
+  };
 
   const mouseLeave = () => {
-    setDropdownOpen(false)
-  }
+    setDropdownOpen(false);
+  };
 
   return (
-    <li
-      className="dropdown nav-item"
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
-    >
-      <Link
-        to={link}
-        type="button"
-        id="languageSelector"
-        aria-expanded="false"
-        data-bs-toggle="dropdown"
-
-      >
+    <li className="dropdown nav-item" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+      <Link to={link} type="button" id="languageSelector" aria-expanded="false" data-bs-toggle="dropdown">
         {label}
       </Link>
 
-      <ul className={`dropdown-menu ${dropdownOpen ? "open" : null}`}>
+      <ul className={`dropdown-menu ${dropdownOpen ? 'open' : null}`}>
         {children?.map(link => (
           <li className="dropdown-item" key={link.id}>
             <Link className="dropdown-link" to={link}>
@@ -52,52 +41,50 @@ const DropdownItem = ({ link, label, children }) => {
         ))}
       </ul>
     </li>
-  )
-}
+  );
+};
 
 export default function Nav({ navData, path }) {
-
   // data
-  const navLinks = navData.datoCmsNavigation.navigationItems
+  const navLinks = navData.datoCmsNavigation.navigationItems;
 
   // Use States --------
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(false);
   // Sticky Nav handlers are here
-  const [scrollPosition, setScrollPosition] = useState(0)
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
-    if (typeof window !== "undefined") {
-      const position = window.pageYOffset
-      setScrollPosition(position)
+    if (typeof window !== 'undefined') {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
     }
-  }
+  };
 
   // Use effect for sticky nav
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", handleScroll)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
       return () => {
-        window.removeEventListener("scroll", handleScroll)
-      }
+        window.removeEventListener('scroll', handleScroll);
+      };
     }
-  }, [])
-
+  }, []);
 
   // Event Handlers -----
   const handleNavClick = () => {
-    setExpanded(!expanded)
-  }
+    setExpanded(!expanded);
+  };
 
-  const isHome = !path || path === "/" || path === "/home";
+  const isHome = !path || path === '/' || path === '/home';
 
   return (
     <nav
       className={`
         navbar navbar-expand-lg
         ===PATH IS==>${path}
-        ${isHome ? "home-nav" : ''} 
-        ${expanded && "expanded"} 
-        ${(scrollPosition > 75 && isHome) ? "sticky-nav" : ''}
+        ${isHome ? 'home-nav' : ''} 
+        ${expanded && 'expanded'} 
+        ${scrollPosition > 75 && isHome ? 'sticky-nav' : ''}
       `}
     >
       <Link className="navbar-brand" to={'/'}>
@@ -114,26 +101,20 @@ export default function Nav({ navData, path }) {
         aria-label="Toggle navigation"
         onClick={() => handleNavClick()}
       >
-        <span
-          className={` ${expanded ? "open-toggle " : ''} navbar-toggler-icon`}
-        ></span>
+        <span className={` ${expanded ? 'open-toggle ' : ''} navbar-toggler-icon`}></span>
       </button>
 
-      <div
-        className={` ${expanded ? "show" : ''} collapse navbar-collapse`}
-        id="navNav"
-      >
+      <div className={` ${expanded ? 'show' : ''} collapse navbar-collapse`} id="navNav">
         <ul className="navbar-nav mr-auto">
-          {
-            navLinks?.map(link =>
-              link.links.length === 0 ? (
-                <LinkItem key={link.mainLink.id} link={link.mainLink} label={link.label} isButton={link.isButton} />
-              ) : (
-                <DropdownItem key={link.mainLink.id} link={link.mainLink} label={link.label} children={link.links} />
-              )
-            )}
+          {navLinks?.map(link =>
+            link.links.length === 0 ? (
+              <LinkItem key={link.mainLink.id} link={link.mainLink} label={link.label} isButton={link.isButton} />
+            ) : (
+              <DropdownItem key={link.mainLink.id} link={link.mainLink} label={link.label} children={link.links} />
+            )
+          )}
         </ul>
       </div>
     </nav>
-  )
+  );
 }
