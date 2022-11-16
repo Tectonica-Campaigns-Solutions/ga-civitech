@@ -3,37 +3,14 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
-import GlobalImage from '../components/Global/GlobalImage/GlobalImage';
+import HeroSelector from '../components/HeroSelector';
 
 const Page = ({ data: { page } }) => {
   return (
     <Layout>
       <SeoDatoCms seo={page.seo} />
-        <div>
-          <div>{ page.title }</div>
-          <div>{ page.description }</div>
-          <div>{ page.heroVisual }</div>
-          <div>
-          {
-            page.image && page.image.length > 0 && (
-              <GlobalImage image={page.image} />
-            )
-          }
-          </div>
-          <div>
-          {
-            page.logo && page.logo.length > 0 && (
-              <GlobalImage image={page.logo} />
-            )
-          }
-          </div>
-          
-          {
-            page.ctas.map(item => (item.title))
-          }
-        </div>
-        <Blocks blocks={page.blocks}></Blocks>
-      
+      <HeroSelector page={page} />
+      <Blocks blocks={page.blocks}></Blocks>
     </Layout>
   );
 };
@@ -49,14 +26,15 @@ export const PageQuery = graphql`
       id
       title
       slug
-      image{
+      image {
         gatsbyImageData
       }
-      logo{
+      logo {
         gatsbyImageData
       }
       description
       heroVisual
+      heroTitle
       ctas {
         title
         isButton
@@ -80,7 +58,12 @@ export const PageQuery = graphql`
         ... on DatoCmsLogosBlock {
           ...BlockLogos
         }
-        
+        ... on DatoCmsGridStat {
+          ...BlockGridStat
+        }
+        ... on DatoCmsTextHubspotForm {
+          ...BlockTextHubspot
+        }
       }
     }
   }
