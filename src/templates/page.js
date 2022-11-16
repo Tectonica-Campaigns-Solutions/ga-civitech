@@ -8,14 +8,9 @@ const Page = ({ data: { page } }) => {
   return (
     <Layout>
       <SeoDatoCms seo={page.seo} />
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <h1>{page.title}</h1>
-          </div>
-        </div>
+      
         <Blocks blocks={page.blocks}></Blocks>
-      </div>
+      
     </Layout>
   );
 };
@@ -32,11 +27,14 @@ export const PageQuery = graphql`
       title
       slug
       blocks {
-        id
         __typename
         ... on DatoCmsNarrativeBlock {
-          title
+          ...BlockNarrativeBlock
         }
+        ... on DatoCmsLogosBlock {
+          ...BlockLogos
+        }
+        
       }
     }
   }

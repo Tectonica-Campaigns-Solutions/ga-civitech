@@ -5,6 +5,7 @@ import ImageWrapper from '../../Slider/ImageWrapper';
 import './index.scss';
 
 export default function NarrativeBlock({ block }) {
+  console.log(block)
   const hasImages = block.image?.length > 0;
   const hasImageAndCentered = hasImages && block.alignment === 'center';
 
@@ -25,7 +26,7 @@ export default function NarrativeBlock({ block }) {
             {block.ctas && block.ctas.length > 0 && <CtaList ctas={block.ctas} />}
           </div>
 
-          {block.image && (
+          {block.image && block.image.length > 0 && (
             <div
               className={`${block.alignment === 'center' ? 'col-lg-12' : 'col-lg-5'} ${
                 block.alignment === 'right' ? 'offset-lg-1' : ''
