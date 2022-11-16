@@ -64,6 +64,9 @@ export const PageQuery = graphql`
         ... on DatoCmsTextHubspotForm {
           ...BlockTextHubspot
         }
+        ... on DatoCmsListMember {
+          ...BlockListMember
+        }
       }
     }
   }

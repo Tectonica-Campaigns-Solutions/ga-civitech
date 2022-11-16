@@ -16,9 +16,7 @@ export default function HeroImageBottom({ heroTitle, description, image, ctas })
 
           {image && (
             <div className="image-container">
-              <img src={'https://i.imgur.com/7pN8j7G.png'} />
-
-              <div>{/* <ImageWrapper image={image} /> */}</div>
+              <ImageWrapper image={image} />
             </div>
           )}
         </div>
