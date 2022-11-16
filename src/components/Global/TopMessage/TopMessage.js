@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import GlobalImage from '../GlobalImage/GlobalImage';
@@ -20,10 +20,23 @@ const TopMessage = () => {
     }
   `);
 
-  const [toggleMessage, setToggleMessage] = useState(data.datoCmsTopMessage.statusTopMessage || false);
-  const handleToggleMessage = () => setToggleMessage(toggleMessage => !toggleMessage);
+  const [toggleTopMessage, setToggleTopMessage] = useState(data.datoCmsTopMessage.statusTopMessage || false);
+  const [showTopMessageAccordingSession, setShowTopMessageAccordingSession] = useState(true);
 
-  if (!toggleMessage) {
+  useEffect(() => {
+    if (sessionStorage.getItem('show_top_message')) {
+      setShowTopMessageAccordingSession(sessionStorage.getItem('show_top_message') == 'true');
+    }
+  }, []);
+
+  const handleToggleTopMessage = () => {
+    setToggleTopMessage(toggleMessage => {
+      sessionStorage.setItem('show_top_message', !toggleMessage);
+      return !toggleMessage;
+    });
+  };
+
+  if (!toggleTopMessage || !showTopMessageAccordingSession) {
     return <></>;
   }
 
@@ -35,7 +48,7 @@ const TopMessage = () => {
           <h1>{data.datoCmsTopMessage.message}</h1>
         </span>
 
-        <div className="close-btn" onClick={handleToggleMessage}>
+        <div className="close-btn" onClick={handleToggleTopMessage}>
           <img src={closeButton} />
         </div>
       </div>
