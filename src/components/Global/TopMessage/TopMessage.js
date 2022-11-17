@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import GlobalImage from '../GlobalImage/GlobalImage';
@@ -23,7 +23,7 @@ const TopMessage = () => {
   const [toggleTopMessage, setToggleTopMessage] = useState(data.datoCmsTopMessage.statusTopMessage || false);
   const [showTopMessageAccordingSession, setShowTopMessageAccordingSession] = useState(true);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (sessionStorage.getItem('show_top_message')) {
       setShowTopMessageAccordingSession(sessionStorage.getItem('show_top_message') == 'true');
     }
