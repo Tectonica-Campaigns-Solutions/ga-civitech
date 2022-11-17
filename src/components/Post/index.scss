@@ -30,6 +30,11 @@
       p {
         margin: 0;
       }
+
+      @media screen and (max-width: 1070px) {
+        left: 0;
+        float: none;
+      }
     }
 
     .tags {
