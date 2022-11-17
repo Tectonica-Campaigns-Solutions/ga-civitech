@@ -8,7 +8,7 @@ export default function HeroBlogPost({ title, summary, createdAt, topic, image }
   return (
     <div className="hero-blog-post">
       <div className="container">
-        <div className="row align-items-center">
+        <div className="row">
           <div className="col-lg-6">
             <ImageWrapper image={image} />
           </div>

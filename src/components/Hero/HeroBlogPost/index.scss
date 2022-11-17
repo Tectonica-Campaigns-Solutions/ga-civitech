@@ -1,8 +1,9 @@
 .hero-blog-post {
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
   min-height: 620px;
   background-color: rgba(112, 212, 252, 0.2);
-  padding-top: 100px;
-  //   padding: 90px 0 90px 0;
 
   .content {
     .info {
@@ -55,5 +56,13 @@
     font-size: 20px;
     line-height: 150%;
     color: var(--ct-black);
+  }
+
+  @media screen and (max-width: 992px) {
+    padding: 100px 0;
+
+    .content {
+      margin-top: 2rem;
+    }
   }
 }

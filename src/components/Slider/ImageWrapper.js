@@ -17,7 +17,7 @@ export default function ImageWrapper({ image, ...props }) {
   }
 
   return (
-    <div>
+    <div className="image-wrapper">
       <GlobalImage image={Array.isArray(image) ? image[0] : image} {...props} />
       {image.title && (
         <div className="caption">
