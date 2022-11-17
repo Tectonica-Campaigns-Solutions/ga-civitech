@@ -8,7 +8,7 @@ export default function PostGrid({ content, tags }) {
   return (
     <div className="post-content container">
       <div className="row">
-        <div className="col-lg-6 offset-md-1 content">
+        <div className="col-lg-7 offset-md-1 content">
           <StructuredTextDefault content={content} />
 
           {Array.isArray(tags) && tags.length > 0 && (
@@ -20,7 +20,7 @@ export default function PostGrid({ content, tags }) {
           )}
         </div>
 
-        <div className="col-lg-4 offset-md-1 related-products">
+        <div className="col-lg-3 offset-md-1 related-products">
           <h3>Related product</h3>
         </div>
       </div>
