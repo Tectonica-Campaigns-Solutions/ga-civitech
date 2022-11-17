@@ -15,25 +15,24 @@
     }
 
     blockquote {
-      left: -130px;
       float: left;
-      position: relative;
       font-family: 'Laca';
       font-style: normal;
       font-weight: 600;
-      font-size: 39px;
-      line-height: 120%;
+      font-size: 35px;
+      line-height: 36px;
       color: var(--ct-dark-blue);
       border-left: 11px solid var(--ct-dark-blue);
       padding-left: 30px;
+      margin: 0 5rem 0 -20%;
 
       p {
         margin: 0;
       }
 
       @media screen and (max-width: 1070px) {
-        left: 0;
         float: none;
+        margin: 0 0 1rem 0;
       }
     }
 
