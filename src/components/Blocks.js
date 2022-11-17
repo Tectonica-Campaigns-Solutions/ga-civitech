@@ -5,6 +5,7 @@ import Tabs from './Blocks/Tabs/Tabs';
 import TextHubsportForm from './Blocks/TextHubspotForm/TextHubsportForm';
 import Logos from './Blocks/Logos/Logos';
 import LatestPost from './Blocks/LatestPost/LatestPost';
+import ListMembers from './Blocks/ListMembers/ListMembers';
 
 export default function Blocks({ blocks }) {
   return (
@@ -23,6 +24,8 @@ export default function Blocks({ blocks }) {
             return <Logos block={block} key={block.id} />;
           case 'DatoCmsLatestPost':
             return <LatestPost block={block} key={block.id} />;
+          case 'DatoCmsListMember':
+            return <ListMembers block={block} key={block.id} />;
           default:
             return '';
         }

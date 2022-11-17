@@ -13,5 +13,5 @@ export default function ImageWrapper({ image, ...props }) {
     );
   }
 
-  return <GlobalImage image={image[0]} {...props} />;
+  return <GlobalImage image={Array.isArray(image) ? image[0] : image} {...props} />;
 }

@@ -1,0 +1,67 @@
+.hero-image-bottom-container {
+  min-height: 90vh;
+  padding-top: 200px;
+  margin-bottom: 7rem;
+  text-align: center;
+  background-color: rgba(112, 212, 252, 0.2);
+
+  .container {
+    max-width: 1054px;
+  }
+
+  h2 {
+    font-family: 'Laca';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 100%;
+    color: var(--ct-dark-blue);
+    margin-bottom: 31px;
+  }
+
+  .description {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-size: 25px;
+    line-height: 130%;
+    color: var(--ct-dark-blue);
+    margin-bottom: 31px;
+  }
+
+  .ctas {
+    justify-content: center;
+  }
+
+  .image-container {
+    position: relative;
+    bottom: -130px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  // Responsive 800px
+  @media screen and (max-width: 800px) {
+    text-align: start;
+    padding-top: 120px;
+
+    h2 {
+      font-size: 41px;
+    }
+
+    p {
+      font-size: initial;
+      line-height: 100%;
+    }
+
+    .ctas {
+      justify-content: start;
+    }
+
+    .image-container {
+      position: initial;
+      margin: 2rem 0 2rem 0;
+    }
+  }
+}

@@ -178,4 +178,30 @@ export const DatoCMS = graphql`
       }
     }
   }
+  fragment BlockListMember on DatoCmsListMember {
+    __typename
+    id
+    members {
+      name
+      positionMember
+      image {
+        gatsbyImageData
+      }
+    }
+    ctas {
+      title
+      isButton
+      link {
+        ... on DatoCmsGlobalLink {
+          label
+          url
+          content {
+            ... on DatoCmsPage {
+              slug
+            }
+          }
+        }
+      }
+    }
+  }
 `;
