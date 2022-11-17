@@ -29,7 +29,16 @@ const Post = ({ data: { post } }) => {
       <div className="container">
         <div className="row">
           <div className="col-lg-7">
-            <StructuredText data={post.content.value} />
+            <StructuredText data={post.content} 
+              renderBlock={({ record }) => {
+                switch (record.__typename) {
+                  case "DatoCmsImage":
+                    return 'imagen';
+                  default:
+                    return null;
+                }
+              }}
+            />
             <div className="tags">
               {post.tags && post.tags.length > 0 && post.tags.map(item => <div>{item.name}</div>)}
             </div>
@@ -57,6 +66,16 @@ export const PostQuery = graphql`
       slug
       content {
         value
+        blocks{
+          id:originalId
+          __typename
+					...on DatoCmsImage{
+            id: originalId
+						image{
+							gatsbyImageData
+            }
+          }
+        }
       }
       image {
         gatsbyImageData(width: 600, height: 400)
