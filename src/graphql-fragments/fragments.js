@@ -34,6 +34,7 @@ export const DatoCMS = graphql`
     id
     title
     text
+    backgroundColor
     stats {
       title
       text
@@ -209,11 +210,11 @@ export const DatoCMS = graphql`
     id
     title
     description
-    products{
-      ... on DatoCmsProduct{
+    products {
+      ... on DatoCmsProduct {
         title
         slug
-        imagePreview{
+        imagePreview {
           gatsbyImageData
         }
         descriptionPreview
