@@ -1,6 +1,6 @@
 import React from 'react';
 import CtaList from '../../Global/Cta/CtaList';
-import GlobalImage from '../../Global/GlobalImage/GlobalImage';
+import ImageWrapper from '../../Slider/ImageWrapper';
 
 import './index.scss';
 
@@ -17,7 +17,7 @@ function Logos({ block }) {
             {block.logos.map(logo => (
               <div className="col-lg-2 col-md-3 col-6">
                 <a href={logo.url} target="_blank">
-                  <GlobalImage image={logo.icon} />
+                  <ImageWrapper image={logo.icon} />
                 </a>
               </div>
             ))}
