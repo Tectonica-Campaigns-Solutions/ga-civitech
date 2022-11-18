@@ -1,0 +1,54 @@
+.cv-accordion-item {
+  display: flex;
+  gap: 54px;
+  padding-left: 20px;
+  border-left: 2px solid #a2a2b8;
+  min-height: 130px;
+
+  .accordion-content {
+    width: 100%;
+
+    h2 {
+      font-family: 'Laca';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 39px;
+      line-height: 120%;
+      color: var(--ct-dark-blue);
+      opacity: 0.6;
+    }
+
+    .content > p {
+      font-family: 'Public Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 150%;
+      color: var(--ct-dark-blue);
+    }
+
+    .image {
+      height: 100%;
+    }
+  }
+
+  .btn-item {
+    padding-top: 0.25rem;
+  }
+
+  .btn-item,
+  .accordion-content h2 {
+    cursor: pointer;
+  }
+
+  &.active {
+    // TODO: Add smooth transition on active
+    border-left: 2px solid var(--ct-dark-blue);
+
+    .accordion-content {
+      h2 {
+        opacity: 1;
+      }
+    }
+  }
+}
