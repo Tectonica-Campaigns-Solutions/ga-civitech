@@ -204,4 +204,20 @@ export const DatoCMS = graphql`
       }
     }
   }
+  fragment BlockRelatedProduct on DatoCmsRelatedProduct {
+    __typename
+    id
+    title
+    description
+    products{
+      ... on DatoCmsProduct{
+        title
+        slug
+        imagePreview{
+          gatsbyImageData
+        }
+        descriptionPreview
+      }
+    }
+  }
 `;

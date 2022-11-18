@@ -6,6 +6,7 @@ exports.createPages = ({ graphql, actions }) => {
     const templates = {
       page: path.resolve('./src/templates/page.js'),
       post: path.resolve('./src/templates/post.js'),
+      product: path.resolve('./src/templates/product.js'),
     };
     resolve(
       graphql(
@@ -28,6 +29,13 @@ exports.createPages = ({ graphql, actions }) => {
                 id
               }
             }
+            products: allDatoCmsProduct {
+              nodes {
+                title
+                slug
+                id
+              }
+            }
           }
         `
       ).then(result => {
@@ -39,6 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
         // create the pages
         const pages = result.data.pages.nodes;
         const posts = result.data.posts.nodes;
+        const products = result.data.products.nodes;
 
         for (page of pages) {
           createPage({
@@ -57,6 +66,16 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               slug: post.slug,
               id: post.id,
+            },
+          });
+        }
+        for (product of products) {
+          createPage({
+            path: `/product/${product.slug}`,
+            component: templates.product,
+            context: {
+              slug: product.slug,
+              id: product.id,
             },
           });
         }

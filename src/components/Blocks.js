@@ -6,6 +6,7 @@ import TextHubsportForm from './Blocks/TextHubspotForm/TextHubsportForm';
 import Logos from './Blocks/Logos/Logos';
 import LatestPost from './Blocks/LatestPost/LatestPost';
 import ListMembers from './Blocks/ListMembers/ListMembers';
+import RelatedProduct from './Blocks/RelatedProduct/RelatedProduct';
 
 export default function Blocks({ blocks }) {
   return (
@@ -26,6 +27,8 @@ export default function Blocks({ blocks }) {
             return <LatestPost block={block} key={block.id} />;
           case 'DatoCmsListMember':
             return <ListMembers block={block} key={block.id} />;
+          case 'DatoCmsRelatedProduct':
+            return <RelatedProduct block={block} key={block.id} />;
           default:
             return '';
         }
