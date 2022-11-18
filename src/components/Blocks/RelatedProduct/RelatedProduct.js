@@ -9,7 +9,7 @@ function RelatedProduct({ block }) {
     <div className="related-products-tab light-blue">
       <div className="container">
         <h2>{block.title}</h2>
-        <p dangerouslySetInnerHTML={{ __html: block.description }} />
+        <p className="description" dangerouslySetInnerHTML={{ __html: block.description }} />
 
         <div>{isArray(block.products) && <Accordion content={block.products} />}</div>
       </div>
