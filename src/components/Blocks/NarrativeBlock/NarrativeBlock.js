@@ -1,5 +1,6 @@
 import React from 'react';
 import CtaList from '../../Global/Cta/CtaList';
+import GlobalImage from '../../Global/GlobalImage/GlobalImage';
 import ImageWrapper from '../../Slider/ImageWrapper';
 
 import './index.scss';
@@ -17,6 +18,12 @@ export default function NarrativeBlock({ block }) {
               block.alignment === 'left' ? 'offset-lg-1' : ''
             }`}
           >
+            {block.logo && (
+              <div className="logo">
+                <GlobalImage image={block.logo} />
+              </div>
+            )}
+
             <h3>{block.pretitle}</h3>
             <h2>{block.title}</h2>
 
