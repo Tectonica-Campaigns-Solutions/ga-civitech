@@ -21,14 +21,14 @@ const AccordionItem = ({ title, content, slug, image, isActive, handleOnClickTab
               <>
                 <div className="content" dangerouslySetInnerHTML={{ __html: content }} />
 
-                <Link className="btn btn-primary" to={`/${slug}`}>
+                <Link className="btn btn-primary mb-5" to={`/${slug}`}>
                   Learn more
                 </Link>
               </>
             )}
           </div>
 
-          {/* <div className="col-lg-5 col-md-12 offset-lg-1 image">{isActive && <GlobalImage image={image} />}</div> */}
+          <div className="col-lg-5 col-md-12 offset-lg-1 image">{isActive && <GlobalImage image={image} />}</div>
         </div>
       </div>
     </div>
