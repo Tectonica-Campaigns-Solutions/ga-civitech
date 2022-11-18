@@ -1,0 +1,57 @@
+.post-content {
+  padding-top: 77px;
+  padding-bottom: 170px;
+
+  .content {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--ct-black);
+
+    ul {
+      list-style: disc;
+    }
+
+    blockquote {
+      float: left;
+      font-family: 'Laca';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 35px;
+      line-height: 36px;
+      color: var(--ct-dark-blue);
+      border-left: 11px solid var(--ct-dark-blue);
+      padding-left: 30px;
+      margin: 0 5rem 0 -20%;
+
+      p {
+        margin: 0;
+      }
+
+      @media screen and (max-width: 1070px) {
+        float: none;
+        margin: 0 0 1rem 0;
+      }
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  .related-products {
+    h3 {
+      font-family: 'Public Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ct-dark-blue);
+    }
+  }
+}
