@@ -28,7 +28,7 @@ const AccordionItem = ({ title, content, slug, image, isActive, handleOnClickTab
             )}
           </div>
 
-          <div className="col-lg-5 col-md-12 offset-lg-1 image">{isActive && <GlobalImage image={image} />}</div>
+          {/* <div className="col-lg-5 col-md-12 offset-lg-1 image">{isActive && <GlobalImage image={image} />}</div> */}
         </div>
       </div>
     </div>
