@@ -2,6 +2,7 @@ import React from 'react';
 import CtaList from '../Cta/CtaList';
 import Shortcut from '../Shortcut/Shortcut';
 import ImageWrapper from '../../Slider/ImageWrapper';
+import { isArray } from '../../../utils/array.utils';
 
 import './index.scss';
 
@@ -23,7 +24,7 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
           )}
         </div>
 
-        {shortcuts && shortcuts.length > 0 && (
+        {isArray(shortcuts) && (
           <div className="row mt-5 mb-5 shortcuts-container">
             <div className="col-lg-12">
               <h3>{titleShortcuts}</h3>

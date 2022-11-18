@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { isArray } from '../../../utils/array.utils';
 import CtaList from '../../Global/Cta/CtaList';
 import ImageWrapper from '../../Slider/ImageWrapper';
 
@@ -11,8 +12,7 @@ export default function ListMembers({ block }) {
     <div className="list-members-container">
       <div className="container">
         <div className="row">
-          {Array.isArray(members) &&
-            members.length > 0 &&
+          {isArray(members) &&
             members.map((member, index) => (
               <div key={index} className="col-lg col-md-4 member-item">
                 <ImageWrapper image={member.image} />
@@ -25,7 +25,7 @@ export default function ListMembers({ block }) {
             ))}
         </div>
 
-        {Array.isArray(ctas) && ctas.length > 0 && (
+        {isArray(ctas) && (
           <div className="mt-5">
             <CtaList ctas={ctas} />
           </div>

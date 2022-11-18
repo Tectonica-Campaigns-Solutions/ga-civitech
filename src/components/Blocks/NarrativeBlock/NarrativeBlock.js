@@ -1,4 +1,5 @@
 import React from 'react';
+import { isArray } from '../../../utils/array.utils';
 import CtaList from '../../Global/Cta/CtaList';
 import GlobalImage from '../../Global/GlobalImage/GlobalImage';
 import ImageWrapper from '../../Slider/ImageWrapper';
@@ -29,10 +30,10 @@ export default function NarrativeBlock({ block }) {
 
             <p dangerouslySetInnerHTML={{ __html: block.textContent }} />
 
-            {block.ctas && block.ctas.length > 0 && <CtaList ctas={block.ctas} />}
+            {isArray(block.ctas) && <CtaList ctas={block.ctas} />}
           </div>
 
-          {block.image && block.image.length > 0 && (
+          {isArray(block.image) && (
             <div
               className={`${block.alignment === 'center' ? 'col-lg-12' : 'col-lg-5'} ${
                 block.alignment === 'right' ? 'offset-lg-1' : ''
