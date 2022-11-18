@@ -67,6 +67,9 @@ export const PageQuery = graphql`
         ... on DatoCmsListMember {
           ...BlockListMember
         }
+        ... on DatoCmsRelatedProduct {
+          ...BlockRelatedProduct
+        }
       }
     }
   }

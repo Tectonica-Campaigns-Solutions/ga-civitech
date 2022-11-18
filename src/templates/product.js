@@ -9,21 +9,39 @@ const Product = ({ data: { page } }) => {
   return (
     <Layout>
       <SeoDatoCms seo={page.seo} />
-      hola!
+      <Blocks blocks={page.blocks}></Blocks>
     </Layout>
   );
 };
 
 export default Product;
 
-export const PageQuery = graphql`
-  query PageById($id: String) {
-    page: datoCmsPage(id: { eq: $id }) {
+export const ProductQuery = graphql`
+  query ProductById($id: String) {
+    page: datoCmsProduct(id: { eq: $id }) {
       seo: seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
       id
       title
+      blocks {
+        __typename
+        ... on DatoCmsNarrativeBlock {
+          ...BlockNarrativeBlock
+        }
+        ... on DatoCmsLogosBlock {
+          ...BlockLogos
+        }
+        ... on DatoCmsGridStat {
+          ...BlockGridStat
+        }
+        ... on DatoCmsTextHubspotForm {
+          ...BlockTextHubspot
+        }
+        ... on DatoCmsListMember {
+          ...BlockListMember
+        }
+      }
     }
   }
 `;
