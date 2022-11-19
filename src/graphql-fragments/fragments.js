@@ -212,6 +212,9 @@ export const DatoCMS = graphql`
     description
     products {
       ... on DatoCmsProduct {
+        model{
+          apiKey
+        }
         title
         slug
         imagePreview {

@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import GlobalImage from '../GlobalImage/GlobalImage';
 import openTab from '../../Icons/tab-plus.svg';
 import closeTab from '../../Icons/tab-minus.svg';
+import { pathToModel } from '../../../utils'
 
 import './index.scss';
 
@@ -21,7 +22,7 @@ const AccordionItem = ({ title, content, slug, image, isActive, handleOnClickTab
               <>
                 <div className="content" dangerouslySetInnerHTML={{ __html: content }} />
 
-                <Link className="btn btn-primary mb-5" to={`/${slug}`}>
+                <Link className="btn btn-primary mb-5" to={`${pathToModel('product')}${slug}`}>
                   Learn more
                 </Link>
               </>
