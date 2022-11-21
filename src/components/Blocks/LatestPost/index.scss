@@ -21,7 +21,7 @@
     .image {
       margin-bottom: 16px;
 
-      > div {
+      a > div {
         width: 100%;
         border-radius: 10px;
       }
@@ -42,17 +42,14 @@
         margin-right: 10px;
       }
 
-      .tag {
-        background: var(--ct-white);
-        border-radius: 2px;
-        font-family: 'Public Sans';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 14px;
-        color: var(--ct-dark-blue);
-        padding: 2px 4px;
-        margin-right: 10px;
+      .tags {
+        display: inline-flex;
+        gap: 10px;
+
+        .tag {
+          background: var(--ct-white);
+          color: var(--ct-dark-blue);
+        }
       }
     }
 
@@ -63,6 +60,11 @@
       font-size: 25px;
       line-height: 130%;
       color: var(--ct-dark-blue);
+
+      &:hover {
+        transition: text-decoration 0.3s ease-in-out;
+        text-decoration: underline;
+      }
     }
   }
 }
