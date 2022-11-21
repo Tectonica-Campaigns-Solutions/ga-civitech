@@ -25,6 +25,13 @@
         width: 100%;
         border-radius: 10px;
       }
+
+      img {
+        &:hover {
+          transition: all 0.3s ease-in-out;
+          transform: scale(1.15);
+        }
+      }
     }
 
     .metadata {
@@ -61,9 +68,11 @@
       line-height: 130%;
       color: var(--ct-dark-blue);
 
+      text-decoration: underline rgba(0, 0, 0, 0);
+      transition: text-decoration-color 300ms;
+
       &:hover {
-        transition: text-decoration 0.3s ease-in-out;
-        text-decoration: underline;
+        text-decoration-color: var(--ct-dark-blue);
       }
     }
   }
