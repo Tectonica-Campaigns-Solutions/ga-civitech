@@ -33,7 +33,13 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
             {shortcuts.map((item, index) => {
               return (
                 <div className="col-lg-4 mb-3">
-                  <Shortcut key={index} title={item.title} description="" btnLabel="Learn more" btnUrl={item.slug} />
+                  <Shortcut
+                    key={index}
+                    title={item.title}
+                    description={item.description}
+                    btnLabel="Learn more"
+                    btnUrl={item.slug}
+                  />
                 </div>
               );
             })}
