@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AccordionItem from './AccordionItem';
 
-const Accordion = ({ content }) => {
+const Accordion = ({ content, alignment }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleOnClickTab = indexTab => {
@@ -16,6 +16,7 @@ const Accordion = ({ content }) => {
           content={descriptionPreview}
           slug={slug}
           image={imagePreview}
+          alignment={alignment}
           isActive={activeTab === index}
           handleOnClickTab={() => handleOnClickTab(index)}
         />

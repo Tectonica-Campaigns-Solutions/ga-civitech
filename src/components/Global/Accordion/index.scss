@@ -1,10 +1,4 @@
 .cv-accordion-item {
-  display: flex;
-  gap: 54px;
-  padding-left: 20px;
-  border-left: 2px solid #a2a2b8;
-  min-height: 130px;
-
   .accordion-content {
     width: 100%;
 
@@ -34,22 +28,30 @@
   }
 
   .btn-item {
+    padding-left: 20px;
+    border-left: 2px solid #a2a2b8;
     padding-top: 0.25rem;
   }
 
-  .btn-item,
-  .accordion-content h2 {
-    cursor: pointer;
-  }
-
-  &.active {
+  .active {
     // TODO: Add smooth transition on active
     border-left: 2px solid var(--ct-dark-blue);
 
-    .accordion-content {
-      h2 {
-        opacity: 1;
-      }
+    h2 {
+      opacity: 1;
     }
+  }
+
+  .image.active {
+    border-left: none;
+
+    @media (max-width: 991px) {
+      border-left: 2px solid var(--ct-dark-blue);
+    }
+  }
+
+  .icon,
+  .accordion-content h2 {
+    cursor: pointer;
   }
 }
