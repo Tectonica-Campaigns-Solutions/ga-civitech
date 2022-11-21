@@ -8,8 +8,12 @@ function RelatedProduct({ block }) {
   return (
     <div className="related-products-tab light-blue">
       <div className="container">
-        <h2>{block.title}</h2>
-        <p className="description" dangerouslySetInnerHTML={{ __html: block.description }} />
+        <div className="row">
+          <div className="col-lg-7">
+            <h2>{block.title}</h2>
+            <p className="description" dangerouslySetInnerHTML={{ __html: block.description }} />
+          </div>
+        </div>
 
         <div>
           {isArray(block.products) && (
