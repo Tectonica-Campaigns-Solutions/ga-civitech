@@ -18,7 +18,7 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
           </div>
 
           {image && (
-            <div className="col-lg-6">
+            <div className="col-lg-5 offset-md-1">
               <ImageWrapper image={image} objectFit="contain" />
             </div>
           )}
