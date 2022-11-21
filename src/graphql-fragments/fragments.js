@@ -210,9 +210,10 @@ export const DatoCMS = graphql`
     id
     title
     description
+    alignment
     products {
       ... on DatoCmsProduct {
-        model{
+        model {
           apiKey
         }
         title

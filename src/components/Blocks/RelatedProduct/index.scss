@@ -21,4 +21,19 @@
     color: var(--ct-dark-blue);
     margin-bottom: 100px;
   }
+
+  .products {
+    span {
+      display: inline-block;
+      font-family: 'Public Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ct-dark-blue);
+      margin-bottom: 70px;
+    }
+  }
 }
