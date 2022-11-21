@@ -15,9 +15,9 @@ export default function NarrativeBlock({ block }) {
       <div className="container pt-4 pb-4">
         <div className={`row ${block.alignment === 'left' ? 'flex-row-reverse' : ''}`}>
           <div
-            className={`${hasImageAndCentered || !hasImages ? 'col-lg-12 text-center' : 'col-lg-6 mb-5 mb-lg-0'} ${
+            className={`${hasImageAndCentered || !hasImages ? 'col-lg-12' : 'col-lg-6 mb-5 mb-lg-0'} ${
               block.alignment === 'left' ? 'offset-lg-1' : ''
-            }`}
+            } ${block.alignment === 'center' ? 'text-center' : ''}`}
           >
             {block.logo && (
               <div className="logo">
