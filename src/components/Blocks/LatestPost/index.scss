@@ -22,7 +22,15 @@
     background: var(--ct-white);
   }
 
-  img {
+  .image {
+    overflow: hidden;
     border-radius: 20px;
+
+    img {
+      &:hover {
+        overflow: hidden;
+        transform: scale(1.15);
+      }
+    }
   }
 }

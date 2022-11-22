@@ -10,9 +10,11 @@ import './index.scss';
 export default function BlogPostCard({ slug, image, date, tags, title }) {
   return (
     <div className="blog-post-card">
-      <Link to={`${pathToModel('post', slug)}`}>
-        <GlobalImage image={image} />
-      </Link>
+      <div className="image">
+        <Link to={`${pathToModel('post', slug)}`}>
+          <GlobalImage image={image} />
+        </Link>
+      </div>
 
       <div className="meta">
         <span className="date">{date}</span>
