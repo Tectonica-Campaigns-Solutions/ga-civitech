@@ -2,8 +2,8 @@ import React from 'react';
 import { useStaticQuery } from 'gatsby';
 import { graphql } from 'gatsby';
 import Link from '../Link';
-import Divider from '../../Divider/Divider';
 import FooterGroupLinks from './FooterGroupLinks';
+import Divider from '../Divider/Divider';
 
 import './index.scss';
 
