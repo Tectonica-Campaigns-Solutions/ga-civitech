@@ -225,4 +225,8 @@ export const DatoCMS = graphql`
       }
     }
   }
+  fragment BlockBlogPost on DatoCmsBlogPost {
+    __typename
+    title
+  }
 `;

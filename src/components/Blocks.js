@@ -7,6 +7,7 @@ import Logos from './Blocks/Logos/Logos';
 import LatestPost from './Blocks/LatestPost/LatestPost';
 import ListMembers from './Blocks/ListMembers/ListMembers';
 import RelatedProduct from './Blocks/RelatedProduct/RelatedProduct';
+import BlogPost from './Blocks/BlogPost/BlogPost';
 
 export default function Blocks({ blocks }) {
   return (
@@ -29,6 +30,8 @@ export default function Blocks({ blocks }) {
             return <ListMembers block={block} key={block.id} />;
           case 'DatoCmsRelatedProduct':
             return <RelatedProduct block={block} key={block.id} />;
+          case 'DatoCmsBlogPost':
+            return <BlogPost />;
           default:
             return '';
         }

@@ -70,6 +70,10 @@ export const PageQuery = graphql`
         ... on DatoCmsRelatedProduct {
           ...BlockRelatedProduct
         }
+        ... on DatoCmsBlogPost{
+          ...BlockBlogPost
+        }
+
       }
     }
   }
