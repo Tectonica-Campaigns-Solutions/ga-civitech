@@ -1,0 +1,50 @@
+.related-product-card {
+  span {
+    display: inline-block;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ct-dark-blue);
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 130%;
+    color: var(--ct-dark-blue);
+    margin-bottom: 20px;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  p {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--ct-dark-blue);
+    margin-bottom: 10px;
+  }
+}
+
+.post-related-product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  @media screen and (max-width: 992px) {
+    margin-top: 50px;
+    gap: 50px;
+  }
+}
