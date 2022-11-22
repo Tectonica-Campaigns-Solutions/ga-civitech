@@ -2,6 +2,7 @@ import React from 'react';
 import CtaList from '../Cta/CtaList';
 import Shortcut from '../Shortcut/Shortcut';
 import ImageWrapper from '../../Slider/ImageWrapper';
+import { isArray } from '../../../utils/array.utils';
 
 import './index.scss';
 
@@ -17,13 +18,13 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
           </div>
 
           {image && (
-            <div className="col-lg-6">
+            <div className="col-lg-5 offset-md-1">
               <ImageWrapper image={image} objectFit="contain" />
             </div>
           )}
         </div>
 
-        {shortcuts && shortcuts.length > 0 && (
+        {isArray(shortcuts) && (
           <div className="row mt-5 mb-5 shortcuts-container">
             <div className="col-lg-12">
               <h3>{titleShortcuts}</h3>
@@ -32,7 +33,13 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
             {shortcuts.map((item, index) => {
               return (
                 <div className="col-lg-4 mb-3">
-                  <Shortcut key={index} title={item.title} description="" btnLabel="Learn more" btnUrl={item.slug} />
+                  <Shortcut
+                    key={index}
+                    title={item.title}
+                    description={item.description}
+                    btnLabel="Learn more"
+                    btnUrl={item.slug}
+                  />
                 </div>
               );
             })}

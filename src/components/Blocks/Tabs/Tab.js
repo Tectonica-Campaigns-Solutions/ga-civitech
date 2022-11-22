@@ -2,6 +2,7 @@ import React from 'react';
 import CtaList from '../../Global/Cta/CtaList';
 import Toolset from './Toolset';
 import GlobalImage from '../../Global/GlobalImage/GlobalImage';
+import { isArray } from '../../../utils/array.utils';
 
 import './index.scss';
 
@@ -28,7 +29,7 @@ function Tab({ item }) {
             <h2>{item.title}</h2>
             <div className="description" dangerouslySetInnerHTML={{ __html: item.text }} />
 
-            {item.ctas && item.ctas.length > 0 && <CtaList ctas={item.ctas} />}
+            {isArray(item.ctas) && <CtaList ctas={item.ctas} />}
           </div>
 
           <Toolset toolset={item} />

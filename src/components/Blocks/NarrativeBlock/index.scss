@@ -1,5 +1,17 @@
 .component-narrative-block {
-  padding: 108px 0 60px 0;
+  padding-top: 100px;
+
+  .logo {
+    margin-bottom: 35px;
+  }
+
+  ul {
+    list-style: disc;
+
+    li {
+      margin-bottom: 1rem;
+    }
+  }
 
   h3 {
     font-family: 'Public Sans';
@@ -32,12 +44,4 @@
     color: var(--ct-dark-blue);
     margin-bottom: 35px;
   }
-}
-
-.light-red {
-  background-color: var(--ct-light-red);
-}
-
-.light-yellow {
-  background-color: var(--ct-light-yellow);
 }

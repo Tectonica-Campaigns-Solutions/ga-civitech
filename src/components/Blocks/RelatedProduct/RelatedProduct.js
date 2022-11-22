@@ -1,28 +1,31 @@
-import React from 'react'
-import Link from '../../Global/Link'
+import React from 'react';
+import { isArray } from '../../../utils/array.utils';
+import Accordion from '../../Global/Accordion/Accordion';
+
+import './index.scss';
 
 function RelatedProduct({ block }) {
   return (
-    <div className="related-product">
+    <div className="related-products-tab light-blue">
       <div className="container">
-        <h2>{ block.title }</h2>
-        <div>{ block.description }</div>
-        <div>
-          {
-            block.products && block.products.length > 0 && (
-              block.products.map(item => {
-                return (<div>
-                  {item.title}
-                  { item.descriptionPreview }
-                  <Link to={item.slug}>Read more</Link>
-                  </div>)
-              })
-            )
-          }
+        <div className="row">
+          <div className="col-lg-7">
+            <h2>{block.title}</h2>
+            <p className="description" dangerouslySetInnerHTML={{ __html: block.description }} />
+          </div>
         </div>
-       </div>
+
+        <div>
+          {isArray(block.products) && (
+            <div className="products">
+              <span>Related tools</span>
+              <Accordion content={block.products} alignment={block.alignment} />
+            </div>
+          )}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default RelatedProduct
+export default RelatedProduct;

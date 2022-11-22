@@ -10,9 +10,11 @@ import './index.scss';
 export default function Shortcut({ title, description, btnLabel, btnUrl }) {
   return (
     <div className="shortcut">
-      <h4>{title}</h4>
-      <p>{description}</p>
-      <Link to={btnUrl}>{btnLabel} ›</Link>
+      <div className="information">
+        <h4>{title}</h4>
+        {description && <p dangerouslySetInnerHTML={{ __html: description }} />}
+        <Link to={btnUrl}>{btnLabel} ›</Link>
+      </div>
 
       {/* Arrow icons */}
       <div className="arrows">

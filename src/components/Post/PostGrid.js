@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { isArray } from '../../utils/array.utils';
 import Tag from '../Global/Tag/Tag';
 import StructuredTextDefault from '../StructuredTextDefault';
 
@@ -11,7 +12,7 @@ export default function PostGrid({ content, tags }) {
         <div className="col-lg-7 offset-md-1 content">
           <StructuredTextDefault content={content} />
 
-          {Array.isArray(tags) && tags.length > 0 && (
+          {isArray(tags) && (
             <div className="tags">
               {tags.map(item => (
                 <Tag title={item.name} />

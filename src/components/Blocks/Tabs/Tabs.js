@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Tab from './Tab';
+import { isArray } from '../../../utils/array.utils';
 
 import './index.scss';
 
@@ -26,7 +27,7 @@ function Tabs({ block }) {
         </div>
 
         <div>
-          {items.length > 0 &&
+          {isArray(items) &&
             items.map((item, index) => {
               return index === activeTab ? <Tab item={item} /> : '';
             })}

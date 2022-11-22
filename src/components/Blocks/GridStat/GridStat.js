@@ -7,7 +7,7 @@ function GridStat({ block }) {
   const gridSizeGreaterThan3 = block?.stats.length > 3;
 
   return (
-    <div className="grid-stats">
+    <div className={`grid-stats ${block.backgroundColor}`}>
       <div className="container">
         <h2>{block.title}</h2>
         <div dangerouslySetInnerHTML={{ __html: block.text }} />

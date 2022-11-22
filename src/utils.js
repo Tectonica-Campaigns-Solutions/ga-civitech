@@ -1,5 +1,9 @@
-const formatDate = val => {
-  return new Date(val).toDateString();
+export const pathToModel = (model, slug = '') => {
+  if (model == 'product') {
+    return `/product/${slug}`;
+  } else if (model == 'post') {
+    return `/post/${slug}`;
+  } else {
+    return null;
+  }
 };
-
-export default formatDate;

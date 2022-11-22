@@ -1,4 +1,5 @@
 import React from 'react';
+import { isArray } from '../../../utils/array.utils';
 import Divider from '../../Divider/Divider';
 import Link from '../Link';
 
@@ -25,7 +26,7 @@ const FooterGroupLinks = ({ item }) => {
         </Link>
       )}
 
-      {item.links && item.links.length > 0 && (
+      {isArray(item.links) && (
         <ul>
           {item.links.map(link => (
             <li key={link.id}>

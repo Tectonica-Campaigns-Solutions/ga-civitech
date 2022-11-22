@@ -16,7 +16,7 @@ export default function HeroBlogPost({ title, summary, createdAt, topic, image }
           <div className="col-lg-6 content">
             <div className="info">
               <span className="date">{createdAt}</span>
-              <Tag title={topic ? topic.name : ''} />
+              {topic ? <Tag title={topic.name} /> : null}
             </div>
 
             <h2>{title}</h2>

@@ -3,12 +3,13 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
-import HeroSelector from '../components/HeroSelector';
+import HeroProduct from '../components/Hero/HeroProduct/HeroProduct';
 
 const Product = ({ data: { page } }) => {
   return (
     <Layout>
       <SeoDatoCms seo={page.seo} />
+      <HeroProduct data={page} />
       <Blocks blocks={page.blocks}></Blocks>
     </Layout>
   );
@@ -24,6 +25,30 @@ export const ProductQuery = graphql`
       }
       id
       title
+      backgroundColor
+      alignment
+      logo {
+        url
+      }
+      description
+      image {
+        gatsbyImageData
+      }
+      ctas {
+        title
+        isButton
+        link {
+          ... on DatoCmsGlobalLink {
+            label
+            url
+            content {
+              ... on DatoCmsPage {
+                slug
+              }
+            }
+          }
+        }
+      }
       blocks {
         __typename
         ... on DatoCmsNarrativeBlock {

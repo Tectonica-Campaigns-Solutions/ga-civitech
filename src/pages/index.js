@@ -35,6 +35,7 @@ export const HomeQuery = graphql`
         ... on DatoCmsPage {
           title
           slug
+          description
         }
       }
       titleShortcuts

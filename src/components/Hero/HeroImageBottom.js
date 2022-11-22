@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { isArray } from '../../utils/array.utils';
 import CtaList from '../Global/Cta/CtaList';
 import ImageWrapper from '../Slider/ImageWrapper';
 
@@ -12,7 +13,7 @@ export default function HeroImageBottom({ heroTitle, description, image, ctas })
           <h2>{heroTitle}</h2>
           <div className="description" dangerouslySetInnerHTML={{ __html: description }} />
 
-          {Array.isArray(ctas) && ctas.length > 0 && <CtaList ctas={ctas} />}
+          {isArray(ctas) && <CtaList ctas={ctas} />}
 
           {image && (
             <div className="image-container">

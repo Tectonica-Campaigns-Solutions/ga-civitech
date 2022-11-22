@@ -1,9 +1,13 @@
 .top-message-container {
-  height: 50px;
+  min-height: 50px;
   padding: 9px 102px;
   text-align: center;
   color: var(--ct-dark-blue);
   background-color: #f9dd87;
+
+  @media (max-width: 600px) {
+    padding: 0;
+  }
 
   h1 {
     font-family: 'Public Sans';
