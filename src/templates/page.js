@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
-import HeroSelector from '../components/HeroSelector';
+import HeroSelector from '../components/Hero/HeroSelector';
 
 const Page = ({ data: { page } }) => {
   return (
@@ -70,10 +70,9 @@ export const PageQuery = graphql`
         ... on DatoCmsRelatedProduct {
           ...BlockRelatedProduct
         }
-        ... on DatoCmsBlogPost{
+        ... on DatoCmsBlogPost {
           ...BlockBlogPost
         }
-
       }
     }
   }

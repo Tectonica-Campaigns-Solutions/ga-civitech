@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import GlobalImage from '../GlobalImage/GlobalImage';
+import GlobalImage from '../Image/GlobalImage';
 import closeButton from '../../Icons/close.svg';
 
 import './index.scss';

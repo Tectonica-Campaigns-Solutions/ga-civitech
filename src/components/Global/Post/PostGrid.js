@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { isArray } from '../../utils/array.utils';
-import Tag from '../Global/Tag/Tag';
-import StructuredTextDefault from '../StructuredTextDefault';
+import { isArray } from '../../../utils/array.utils';
+import Tag from '../Tag/Tag';
+import StructuredTextDefault from '../../StructuredTextDefault';
 
 import './index.scss';
 

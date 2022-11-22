@@ -1,6 +1,6 @@
 import React from 'react';
 import CtaList from '../../Global/Cta/CtaList';
-import ImageWrapper from '../../Slider/ImageWrapper';
+import ImageWrapper from '../../Global/Image/ImageWrapper';
 
 import './index.scss';
 

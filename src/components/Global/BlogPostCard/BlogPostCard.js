@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import GlobalImage from '../GlobalImage/GlobalImage';
+import GlobalImage from '../Image/GlobalImage';
 import Tag from '../Tag/Tag';
 import { pathToModel } from '../../../utils';
 import { isArray } from '../../../utils/array.utils';

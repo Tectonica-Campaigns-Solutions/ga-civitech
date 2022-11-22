@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import GlobalImage from '../GlobalImage/GlobalImage';
+import GlobalImage from '../Image/GlobalImage';
 import openTab from '../../Icons/tab-plus.svg';
 import closeTab from '../../Icons/tab-minus.svg';
 import { pathToModel } from '../../../utils';
