@@ -36,7 +36,7 @@ const LatestPost = ({ block }) => {
       <div className={`container`}>
         <div className="title-section">
           <h2>{block.title}</h2>
-          <Cta label={'Read all'} isButton />
+          <Cta url="/blog" label={'Read all'} isButton />
         </div>
 
         <div className="row">

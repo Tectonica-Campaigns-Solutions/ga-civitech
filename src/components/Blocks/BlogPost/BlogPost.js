@@ -1,51 +1,34 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react';
+import { Link } from 'gatsby';
+import { isArray } from '../../../utils/array.utils';
+import GlobalImage from '../../Global/GlobalImage/GlobalImage';
+import Tag from '../../Global/Tag/Tag';
+import { pathToModel } from '../../../utils';
+
 import './index.scss';
 
-function BlogPost() {
-  
-  const data = useStaticQuery(graphql`
-    query allPosts {
-      posts:allDatoCmsPost{
-        nodes{
-          meta {
-            createdAt(formatString: "MMMM D, YYYY")
-          }
-          title
-          topic {
-            ... on DatoCmsTag {
-              name
-            }
-          }
-          tags {
-            ... on DatoCmsTag {
-              name
-            }
-          }
-        }
-      }
-    }
-  `);
+export default function BlogPost({ post }) {
   return (
-    <div className="blog-post">
-      <div className="container">
-        <h2>Title</h2>
-        {
-          data.posts.nodes.map(item => {
-            return (
-              <div>
-                { item.meta.createdAt}
-                <h3>{ item.title }</h3>
-                {
-                  item.tags && item.tags.length > 0 && item.tags.map(item => <div>{item.name}</div>)
-                }
-              </div>
-            )
-          })
-        }
-      </div>
-    </div>
-  )
-}
+    <div className="blog-post-detail">
+      <Link to={`${pathToModel('post', post.slug)}`}>
+        <GlobalImage image={post.image} />
+      </Link>
 
-export default BlogPost
+      <div className="meta">
+        <span className="date">{post.meta.createdAt}</span>
+
+        {isArray(post.tags) && (
+          <div className="tags">
+            {post.tags.map(tag => (
+              <Tag title={tag.name} />
+            ))}
+          </div>
+        )}
+      </div>
+
+      <Link to={`${pathToModel('post', post.slug)}`}>
+        <h3>{post.title}</h3>
+      </Link>
+    </div>
+  );
+}

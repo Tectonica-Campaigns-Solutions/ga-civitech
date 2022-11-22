@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Tab from './Tab';
+import TabTitles from './TabTitles';
 import { isArray } from '../../../utils/array.utils';
 
 import './index.scss';
@@ -13,18 +14,9 @@ function Tabs({ block }) {
   };
 
   return (
-    <div className={`tabs ${block.backgroundColor2}`}>
+    <div className={`tabs ${block.backgroundColor}`}>
       <div className="container">
-        <div className="row titles">
-          {items.map((item, index) => (
-            <div
-              className={`col-lg-4 mb-4 mb-lg-0 ${activeTab === index ? 'active' : ''}`}
-              onClick={() => handleTab(index)}
-            >
-              {item.titleTab}
-            </div>
-          ))}
-        </div>
+        {isArray(items) && <TabTitles items={items} classes="col-lg-4" activeTab={activeTab} handleTab={handleTab} />}
 
         <div>
           {isArray(items) &&
