@@ -2,6 +2,7 @@ import * as React from 'react';
 import { isArray } from '../../utils/array.utils';
 import CtaList from '../Global/Cta/CtaList';
 import ImageWrapper from '../Global/Image/ImageWrapper';
+import arrows from '../Icons/Union.svg';
 
 import './index.scss';
 
@@ -22,6 +23,8 @@ export default function HeroImageBottom({ heroTitle, description, image, ctas })
           )}
         </div>
       </div>
+
+      <img className="arrows" src={arrows} />
     </div>
   );
 }
