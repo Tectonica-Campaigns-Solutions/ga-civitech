@@ -8,7 +8,7 @@ import { isArray } from '../../../utils/array.utils';
 import './index.scss';
 
 export default function BlogPostCard({ slug, model, image, date, tags, title }) {
-  const link = pathToModel(model.apiKey, slug);
+  const link = pathToModel(model?.apiKey, slug);
 
   return (
     <div className="blog-post-card">
