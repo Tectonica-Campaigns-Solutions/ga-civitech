@@ -1,0 +1,52 @@
+.related-toolset {
+  background-color: #fff;
+  border: 2px solid #eeeef1;
+  border-radius: 10px;
+  padding: 30px;
+
+  h4 {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ct-dark-blue);
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 130%;
+    color: var(--ct-blue);
+    margin-bottom: 10px;
+  }
+
+  .toolset-description {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--ct-dark-blue);
+    margin-bottom: 10px;
+  }
+
+  .links-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+
+    .link-cta {
+      color: var(--ct-white);
+      text-align: center;
+      padding: 5px 10px;
+      background: var(--ct-blue);
+      border-radius: 4px;
+    }
+  }
+}

@@ -1,16 +1,16 @@
 import React from 'react';
-import CtaList from '../../Global/Cta/CtaList';
-import Toolset from './Toolset';
-import GlobalImage from '../../Global/Image/GlobalImage';
-import { isArray } from '../../../utils/array.utils';
+import CtaList from '../../../Global/Cta/CtaList';
+import Toolset from '../../../Global/Toolset/Toolset';
+import GlobalImage from '../../../Global/Image/GlobalImage';
+import { isArray } from '../../../../utils/array.utils';
 
 import './index.scss';
 
-function Tab({ item }) {
+function TabGeneric({ item }) {
   const testimonial = item.testimonial;
 
   return (
-    <div className="tab-content">
+    <div className="tab-generic-content">
       <div className="row">
         <div className="col-lg-4 testimonial">
           <div className="content-image">
@@ -19,7 +19,6 @@ function Tab({ item }) {
 
           <div className="quote-information">
             <div className="quote">{testimonial?.quote}</div>
-
             <div className="author">{testimonial?.author}</div>
           </div>
         </div>
@@ -39,4 +38,4 @@ function Tab({ item }) {
   );
 }
 
-export default Tab;
+export default TabGeneric;

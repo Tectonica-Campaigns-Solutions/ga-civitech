@@ -67,11 +67,10 @@ export const PostQuery = graphql`
         }
       }
     }
-    relatedProducts: allDatoCmsProduct(filter: {topic: {id: {eq: $topic}}}) {
+    relatedProducts: allDatoCmsProduct(filter: { topic: { id: { eq: $topic } } }) {
       nodes {
         title
         slug
-        
       }
     }
   }
