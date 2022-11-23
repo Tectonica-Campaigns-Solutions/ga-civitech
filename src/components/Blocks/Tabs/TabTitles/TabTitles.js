@@ -10,7 +10,7 @@ export default function TabTitles({ items, activeTab, handleTab, classes }) {
           className={`${classes} mb-4 mb-lg-0 ${activeTab === index ? 'active' : ''}`}
           onClick={() => handleTab(index)}
         >
-          {item.titleTab ? item.titleTab : item.name}
+          {item.titleTab || item.name || item.title}
         </div>
       ))}
     </div>

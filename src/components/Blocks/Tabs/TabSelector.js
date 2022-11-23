@@ -1,11 +1,11 @@
 import * as React from 'react';
 import TabGeneric from './TabGeneric/TabGeneric';
-import TabCaseStudy from './TabCaseStudy/TabCaseStudy';
+import TabPost from './TabPost/TabPost';
 
-export default function TabSelector({ __typename, item }) {
+export default function TabSelector({ item }) {
   const selectTabComponent = () => {
-    if (__typename === 'tab_case_study') {
-      return <TabCaseStudy item={item} />;
+    if (item.__typename === 'DatoCmsPost') {
+      return <TabPost item={item} />;
     }
 
     return <TabGeneric item={item} />;

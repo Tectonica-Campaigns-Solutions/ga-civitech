@@ -70,6 +70,13 @@ export const DatoCMS = graphql`
         __typename
         title
         slug
+        summary
+        image {
+          gatsbyImageData
+        }
+        model {
+          apiKey
+        }
       }
       ... on DatoCmsTabItem {
         __typename
