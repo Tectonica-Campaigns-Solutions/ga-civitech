@@ -73,6 +73,9 @@ export const PageQuery = graphql`
         ... on DatoCmsBlogPost {
           ...BlockBlogPost
         }
+        ... on DatoCmsTab {
+          ...BlockTab
+        }
       }
     }
   }

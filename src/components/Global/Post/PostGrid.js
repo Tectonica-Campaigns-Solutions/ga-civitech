@@ -6,7 +6,7 @@ import RelatedProductGrid from '../RelatedProduct/RelatedProductGrid';
 
 import './index.scss';
 
-export default function PostGrid({ content, tags, relatedProducts }) {
+export default function PostGrid({ content, tags, relatedProduct, relatedPost = null }) {
   return (
     <div className="post-content container">
       <div className="row">
@@ -23,7 +23,7 @@ export default function PostGrid({ content, tags, relatedProducts }) {
         </div>
 
         <div className="col-lg-4 offset-md-1">
-          <RelatedProductGrid relatedProducts={relatedProducts}/>
+          <RelatedProductGrid relatedProduct={relatedProduct} relatedPost={relatedPost} />
         </div>
       </div>
     </div>

@@ -6,21 +6,23 @@ import Cta from '../Cta/Cta';
 
 import './index.scss';
 
-export default function RelatedProductCard({ preTitle, title, slug, image, description }) {
+export default function RelatedProductCard({ preTitle, title, slug, image, description, model }) {
+  const link = pathToModel(model.apiKey, slug);
+
   return (
     <div className="related-product-card">
-      <span>{preTitle}</span>
+      <h3>{preTitle}</h3>
 
-      <Link to={slug}>
+      <Link to={link}>
         <h2>{title}</h2>
       </Link>
 
-      <Link to={slug}>
+      <Link className="image" to={link}>
         <GlobalImage image={image} />
       </Link>
 
       <p dangerouslySetInnerHTML={{ __html: description }} />
-      <Cta isButton label="Read more" to={pathToModel('product', slug)} />
+      <Cta isButton label="Read more" url={link} />
     </div>
   );
 }
