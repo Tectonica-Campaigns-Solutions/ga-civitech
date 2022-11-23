@@ -31,7 +31,7 @@ export default function Blocks({ blocks }) {
           case 'DatoCmsRelatedProduct':
             return <RelatedProduct block={block} key={block.id} />;
           case 'DatoCmsBlogPost':
-            return <BlogPost block={block} key={block.id} />;
+            return <BlogPost block={block} key={block.id} topics={block.tagsToFilter} />;
           default:
             return '';
         }

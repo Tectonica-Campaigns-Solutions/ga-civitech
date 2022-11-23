@@ -5,7 +5,7 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import HeroBlogPost from '../components/Hero/HeroBlogPost/HeroBlogPost';
 import PostGrid from '../components/Global/Post/PostGrid';
 
-const Post = ({ data: { post } }) => {
+const Post = ({ data: { post, relatedProducts } }) => {
   return (
     <Layout>
       <SeoDatoCms seo={post.seo} />
@@ -18,7 +18,7 @@ const Post = ({ data: { post } }) => {
         image={post.image}
       />
 
-      <PostGrid {...post} />
+      <PostGrid {...post} relatedProducts={relatedProducts} />
     </Layout>
   );
 };
@@ -26,7 +26,7 @@ const Post = ({ data: { post } }) => {
 export default Post;
 
 export const PostQuery = graphql`
-  query PostById($id: String) {
+  query PostById($id: String, $topic: String) {
     post: datoCmsPost(id: { eq: $id }) {
       seo: seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
@@ -65,6 +65,13 @@ export const PostQuery = graphql`
         ... on DatoCmsTag {
           name
         }
+      }
+    }
+    relatedProducts: allDatoCmsProduct(filter: {topic: {id: {eq: $topic}}}) {
+      nodes {
+        title
+        slug
+        
       }
     }
   }

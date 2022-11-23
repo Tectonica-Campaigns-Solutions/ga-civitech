@@ -66,6 +66,7 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               slug: post.slug,
               id: post.id,
+              topic: post.topic.id
             },
           });
         }

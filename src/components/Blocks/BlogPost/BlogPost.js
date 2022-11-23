@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { isArray } from '../../../utils/array.utils';
 import TabTitles from '../Tabs/TabTitles';
 import BlogPostCard from '../../Global/BlogPostCard/BlogPostCard';
 
 import './index.scss';
+import BlogPostTab from './BlogPostTab';
 
-function BlogPost({ block }) {
+function BlogPost({ block, topics }) {
+  const [activeTab, setActiveTab] = useState(0);
+  const handleTab = val => {
+    setActiveTab(val);
+  };
   const data = useStaticQuery(graphql`
     query allPosts {
       posts: allDatoCmsPost {
@@ -19,6 +24,7 @@ function BlogPost({ block }) {
           topic {
             ... on DatoCmsTag {
               name
+              id
             }
           }
           tags {
@@ -35,25 +41,22 @@ function BlogPost({ block }) {
   `);
   const blogList = data.posts.nodes;
 
-  // TODO: Hardcoded, remove...
-  const items = [{ titleTab: 'Updates' }, { titleTab: 'Success Stories' }, { titleTab: 'Press' }];
+  const filteredBlogList =  blogList.reduce((group, post) => {
+    const { name } = post.topic;
+    group[name] = group[name] ?? [];
+    group[name].push(post);
+    return group;
+  }, {});
 
   return (
     <div className="blog-post-list">
       <div className="container">
-        {isArray(items) && <TabTitles items={items} classes="col-lg-3" activeTab={0} handleTab={() => {}} />}
-
-        <h2>{block.title}</h2>
-
-        {isArray(blogList) && (
-          <div className="row gy-5">
-            {blogList.map(({ slug, image, meta, tags, title }) => (
-              <div className="col-lg-4 col-md-6">
-                <BlogPostCard slug={slug} image={image} date={meta.createdAt} tags={tags} title={title} />
-              </div>
-            ))}
-          </div>
-        )}
+        {isArray(topics) && <TabTitles items={topics} classes="col-lg-3" activeTab={activeTab} handleTab={handleTab} />}
+          {
+            Object.entries(filteredBlogList).map((item, index) => {
+              return index === activeTab ? <BlogPostTab title={item[0]} items={item[1]}  /> : '';
+            })
+          }
       </div>
     </div>
   );
