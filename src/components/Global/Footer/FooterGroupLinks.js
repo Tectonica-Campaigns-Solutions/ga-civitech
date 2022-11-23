@@ -1,6 +1,6 @@
 import React from 'react';
 import { isArray } from '../../../utils/array.utils';
-import Divider from '../../Divider/Divider';
+import Divider from '../Divider/Divider';
 import Link from '../Link';
 
 const FooterGroupLinks = ({ item }) => {

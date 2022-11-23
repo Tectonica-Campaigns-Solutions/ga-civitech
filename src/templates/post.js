@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SeoDatoCms from '../components/SeoDatoCms';
 import HeroBlogPost from '../components/Hero/HeroBlogPost/HeroBlogPost';
-import PostGrid from '../components/Post/PostGrid';
+import PostGrid from '../components/Global/Post/PostGrid';
 
 const Post = ({ data: { post } }) => {
   return (

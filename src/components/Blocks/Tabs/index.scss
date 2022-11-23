@@ -1,28 +1,6 @@
 .tabs {
   padding: 130px 0 150px 0;
 
-  .titles {
-    font-size: 20px;
-    font-family: 'Public Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 25px;
-    line-height: 130%;
-    margin: 10px 0;
-
-    > div {
-      cursor: pointer;
-      color: #eeeef1;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eeeef1;
-    }
-  }
-
-  .titles .active {
-    color: var(--ct-blue);
-    border-bottom: 1px solid var(--ct-blue);
-  }
-
   .tab-content {
     padding-top: 40px;
 
@@ -98,6 +76,28 @@
       background: url('../../Icons/after_tab.svg');
     }
   }
+}
+
+.titles {
+  font-size: 20px;
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 130%;
+  margin: 10px 0;
+
+  > div {
+    cursor: pointer;
+    color: #eeeef1;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeef1;
+  }
+}
+
+.titles .active {
+  color: var(--ct-blue);
+  border-bottom: 1px solid var(--ct-blue);
 }
 
 .related-toolset {

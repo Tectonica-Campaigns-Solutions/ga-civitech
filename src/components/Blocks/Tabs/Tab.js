@@ -1,7 +1,7 @@
 import React from 'react';
 import CtaList from '../../Global/Cta/CtaList';
 import Toolset from './Toolset';
-import GlobalImage from '../../Global/GlobalImage/GlobalImage';
+import GlobalImage from '../../Global/Image/GlobalImage';
 import { isArray } from '../../../utils/array.utils';
 
 import './index.scss';

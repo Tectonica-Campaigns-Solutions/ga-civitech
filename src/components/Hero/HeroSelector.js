@@ -1,5 +1,5 @@
 import * as React from 'react';
-import HeroImageBottom from './Hero/HeroImageBottom';
+import HeroImageBottom from './HeroImageBottom';
 
 export default function HeroSelector({ page }) {
   const selectHeroTemplate = page => {

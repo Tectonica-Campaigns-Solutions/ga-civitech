@@ -1,7 +1,7 @@
 import React from 'react';
 import CtaList from '../Cta/CtaList';
 import Shortcut from '../Shortcut/Shortcut';
-import ImageWrapper from '../../Slider/ImageWrapper';
+import ImageWrapper from '../../Global/Image/ImageWrapper';
 import { isArray } from '../../../utils/array.utils';
 
 import './index.scss';

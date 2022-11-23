@@ -1,7 +1,7 @@
 import React from 'react';
-import CTSlider from '../Slider/CTSlider';
-import GlobalImage from '../Global/GlobalImage/GlobalImage';
-import pictureBtn from '../Icons/picture.svg';
+import CTSlider from './CTSlider';
+import GlobalImage from './GlobalImage';
+import pictureBtn from '../../Icons/picture.svg';
 
 import './index.scss';
 

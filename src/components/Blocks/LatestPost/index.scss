@@ -17,62 +17,19 @@
     color: var(--ct-dark-blue);
   }
 
-  .post-card {
-    .image {
-      margin-bottom: 16px;
+  .tag {
+    color: var(--ct-dark-blue);
+    background: var(--ct-white);
+  }
 
-      a > div {
-        width: 100%;
-        border-radius: 10px;
-      }
+  .image {
+    overflow: hidden;
+    border-radius: 20px;
 
-      img {
-        &:hover {
-          transition: all 0.3s ease-in-out;
-          transform: scale(1.15);
-        }
-      }
-    }
-
-    .metadata {
-      margin-bottom: 13.5px;
-
-      .date {
-        font-family: 'Public Sans';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 130%;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: var(--ct-gray-dark);
-        margin-right: 10px;
-      }
-
-      .tags {
-        display: inline-flex;
-        gap: 10px;
-
-        .tag {
-          background: var(--ct-white);
-          color: var(--ct-dark-blue);
-        }
-      }
-    }
-
-    h3 {
-      font-family: 'Public Sans';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 25px;
-      line-height: 130%;
-      color: var(--ct-dark-blue);
-
-      text-decoration: underline rgba(0, 0, 0, 0);
-      transition: text-decoration-color 300ms;
-
+    img {
       &:hover {
-        text-decoration-color: var(--ct-dark-blue);
+        overflow: hidden;
+        transform: scale(1.15);
       }
     }
   }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import Cta from '../../Global/Cta/Cta';
-import PostCard from './PostCard';
 import { isArray } from '../../../utils/array.utils';
+import Cta from '../../Global/Cta/Cta';
+import BlogPostCard from '../../Global/BlogPostCard/BlogPostCard';
 
 import './index.scss';
 
@@ -36,14 +36,14 @@ const LatestPost = ({ block }) => {
       <div className={`container`}>
         <div className="title-section">
           <h2>{block.title}</h2>
-          <Cta label={'Read all'} isButton />
+          <Cta url="/blog" label={'Read all'} isButton />
         </div>
 
         <div className="row">
           {isArray(latestsPosts) ? (
-            latestsPosts.map(item => (
+            latestsPosts.map(({ image, meta, slug, tags, title }) => (
               <div className="col-lg-4 mb-lg-0 mb-5">
-                <PostCard item={item} />
+                <BlogPostCard slug={slug} image={image} date={meta.publishedAt} tags={tags} title={title} />
               </div>
             ))
           ) : (

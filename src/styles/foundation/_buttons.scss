@@ -7,7 +7,7 @@
   border-radius: 24px;
   border: 2px solid var(--ct-blue);
 
-  font-family: "Public Sans";
+  font-family: 'Public Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -53,32 +53,12 @@
   }
 }
 
-// Accordion Button Styles
-.btn.btn--accordion,
-.btn.btn--load-more,
-.btn.btn--job {
-  color: #4f6fbb;
-  border-color: #4f6fbb;
-  padding: "12px, 20px, 12px, 20px";
-
-  &:hover {
-    color: #fff;
-    background-color: #4f6fbb;
-  }
-}
-
-.btn.btn--load-more {
-  color: #1f1646;
-  border-color: #1f1646;
-
-  &:hover {
-    color: #fff;
-    background-color: #1f1646;
-  }
-}
-
 .btn--large {
   height: 48px;
+}
+
+.btn--small {
+  font-size: 16px;
 }
 
 @mixin btn {

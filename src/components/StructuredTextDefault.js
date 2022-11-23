@@ -1,6 +1,6 @@
 import React from 'react';
 import { StructuredText } from 'react-datocms';
-import ImageWrapper from './Slider/ImageWrapper';
+import ImageWrapper from '../components/Global/Image/ImageWrapper';
 
 const StructuredTextDefault = ({ content }) => {
   return (

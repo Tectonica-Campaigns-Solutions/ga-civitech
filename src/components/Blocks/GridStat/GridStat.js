@@ -1,5 +1,5 @@
 import React from 'react';
-import GlobalImage from '../../Global/GlobalImage/GlobalImage';
+import GlobalImage from '../../Global/Image/GlobalImage';
 
 import './index.scss';
 
