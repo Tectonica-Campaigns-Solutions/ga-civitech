@@ -7,8 +7,9 @@ import { pathToModel } from '../../../utils';
 
 import './index.scss';
 
-const AccordionItem = ({ title, content, slug, image, alignment, isActive, handleOnClickTab }) => {
+const AccordionItem = ({ title, content, slug, model, image, alignment, isActive, handleOnClickTab }) => {
   const isAlignmentRight = alignment === 'right';
+  const link = pathToModel(model.apiKey, slug);
 
   return (
     <div className={'cv-accordion-item'}>
@@ -29,7 +30,7 @@ const AccordionItem = ({ title, content, slug, image, alignment, isActive, handl
                 <>
                   <div className="content" dangerouslySetInnerHTML={{ __html: content }} />
 
-                  <Link className="btn btn-primary mb-5" to={`${pathToModel('product')}${slug}`}>
+                  <Link className="btn btn-primary mb-5" to={link}>
                     Learn more
                   </Link>
                 </>

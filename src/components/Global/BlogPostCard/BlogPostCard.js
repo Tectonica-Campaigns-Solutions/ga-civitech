@@ -7,11 +7,13 @@ import { isArray } from '../../../utils/array.utils';
 
 import './index.scss';
 
-export default function BlogPostCard({ slug, image, date, tags, title }) {
+export default function BlogPostCard({ slug, model, image, date, tags, title }) {
+  const link = pathToModel(model.apiKey, slug);
+
   return (
     <div className="blog-post-card">
       <div className="image">
-        <Link to={`${pathToModel('post', slug)}`}>
+        <Link to={link}>
           <GlobalImage image={image} />
         </Link>
       </div>
@@ -28,7 +30,7 @@ export default function BlogPostCard({ slug, image, date, tags, title }) {
         )}
       </div>
 
-      <Link to={`${pathToModel('post', slug)}`}>
+      <Link to={link}>
         <h3>{title}</h3>
       </Link>
     </div>

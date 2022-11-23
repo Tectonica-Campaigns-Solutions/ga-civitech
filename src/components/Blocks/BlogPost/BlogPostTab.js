@@ -11,6 +11,7 @@ function BlogPostTab({ title, items }) {
             <div className="col-lg-4">
               <BlogPostCard
                 slug={item.slug}
+                model={item.model}
                 image={item.image}
                 date={item.meta.createdAt}
                 tags={item.tags}

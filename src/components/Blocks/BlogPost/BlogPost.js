@@ -22,6 +22,9 @@ function BlogPost({ block, topics }) {
           }
           title
           slug
+          model {
+            apiKey
+          }
           topic {
             ... on DatoCmsTag {
               name
