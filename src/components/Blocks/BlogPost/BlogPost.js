@@ -49,7 +49,7 @@ function BlogPost({ block, topics }) {
   // We filter those blog posts whose topic is identical to the one that is active
   const blogListFiltered = blogList.filter(post => {
     const { name } = post.topic;
-    return name === activeTopic.name;
+    return name === activeTopic?.name;
   });
 
   return (
@@ -57,7 +57,7 @@ function BlogPost({ block, topics }) {
       <div className="container">
         {isArray(topics) && <TabTitles items={topics} classes="col-lg-3" activeTab={activeTab} handleTab={handleTab} />}
 
-        {isArray(blogListFiltered) && <BlogPostTab title={activeTopic.name} items={blogListFiltered} />}
+        {isArray(blogListFiltered) && <BlogPostTab title={activeTopic?.name} items={blogListFiltered} />}
       </div>
     </div>
   );
