@@ -17,11 +17,14 @@ export default function RelatedProductCard({ preTitle, title, slug, image, descr
         <h2>{title}</h2>
       </Link>
 
-      {/* <Link className="image" to={link}>
-        <GlobalImage image={image} />
-      </Link> */}
+      {image && (
+        <Link className="image" to={link}>
+          <GlobalImage image={image} />
+        </Link>
+      )}
 
-      <p dangerouslySetInnerHTML={{ __html: description }} />
+      {description && <p dangerouslySetInnerHTML={{ __html: description }} />}
+
       <Cta isButton label="Read more" url={link} />
     </div>
   );

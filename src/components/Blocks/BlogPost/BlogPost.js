@@ -7,13 +7,9 @@ import BlogPostTab from './BlogPostTab';
 import './index.scss';
 
 function BlogPost({ block, topics }) {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const handleTab = val => {
-    setActiveTab(val);
-  };
-
-  const data = useStaticQuery(graphql`
+  const {
+    posts: { nodes: blogList },
+  } = useStaticQuery(graphql`
     query allPosts {
       posts: allDatoCmsPost {
         nodes {
@@ -44,23 +40,24 @@ function BlogPost({ block, topics }) {
       }
     }
   `);
-  const blogList = data.posts.nodes;
 
-  const filteredBlogList = blogList.reduce((group, post) => {
+  const [activeTab, setActiveTab] = useState(0);
+  const activeTopic = topics[activeTab];
+
+  const handleTab = val => setActiveTab(val);
+
+  // We filter those blog posts whose theme is identical to the one that is active
+  const blogListFiltered = blogList.filter(post => {
     const { name } = post.topic;
-    group[name] = group[name] ?? [];
-    group[name].push(post);
-    return group;
-  }, {});
+    return name === activeTopic.name;
+  });
 
   return (
     <div className="blog-post-list">
       <div className="container">
         {isArray(topics) && <TabTitles items={topics} classes="col-lg-3" activeTab={activeTab} handleTab={handleTab} />}
 
-        {Object.entries(filteredBlogList).map((item, index) => {
-          return index === activeTab ? <BlogPostTab title={item[0]} items={item[1]} /> : '';
-        })}
+        {isArray(blogListFiltered) && <BlogPostTab title={activeTopic.name} items={blogListFiltered} />}
       </div>
     </div>
   );

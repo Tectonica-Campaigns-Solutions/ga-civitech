@@ -7,10 +7,12 @@ import RelatedProductGrid from '../RelatedProduct/RelatedProductGrid';
 import './index.scss';
 
 export default function PostGrid({ content, tags, relatedProduct, relatedPost = null }) {
+  const hasRelatedProducts = relatedProduct != null || relatedPost != null;
+
   return (
     <div className="post-content container">
-      <div className="row">
-        <div className="col-lg-6 offset-md-1 content">
+      <div className={`row ${!hasRelatedProducts ? 'justify-content-center' : ''}`}>
+        <div className={`${hasRelatedProducts ? 'col-lg-6 offset-md-1 content' : 'col-lg-10'}`}>
           <StructuredTextDefault content={content} />
 
           {isArray(tags) && (
@@ -22,9 +24,11 @@ export default function PostGrid({ content, tags, relatedProduct, relatedPost = 
           )}
         </div>
 
-        <div className="col-lg-4 offset-md-1">
-          <RelatedProductGrid relatedProduct={relatedProduct} relatedPost={relatedPost} />
-        </div>
+        {hasRelatedProducts && (
+          <div className="col-lg-4 offset-md-1">
+            <RelatedProductGrid relatedProduct={relatedProduct} relatedPost={relatedPost} />
+          </div>
+        )}
       </div>
     </div>
   );
