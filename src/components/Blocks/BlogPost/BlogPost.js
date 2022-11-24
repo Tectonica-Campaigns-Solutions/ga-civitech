@@ -46,7 +46,7 @@ function BlogPost({ block, topics }) {
 
   const handleTab = val => setActiveTab(val);
 
-  // We filter those blog posts whose theme is identical to the one that is active
+  // We filter those blog posts whose topic is identical to the one that is active
   const blogListFiltered = blogList.filter(post => {
     const { name } = post.topic;
     return name === activeTopic.name;
