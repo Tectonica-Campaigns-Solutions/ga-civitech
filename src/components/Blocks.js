@@ -7,7 +7,7 @@ import Logos from './Blocks/Logos/Logos';
 import LatestPost from './Blocks/LatestPost/LatestPost';
 import ListMembers from './Blocks/ListMembers/ListMembers';
 import RelatedProduct from './Blocks/RelatedProduct/RelatedProduct';
-import BlogPost from './Blocks/BlogPost/BlogPost';
+import BlogPostList from './Blocks/BlogPost/BlogPostList';
 
 export default function Blocks({ blocks }) {
   return (
@@ -31,7 +31,7 @@ export default function Blocks({ blocks }) {
           case 'DatoCmsRelatedProduct':
             return <RelatedProduct block={block} key={block.id} />;
           case 'DatoCmsBlogPost':
-            return <BlogPost block={block} key={block.id} topics={block.tagsToFilter} />;
+            return <BlogPostList block={block} key={block.id} topics={block.tagsToFilter} />;
           default:
             return '';
         }

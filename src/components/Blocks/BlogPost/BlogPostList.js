@@ -7,7 +7,7 @@ import Pagination, { PAGE_SIZE } from '../../Global/Pagination/Pagination';
 
 import './index.scss';
 
-function BlogPost({ block, topics }) {
+function BlogPostList({ block, topics }) {
   const {
     posts: { nodes: blogList },
   } = useStaticQuery(graphql`
@@ -88,4 +88,4 @@ function BlogPost({ block, topics }) {
   );
 }
 
-export default BlogPost;
+export default BlogPostList;
