@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import Layout from '../components/Layout';
-import SeoDatoCms from '../components/SeoDatoCms';
 
 const NotFoundPage = () => (
   <Layout>

@@ -4,6 +4,7 @@
   margin-bottom: 7rem;
   text-align: center;
   background-color: rgba(112, 212, 252, 0.2);
+  position: relative;
 
   .container {
     max-width: 1054px;
@@ -38,7 +39,15 @@
 
     img {
       width: 100%;
+      z-index: 2;
     }
+  }
+
+  .arrows {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
   }
 
   // Responsive 800px
@@ -62,6 +71,10 @@
     .image-container {
       position: initial;
       margin: 2rem 0 2rem 0;
+    }
+
+    .arrows {
+      display: none;
     }
   }
 }

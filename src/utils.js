@@ -1,7 +1,7 @@
 export const pathToModel = (model, slug = '') => {
-  if (model == 'product') {
+  if (model === 'product') {
     return `/product/${slug}`;
-  } else if (model == 'post') {
+  } else if (model === 'post') {
     return `/post/${slug}`;
   } else {
     return null;
