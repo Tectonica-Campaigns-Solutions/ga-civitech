@@ -1,5 +1,5 @@
 .related-product-card {
-  span {
+  h3 {
     display: inline-block;
     font-family: 'Public Sans';
     font-style: normal;
@@ -22,19 +22,22 @@
     margin-bottom: 20px;
   }
 
-  img {
-    width: 100%;
+  .image {
+    display: block;
     margin-bottom: 18px;
   }
 
   p {
-    font-family: 'Public Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-    color: var(--ct-dark-blue);
-    margin-bottom: 10px;
+    span {
+      font-family: 'Public Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: var(--ct-dark-blue);
+      margin-bottom: 10px;
+      text-transform: none;
+    }
   }
 }
 

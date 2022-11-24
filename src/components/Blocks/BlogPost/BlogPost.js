@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { isArray } from '../../../utils/array.utils';
-import TabTitles from '../Tabs/TabTitles';
-import BlogPostCard from '../../Global/BlogPostCard/BlogPostCard';
+import TabTitles from '../Tabs/TabTitles/TabTitles';
+import BlogPostTab from './BlogPostTab';
 
 import './index.scss';
-import BlogPostTab from './BlogPostTab';
 
 function BlogPost({ block, topics }) {
   const [activeTab, setActiveTab] = useState(0);
+
   const handleTab = val => {
     setActiveTab(val);
   };
+
   const data = useStaticQuery(graphql`
     query allPosts {
       posts: allDatoCmsPost {
@@ -21,6 +22,9 @@ function BlogPost({ block, topics }) {
           }
           title
           slug
+          model {
+            apiKey
+          }
           topic {
             ... on DatoCmsTag {
               name
@@ -41,7 +45,7 @@ function BlogPost({ block, topics }) {
   `);
   const blogList = data.posts.nodes;
 
-  const filteredBlogList =  blogList.reduce((group, post) => {
+  const filteredBlogList = blogList.reduce((group, post) => {
     const { name } = post.topic;
     group[name] = group[name] ?? [];
     group[name].push(post);
@@ -52,11 +56,10 @@ function BlogPost({ block, topics }) {
     <div className="blog-post-list">
       <div className="container">
         {isArray(topics) && <TabTitles items={topics} classes="col-lg-3" activeTab={activeTab} handleTab={handleTab} />}
-          {
-            Object.entries(filteredBlogList).map((item, index) => {
-              return index === activeTab ? <BlogPostTab title={item[0]} items={item[1]}  /> : '';
-            })
-          }
+
+        {Object.entries(filteredBlogList).map((item, index) => {
+          return index === activeTab ? <BlogPostTab title={item[0]} items={item[1]} /> : '';
+        })}
       </div>
     </div>
   );

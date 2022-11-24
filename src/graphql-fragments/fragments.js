@@ -66,8 +66,20 @@ export const DatoCMS = graphql`
     id
     backgroundColor
     items {
-      id
+      ... on DatoCmsPost {
+        __typename
+        title
+        slug
+        summary
+        image {
+          gatsbyImageData
+        }
+        model {
+          apiKey
+        }
+      }
       ... on DatoCmsTabItem {
+        __typename
         title
         titleTab
         description
@@ -228,8 +240,8 @@ export const DatoCMS = graphql`
   fragment BlockBlogPost on DatoCmsBlogPost {
     __typename
     title
-    tagsToFilter{
-      ...on DatoCmsTag{
+    tagsToFilter {
+      ... on DatoCmsTag {
         name
       }
     }

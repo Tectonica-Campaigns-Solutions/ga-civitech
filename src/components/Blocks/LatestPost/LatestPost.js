@@ -16,7 +16,7 @@ const LatestPost = ({ block }) => {
           title
           slug
           image {
-            gatsbyImageData
+            gatsbyImageData(width: 387, height: 259)
           }
           tags {
             ... on DatoCmsTag {

@@ -5,7 +5,7 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import HeroBlogPost from '../components/Hero/HeroBlogPost/HeroBlogPost';
 import PostGrid from '../components/Global/Post/PostGrid';
 
-const Post = ({ data: { post, relatedProducts } }) => {
+const Post = ({ data: { post } }) => {
   return (
     <Layout>
       <SeoDatoCms seo={post.seo} />
@@ -18,7 +18,8 @@ const Post = ({ data: { post, relatedProducts } }) => {
         image={post.image}
       />
 
-      <PostGrid {...post} relatedProducts={relatedProducts} />
+      {/* TODO: Add related post on query */}
+      <PostGrid {...post} relatedProduct={post.relatedProduct} relatedPost={null} />
     </Layout>
   );
 };
@@ -26,7 +27,7 @@ const Post = ({ data: { post, relatedProducts } }) => {
 export default Post;
 
 export const PostQuery = graphql`
-  query PostById($id: String, $topic: String) {
+  query PostById($id: String) {
     post: datoCmsPost(id: { eq: $id }) {
       seo: seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
@@ -36,6 +37,19 @@ export const PostQuery = graphql`
       }
       id
       title
+      relatedProduct {
+        ... on DatoCmsProduct {
+          model {
+            apiKey
+          }
+          title
+          slug
+          imagePreview {
+            gatsbyImageData(width: 374, height: 211)
+          }
+          descriptionPreview
+        }
+      }
       slug
       content {
         value
@@ -65,13 +79,6 @@ export const PostQuery = graphql`
         ... on DatoCmsTag {
           name
         }
-      }
-    }
-    relatedProducts: allDatoCmsProduct(filter: {topic: {id: {eq: $topic}}}) {
-      nodes {
-        title
-        slug
-        
       }
     }
   }
