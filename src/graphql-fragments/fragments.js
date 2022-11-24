@@ -12,6 +12,7 @@ export const DatoCMS = graphql`
     image {
       gatsbyImageData(width: 500, height: 500)
       alt
+      url
     }
     ctas {
       title
@@ -66,16 +67,19 @@ export const DatoCMS = graphql`
     id
     backgroundColor
     items {
-      ... on DatoCmsPost {
+      ... on DatoCmsTabPost{
         __typename
-        title
-        slug
-        summary
-        image {
-          gatsbyImageData
-        }
-        model {
-          apiKey
+        titleTab
+        pretitle
+        post{
+          ... on DatoCmsPost{
+            title
+            slug
+            summary
+            model {
+              apiKey
+            }
+          }
         }
       }
       ... on DatoCmsTabItem {
@@ -92,6 +96,7 @@ export const DatoCMS = graphql`
             author
             image {
               gatsbyImageData(width: 400, height: 500)
+              url
             }
           }
         }
@@ -141,6 +146,7 @@ export const DatoCMS = graphql`
         url
         icon {
           gatsbyImageData
+          url
         }
       }
     }
@@ -199,6 +205,7 @@ export const DatoCMS = graphql`
       positionMember
       image {
         gatsbyImageData
+        url
       }
     }
     ctas {
@@ -232,6 +239,7 @@ export const DatoCMS = graphql`
         slug
         imagePreview {
           gatsbyImageData
+          url
         }
         descriptionPreview
       }

@@ -6,7 +6,8 @@ import { pathToModel } from '../../../../utils';
 
 import './index.scss';
 
-export default function TabPost({ item }) {
+export default function TabPost({ pretitle=null, item }) {
+
   const link = pathToModel(item.model.apiKey, item.slug);
 
   return (
@@ -14,7 +15,7 @@ export default function TabPost({ item }) {
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
-            {item.preTitle && <h4>{item.preTitle}</h4>}
+            {pretitle && <h4>{pretitle}</h4>}
 
             <Link to={link}>
               <h2>{item.title}</h2>

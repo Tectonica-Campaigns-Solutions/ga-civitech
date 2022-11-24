@@ -41,6 +41,7 @@ export const HomeQuery = graphql`
       titleShortcuts
       heroImage {
         gatsbyImageData(width: 500, height: 500)
+        url
         alt
       }
       ctas {

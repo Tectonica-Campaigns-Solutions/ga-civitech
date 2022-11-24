@@ -5,7 +5,7 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import HeroBlogPost from '../components/Hero/HeroBlogPost/HeroBlogPost';
 import PostGrid from '../components/Global/Post/PostGrid';
 
-const Post = ({ data: { post } }) => {
+const Post = ({ data: { post, featuredPost } }) => {
   return (
     <Layout>
       <SeoDatoCms seo={post.seo} />
@@ -19,7 +19,8 @@ const Post = ({ data: { post } }) => {
       />
 
       {/* TODO: Add related post on query */}
-      <PostGrid {...post} relatedProduct={post.relatedProduct} relatedPost={null} />
+      <PostGrid {...post} relatedProduct={post.relatedProduct} relatedPost={featuredPost} />
+     
     </Layout>
   );
 };
@@ -37,6 +38,7 @@ export const PostQuery = graphql`
       }
       id
       title
+      featured
       relatedProduct {
         ... on DatoCmsProduct {
           model {
@@ -46,6 +48,7 @@ export const PostQuery = graphql`
           slug
           imagePreview {
             gatsbyImageData(width: 374, height: 211)
+            url
           }
           descriptionPreview
         }
@@ -61,6 +64,7 @@ export const PostQuery = graphql`
             image {
               gatsbyImageData
               title
+              url
             }
           }
         }
@@ -68,6 +72,7 @@ export const PostQuery = graphql`
       image {
         gatsbyImageData(width: 600, height: 400)
         alt
+        url
       }
       summary
       topic {
@@ -79,6 +84,18 @@ export const PostQuery = graphql`
         ... on DatoCmsTag {
           name
         }
+      }
+    }
+    featuredPost: datoCmsPost(id: {ne: $id}) {
+      title
+      slug
+      model{
+        apiKey
+      }
+      image {
+        gatsbyImageData(width: 600, height: 400)
+        alt
+        url
       }
     }
   }

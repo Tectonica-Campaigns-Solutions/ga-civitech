@@ -17,9 +17,9 @@ export default function RelatedProductCard({ preTitle, title, slug, image, descr
         <h2>{title}</h2>
       </Link>
 
-      <Link className="image" to={link}>
+      {/* <Link className="image" to={link}>
         <GlobalImage image={image} />
-      </Link>
+      </Link> */}
 
       <p dangerouslySetInnerHTML={{ __html: description }} />
       <Cta isButton label="Read more" url={link} />

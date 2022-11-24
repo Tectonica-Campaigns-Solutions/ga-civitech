@@ -5,8 +5,11 @@ const GlobalImage = ({ image, ...props }) => {
   if (image?.gatsbyImageData) {
     return <GatsbyImage image={{ ...image.gatsbyImageData }} {...props} />;
   }
-
-  return <img src={image.url} />;
+  else if(image?.url){
+    return <img src={image.url} />
+  }else{
+    return '';
+  }
 };
 
 export default GlobalImage;

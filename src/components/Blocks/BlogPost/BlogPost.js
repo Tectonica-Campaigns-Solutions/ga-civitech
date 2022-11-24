@@ -38,6 +38,7 @@ function BlogPost({ block, topics }) {
           }
           image {
             gatsbyImageData(width: 387, height: 259)
+            url
           }
         }
       }

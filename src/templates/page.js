@@ -28,9 +28,11 @@ export const PageQuery = graphql`
       slug
       image {
         gatsbyImageData
+        url
       }
       logo {
         gatsbyImageData
+        url
       }
       description
       heroVisual

@@ -33,6 +33,7 @@ export const ProductQuery = graphql`
       description
       image {
         gatsbyImageData
+        url
       }
       ctas {
         title
