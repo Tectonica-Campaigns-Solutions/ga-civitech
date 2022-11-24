@@ -3,9 +3,10 @@ import BlogPostCard from '../../Global/BlogPostCard/BlogPostCard';
 
 function BlogPostTab({ title, items }) {
   return (
-    <div className="container">
+    <>
       <h2>{title}</h2>
-      <div className="row">
+
+      <div className="row gy-5">
         {items.map(item => {
           return (
             <div className="col-lg-4">
@@ -21,7 +22,7 @@ function BlogPostTab({ title, items }) {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
 
