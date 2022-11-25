@@ -1,0 +1,41 @@
+.blog-cta-container {
+  padding: 31px 70px 32px 79px;
+  margin: 70px 0 54px 0;
+
+  h4 {
+    font-family: 'Laca';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 31px;
+    line-height: 120%;
+    color: var(--ct-dark-blue);
+    margin-bottom: 25px;
+  }
+
+  .image {
+    margin-right: 40px;
+
+    img {
+      width: 193px;
+      height: 202px;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    padding: 30px;
+
+    h4 {
+      margin-top: 1rem;
+    }
+
+    .image {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    h4 {
+      font-size: 25px;
+    }
+  }
+}
