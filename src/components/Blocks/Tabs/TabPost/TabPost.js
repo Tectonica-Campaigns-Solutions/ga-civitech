@@ -6,8 +6,7 @@ import { pathToModel } from '../../../../utils';
 
 import './index.scss';
 
-export default function TabPost({ pretitle=null, item }) {
-
+export default function TabPost({ pretitle = null, item }) {
   const link = pathToModel(item.model.apiKey, item.slug);
 
   return (
@@ -25,13 +24,13 @@ export default function TabPost({ pretitle=null, item }) {
             <Cta label="Read more" url={link} isButton />
           </div>
 
-          <div className="col-lg-5 offset-lg-1">
-            {item.image && (
+          {item.image && (
+            <div className="col-lg-5 offset-lg-1">
               <Link to={link}>
                 <GlobalImage image={item.image} />
               </Link>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

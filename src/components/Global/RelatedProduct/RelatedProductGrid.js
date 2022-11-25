@@ -19,7 +19,7 @@ export default function RelatedProductGrid({ relatedProduct, relatedPost = null 
         <RelatedProductCard
           preTitle="Feature"
           title={relatedPost.title}
-          slug={relatedProduct.slug}
+          slug={relatedPost.slug}
           image={relatedPost.imagePreview}
           description={relatedPost.descriptionPreview}
           model={relatedPost.model}

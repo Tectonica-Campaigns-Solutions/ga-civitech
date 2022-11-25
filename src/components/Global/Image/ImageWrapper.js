@@ -20,7 +20,7 @@ export default function ImageWrapper({ image, ...props }) {
     <div className="image-wrapper">
       <GlobalImage image={Array.isArray(image) ? image[0] : image} {...props} />
 
-      {image.title && (
+      {image?.title && (
         <div className="caption">
           <img src={pictureBtn} />
           <span className="image-caption">{image.title}</span>

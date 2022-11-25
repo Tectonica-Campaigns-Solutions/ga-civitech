@@ -1,0 +1,15 @@
+.share-buttons-fixed {
+  height: 250px;
+  width: 70px;
+  padding: 20px;
+  color: var(--ct-dark-blue);
+  background-color: var(--ct-white);
+  border-radius: 0px 10px 10px 0px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  position: absolute;
+  left: 0;
+}
