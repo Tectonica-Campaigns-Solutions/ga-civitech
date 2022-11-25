@@ -27,15 +27,10 @@
       color: var(--ct-dark-blue);
       border-left: 11px solid var(--ct-dark-blue);
       padding-left: 30px;
-      margin: 0 5rem 0 -20%;
+      margin: 1rem 5rem 1.5rem 0;
 
       p {
         margin: 0;
-      }
-
-      @media screen and (max-width: 1070px) {
-        float: none;
-        margin: 0 0 1rem 0;
       }
     }
 
