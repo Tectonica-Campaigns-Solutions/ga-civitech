@@ -20,7 +20,6 @@ const Post = ({ data: { post, featuredPost } }) => {
 
       {/* TODO: Add related post on query */}
       <PostGrid {...post} relatedProduct={post.relatedProduct} relatedPost={featuredPost} />
-     
     </Layout>
   );
 };
@@ -57,14 +56,21 @@ export const PostQuery = graphql`
       content {
         value
         blocks {
-          id: originalId
+          id
           __typename
           ... on DatoCmsImage {
-            id: originalId
+            id
             image {
               gatsbyImageData
               title
               url
+            }
+          }
+          ... on DatoCmsBlogPostCta {
+            id
+            title
+            image {
+              gatsbyImageData
             }
           }
         }
@@ -86,10 +92,10 @@ export const PostQuery = graphql`
         }
       }
     }
-    featuredPost: datoCmsPost(id: {ne: $id}) {
+    featuredPost: datoCmsPost(id: { ne: $id }) {
       title
       slug
-      model{
+      model {
         apiKey
       }
       image {
