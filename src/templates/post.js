@@ -56,7 +56,7 @@ export const PostQuery = graphql`
       content {
         value
         blocks {
-          id: originalId
+          id
           __typename
           ... on DatoCmsImage {
             id
