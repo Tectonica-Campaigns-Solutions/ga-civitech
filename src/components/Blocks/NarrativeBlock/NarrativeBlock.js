@@ -11,7 +11,7 @@ export default function NarrativeBlock({ block }) {
   const hasImageAndCentered = hasImages && block.alignment === 'center';
 
   return (
-    <div className={`component-narrative-block ${block.backgroundColor}`}>
+    <div className={`component-narrative-block ${block.backgroundColor} ${block.classNames}`}>
       <div className="container pt-4 pb-4">
         <div className={`row ${block.alignment === 'left' ? 'flex-row-reverse' : ''}`}>
           <div
