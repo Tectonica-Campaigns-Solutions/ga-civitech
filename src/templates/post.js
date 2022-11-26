@@ -67,7 +67,7 @@ export const PostQuery = graphql`
             }
           }
           ... on DatoCmsBlogPostCta {
-            id: originalId
+            id
             title
             image {
               gatsbyImageData
