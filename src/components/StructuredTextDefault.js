@@ -17,7 +17,7 @@ const StructuredTextDefault = ({ content }) => {
             );
 
           case 'DatoCmsBlogPostCta':
-            return <BlogCta image={record.image} slug={record.slug} title={record.title} />;
+            return <BlogCta image={record.image} cta={record.cta} title={record.title} />;
 
           default:
             return null;
