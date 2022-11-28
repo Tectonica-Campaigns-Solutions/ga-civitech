@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import blueArrows from '../../Icons/hubspot-arrows.svg';
+
 import './index.scss';
 
 function TextHubsportForm({ block }) {
@@ -31,6 +33,8 @@ function TextHubsportForm({ block }) {
           <div className="col-lg-5">
             <h2>{block.title}</h2>
             <p dangerouslySetInnerHTML={{ __html: block.text }} />
+
+            <img className="blue-arrows" src={blueArrows} />
           </div>
 
           <div className="col-lg-4 offset-lg-1">
