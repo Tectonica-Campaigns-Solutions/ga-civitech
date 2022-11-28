@@ -54,6 +54,7 @@ export const DatoCMS = graphql`
     id
     text
     title
+    backgroundColor
     hubspot {
       ... on DatoCmsHubspot {
         formId

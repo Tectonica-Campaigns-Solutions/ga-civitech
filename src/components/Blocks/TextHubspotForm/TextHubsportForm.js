@@ -25,7 +25,7 @@ function TextHubsportForm({ block }) {
   }, [formId, region, portalId]);
 
   return (
-    <div className="text-hubspot-form">
+    <div className={`text-hubspot-form ${block.backgroundColor}`}>
       <div className="container">
         <div className="row gy-3">
           <div className="col-lg-5">
