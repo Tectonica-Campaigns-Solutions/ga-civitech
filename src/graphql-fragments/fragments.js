@@ -68,12 +68,12 @@ export const DatoCMS = graphql`
     id
     backgroundColor
     items {
-      ... on DatoCmsTabPost{
+      ... on DatoCmsTabPost {
         __typename
         titleTab
         pretitle
-        post{
-          ... on DatoCmsPost{
+        post {
+          ... on DatoCmsPost {
             title
             slug
             summary

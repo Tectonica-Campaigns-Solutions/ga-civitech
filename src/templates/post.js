@@ -68,6 +68,9 @@ export const PostQuery = graphql`
           ... on DatoCmsBlogPostCta {
             id: originalId
             title
+            model {
+              apiKey
+            }
             image {
               gatsbyImageData
             }
