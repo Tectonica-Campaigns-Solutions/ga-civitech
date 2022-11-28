@@ -58,7 +58,7 @@ export const PostQuery = graphql`
         blocks {
           __typename
           ... on DatoCmsImage {
-            id:originalId
+            id: originalId
             image {
               gatsbyImageData
               title
@@ -66,10 +66,25 @@ export const PostQuery = graphql`
             }
           }
           ... on DatoCmsBlogPostCta {
-            id:originalId
+            id: originalId
             title
             image {
               gatsbyImageData
+            }
+            cta {
+              title
+              isButton
+              link {
+                ... on DatoCmsGlobalLink {
+                  label
+                  url
+                  content {
+                    ... on DatoCmsPage {
+                      slug
+                    }
+                  }
+                }
+              }
             }
           }
         }

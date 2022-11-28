@@ -1,10 +1,25 @@
 import React from 'react';
+import { isArray } from '../../../utils/array.utils';
 import Cta from '../Cta/Cta';
 import GlobalImage from '../Image/GlobalImage';
 
 import './index.scss';
 
-export default function BlogCta({ title, slug, image }) {
+export default function BlogCta({ title, cta, image }) {
+  const renderCta = () => {
+    if (!isArray(cta)) return null;
+
+    const [firstCta] = cta;
+
+    return (
+      <Cta
+        url={firstCta.link?.content ? firstCta.link?.content?.slug : firstCta.link?.url}
+        label={firstCta.title}
+        isButton
+      />
+    );
+  };
+
   return (
     <div className="blog-cta-container light-red">
       <div className="row">
@@ -16,7 +31,7 @@ export default function BlogCta({ title, slug, image }) {
 
         <div className="col">
           {title && <h4>{title}</h4>}
-          {slug && <Cta url={slug} label="Learn more" isButton />}
+          {renderCta()}
         </div>
       </div>
     </div>
