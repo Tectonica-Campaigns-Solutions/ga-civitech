@@ -22,8 +22,10 @@ function ShareButtons() {
 
   // TODO: Ask Mar about this
   const isSticky = e => {
+    const topHero = document.querySelector('.hero-blog-post').offsetHeight;
+    const topContent = document.querySelector('.post-content').offsetHeight;
     const scrollTop = window.scrollY;
-    if (scrollTop >= 350) {
+    if (scrollTop >= topHero && scrollTop <= topContent) {
       setIsFixed('show');
     } else {
       setIsFixed('');

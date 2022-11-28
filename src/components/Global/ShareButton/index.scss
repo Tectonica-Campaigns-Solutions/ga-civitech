@@ -12,4 +12,8 @@
 
   position: absolute;
   left: 0;
+  &.show{
+    position:fixed;
+    top:200px;
+  }
 }
