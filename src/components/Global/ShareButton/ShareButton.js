@@ -25,6 +25,7 @@ function ShareButtons() {
     const topHero = document.querySelector('.hero-blog-post').offsetHeight;
     const topContent = document.querySelector('.post-content').offsetHeight;
     const scrollTop = window.scrollY;
+
     if (scrollTop >= topHero && scrollTop <= topContent) {
       setIsFixed('show');
     } else {

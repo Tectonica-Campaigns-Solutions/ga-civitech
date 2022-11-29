@@ -10,14 +10,9 @@ export default function BlogCta({ title, cta, image }) {
     if (!isArray(cta)) return null;
 
     const [firstCta] = cta;
+    const url = firstCta.link?.content ? firstCta.link?.content?.slug : firstCta.link?.url;
 
-    return (
-      <Cta
-        url={firstCta.link?.content ? firstCta.link?.content?.slug : firstCta.link?.url}
-        label={firstCta.title}
-        isButton
-      />
-    );
+    return <Cta url={`/${url}`} label={firstCta.title} isButton />;
   };
 
   return (

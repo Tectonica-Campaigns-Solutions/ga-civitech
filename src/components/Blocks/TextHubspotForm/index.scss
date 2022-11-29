@@ -2,7 +2,7 @@
   padding: 140px 0 100px 0;
 
   h2 {
-    font-family: "Laca";
+    font-family: 'Laca';
     font-style: normal;
     font-weight: 700;
     font-size: 61px;
@@ -12,16 +12,31 @@
   }
 
   p {
-    font-family: "Public Sans";
+    font-family: 'Public Sans';
     font-style: normal;
     font-weight: 500;
     font-size: 25px;
     line-height: 130%;
     color: var(--ct-white);
   }
-  &.light-blue{
+
+  ul,
+  ol {
+    list-style: disc;
+  }
+
+  .blue-arrows {
+    display: none;
+    margin-top: 75px;
+  }
+
+  &.light-blue {
     * {
       color: var(--ct-dark-blue);
+    }
+
+    .blue-arrows {
+      display: block;
     }
   }
 }
