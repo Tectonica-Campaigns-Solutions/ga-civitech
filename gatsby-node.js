@@ -27,7 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
                 title
                 slug
                 id
-                topic{
+                topic {
                   id
                   originalId
                 }

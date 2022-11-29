@@ -9,7 +9,7 @@ import LatestPost from '../../Blocks/LatestPost/LatestPost';
 import './index.scss';
 
 export default function PostGrid({ content, tags, relatedProduct, relatedPost }) {
-  const hasRelatedProducts = relatedProduct != null
+  const hasRelatedProducts = relatedProduct != null;
 
   return (
     <>
@@ -31,7 +31,6 @@ export default function PostGrid({ content, tags, relatedProduct, relatedPost })
             {hasRelatedProducts && (
               <div className="col-lg-4 offset-md-1">
                 <RelatedProductGrid relatedProduct={relatedProduct} relatedPost={relatedPost.nodes[0]} />
-                
               </div>
             )}
 

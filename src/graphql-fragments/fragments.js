@@ -258,7 +258,7 @@ export const DatoCMS = graphql`
   fragment PostCard on DatoCmsPost {
     title
     slug
-    model{
+    model {
       apiKey
     }
     summary

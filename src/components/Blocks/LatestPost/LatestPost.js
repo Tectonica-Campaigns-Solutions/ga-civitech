@@ -13,7 +13,7 @@ const LatestPost = ({ block }) => {
     query latestPost {
       allDatoCmsPost(limit: 3) {
         nodes {
-          ... PostCard
+          ...PostCard
         }
       }
     }
@@ -29,9 +29,16 @@ const LatestPost = ({ block }) => {
 
         <div className="row">
           {isArray(latestsPosts) ? (
-            latestsPosts.map(({ image, meta, slug, tags, title }) => (
+            latestsPosts.map(({ image, meta, slug, tags, title, model }) => (
               <div className="col-lg-4 mb-lg-0 mb-5">
-                <BlogPostCard slug={slug} image={image} date={meta.publishedAt} tags={tags} title={title} />
+                <BlogPostCard
+                  slug={slug}
+                  image={image}
+                  date={meta.publishedAt}
+                  tags={tags}
+                  title={title}
+                  model={model}
+                />
               </div>
             ))
           ) : (
