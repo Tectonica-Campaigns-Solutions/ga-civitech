@@ -1,7 +1,8 @@
 import * as React from 'react';
 import RelatedProductCard from './RelatedProductCard';
+import { isArray } from '../../../utils/array.utils';
 
-export default function RelatedProductGrid({ relatedProduct, relatedPost = null }) {
+export default function RelatedProductGrid({ relatedProduct, relatedPost}) {
   return (
     <div className="post-related-product-container">
       {relatedProduct && (
@@ -20,8 +21,8 @@ export default function RelatedProductGrid({ relatedProduct, relatedPost = null 
           preTitle="Feature"
           title={relatedPost.title}
           slug={relatedPost.slug}
-          image={relatedPost.imagePreview}
-          description={relatedPost.descriptionPreview}
+          image={relatedPost.image}
+          description={relatedPost.summary}
           model={relatedPost.model}
         />
       )}

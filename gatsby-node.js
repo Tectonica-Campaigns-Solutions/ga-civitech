@@ -27,6 +27,11 @@ exports.createPages = ({ graphql, actions }) => {
                 title
                 slug
                 id
+                topic{
+                  id
+                  originalId
+                }
+                featured
               }
             }
             products: allDatoCmsProduct {
@@ -66,7 +71,8 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               slug: post.slug,
               id: post.id,
-              topic: post.topic?.id,
+              topic: post.topic.originalId,
+              featured: post.featured,
             },
           });
         }

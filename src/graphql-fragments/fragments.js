@@ -255,4 +255,24 @@ export const DatoCMS = graphql`
       }
     }
   }
+  fragment PostCard on DatoCmsPost {
+    title
+    slug
+    model{
+      apiKey
+    }
+    summary
+    image {
+      gatsbyImageData(width: 387, height: 259)
+      url
+    }
+    tags {
+      ... on DatoCmsTag {
+        name
+      }
+    }
+    meta {
+      publishedAt(formatString: "MMM D YYYY")
+    }
+  }
 `;

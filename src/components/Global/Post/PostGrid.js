@@ -8,8 +8,8 @@ import LatestPost from '../../Blocks/LatestPost/LatestPost';
 
 import './index.scss';
 
-export default function PostGrid({ content, tags, relatedProduct, relatedPost = null }) {
-  const hasRelatedProducts = relatedProduct != null || relatedPost != null;
+export default function PostGrid({ content, tags, relatedProduct, relatedPost }) {
+  const hasRelatedProducts = relatedProduct != null
 
   return (
     <>
@@ -30,7 +30,8 @@ export default function PostGrid({ content, tags, relatedProduct, relatedPost = 
 
             {hasRelatedProducts && (
               <div className="col-lg-4 offset-md-1">
-                <RelatedProductGrid relatedProduct={relatedProduct} relatedPost={relatedPost} />
+                <RelatedProductGrid relatedProduct={relatedProduct} relatedPost={relatedPost.nodes[0]} />
+                
               </div>
             )}
 
@@ -39,7 +40,6 @@ export default function PostGrid({ content, tags, relatedProduct, relatedPost = 
         </div>
       </div>
 
-      {/* TODO: Improve component, remove static query for main component */}
       <LatestPost block={{ backgroundColor: 'light-blue', title: 'Latest from the community' }} />
     </>
   );

@@ -13,20 +13,7 @@ const LatestPost = ({ block }) => {
     query latestPost {
       allDatoCmsPost(limit: 3) {
         nodes {
-          title
-          slug
-          image {
-            gatsbyImageData(width: 387, height: 259)
-            url
-          }
-          tags {
-            ... on DatoCmsTag {
-              name
-            }
-          }
-          meta {
-            publishedAt(formatString: "MMM D YYYY")
-          }
+          ... PostCard
         }
       }
     }

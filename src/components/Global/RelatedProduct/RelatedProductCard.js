@@ -25,6 +25,7 @@ export default function RelatedProductCard({ preTitle, title, slug, image, descr
 
       {description && <p dangerouslySetInnerHTML={{ __html: description }} />}
 
+
       <Cta isButton label="Read more" url={link} />
     </div>
   );

@@ -5,7 +5,7 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import HeroBlogPost from '../components/Hero/HeroBlogPost/HeroBlogPost';
 import PostGrid from '../components/Global/Post/PostGrid';
 
-const Post = ({ data: { post, featuredPost } }) => {
+const Post = ({ data: { post, relatedPost } }) => {
   return (
     <Layout>
       <SeoDatoCms seo={post.seo} />
@@ -19,7 +19,7 @@ const Post = ({ data: { post, featuredPost } }) => {
       />
 
       {/* TODO: Add related post on query */}
-      <PostGrid {...post} relatedProduct={post.relatedProduct} relatedPost={featuredPost} />
+      <PostGrid {...post} relatedProduct={post.relatedProduct} relatedPost={relatedPost} />
     </Layout>
   );
 };
@@ -27,7 +27,7 @@ const Post = ({ data: { post, featuredPost } }) => {
 export default Post;
 
 export const PostQuery = graphql`
-  query PostById($id: String) {
+  query PostById($id: String, $topic: String) {
     post: datoCmsPost(id: { eq: $id }) {
       seo: seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
@@ -109,16 +109,9 @@ export const PostQuery = graphql`
         }
       }
     }
-    featuredPost: datoCmsPost(id: { ne: $id }) {
-      title
-      slug
-      model {
-        apiKey
-      }
-      image {
-        gatsbyImageData(width: 600, height: 400)
-        alt
-        url
+    relatedPost: allDatoCmsPost(limit: 1, filter: {topic: {originalId: {eq: $topic}}, featured: {eq: true}, id: {ne: $id}}) {
+      nodes{
+        ... PostCard
       }
     }
   }
