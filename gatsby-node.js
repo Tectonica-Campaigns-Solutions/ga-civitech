@@ -41,6 +41,12 @@ exports.createPages = ({ graphql, actions }) => {
                 id
               }
             }
+            globalSettings: allDatoCmsGlobalSetting {
+              nodes {
+                codeId
+                value
+              }
+            }
           }
         `
       ).then(result => {
@@ -53,6 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
         const pages = result.data.pages.nodes;
         const posts = result.data.posts.nodes;
         const products = result.data.products.nodes;
+        const globalSettings = result.data.globalSettings.nodes;
 
         for (page of pages) {
           createPage({
@@ -64,6 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         }
+
         for (post of posts) {
           createPage({
             path: `/post/${post.slug}`,
@@ -73,9 +81,11 @@ exports.createPages = ({ graphql, actions }) => {
               id: post.id,
               topic: post.topic.originalId,
               featured: post.featured,
+              globalSettings,
             },
           });
         }
+
         for (product of products) {
           createPage({
             path: `/product/${product.slug}`,

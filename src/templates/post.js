@@ -5,7 +5,12 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import HeroBlogPost from '../components/Hero/HeroBlogPost/HeroBlogPost';
 import PostGrid from '../components/Global/Post/PostGrid';
 
-const Post = ({ data: { post, relatedPost } }) => {
+const Post = ({ pageContext, data: { post, relatedPost } }) => {
+  const { globalSettings } = pageContext;
+
+  let titleLatestPosts = globalSettings.find(setting => setting.codeId === 'text_latest_posts');
+  titleLatestPosts = titleLatestPosts ? titleLatestPosts?.value : 'Latest from the community';
+
   return (
     <Layout>
       <SeoDatoCms seo={post.seo} />
@@ -18,8 +23,12 @@ const Post = ({ data: { post, relatedPost } }) => {
         image={post.image}
       />
 
-      {/* TODO: Add related post on query */}
-      <PostGrid {...post} relatedProduct={post.relatedProduct} relatedPost={relatedPost} />
+      <PostGrid
+        {...post}
+        relatedProduct={post.relatedProduct}
+        relatedPost={relatedPost}
+        titleLatest={titleLatestPosts}
+      />
     </Layout>
   );
 };
@@ -109,9 +118,12 @@ export const PostQuery = graphql`
         }
       }
     }
-    relatedPost: allDatoCmsPost(limit: 1, filter: {topic: {originalId: {eq: $topic}}, featured: {eq: true}, id: {ne: $id}}) {
-      nodes{
-        ... PostCard
+    relatedPost: allDatoCmsPost(
+      limit: 1
+      filter: { topic: { originalId: { eq: $topic } }, featured: { eq: true }, id: { ne: $id } }
+    ) {
+      nodes {
+        ...PostCard
       }
     }
   }

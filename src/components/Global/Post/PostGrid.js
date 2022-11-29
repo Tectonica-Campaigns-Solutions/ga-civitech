@@ -8,7 +8,7 @@ import LatestPost from '../../Blocks/LatestPost/LatestPost';
 
 import './index.scss';
 
-export default function PostGrid({ content, tags, relatedProduct, relatedPost }) {
+export default function PostGrid({ content, tags, relatedProduct, relatedPost, titleLatest }) {
   const hasRelatedProducts = relatedProduct != null;
 
   return (
@@ -39,7 +39,7 @@ export default function PostGrid({ content, tags, relatedProduct, relatedPost })
         </div>
       </div>
 
-      <LatestPost block={{ backgroundColor: 'light-blue', title: 'Latest from the community' }} />
+      <LatestPost block={{ backgroundColor: 'light-blue', title: titleLatest }} />
     </>
   );
 }
