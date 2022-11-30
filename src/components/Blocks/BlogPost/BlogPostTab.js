@@ -13,6 +13,8 @@ function BlogPostTab({ title, items }) {
         {items.map((item, index) => (
           <>
             <div className="col-lg-4" key={index}>
+
+              {/* TODO  add field to blog componente */}
               <BlogPostCard
                 slug={item.slug}
                 model={item.model}
