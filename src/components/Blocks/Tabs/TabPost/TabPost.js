@@ -7,7 +7,7 @@ import { pathToModel } from '../../../../utils';
 import './index.scss';
 
 export default function TabPost({ pretitle = null, item }) {
-  const link = pathToModel(item.model.apiKey, item.slug);
+  const link = pathToModel(item?.model?.apiKey, item.slug);
 
   return (
     <div className="tab-case-study-item">
