@@ -24,17 +24,19 @@ function BlogPostTab({ title, items }) {
             </div>
 
             {shouldRenderCta && index === 5 && (
-              <div className="col-lg-12 blog-post-tab-cta">
-                <div className="row align-items-center">
-                  <div className="col-lg-9">
-                    <h4>
-                      Lorem ipsum dolor sit amet consectetur. Sed egestas dictumst nunc eget feugiat arcu sed sapien.
-                      Lacus ut venenatis tortor amet.
-                    </h4>
-                  </div>
+              <div className="col-lg-12">
+                <div className="blog-post-tab-cta">
+                  <div className="row align-items-center">
+                    <div className="col-lg-9">
+                      <h4>
+                        Lorem ipsum dolor sit amet consectetur. Sed egestas dictumst nunc eget feugiat arcu sed sapien.
+                        Lacus ut venenatis tortor amet.
+                      </h4>
+                    </div>
 
-                  <div className="col-lg-3">
-                    <Cta label="Learn more" url="/" isButton />
+                    <div className="col-lg-3">
+                      <Cta label="Learn more" url="/" isButton />
+                    </div>
                   </div>
                 </div>
               </div>
