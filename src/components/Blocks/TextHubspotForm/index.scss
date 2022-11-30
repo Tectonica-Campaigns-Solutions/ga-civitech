@@ -39,4 +39,44 @@
       display: block;
     }
   }
+
+  .form-content {
+    &.white-box {
+      padding: 50px 69px;
+      background-color: var(--ct-white);
+      border-radius: 5px;
+
+      h3 {
+        font-family: 'Laca';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 39px;
+        line-height: 120%;
+        color: var(--ct-dark-blue);
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-family: 'Public Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        color: var(--ct-dark-blue);
+        margin-bottom: 36px;
+      }
+
+      #hubspotForm {
+        padding: 0 68px;
+      }
+
+      @media screen and (max-width: 768px) {
+        padding: 30px;
+
+        #hubspotForm {
+          padding: 0;
+        }
+      }
+    }
+  }
 }

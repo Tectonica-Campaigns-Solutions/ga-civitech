@@ -8,9 +8,9 @@ function Logos({ block }) {
   return (
     <div className={`logos-block ${block.backgroundColor}`}>
       <div className="container">
-        <h2>{block.title}</h2>
+        {block.title && <h2>{block.title}</h2>}
 
-        <div className="intro" dangerouslySetInnerHTML={{ __html: block.intro }} />
+        {block.intro && <div className="intro" dangerouslySetInnerHTML={{ __html: block.intro }} />}
 
         {block.logos && (
           <div className="row logos-list justify-content-center g-5">

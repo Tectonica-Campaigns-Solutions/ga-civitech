@@ -4,9 +4,7 @@ import blueArrows from '../../Icons/hubspot-arrows.svg';
 import './index.scss';
 
 function TextHubsportForm({ block }) {
-  const formId = block.hubspot.formId;
-  const region = block.hubspot.region;
-  const portalId = block.hubspot.portalId;
+  const { formId, region, portalId } = block.hubspot;
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -37,7 +35,10 @@ function TextHubsportForm({ block }) {
             <img className="blue-arrows" src={blueArrows} />
           </div>
 
-          <div className="col-lg-4 offset-lg-1">
+          <div className={`form-content ${block.whiteBox ? 'col-lg-6 white-box' : 'col-lg-4'} offset-lg-1`}>
+            {block.titleInsideBox && <h3>{block.titleInsideBox}</h3>}
+            {block.descriptionInsideBox && <p>{block.descriptionInsideBox}</p>}
+
             <div id="hubspotForm" />
           </div>
         </div>
