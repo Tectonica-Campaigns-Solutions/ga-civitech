@@ -16,8 +16,17 @@ export default function HeroProduct({ data }) {
   };
 
   return (
-    <div className="hero-single-product">
-      <NarrativeBlock block={productBlockData} />
-    </div>
+    <>
+      {
+        data.textLink && data.linkUrl && (
+          <div style={{marginTop: '70px'}}>
+            <a href={data.linkUrl} target="_blank">{data.textLink}</a>
+          </div>
+        )
+      }
+      <div className="hero-single-product">
+        <NarrativeBlock block={productBlockData} />
+      </div>
+    </>
   );
 }

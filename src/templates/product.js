@@ -27,6 +27,8 @@ export const ProductQuery = graphql`
       title
       backgroundColor
       alignment
+      textLink
+      linkUrl
       logo {
         url
       }
