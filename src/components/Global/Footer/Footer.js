@@ -66,7 +66,9 @@ function Footer() {
                 const isButton = item.isButton;
                 return (
                   <div className="col-md col-sm-12" key={item.id}>
-                    <Link to={item.mainLink} className={isButton ? 'btn btn-primary' : ''}>{item.label}</Link>
+                    <Link to={item.mainLink} className={isButton ? 'btn btn-primary' : ''}>
+                      {item.label}
+                    </Link>
                   </div>
                 );
               })}

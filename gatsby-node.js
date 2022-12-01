@@ -93,6 +93,7 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               slug: product.slug,
               id: product.id,
+              globalSettings,
             },
           });
         }
