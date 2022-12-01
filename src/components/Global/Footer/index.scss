@@ -80,4 +80,25 @@
       margin-bottom: 3em;
     }
   }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+
+    a.btn {
+      color: var(--ct-dark-blue);
+      background-color: var(--ct-white);
+      font-size: 16px;
+      padding: 7px 22px;
+      border: 1px solid var(--ct-white);
+
+      &:hover {
+        color: var(--ct-white);
+        background-color: var(--ct-dark-blue);
+        border: 1px solid var(--ct-white);
+      }
+    }
+  }
 }

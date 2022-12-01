@@ -55,26 +55,28 @@ function Footer() {
 
       <div className="container mt-5">
         <div className="row align-items-center">
+          {/* Logo B Corporation */}
           <div className="col-sm-6 col-lg-2 logo-container">
-            <img src={footer.certified.image.url} alt="" />
+            <img src={footer.certified.image.url} alt="B Corporation" />
           </div>
 
-          <div className="col-sm-6 col-lg-6 mt-md-0">
-            <div className="row">
-              <div className="col">{footer.copyright.value}</div>
-              {footer.menuLegal.navigationItems.map(item => {
-                const isButton = item.isButton;
-                return (
-                  <div className="col-md col-sm-12" key={item.id}>
-                    <Link to={item.mainLink} className={isButton ? 'btn btn-primary' : ''}>
-                      {item.label}
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
+          {/* Links */}
+          <div className="col-sm-6 col-lg-7 mt-md-0 footer-links">
+            <div>{footer.copyright.value}</div>
+
+            {footer.menuLegal.navigationItems.map(item => {
+              const isButton = item.isButton;
+              return (
+                <div key={item.id}>
+                  <Link to={item.mainLink} className={isButton ? 'btn btn-primary' : ''}>
+                    {item.label}
+                  </Link>
+                </div>
+              );
+            })}
           </div>
 
+          {/* Social links */}
           <div className="col-lg col-sm-12 ct-footer-social-icons-container pt-5 pt-lg-0">
             <ul className="justify-content-lg-end justify-content-sm-start">
               {footer.social.navigationItems.map(item => {
