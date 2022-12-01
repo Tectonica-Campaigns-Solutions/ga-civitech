@@ -30,7 +30,7 @@ const FooterGroupLinks = ({ item }) => {
         <ul>
           {item.links.map(link => (
             <li key={link.id}>
-              <Link to={link}>{link.label}</Link>
+              <Link to={link} className={isButton ? 'btn btn-primary' : ''}>{link.label}</Link>
             </li>
           ))}
         </ul>
