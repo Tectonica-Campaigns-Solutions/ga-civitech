@@ -7,8 +7,6 @@ import ImageWrapper from '../../Global/Image/ImageWrapper';
 import './index.scss';
 
 export default function NarrativeBlock({ block }) {
-  console.log('Hero block data ', block);
-
   const hasImages = block.image?.length > 0;
   const hasImageAndCentered = hasImages && block.alignment === 'center';
 
@@ -41,7 +39,7 @@ export default function NarrativeBlock({ block }) {
                 block.alignment === 'right' ? 'offset-lg-1' : ''
               }`}
             >
-              <ImageWrapper image={block.image} />
+              <ImageWrapper image={block.image} objectFit="contain" />
             </div>
           )}
         </div>

@@ -12,5 +12,9 @@ export default function HeroImageRight(data) {
     classNames: 'pb-5',
   };
 
-  return <NarrativeBlock block={heroData} />;
+  return (
+    <div className={`${heroData.backgroundColor} py-5 mb-5`}>
+      <NarrativeBlock block={heroData} />
+    </div>
+  );
 }
