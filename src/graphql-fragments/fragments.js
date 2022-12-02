@@ -252,6 +252,19 @@ export const DatoCMS = graphql`
   fragment BlockBlogPost on DatoCmsBlogPost {
     __typename
     title
+    textCta
+    link {
+      label
+      id
+      ... on DatoCmsGlobalLink{
+        url
+        content{
+          ... on DatoCmsPage{
+            slug
+          }
+        }
+      }
+    }
     tagsToFilter {
       ... on DatoCmsTag {
         name

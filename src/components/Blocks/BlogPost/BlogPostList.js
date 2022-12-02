@@ -73,7 +73,7 @@ function BlogPostList({ block, topics }) {
 
         {isArray(blogListPaginated) && (
           <div className="container">
-            <BlogPostTab title={activeTopic?.name} items={blogListPaginated} />
+            <BlogPostTab title={activeTopic?.name} items={blogListPaginated} textCta={block.textCta} cta={block.link}/>
 
             <Pagination
               pageSize={PAGE_SIZE}
