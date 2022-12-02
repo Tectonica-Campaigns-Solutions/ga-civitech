@@ -7,17 +7,19 @@ import ImageWrapper from '../../Global/Image/ImageWrapper';
 import './index.scss';
 
 export default function NarrativeBlock({ block }) {
+  console.log('Hero block data ', block);
+
   const hasImages = block.image?.length > 0;
   const hasImageAndCentered = hasImages && block.alignment === 'center';
 
   return (
     <div className={`component-narrative-block ${block.backgroundColor} ${block.classNames}`}>
-      <div className="container pt-4 pb-4">
+      <div className="container pb-5">
         <div className={`row ${block.alignment === 'left' ? 'flex-row-reverse' : ''}`}>
           <div
             className={`${hasImageAndCentered || !hasImages ? 'col-lg-12' : 'col-lg-6 mb-5 mb-lg-0'} ${
               block.alignment === 'left' ? 'offset-lg-1' : ''
-            } ${block.alignment === 'center' ? 'text-center' : ''}`}
+            } ${block.alignment === 'center' ? 'center-content' : ''}`}
           >
             {block.logo && (
               <div className="logo">
@@ -25,10 +27,10 @@ export default function NarrativeBlock({ block }) {
               </div>
             )}
 
-            <h3>{block.pretitle}</h3>
-            <h2>{block.title}</h2>
+            {block.pretitle && <h3>{block.pretitle}</h3>}
+            {block.title && <h2>{block.title}</h2>}
 
-            <p dangerouslySetInnerHTML={{ __html: block.textContent }} />
+            {block.textContent && <p dangerouslySetInnerHTML={{ __html: block.textContent }} />}
 
             {isArray(block.ctas) && <CtaList ctas={block.ctas} />}
           </div>
@@ -39,7 +41,7 @@ export default function NarrativeBlock({ block }) {
                 block.alignment === 'right' ? 'offset-lg-1' : ''
               }`}
             >
-              <ImageWrapper image={block.image} objectFit="contain" />
+              <ImageWrapper image={block.image} />
             </div>
           )}
         </div>

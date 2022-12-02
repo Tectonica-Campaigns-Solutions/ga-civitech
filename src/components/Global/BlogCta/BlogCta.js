@@ -1,5 +1,6 @@
 import React from 'react';
 import { isArray } from '../../../utils/array.utils';
+import { getCtaUrl } from '../../../utils/cta.utils';
 import Cta from '../Cta/Cta';
 import GlobalImage from '../Image/GlobalImage';
 
@@ -10,9 +11,8 @@ export default function BlogCta({ title, cta, image }) {
     if (!isArray(cta)) return null;
 
     const [firstCta] = cta;
-    const url = firstCta.link?.content ? firstCta.link?.content?.slug : firstCta.link?.url;
 
-    return <Cta url={`/${url}`} label={firstCta.title} isButton />;
+    return <Cta url={`/${getCtaUrl(firstCta)}`} label={firstCta.title} isButton />;
   };
 
   return (
