@@ -19,7 +19,7 @@ export default function BlogPostCard({ slug, model, image, date, tags, title }) 
       </div>
 
       <div className="meta">
-        <span className="date">{date}</span>
+        {date && <span className="date">{date}</span>}
 
         {isArray(tags) && (
           <div className="tags">
@@ -30,9 +30,11 @@ export default function BlogPostCard({ slug, model, image, date, tags, title }) 
         )}
       </div>
 
-      <Link to={link}>
-        <h3>{title}</h3>
-      </Link>
+      {title && (
+        <Link to={link}>
+          <h3>{title}</h3>
+        </Link>
+      )}
     </div>
   );
 }

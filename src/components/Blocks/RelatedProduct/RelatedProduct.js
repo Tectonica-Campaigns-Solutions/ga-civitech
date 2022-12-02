@@ -5,21 +5,23 @@ import Accordion from '../../Global/Accordion/Accordion';
 import './index.scss';
 
 function RelatedProduct({ block }) {
+  const { title, description, products, alignment } = block;
+
   return (
     <div className="related-products-tab light-blue">
       <div className="container">
         <div className="row">
           <div className="col-lg-7">
-            <h2>{block.title}</h2>
-            <p className="description" dangerouslySetInnerHTML={{ __html: block.description }} />
+            {title && <h2>{title}</h2>}
+            {description && <p className="description" dangerouslySetInnerHTML={{ __html: description }} />}
           </div>
         </div>
 
         <div>
-          {isArray(block.products) && (
+          {isArray(products) && (
             <div className="products">
               <span>Related tools</span>
-              <Accordion content={block.products} alignment={block.alignment} />
+              <Accordion content={products} alignment={alignment} />
             </div>
           )}
         </div>

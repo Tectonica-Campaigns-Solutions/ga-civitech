@@ -7,7 +7,8 @@ import { pathToModel } from '../../../../utils';
 import './index.scss';
 
 export default function TabPost({ pretitle = null, item }) {
-  const link = pathToModel(item?.model?.apiKey, item?.slug);
+  const { title, summary, image, model, slug } = item;
+  const link = pathToModel(model?.apiKey, slug);
 
   return (
     <div className="tab-case-study-item">
@@ -16,21 +17,21 @@ export default function TabPost({ pretitle = null, item }) {
           <div className="col-lg-6">
             {pretitle && <h4>{pretitle}</h4>}
 
-            {item.title && (
+            {title && (
               <Link to={link}>
-                <h2>{item.title}</h2>
+                <h2>{title}</h2>
               </Link>
             )}
 
-            {item.summary && <p dangerouslySetInnerHTML={{ __html: item.summary }} />}
+            {summary && <p dangerouslySetInnerHTML={{ __html: summary }} />}
 
             <Cta label="Read more" url={link} isButton />
           </div>
 
-          {item.image && (
+          {image && (
             <div className="col-lg-5 offset-lg-1">
               <Link to={link}>
-                <GlobalImage image={item.image} />
+                <GlobalImage image={image} />
               </Link>
             </div>
           )}

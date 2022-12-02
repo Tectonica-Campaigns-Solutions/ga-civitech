@@ -7,7 +7,7 @@ import { isArray } from '../../../../utils/array.utils';
 import './index.scss';
 
 function TabGeneric({ item }) {
-  const testimonial = item.testimonial;
+  const { testimonial, title, text, ctas } = item;
 
   return (
     <div className="tab-generic-content">
@@ -25,10 +25,10 @@ function TabGeneric({ item }) {
 
         <div className="col-lg-8 d-flex flex-column tab-information mt-5 mt-lg-0">
           <div className="flex-grow-1 mb-5 mb-lg-0">
-            <h2>{item.title}</h2>
-            <div className="description" dangerouslySetInnerHTML={{ __html: item.text }} />
+            <h2>{title}</h2>
+            <div className="description" dangerouslySetInnerHTML={{ __html: text }} />
 
-            {isArray(item.ctas) && <CtaList ctas={item.ctas} />}
+            {isArray(ctas) && <CtaList ctas={ctas} />}
           </div>
 
           <Toolset toolset={item} />

@@ -7,7 +7,7 @@ function BlogPostTab({ title, items, textCta = null, cta = null }) {
 
   return (
     <>
-      <h2>{title}</h2>
+      {title && <h2>{title}</h2>}
 
       <div className="row gy-5">
         {items.map((item, index) => (
