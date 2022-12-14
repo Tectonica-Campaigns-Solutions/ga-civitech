@@ -12,23 +12,31 @@ function TabGeneric({ item }) {
   return (
     <div className="tab-generic-content">
       <div className="row">
-        <div className="col-lg-4 testimonial">
-          <div className="content-image">
-            <GlobalImage image={testimonial.image} />
-          </div>
+        {testimonial && (
+          <div className="col-lg-4 testimonial">
+            {testimonial?.image && (
+              <div className="content-image">
+                <GlobalImage image={testimonial.image} />
+              </div>
+            )}
 
-          <div className="quote-information">
-            <div className="quote">{testimonial?.quote}</div>
-            <div className="author">{testimonial?.author}</div>
+            <div className="quote-information">
+              <div className="quote">{testimonial?.quote}</div>
+              <div className="author">{testimonial?.author}</div>
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="col-lg-8 d-flex flex-column tab-information mt-5 mt-lg-0">
           <div className="flex-grow-1 mb-5 mb-lg-0">
             <h2>{title}</h2>
             <div className="description" dangerouslySetInnerHTML={{ __html: text }} />
 
-            {isArray(ctas) && <CtaList ctas={ctas} />}
+            {isArray(ctas) && (
+              <div className="mb-5">
+                <CtaList ctas={ctas} />
+              </div>
+            )}
           </div>
 
           <Toolset toolset={item} />
