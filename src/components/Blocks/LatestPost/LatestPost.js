@@ -19,11 +19,13 @@ const LatestPost = ({ block }) => {
     }
   `);
 
+  const { title, backgroundColor } = block;
+
   return (
-    <div className={`latest-posts-container ${block.backgroundColor}`}>
+    <div className={`latest-posts-container ${backgroundColor}`}>
       <div className={`container`}>
         <div className="title-section">
-          <h2>{block.title}</h2>
+          {title && <h2>{title}</h2>}
           <Cta url="/blog" label={'Read all'} isButton />
         </div>
 

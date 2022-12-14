@@ -11,8 +11,8 @@ export default function HeroImageBottom({ heroTitle, description, image, ctas })
     <div className="hero-image-bottom-container">
       <div className="container">
         <div className="row justify-content-center">
-          <h2>{heroTitle}</h2>
-          <div className="description" dangerouslySetInnerHTML={{ __html: description }} />
+          {heroTitle && <h2>{heroTitle}</h2>}
+          {description && <div className="description" dangerouslySetInnerHTML={{ __html: description }} />}
 
           {isArray(ctas) && <CtaList ctas={ctas} />}
 

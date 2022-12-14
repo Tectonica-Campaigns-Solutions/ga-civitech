@@ -44,4 +44,29 @@
     color: var(--ct-dark-blue);
     margin-bottom: 35px;
   }
+
+  .center-content {
+    text-align: center;
+
+    & > p {
+      max-width: 60%;
+      margin: auto;
+
+      @media screen and (max-width: 1199px) {
+        max-width: 80%;
+      }
+
+      @media screen and (max-width: 991px) {
+        max-width: 100%;
+      }
+    }
+
+    p {
+      color: var(--ct-gray-dark);
+    }
+
+    @media screen and (max-width: 767px) {
+      text-align: left;
+    }
+  }
 }

@@ -256,10 +256,10 @@ export const DatoCMS = graphql`
     link {
       label
       id
-      ... on DatoCmsGlobalLink{
+      ... on DatoCmsGlobalLink {
         url
-        content{
-          ... on DatoCmsPage{
+        content {
+          ... on DatoCmsPage {
             slug
           }
         }

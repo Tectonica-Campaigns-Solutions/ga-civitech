@@ -11,11 +11,13 @@ export default function RelatedProductCard({ preTitle, title, slug, image, descr
 
   return (
     <div className="related-product-card">
-      <h3>{preTitle}</h3>
+      {preTitle && <h3>{preTitle}</h3>}
 
-      <Link to={link}>
-        <h2>{title}</h2>
-      </Link>
+      {title && (
+        <Link to={link}>
+          <h2>{title}</h2>
+        </Link>
+      )}
 
       {image && (
         <Link className="image" to={link}>
@@ -24,7 +26,6 @@ export default function RelatedProductCard({ preTitle, title, slug, image, descr
       )}
 
       {description && <p dangerouslySetInnerHTML={{ __html: description }} />}
-
 
       <Cta isButton label="Read more" url={link} />
     </div>

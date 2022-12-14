@@ -2,14 +2,10 @@
   min-height: 100vh;
   background-color: rgba(112, 212, 252, 0.2);
 
-  h1 {
-    font-family: 'Laca';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 61px;
-    line-height: 100%;
-    color: var(--ct-dark-blue);
-    margin-bottom: 31px;
+  .component-narrative-block {
+    h2 {
+      font-size: 61px;
+    }
   }
 
   span {

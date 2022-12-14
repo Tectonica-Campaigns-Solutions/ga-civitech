@@ -69,7 +69,7 @@ export const PostQuery = graphql`
           ... on DatoCmsImage {
             id: originalId
             image {
-              gatsbyImageData
+              gatsbyImageData(width: 645, height: 375)
               title
               url
             }

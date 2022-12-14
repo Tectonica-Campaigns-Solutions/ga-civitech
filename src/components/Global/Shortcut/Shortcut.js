@@ -11,8 +11,9 @@ export default function Shortcut({ title, description, btnLabel, btnUrl }) {
   return (
     <div className="shortcut">
       <div className="information">
-        <h4>{title}</h4>
+        {title && <h4>{title}</h4>}
         {description && <p dangerouslySetInnerHTML={{ __html: description }} />}
+
         <Link to={btnUrl}>{btnLabel} ›</Link>
       </div>
 

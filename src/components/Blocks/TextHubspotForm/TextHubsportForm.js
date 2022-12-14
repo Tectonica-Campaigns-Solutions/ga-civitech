@@ -4,6 +4,7 @@ import blueArrows from '../../Icons/hubspot-arrows.svg';
 import './index.scss';
 
 function TextHubsportForm({ block }) {
+  const { backgroundColor, text, title, whiteBox, titleInsideBox, descriptionInsideBox } = block;
   const { formId, region, portalId } = block.hubspot;
 
   useEffect(() => {
@@ -25,19 +26,19 @@ function TextHubsportForm({ block }) {
   }, [formId, region, portalId]);
 
   return (
-    <div className={`text-hubspot-form ${block.backgroundColor}`}>
+    <div className={`text-hubspot-form ${backgroundColor}`}>
       <div className="container">
         <div className="row gy-3">
           <div className="col-lg-5">
-            <h2>{block.title}</h2>
-            <p dangerouslySetInnerHTML={{ __html: block.text }} />
+            {title && <h2>{title}</h2>}
+            {text && <p dangerouslySetInnerHTML={{ __html: text }} />}
 
             <img className="blue-arrows" src={blueArrows} />
           </div>
 
-          <div className={`form-content ${block.whiteBox ? 'col-lg-6 white-box' : 'col-lg-4'} offset-lg-1`}>
-            {block.titleInsideBox && <h3>{block.titleInsideBox}</h3>}
-            {block.descriptionInsideBox && <p>{block.descriptionInsideBox}</p>}
+          <div className={`form-content ${whiteBox ? 'col-lg-6 white-box' : 'col-lg-4'} offset-lg-1`}>
+            {titleInsideBox && <h3>{titleInsideBox}</h3>}
+            {descriptionInsideBox && <p>{descriptionInsideBox}</p>}
 
             <div id="hubspotForm" />
           </div>

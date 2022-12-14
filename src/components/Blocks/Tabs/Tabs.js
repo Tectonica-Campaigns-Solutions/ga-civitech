@@ -6,7 +6,7 @@ import { isArray } from '../../../utils/array.utils';
 import './index.scss';
 
 function Tabs({ block }) {
-  const items = block.items;
+  const { items, backgroundColor } = block;
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTab = val => {
@@ -14,7 +14,7 @@ function Tabs({ block }) {
   };
 
   return (
-    <div className={`tabs ${block.backgroundColor}`}>
+    <div className={`tabs ${backgroundColor}`}>
       <div className="container">
         {isArray(items) && <TabTitles items={items} classes="col-lg-4" activeTab={activeTab} handleTab={handleTab} />}
         {isArray(items) && items.map((item, index) => (index === activeTab ? <TabSelector item={item} /> : ''))}

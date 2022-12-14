@@ -1,20 +1,23 @@
 import React from 'react';
 import CtaList from '../../Global/Cta/CtaList';
 import ImageWrapper from '../../Global/Image/ImageWrapper';
+import { isArray } from '../../../utils/array.utils';
 
 import './index.scss';
 
 function Logos({ block }) {
+  const { title, intro, logos, ctas, backgroundColor } = block;
+
   return (
-    <div className={`logos-block ${block.backgroundColor}`}>
+    <div className={`logos-block ${backgroundColor}`}>
       <div className="container">
-        {block.title && <h2>{block.title}</h2>}
+        {title && <h2>{title}</h2>}
 
-        {block.intro && <div className="intro" dangerouslySetInnerHTML={{ __html: block.intro }} />}
+        {intro && <div className="intro" dangerouslySetInnerHTML={{ __html: intro }} />}
 
-        {block.logos && (
+        {isArray(logos) && (
           <div className="row logos-list justify-content-center g-5">
-            {block.logos.map(logo => (
+            {logos.map(logo => (
               <div className="col-lg-2 col-md-3 col-6">
                 <a href={logo.url} target="_blank">
                   <ImageWrapper image={logo.icon} />
@@ -24,9 +27,9 @@ function Logos({ block }) {
           </div>
         )}
 
-        {block.ctas && (
+        {isArray(ctas) && (
           <div className="logos-ctas">
-            <CtaList ctas={block.ctas} />
+            <CtaList ctas={ctas} />
           </div>
         )}
       </div>

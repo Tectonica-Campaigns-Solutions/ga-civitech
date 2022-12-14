@@ -1,21 +1,24 @@
 import React from 'react';
 import ToolsetCta from './ToolsetCta';
+import { isArray } from '../../../utils/array.utils';
 
 import './index.scss';
 
 function Toolset({ toolset }) {
+  const { intro, headline, description, links } = toolset;
+
   return (
-    toolset.intro &&
-    toolset.headline && (
+    intro &&
+    headline && (
       <div className="related-toolset">
-        <h4>{toolset.intro}</h4>
-        <h3>{toolset.headline}</h3>
+        {intro && <h4>{intro}</h4>}
+        {headline && <h3>{headline}</h3>}
 
-        <div className="toolset-description" dangerouslySetInnerHTML={{ __html: toolset.description }} />
+        {description && <div className="toolset-description" dangerouslySetInnerHTML={{ __html: description }} />}
 
-        {toolset.links && toolset.links.length && (
+        {isArray(links) && (
           <div className="links-ctas">
-            {toolset.links.map(link => (
+            {links.map(link => (
               <ToolsetCta cta={link} />
             ))}
           </div>

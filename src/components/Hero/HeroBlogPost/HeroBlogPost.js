@@ -9,18 +9,16 @@ export default function HeroBlogPost({ title, summary, createdAt, topic, image }
     <div className="hero-blog-post">
       <div className="container">
         <div className="row">
-          <div className="col-lg-6">
-            <ImageWrapper image={image} />
-          </div>
+          <div className="col-lg-6">{image && <ImageWrapper image={image} />}</div>
 
           <div className="col-lg-6 content">
             <div className="info">
-              <span className="date">{createdAt}</span>
+              {createdAt && <span className="date">{createdAt}</span>}
               {topic ? <Tag title={topic.name} /> : null}
             </div>
 
-            <h2>{title}</h2>
-            <p>{summary}</p>
+            {title && <h2>{title}</h2>}
+            {summary && <p>{summary}</p>}
           </div>
         </div>
       </div>
