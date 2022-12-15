@@ -15,7 +15,7 @@ export default function NarrativeBlock({ block }) {
   return (
     <div className={`component-narrative-block ${backgroundColor} ${classNames}`}>
       <div className="container pb-5">
-        <div className={`row ${alignment === 'left' ? 'flex-row-reverse' : ''}`}>
+        <div className={`row align-items-center ${alignment === 'left' ? 'flex-row-reverse' : ''}`}>
           <div
             className={`${hasImageAndCentered || !hasImages ? 'col-lg-12' : 'col-lg-6 mb-5 mb-lg-0'} ${
               alignment === 'left' ? 'offset-lg-1' : ''

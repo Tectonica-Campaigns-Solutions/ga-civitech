@@ -1,9 +1,16 @@
 .navbar {
   top: 0;
+  min-height: 89px;
   width: 100%;
   z-index: 999;
-  background: #fff;
-  padding: 10px 2.5rem;
+  background: var(--ct-white);
+  padding: 31.5px 41px 32.5px 41px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+
+  .nav-item .btn-primary {
+    border-radius: 25px;
+    padding: 9px 22px;
+  }
 
   .show {
     .search-icon {
@@ -63,21 +70,22 @@
 
     background: transparent;
     position: absolute;
+
     #navNav ul li.nav-item {
       .dropdown-button {
         color: #fff;
       }
+
       a.nav-link {
         color: #fff;
+
         &.btn {
           background-color: transparent;
           color: #fff;
           border: 2px solid #fff;
-          // &:hover {
-          //     color: var(--psa-magenta);
-          // }
         }
       }
+
       a.dropdown-button {
         color: #fff;
       }
@@ -86,8 +94,7 @@
 
   .collapse {
     @media (max-width: 991px) {
-      background-color: var(--psa-navy);
-
+      background-color: var(--ct-white);
       li.nav-item {
         a.dropdown-button,
         a.nav-link {
@@ -130,15 +137,18 @@
     #navNav ul li.nav-item {
       a.nav-link {
         color: var(--psa-navy);
+
         &.btn {
           background-color: var(--psa-magenta);
           border-color: var(--psa-magenta);
         }
       }
+
       a.dropdown-button {
         color: var(--psa-navy);
       }
     }
+
     li > svg > path {
       fill: var(--psa-navy);
     }
@@ -146,10 +156,12 @@
 
   #navNav {
     justify-content: flex-end;
+
     ul {
       align-items: center;
+
       li.nav-item {
-        margin-right: 2.5rem;
+        margin-right: 50px;
 
         a {
           font-family: 'Public Sans';
@@ -170,21 +182,26 @@
           line-height: 22px;
           text-transform: uppercase;
           color: var(--psa-navy);
+
           &.btn {
             background-color: var(--psa-magenta);
             color: #fff;
+
             &:hover {
               background-color: #cf3339;
             }
           }
+
           &:hover {
             text-decoration: none;
           }
+
           &.current {
             color: var(--psa-magenta) !important;
           }
         }
       }
+
       [aria-current]:not([aria-current='false']) {
         color: var(--psa-magenta) !important;
       }

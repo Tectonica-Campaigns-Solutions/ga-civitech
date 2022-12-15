@@ -14,7 +14,7 @@ import Footer from './Global/Footer/Footer';
 
 import '../styles/main.scss';
 
-const Layout = ({ children }) => {
+const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <TopMessage />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header location={location} />
       <main>{children}</main>
       <Footer />
     </>

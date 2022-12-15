@@ -1,10 +1,9 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import Nav from './Global/Nav/Nav';
 import { useStaticQuery } from 'gatsby';
 import { graphql } from 'gatsby';
 
-const Header = ({ siteTitle }) => {
+const Header = ({ location }) => {
   const mainMenu = useStaticQuery(graphql`
     query {
       datoCmsNavigation(codeId: { eq: "main_menu" }) {
@@ -12,19 +11,12 @@ const Header = ({ siteTitle }) => {
       }
     }
   `);
+
   return (
     <header>
-      <Nav navData={mainMenu} />
+      <Nav navData={mainMenu} path={location?.pathname} />
     </header>
   );
-};
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
 };
 
 export default Header;
