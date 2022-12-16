@@ -331,7 +331,8 @@ span.navbar-toggler-icon {
 .top-message-container {
   + header {
     nav {
-      top: 50px;
+      position: absolute;
+      top: 44px;
     }
   }
 }
