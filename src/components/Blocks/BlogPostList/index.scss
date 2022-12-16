@@ -51,3 +51,10 @@
     }
   }
 }
+
+// Check how to fix this in a better way
+.top-message-container + header + main {
+  .blog-post-list {
+    margin-top: 56px;
+  }
+}

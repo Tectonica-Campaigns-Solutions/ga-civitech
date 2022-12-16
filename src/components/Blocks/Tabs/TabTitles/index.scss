@@ -9,13 +9,13 @@
 
   > div {
     cursor: pointer;
-    color: #eeeef1;
+    color: #b7b7c9;
     padding-bottom: 10px;
     border-bottom: 1px solid #eeeef1;
   }
 
   & .active {
     color: var(--ct-blue);
-    border-bottom: 1px solid var(--ct-blue);
+    border-bottom: 2px solid var(--ct-blue);
   }
 }

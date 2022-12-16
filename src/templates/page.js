@@ -5,9 +5,9 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
 import HeroSelector from '../components/Hero/HeroSelector';
 
-const Page = ({ data: { page } }) => {
+const Page = ({ location, data: { page } }) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <SeoDatoCms seo={page.seo} />
       <HeroSelector page={page} />
       <Blocks blocks={page.blocks}></Blocks>

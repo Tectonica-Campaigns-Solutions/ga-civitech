@@ -71,9 +71,9 @@ function BlogPostList({ block, topics }) {
           <TabTitles items={topics} classes="col-lg-3" activeTab={activeTab} handleTab={val => setActiveTab(val)} />
         )}
 
-        {isArray(blogListPaginated) && (
+        {isArray(blogListPaginated) ? (
           <div className="container">
-            <BlogPostTab title={activeTopic?.name} items={blogListPaginated} textCta={block.textCta} cta={block.link}/>
+            <BlogPostTab title={activeTopic?.name} items={blogListPaginated} textCta={block.textCta} cta={block.link} />
 
             <Pagination
               pageSize={PAGE_SIZE}
@@ -82,6 +82,8 @@ function BlogPostList({ block, topics }) {
               onPageChange={page => setCurrentPage(page)}
             />
           </div>
+        ) : (
+          <p className="mt-5">No post found. Try again later.</p>
         )}
       </div>
     </div>

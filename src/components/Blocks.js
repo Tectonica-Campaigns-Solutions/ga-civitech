@@ -7,7 +7,7 @@ import Logos from './Blocks/Logos/Logos';
 import LatestPost from './Blocks/LatestPost/LatestPost';
 import ListMembers from './Blocks/ListMembers/ListMembers';
 import RelatedProduct from './Blocks/RelatedProduct/RelatedProduct';
-import BlogPostList from './Blocks/BlogPost/BlogPostList';
+import BlogPostList from './Blocks/BlogPostList/BlogPostList';
 
 export default function Blocks({ blocks }) {
   return (

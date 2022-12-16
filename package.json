@@ -24,6 +24,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@datocms/cli": "^1.0.21",
     "prettier": "^2.7.1"
   },
   "keywords": [

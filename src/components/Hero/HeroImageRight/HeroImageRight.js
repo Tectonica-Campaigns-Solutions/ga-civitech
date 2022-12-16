@@ -1,5 +1,7 @@
 import * as React from 'react';
-import NarrativeBlock from '../Blocks/NarrativeBlock/NarrativeBlock';
+import NarrativeBlock from '../../Blocks/NarrativeBlock/NarrativeBlock';
+
+import './index.scss';
 
 export default function HeroImageRight(data) {
   const heroData = {
@@ -13,7 +15,7 @@ export default function HeroImageRight(data) {
   };
 
   return (
-    <div className={`${heroData.backgroundColor} py-5 mb-5`}>
+    <div className={`hero-image-right ${heroData.backgroundColor} py-5 mb-5`}>
       <NarrativeBlock block={heroData} />
     </div>
   );

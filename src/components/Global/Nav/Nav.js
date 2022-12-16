@@ -79,13 +79,9 @@ export default function Nav({ navData, path }) {
 
   return (
     <nav
-      className={`
-        navbar navbar-expand-lg
-        ===PATH IS==>${path}
-        ${isHome ? 'home-nav' : ''} 
-        ${expanded && 'expanded'} 
-        ${scrollPosition > 75 && isHome ? 'sticky-nav' : ''}
-      `}
+      className={`navbar navbar-expand-lg ${isHome ? 'home-nav' : ''} ${expanded && 'expanded'} ${
+        scrollPosition > 75 ? 'sticky-nav' : ''
+      }`}
     >
       <Link className="navbar-brand" to={'/'}>
         <img src={logo} />

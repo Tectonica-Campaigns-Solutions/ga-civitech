@@ -9,7 +9,7 @@ const FooterGroupLinks = ({ item }) => {
   return (
     <div
       className={`col-md col-sm-6 mb-4 mb-md-0 ct-footer-links ${
-        isButton ? 'd-flex justify-content-lg-end justify-content-sm-start align-items-start' : ''
+        isButton ? 'is-button d-flex justify-content-lg-end justify-content-sm-start align-items-start' : ''
       }`}
       key={item.id}
     >

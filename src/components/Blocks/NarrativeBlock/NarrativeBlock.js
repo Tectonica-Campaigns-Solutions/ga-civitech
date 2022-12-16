@@ -7,7 +7,18 @@ import ImageWrapper from '../../Global/Image/ImageWrapper';
 import './index.scss';
 
 export default function NarrativeBlock({ block }) {
-  const { backgroundColor, classNames, alignment, logo, pretitle, title, textContent, ctas, image } = block;
+  const {
+    backgroundColor,
+    verticalCtas = false,
+    classNames,
+    alignment,
+    logo,
+    pretitle,
+    title,
+    textContent,
+    ctas,
+    image,
+  } = block;
 
   const hasImages = image?.length > 0;
   const hasImageAndCentered = hasImages && alignment === 'center';
@@ -15,7 +26,7 @@ export default function NarrativeBlock({ block }) {
   return (
     <div className={`component-narrative-block ${backgroundColor} ${classNames}`}>
       <div className="container pb-5">
-        <div className={`row ${alignment === 'left' ? 'flex-row-reverse' : ''}`}>
+        <div className={`row align-items-center ${alignment === 'left' ? 'flex-row-reverse' : ''}`}>
           <div
             className={`${hasImageAndCentered || !hasImages ? 'col-lg-12' : 'col-lg-6 mb-5 mb-lg-0'} ${
               alignment === 'left' ? 'offset-lg-1' : ''
@@ -30,9 +41,13 @@ export default function NarrativeBlock({ block }) {
             {pretitle && <h3>{pretitle}</h3>}
             {title && <h2>{title}</h2>}
 
-            {textContent && <p dangerouslySetInnerHTML={{ __html: textContent }} />}
+            {textContent && <div className="text-content" dangerouslySetInnerHTML={{ __html: textContent }} />}
 
-            {isArray(ctas) && <CtaList ctas={ctas} />}
+            {isArray(ctas) && (
+              <div className={`${verticalCtas ? 'vertical-ctas' : ''}`}>
+                <CtaList ctas={ctas} />
+              </div>
+            )}
           </div>
 
           {isArray(image) && (

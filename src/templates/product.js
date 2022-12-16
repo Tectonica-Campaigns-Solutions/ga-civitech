@@ -5,12 +5,12 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
 import HeroProduct from '../components/Hero/HeroProduct/HeroProduct';
 
-const Product = ({ pageContext, data: { page } }) => {
+const Product = ({ location, pageContext, data: { page } }) => {
   const { globalSettings } = pageContext;
   let loginTitle = globalSettings.find(setting => setting.codeId === 'text_login_tool');
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SeoDatoCms seo={page.seo} />
       <HeroProduct data={page} loginTitle={loginTitle.value} />
       <Blocks blocks={page.blocks}></Blocks>

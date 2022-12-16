@@ -101,4 +101,16 @@
       }
     }
   }
+
+  .is-button {
+    a.btn {
+      border: 2px solid var(--ct-blue);
+
+      &:hover {
+        color: var(--ct-white);
+        background-color: var(--ct-dark-blue);
+        border: 2px solid var(--ct-white);
+      }
+    }
+  }
 }

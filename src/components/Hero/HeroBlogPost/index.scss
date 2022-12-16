@@ -1,7 +1,7 @@
 .hero-blog-post {
   display: flex;
   align-items: center;
-  padding-top: 50px;
+  // padding-top: 90px;
   min-height: 620px;
   background-color: rgba(112, 212, 252, 0.2);
 
@@ -64,5 +64,12 @@
     .content {
       margin-top: 2rem;
     }
+  }
+}
+
+// Check how to fix this in a better way
+.top-message-container + header + main {
+  .hero-blog-post {
+    padding-top: 120px;
   }
 }
