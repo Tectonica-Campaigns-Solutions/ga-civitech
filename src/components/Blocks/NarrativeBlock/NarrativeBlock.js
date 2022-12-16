@@ -7,7 +7,18 @@ import ImageWrapper from '../../Global/Image/ImageWrapper';
 import './index.scss';
 
 export default function NarrativeBlock({ block }) {
-  const { backgroundColor, classNames, alignment, logo, pretitle, title, textContent, ctas, image } = block;
+  const {
+    backgroundColor,
+    verticalCtas = false,
+    classNames,
+    alignment,
+    logo,
+    pretitle,
+    title,
+    textContent,
+    ctas,
+    image,
+  } = block;
 
   const hasImages = image?.length > 0;
   const hasImageAndCentered = hasImages && alignment === 'center';
@@ -30,9 +41,13 @@ export default function NarrativeBlock({ block }) {
             {pretitle && <h3>{pretitle}</h3>}
             {title && <h2>{title}</h2>}
 
-            {textContent && <p dangerouslySetInnerHTML={{ __html: textContent }} />}
+            {textContent && <div className="text-content" dangerouslySetInnerHTML={{ __html: textContent }} />}
 
-            {isArray(ctas) && <CtaList ctas={ctas} />}
+            {isArray(ctas) && (
+              <div className={`${verticalCtas ? 'vertical-ctas' : ''}`}>
+                <CtaList ctas={ctas} />
+              </div>
+            )}
           </div>
 
           {isArray(image) && (

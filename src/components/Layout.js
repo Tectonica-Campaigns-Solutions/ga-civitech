@@ -27,7 +27,7 @@ const Layout = ({ location, children }) => {
 
   return (
     <>
-      <TopMessage />
+      {/* <TopMessage /> */}
       <Header location={location} />
       <main>{children}</main>
       <Footer />

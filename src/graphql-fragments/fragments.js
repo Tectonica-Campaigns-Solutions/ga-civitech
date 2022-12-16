@@ -9,6 +9,7 @@ export const DatoCMS = graphql`
     alignment
     textContent
     backgroundColor
+    verticalCtas
     image {
       gatsbyImageData(width: 500, height: 500)
       alt

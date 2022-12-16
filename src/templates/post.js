@@ -5,14 +5,14 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import HeroBlogPost from '../components/Hero/HeroBlogPost/HeroBlogPost';
 import PostGrid from '../components/Global/Post/PostGrid';
 
-const Post = ({ pageContext, data: { post, relatedPost } }) => {
+const Post = ({ location, pageContext, data: { post, relatedPost } }) => {
   const { globalSettings } = pageContext;
 
   let titleLatestPosts = globalSettings.find(setting => setting.codeId === 'text_latest_posts');
   titleLatestPosts = titleLatestPosts ? titleLatestPosts?.value : 'Latest from the community';
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SeoDatoCms seo={post.seo} />
 
       <HeroBlogPost
