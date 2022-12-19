@@ -1,6 +1,20 @@
 .hero-image-center {
   padding: 100px 0 73px 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  .arrow-effect {
+    height: 300px;
+    width: 513px;
+    position: absolute;
+    top: -2%;
+    right: -6%;
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
 
   .content {
     display: flex;
