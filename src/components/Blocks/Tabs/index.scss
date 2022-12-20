@@ -6,8 +6,8 @@
   &.light-yellow {
     .titles {
       > div:not(.active) {
-        color: var(--ct-gray-dark);
-        border-color: var(--ct-gray-dark);
+        color: var(--ct-dark-gray);
+        border-color: var(--ct-dark-gray);
       }
     }
   }

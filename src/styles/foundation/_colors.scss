@@ -1,33 +1,51 @@
 :root {
+  // Bright colors
+  --ct-red: #ff3a45;
+  --ct-medium-red: #fcb7bb;
   --ct-yellow: #ffaa2d;
-  --ct-dark-blue: #003366;
+  --ct-medium-yellow: #fdcf87;
   --ct-blue: #0066ff;
-  --ct-white: #ffffff;
-  --ct-black: #000000;
   --ct-light-blue: #70d4fc;
-  --ct-light-gray: #f8f9fb;
-  --ct-gray-dark: #686987;
-  --ct-gray: #848383;
-  --ct-light-yellow: #fbf5e0;
-  --ct-light-red: #fbecee;
+  --ct-dark-blue: #003366;
+
+  --ct-gray: #848383; // Remove? color used for image caption
+  --ct-dark-gray: #686987;
+
+  --ct-pearl: #eeeef1;
+  --ct-black: #000000;
+  --ct-alternative-black: #001325; // Color used on footer
+  --ct-white: #ffffff;
+
+  // Pale colors (For backgrounds)
+  --ct-pale-blue: #e4f5fd;
+  --ct-pale-yellow: #fbf5e0;
+  --ct-pale-red: #fbeef0;
+  --ct-pale-gray: #fbfbfd; // Background color for the most of the pages
+  --ct-pale-light-gray: #f8f9fb;
+
+  // Forms colors
+  --ct-form-floating-level: #a2a2b8;
+  --ct-form-red-value: #a0353b;
+  --ct-form-error: #ffe8e9;
 }
 
-.blue {
-  background-color: var(--ct-light-blue);
-}
+// TODO: Check if we can remove this class
+// .blue {
+//   background-color: var(--ct-light-blue);
+// }
 
 .dark-blue {
   background-color: var(--ct-dark-blue);
 }
 
 .light-blue {
-  background-color: #e4f5fd;
+  background-color: var(--ct-pale-blue);
 }
 
 .light-red {
-  background-color: var(--ct-light-red);
+  background-color: var(--ct-pale-red);
 }
 
 .light-yellow {
-  background-color: var(--ct-light-yellow);
+  background-color: var(--ct-pale-yellow);
 }
