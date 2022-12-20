@@ -60,6 +60,7 @@ export const DatoCMS = graphql`
     whiteBox
     titleInsideBox
     descriptionInsideBox
+    visual
     hubspot {
       ... on DatoCmsHubspot {
         formId

@@ -4,9 +4,9 @@ import blueArrows from '../../Icons/hubspot-arrows.svg';
 import './index.scss';
 
 function TextHubsportForm({ block }) {
-  const { backgroundColor, text, title, whiteBox, titleInsideBox, descriptionInsideBox } = block;
+  const { backgroundColor, text, title, whiteBox, titleInsideBox, descriptionInsideBox, visual } = block;
   const { formId, region, portalId } = block.hubspot;
-
+  console.log(visual)
   useEffect(() => {
     const script = document.createElement('script');
     script.id = 'hubspot-contact-form';
@@ -19,31 +19,63 @@ function TextHubsportForm({ block }) {
           region: region,
           portalId: portalId,
           formId: formId,
-          target: '#hubspotForm',
+          target: `#hubspotForm-${block.id}`,
         });
       }
     });
   }, [formId, region, portalId]);
 
   return (
-    <div className={`text-hubspot-form ${backgroundColor}`}>
-      <div className="container">
-        <div className="row gy-3">
-          <div className="col-lg-5">
-            {title && <h2>{title}</h2>}
-            {text && <p dangerouslySetInnerHTML={{ __html: text }} />}
-
-            <img className="blue-arrows" src={blueArrows} />
+    <div className={`text-hubspot-form ${backgroundColor} ${visual}`}>
+     {
+      visual == 'small' && 
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              {title && <h3>{title}</h3>}
+            </div>
+            <div className="col">
+              <div id={`hubspotForm-${block.id}`} />
+            </div>
           </div>
+        </div> 
+     }
+     {
+      visual == 'two_columns' &&
+        <div className="container">
+          <div className="row gy-3">
+            <div className="col-lg-5">
+              {title && <h2>{title}</h2>}
+              {text && <p dangerouslySetInnerHTML={{ __html: text }} />}
 
-          <div className={`form-content ${whiteBox ? 'col-lg-6 white-box' : 'col-lg-4'} offset-lg-1`}>
-            {titleInsideBox && <h3>{titleInsideBox}</h3>}
-            {descriptionInsideBox && <p>{descriptionInsideBox}</p>}
+              <img className="blue-arrows" src={blueArrows} />
+            </div>
 
-            <div id="hubspotForm" />
+            <div className={`form-content ${whiteBox ? 'col-lg-6 white-box' : 'col-lg-4'} offset-lg-1`}>
+              {titleInsideBox && <h3>{titleInsideBox}</h3>}
+              {descriptionInsideBox && <p>{descriptionInsideBox}</p>}
+
+              <div id={`hubspotForm-${block.id}`} />
+            </div>
           </div>
         </div>
-      </div>
+     }
+
+    {
+      visual == 'one_column' &&
+        <div className="container">
+          <div className="row align-items-center flex-column">
+            <div className="col-lg-6">
+              {title && <h2>{title}</h2>}
+              {text && <p dangerouslySetInnerHTML={{ __html: text }} />}
+            </div>
+            <div className="col-lg-6">
+              <div id={`hubspotForm-${block.id}`} />
+            </div>
+          </div>
+        </div>
+     }
+     
     </div>
   );
 }
