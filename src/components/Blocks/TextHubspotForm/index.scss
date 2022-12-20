@@ -79,13 +79,28 @@
       }
     }
   }
-  &.small{
-    padding:50px 0;
-    h3{
-      color:#fff;
+
+  &.small {
+    position: relative;
+    padding: 0;
+
+    h3 {
+      font-family: 'Laca';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 31px;
+      line-height: 120%;
+      color: var(--ct-white);
+    }
+
+    .arrows {
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
   }
-  &.one_column{
-    padding:50px 0;
+
+  &.one_column {
+    padding: 50px 0;
   }
 }
