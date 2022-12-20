@@ -13,6 +13,7 @@ export default function NarrativeBlock({ block }) {
     classNames,
     alignment,
     logo,
+    sectionTitle,
     pretitle,
     title,
     textContent,
@@ -27,6 +28,9 @@ export default function NarrativeBlock({ block }) {
   return (
     <div className={`component-narrative-block ${backgroundColor} ${classNames}`}>
       <div className="container pb-5">
+        {
+          sectionTitle && <div className="row"><div className="col pb-3"><h2>{ sectionTitle }</h2></div></div>
+        }
         <div className={`row align-items-center ${alignment === 'left' ? 'flex-row-reverse' : ''}`}>
           <div
             className={`${hasImageAndCentered || !hasImages ? 'col-lg-12' : 'col-lg-6 mb-5 mb-lg-0'} ${

@@ -10,6 +10,7 @@ export const DatoCMS = graphql`
     textContent
     backgroundColor
     verticalCtas
+    sectionTitle
     image {
       gatsbyImageData(width: 500, height: 500)
       alt
