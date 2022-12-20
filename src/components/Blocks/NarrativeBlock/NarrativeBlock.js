@@ -21,7 +21,8 @@ export default function NarrativeBlock({ block }) {
   } = block;
 
   const hasImages = image?.length > 0;
-  const hasImageAndCentered = hasImages && alignment === 'center';
+  const isAlignmentCenter = alignment === 'center';
+  const hasImageAndCentered = hasImages && isAlignmentCenter;
 
   return (
     <div className={`component-narrative-block ${backgroundColor} ${classNames}`}>
@@ -30,7 +31,7 @@ export default function NarrativeBlock({ block }) {
           <div
             className={`${hasImageAndCentered || !hasImages ? 'col-lg-12' : 'col-lg-6 mb-5 mb-lg-0'} ${
               alignment === 'left' ? 'offset-lg-1' : ''
-            } ${alignment === 'center' ? 'center-content' : ''}`}
+            } ${isAlignmentCenter ? 'center-content' : ''}`}
           >
             {logo && (
               <div className="logo">

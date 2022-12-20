@@ -30,9 +30,11 @@ const AccordionItem = ({ title, content, slug, model, image, alignment, isActive
                 <>
                   <div className="content" dangerouslySetInnerHTML={{ __html: content }} />
 
-                  <Link className="btn btn-primary mb-5" to={link}>
-                    Learn more
-                  </Link>
+                  {link && (
+                    <Link className="btn btn-primary mb-5" to={link}>
+                      Learn more
+                    </Link>
+                  )}
                 </>
               )}
             </div>

@@ -66,6 +66,10 @@
       color: var(--ct-gray-dark);
     }
 
+    .ctas {
+      justify-content: center;
+    }
+
     @media screen and (max-width: 767px) {
       text-align: left;
     }
@@ -75,5 +79,9 @@
     .ctas {
       flex-direction: column;
     }
+  }
+
+  + .component-narrative-block {
+    padding-top: 0;
   }
 }

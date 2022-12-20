@@ -29,7 +29,7 @@ const LatestPost = ({ block }) => {
           <Cta url="/blog" label={'Read all'} isButton />
         </div>
 
-        <div className="row">
+        <div className="row gx-6">
           {isArray(latestsPosts) ? (
             latestsPosts.map(({ image, meta, slug, tags, title, model }) => (
               <div className="col-lg-4 mb-lg-0 mb-5">

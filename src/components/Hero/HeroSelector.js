@@ -1,5 +1,6 @@
 import * as React from 'react';
 import HeroImageBottom from './HeroImageBottom/HeroImageBottom';
+import HeroImageCenter from './HeroImageCenter/HeroImageCenter';
 import HeroImageRight from './HeroImageRight/HeroImageRight';
 
 export default function HeroSelector({ page }) {
@@ -9,7 +10,7 @@ export default function HeroSelector({ page }) {
     if (visual === 'image_bottom') {
       return <HeroImageBottom {...page} />;
     } else if (visual === 'image_center') {
-      return <>TODO: Hero image center</>;
+      return <HeroImageCenter {...page} />;
     } else if (visual === 'image_right') {
       return <HeroImageRight {...page} />;
     }

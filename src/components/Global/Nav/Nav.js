@@ -33,9 +33,9 @@ const DropdownItem = ({ link, label, children }) => {
 
       <ul className={`dropdown-menu ${dropdownOpen ? 'open' : null}`}>
         {children?.map(link => (
-          <li className="dropdown-item" key={link.id}>
+          <li className="dropdown-item" key={link?.id}>
             <Link className="dropdown-link" to={link}>
-              {link.label}
+              {link?.label}
             </Link>
           </li>
         ))}
@@ -104,9 +104,9 @@ export default function Nav({ navData, path }) {
         <ul className="navbar-nav mr-auto">
           {navLinks?.map(link =>
             link.links.length === 0 ? (
-              <LinkItem key={link.mainLink.id} link={link.mainLink} label={link.label} isButton={link.isButton} />
+              <LinkItem key={link?.mainLink?.id} link={link?.mainLink} label={link?.label} isButton={link?.isButton} />
             ) : (
-              <DropdownItem key={link.mainLink.id} link={link.mainLink} label={link.label} children={link.links} />
+              <DropdownItem key={link?.mainLink?.id} link={link?.mainLink} label={link?.label} children={link?.links} />
             )
           )}
         </ul>
