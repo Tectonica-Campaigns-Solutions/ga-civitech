@@ -11,8 +11,8 @@ function GridStat({ block }) {
   return (
     <div className={`grid-stats ${backgroundColor}`}>
       <div className="container">
-        <h2>{title}</h2>
-        <div dangerouslySetInnerHTML={{ __html: text }} />
+        {title && <h2>{title}</h2>}
+        {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
 
         {isArray(stats) && (
           <div className="row gy-5">

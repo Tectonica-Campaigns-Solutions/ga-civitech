@@ -80,4 +80,8 @@
       flex-direction: column;
     }
   }
+
+  + .component-narrative-block {
+    padding-top: 0;
+  }
 }

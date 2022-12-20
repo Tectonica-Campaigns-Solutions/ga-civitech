@@ -15,7 +15,7 @@ export default function ListMembers({ block }) {
           {isArray(members) &&
             members.map((member, index) => (
               <div key={index} className="col-lg col-md-4 member-item">
-                <ImageWrapper image={member.image} />
+                <ImageWrapper image={member.image} objectFit="contain" />
 
                 <div className="description">
                   <h3>{member.name}</h3>
