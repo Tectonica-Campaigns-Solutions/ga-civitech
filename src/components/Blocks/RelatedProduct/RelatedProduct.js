@@ -5,10 +5,10 @@ import Accordion from '../../Global/Accordion/Accordion';
 import './index.scss';
 
 function RelatedProduct({ block }) {
-  const { title, description, products, alignment } = block;
+  const { title, description, products, alignment, backgroundColor } = block;
 
   return (
-    <div className="related-products-tab light-blue">
+    <div className={`related-products-tab ${backgroundColor}`}>
       <div className="container">
         <div className="row">
           <div className="col-lg-7">
@@ -17,14 +17,14 @@ function RelatedProduct({ block }) {
           </div>
         </div>
 
-        <div>
-          {isArray(products) && (
+        {isArray(products) && (
+          <div>
             <div className="products">
               <span>Related tools</span>
               <Accordion content={products} alignment={alignment} />
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -29,23 +29,23 @@
   --ct-form-error: #ffe8e9;
 }
 
-// TODO: Check if we can remove this class
-// .blue {
-//   background-color: var(--ct-light-blue);
-// }
-
-.dark-blue {
-  background-color: var(--ct-dark-blue);
-}
-
-.light-blue {
+// Global background colors
+.pale-blue {
   background-color: var(--ct-pale-blue);
 }
 
-.light-red {
+.pale-yellow {
+  background-color: var(--ct-pale-yellow);
+}
+
+.pale-red {
   background-color: var(--ct-pale-red);
 }
 
-.light-yellow {
-  background-color: var(--ct-pale-yellow);
+.pale-gray {
+  background-color: var(--ct-pale-gray);
+}
+
+.dark-blue {
+  background-color: var(--ct-dark-blue);
 }
