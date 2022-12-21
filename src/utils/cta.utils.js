@@ -1,5 +1,6 @@
 export const getCtaUrl = cta => {
-  return cta.link?.content ? cta.link?.content?.slug : cta.link?.url;
+  const url = cta.link?.content ? cta.link?.content?.slug : cta.link?.url;
+  return '/' + url;
 };
 
 export const getCtaTitle = cta => {
