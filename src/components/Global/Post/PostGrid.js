@@ -39,7 +39,7 @@ export default function PostGrid({ content, tags, relatedProduct, relatedPost, t
         </div>
       </div>
 
-      <LatestPost block={{ backgroundColor: 'light-blue', title: titleLatest }} />
+      <LatestPost block={{ title: titleLatest }} />
     </>
   );
 }

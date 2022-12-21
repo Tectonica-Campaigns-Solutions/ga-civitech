@@ -19,7 +19,7 @@ const LatestPost = ({ block }) => {
     }
   `);
 
-  const { title, backgroundColor } = block;
+  const { title, backgroundColor = 'pale-blue' } = block;
 
   return (
     <div className={`latest-posts-container ${backgroundColor}`}>
