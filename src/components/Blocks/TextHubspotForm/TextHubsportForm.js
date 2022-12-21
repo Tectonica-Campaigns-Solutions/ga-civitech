@@ -34,9 +34,9 @@ function TextHubspotForm({ block }) {
         <div className="container">
           <img className="arrows" src={arrows} alt="Arrows effect" />
 
-          <div className="row align-items-center">
+          <div className="row align-items-center py-3">
             <div className="col-md-3">{title && <h3>{title}</h3>}</div>
-            <div className="col-md-9">
+            <div className="col-md-9 hubspot-form">
               <div id={`hubspotForm-${block.id}`} />
             </div>
           </div>
