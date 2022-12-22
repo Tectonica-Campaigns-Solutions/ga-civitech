@@ -6,10 +6,10 @@ import ImageWrapper from '../../Global/Image/ImageWrapper';
 import './index.scss';
 
 export default function ListMembers({ block }) {
-  const { members, ctas } = block;
+  const { members, ctas, backgroundColor } = block;
 
   return (
-    <div className="list-members-container">
+    <div className={`list-members-container ${backgroundColor}`}>
       <div className="container">
         <div className="row">
           {isArray(members) &&

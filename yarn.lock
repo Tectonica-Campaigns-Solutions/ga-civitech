@@ -1424,14 +1424,14 @@
   dependencies:
     "@lezer/common" "^0.15.0"
 
-"@lmdb/lmdb-darwin-arm64@2.5.2":
-  "integrity" "sha512-+F8ioQIUN68B4UFiIBYu0QQvgb9FmlKw2ctQMSBfW2QBrZIxz9vD9jCGqTCPqZBRbPHAS/vG1zSXnKqnS2ch/A=="
-  "resolved" "https://registry.npmjs.org/@lmdb/lmdb-darwin-arm64/-/lmdb-darwin-arm64-2.5.2.tgz"
+"@lmdb/lmdb-win32-x64@2.5.2":
+  "integrity" "sha512-zrBczSbXKxEyK2ijtbRdICDygRqWSRPpZMN5dD1T8VMEW5RIhIbwFWw2phDRXuBQdVDpSjalCIUMWMV2h3JaZA=="
+  "resolved" "https://registry.npmjs.org/@lmdb/lmdb-win32-x64/-/lmdb-win32-x64-2.5.2.tgz"
   "version" "2.5.2"
 
-"@lmdb/lmdb-darwin-arm64@2.5.3":
-  "integrity" "sha512-RXwGZ/0eCqtCY8FLTM/koR60w+MXyvBUpToXiIyjOcBnC81tAlTUHrRUavCEWPI9zc9VgvpK3+cbumPyR8BSuA=="
-  "resolved" "https://registry.npmjs.org/@lmdb/lmdb-darwin-arm64/-/lmdb-darwin-arm64-2.5.3.tgz"
+"@lmdb/lmdb-win32-x64@2.5.3":
+  "integrity" "sha512-cK+Elf3RjEzrm3SerAhrFWL5oQAsZSJ/LmjL1joIpTfEP1etJJ9CTRvdaV6XLYAxaEkfdhk/9hOvHLbR9yIhCA=="
+  "resolved" "https://registry.npmjs.org/@lmdb/lmdb-win32-x64/-/lmdb-win32-x64-2.5.3.tgz"
   "version" "2.5.3"
 
 "@mischnic/json-sourcemap@^0.1.0":
@@ -1443,9 +1443,9 @@
     "@lezer/lr" "^0.15.4"
     "json5" "^2.2.1"
 
-"@msgpackr-extract/msgpackr-extract-darwin-arm64@2.1.2":
-  "integrity" "sha512-TyVLn3S/+ikMDsh0gbKv2YydKClN8HaJDDpONlaZR+LVJmsxLFUgA+O7zu59h9+f9gX1aj/ahw9wqa6rosmrYQ=="
-  "resolved" "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-darwin-arm64/-/msgpackr-extract-darwin-arm64-2.1.2.tgz"
+"@msgpackr-extract/msgpackr-extract-win32-x64@2.1.2":
+  "integrity" "sha512-rIZVR48zA8hGkHIK7ED6+ZiXsjRCcAVBJbm8o89OKAMTmEAQ2QvoOxoiu3w2isAaWwzgtQIOFIqHwvZDyLKCvw=="
+  "resolved" "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-win32-x64/-/msgpackr-extract-win32-x64-2.1.2.tgz"
   "version" "2.1.2"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -1480,10 +1480,10 @@
     "supports-color" "^8.1.1"
     "tslib" "^2"
 
-"@oclif/core@^1", "@oclif/core@^1.20.3", "@oclif/core@^1.21.0":
-  "integrity" "sha512-B/AKYfHcNRAbb6Xz2kj0FlH9gWEi8aFS4iEr7EzguP3E2DpDk4wcf7eOMOfJYEmhuVd9sOpVWSnI2yP+FL/3Sg=="
-  "resolved" "https://registry.npmjs.org/@oclif/core/-/core-1.21.0.tgz"
-  "version" "1.21.0"
+"@oclif/core@^1", "@oclif/core@^1.20.0", "@oclif/core@^1.20.3", "@oclif/core@^1.20.4":
+  "integrity" "sha512-giug32M4YhSYNYKQwE1L57/+k5gp1+Bq3/0vKNQmzAY1tizFGhvBJc6GIRZasHjU+xtZLutQvrVrJo7chX3hxg=="
+  "resolved" "https://registry.npmjs.org/@oclif/core/-/core-1.20.4.tgz"
+  "version" "1.20.4"
   dependencies:
     "@oclif/linewrap" "^1.0.0"
     "@oclif/screen" "^3.0.3"
@@ -1520,21 +1520,21 @@
   "version" "1.0.0"
 
 "@oclif/plugin-autocomplete@^1.2.0":
-  "integrity" "sha512-bJMf/ieHhnU5+2IPCFZl85ym/XVJ4IIN891R80pNs9KvUdOdE4RwFrYv+nCOp5k+aqteY903tIWmV1xI6A8YgA=="
-  "resolved" "https://registry.npmjs.org/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.3.7.tgz"
-  "version" "1.3.7"
+  "integrity" "sha512-XmSuuVohfGPAi2ouoCbWbVUjaaxprK+4KsNOkUafK2rqCMmmoK/VuAQvv539yMpM9IhSvARwS7NnGvFY9HmZVw=="
+  "resolved" "https://registry.npmjs.org/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.3.6.tgz"
+  "version" "1.3.6"
   dependencies:
-    "@oclif/core" "^1.21.0"
+    "@oclif/core" "^1.20.4"
     "chalk" "^4.1.0"
     "debug" "^4.3.4"
     "fs-extra" "^9.0.1"
 
 "@oclif/plugin-help@^5":
-  "integrity" "sha512-N8xRxE/isFcdBDI8cobixEZA5toxIK5jbxpwALNTr4s8KNAtBA3ORQrSiY0fWGkcv0sCGMwZw7rJ0Izh18JPsw=="
-  "resolved" "https://registry.npmjs.org/@oclif/plugin-help/-/plugin-help-5.1.20.tgz"
-  "version" "5.1.20"
+  "integrity" "sha512-eQVRCFJOwRj8Tbqz8Lzd9GN38egwLCg+ohJ0xfg12CoXml03WqkfcFiAWkVwSWmLVrZUlUVrxfXKKkmpUaXZHg=="
+  "resolved" "https://registry.npmjs.org/@oclif/plugin-help/-/plugin-help-5.1.19.tgz"
+  "version" "5.1.19"
   dependencies:
-    "@oclif/core" "^1.21.0"
+    "@oclif/core" "^1.20.4"
 
 "@oclif/plugin-not-found@^2.3.1":
   "integrity" "sha512-FJXIa5KmNbCgO8kDVJ23C/SkRRuwMYaRTNs5jejwrwKAm5fPp+TnR1+4pBp64ik7FA806nioqMGlotiyEWfMJA=="
@@ -1547,12 +1547,12 @@
     "lodash" "^4.17.21"
 
 "@oclif/plugin-plugins@^2.0.1":
-  "integrity" "sha512-n6avDtvkQ5RbaG4e7FGe7gAQSzzXJ8ocrwubQbuqhtHkbxuFazps8rpkizR2ILgJLxCQdjGvHbXeVJ2Ui6yCPg=="
-  "resolved" "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-2.1.8.tgz"
-  "version" "2.1.8"
+  "integrity" "sha512-z3nJWFskBKSimw8HUmlYyoaGEJlbjoFRT0xuiip4x7bccWn/Jyp4OWUzXcEdas6mnzmtBpNcQ5VxLaHIfad70Q=="
+  "resolved" "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-2.1.7.tgz"
+  "version" "2.1.7"
   dependencies:
     "@oclif/color" "^1.0.1"
-    "@oclif/core" "^1.21.0"
+    "@oclif/core" "^1.20.0"
     "chalk" "^4.1.2"
     "debug" "^4.3.4"
     "fs-extra" "^9.0"
@@ -1564,11 +1564,11 @@
     "yarn" "^1.22.18"
 
 "@oclif/plugin-warn-if-update-available@^2.0.4":
-  "integrity" "sha512-jLe+yIwyMqUwdHTKLviAUqJbX0+QEj63LPDWCWqLZnuo6BSoIvJl6vRGzIDoxhWG/4nileBgwPv8ivSo6BEr0w=="
-  "resolved" "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.0.16.tgz"
-  "version" "2.0.16"
+  "integrity" "sha512-gEgFZuNtFx3yPfSuxhAm9F8nLZ4+UnBJhbjTywY0Cvrqvd+OvKvo6PfwRm0lWmH4EgWwQEq39pfaks1fg+y1gw=="
+  "resolved" "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.0.14.tgz"
+  "version" "2.0.14"
   dependencies:
-    "@oclif/core" "^1.21.0"
+    "@oclif/core" "^1.20.4"
     "chalk" "^4.1.0"
     "debug" "^4.1.0"
     "fs-extra" "^9.0.1"
@@ -5619,11 +5619,6 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
-"fsevents@~2.3.2":
-  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
-  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
-  "version" "2.3.2"
-
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -7813,9 +7808,9 @@
     "brace-expansion" "^1.1.7"
 
 "minimatch@^5.0.1":
-  "integrity" "sha512-362NP+zlprccbEt/SkxKfRMHnNY85V74mVnpUpNyr3F35covl09Kec7/sEFLt3RA4oXmewtoaanoIf67SE5Y5g=="
-  "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-5.1.1.tgz"
-  "version" "5.1.1"
+  "integrity" "sha512-9TPBGGak4nHfGZsPBohm9AWg6NoT7QTCehS3BIJABslyZbzxfV78QM2Y6+i741OPZIafFAaiiEMh5OyIrJPgtg=="
+  "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-5.1.0.tgz"
+  "version" "5.1.0"
   dependencies:
     "brace-expansion" "^2.0.1"
 
@@ -9098,9 +9093,9 @@
     "strip-json-comments" "~2.0.1"
 
 "react-datocms@^3.1.1":
-  "integrity" "sha512-BXT6BN0J5rnk0vjyiDddSjalAq0zpqVrS/k1aBMMvfmLr0IA/Ex2iuDkkpHucxOQy/86v2njz6GCc06wbhTxbQ=="
-  "resolved" "https://registry.npmjs.org/react-datocms/-/react-datocms-3.1.1.tgz"
-  "version" "3.1.1"
+  "integrity" "sha512-rHSV9ITtJIWx6AivYUJPGWuAq4tKEM7N40qpkdIgvovIroeTENwzbnQsJDuovYPksUAD4uz9vIppmuQWua+EaQ=="
+  "resolved" "https://registry.npmjs.org/react-datocms/-/react-datocms-3.1.3.tgz"
+  "version" "3.1.3"
   dependencies:
     "datocms-listen" "^0.1.9"
     "datocms-structured-text-generic-html-renderer" "^2.0.1"

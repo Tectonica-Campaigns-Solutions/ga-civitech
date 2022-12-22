@@ -30,7 +30,7 @@
     margin-top: 75px;
   }
 
-  &.light-blue {
+  &.pale-blue {
     * {
       color: var(--ct-dark-blue);
     }
@@ -79,13 +79,44 @@
       }
     }
   }
-  &.small{
-    padding:50px 0;
-    h3{
-      color:#fff;
+
+  &.small {
+    position: relative;
+    padding: 0;
+
+    .hubspot-form {
+      z-index: 10;
+    }
+
+    h3 {
+      z-index: 10;
+      font-family: 'Laca';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 31px;
+      line-height: 120%;
+      color: var(--ct-white);
+
+      @media screen and (max-width: 767px) {
+        padding-top: 1.5rem;
+      }
+    }
+
+    .arrows {
+      z-index: 5;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
   }
-  &.one_column{
-    padding:50px 0;
+
+  &.one_column {
+    padding: 140px 0 91px 0;
+
+    h2,
+    p {
+      color: var(--ct-dark-blue);
+    }
   }
 }

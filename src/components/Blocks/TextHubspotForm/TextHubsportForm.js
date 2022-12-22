@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import blueArrows from '../../Icons/hubspot-arrows.svg';
+import arrows from '../../Icons/form-union.svg';
 
 import './index.scss';
 
-function TextHubsportForm({ block }) {
+function TextHubspotForm({ block }) {
   const { backgroundColor, text, title, whiteBox, titleInsideBox, descriptionInsideBox, visual } = block;
   const { formId, region, portalId } = block.hubspot;
-  console.log(visual)
+
+  console.log('Hubspot form visual: ', visual);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.id = 'hubspot-contact-form';
@@ -27,21 +30,20 @@ function TextHubsportForm({ block }) {
 
   return (
     <div className={`text-hubspot-form ${backgroundColor} ${visual}`}>
-     {
-      visual == 'small' && 
+      {visual == 'small' && (
         <div className="container">
-          <div className="row">
-            <div className="col">
-              {title && <h3>{title}</h3>}
-            </div>
-            <div className="col">
+          <img className="arrows" src={arrows} alt="Arrows effect" />
+
+          <div className="row align-items-center py-3">
+            <div className="col-md-3">{title && <h3>{title}</h3>}</div>
+            <div className="col-md-9 hubspot-form">
               <div id={`hubspotForm-${block.id}`} />
             </div>
           </div>
-        </div> 
-     }
-     {
-      visual == 'two_columns' &&
+        </div>
+      )}
+
+      {visual == 'two_columns' && (
         <div className="container">
           <div className="row gy-3">
             <div className="col-lg-5">
@@ -59,10 +61,9 @@ function TextHubsportForm({ block }) {
             </div>
           </div>
         </div>
-     }
+      )}
 
-    {
-      visual == 'one_column' &&
+      {visual == 'one_column' && (
         <div className="container">
           <div className="row align-items-center flex-column">
             <div className="col-lg-6">
@@ -74,10 +75,9 @@ function TextHubsportForm({ block }) {
             </div>
           </div>
         </div>
-     }
-     
+      )}
     </div>
   );
 }
 
-export default TextHubsportForm;
+export default TextHubspotForm;

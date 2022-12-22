@@ -207,6 +207,7 @@ export const DatoCMS = graphql`
   fragment BlockListMember on DatoCmsListMember {
     __typename
     id
+    backgroundColor
     members {
       name
       positionMember
@@ -237,6 +238,7 @@ export const DatoCMS = graphql`
     title
     description
     alignment
+    backgroundColor
     products {
       ... on DatoCmsProduct {
         model {
