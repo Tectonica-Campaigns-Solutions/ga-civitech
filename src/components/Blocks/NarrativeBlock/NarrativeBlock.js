@@ -3,11 +3,11 @@ import { isArray } from '../../../utils/array.utils';
 import CtaList from '../../Global/Cta/CtaList';
 import GlobalImage from '../../Global/Image/GlobalImage';
 import ImageWrapper from '../../Global/Image/ImageWrapper';
+import VideoPlayer from '../../Global/VideoPlayer/VideoPlayer';
 
 import './index.scss';
 
 export default function NarrativeBlock({ block }) {
-  console.log(block)
   const {
     backgroundColor,
     verticalCtas = false,
@@ -57,23 +57,23 @@ export default function NarrativeBlock({ block }) {
             )}
           </div>
 
-          {isArray(image) && (
+          {isArray(image) || video && (
             <div
               className={`${alignment === 'center' ? 'col-lg-12' : 'col-lg-5'} ${
                 alignment === 'right' ? 'offset-lg-1' : ''
               }`}
             >
-              <ImageWrapper image={image} objectFit="contain" />
+              {isArray(image) && !video && (
+                  <ImageWrapper image={image} objectFit="contain" />
+              )}
+
+              {video && (
+                <VideoPlayer video={ video }/>
+              )}
+             
             </div>
           )}
-          {!image && video && (
-              <div
-              className={`${alignment === 'center' ? 'col-lg-12' : 'col-lg-5'} ${
-                alignment === 'right' ? 'offset-lg-1' : ''
-              }`}>
-                <img src={video.thumbnailUrl} />
-              </div>
-          )}
+         
         </div>
       </div>
     </div>
