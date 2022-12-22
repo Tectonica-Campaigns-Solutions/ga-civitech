@@ -38,6 +38,10 @@ export const PageQuery = graphql`
       heroVisual
       heroTitle
       backgroundColor
+      video{
+        thumbnailUrl
+        url
+      }
       ctas {
         title
         isButton

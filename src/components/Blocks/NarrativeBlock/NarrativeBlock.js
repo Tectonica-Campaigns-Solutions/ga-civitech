@@ -7,6 +7,7 @@ import ImageWrapper from '../../Global/Image/ImageWrapper';
 import './index.scss';
 
 export default function NarrativeBlock({ block }) {
+  console.log(block)
   const {
     backgroundColor,
     verticalCtas = false,
@@ -19,6 +20,7 @@ export default function NarrativeBlock({ block }) {
     textContent,
     ctas,
     image,
+    video,
   } = block;
 
   const hasImages = image?.length > 0;
@@ -33,7 +35,7 @@ export default function NarrativeBlock({ block }) {
         }
         <div className={`row align-items-center ${alignment === 'left' ? 'flex-row-reverse' : ''}`}>
           <div
-            className={`${hasImageAndCentered || !hasImages ? 'col-lg-12' : 'col-lg-6 mb-5 mb-lg-0'} ${
+            className={`${hasImageAndCentered || !hasImages && !video ? 'col-lg-12' : 'col-lg-6 mb-5 mb-lg-0'} ${
               alignment === 'left' ? 'offset-lg-1' : ''
             } ${isAlignmentCenter ? 'center-content' : ''}`}
           >
@@ -63,6 +65,14 @@ export default function NarrativeBlock({ block }) {
             >
               <ImageWrapper image={image} objectFit="contain" />
             </div>
+          )}
+          {!image && video && (
+              <div
+              className={`${alignment === 'center' ? 'col-lg-12' : 'col-lg-5'} ${
+                alignment === 'right' ? 'offset-lg-1' : ''
+              }`}>
+                <img src={video.thumbnailUrl} />
+              </div>
           )}
         </div>
       </div>

@@ -11,6 +11,10 @@ export const DatoCMS = graphql`
     backgroundColor
     verticalCtas
     sectionTitle
+    video{
+      thumbnailUrl
+      url
+    }
     image {
       gatsbyImageData(width: 500, height: 500)
       alt
