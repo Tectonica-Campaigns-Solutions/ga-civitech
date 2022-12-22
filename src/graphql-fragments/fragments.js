@@ -11,7 +11,7 @@ export const DatoCMS = graphql`
     backgroundColor
     verticalCtas
     sectionTitle
-    video{
+    video {
       thumbnailUrl
       url
     }
