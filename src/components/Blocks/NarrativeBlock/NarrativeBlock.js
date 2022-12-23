@@ -25,17 +25,23 @@ export default function NarrativeBlock({ block }) {
 
   const hasImages = image?.length > 0;
   const isAlignmentCenter = alignment === 'center';
-  const hasImageAndCentered = hasImages && isAlignmentCenter;
+  const hasMedia = hasImages || video;
+  const hasImageAndCentered = hasMedia && isAlignmentCenter;
 
   return (
     <div className={`component-narrative-block ${backgroundColor} ${classNames}`}>
       <div className="container pb-5">
-        {
-          sectionTitle && <div className="row"><div className="col pb-3"><h2>{ sectionTitle }</h2></div></div>
-        }
+        {sectionTitle && (
+          <div className="row">
+            <div className="col pb-3">
+              <h2>{sectionTitle}</h2>
+            </div>
+          </div>
+        )}
+
         <div className={`row align-items-center ${alignment === 'left' ? 'flex-row-reverse' : ''}`}>
           <div
-            className={`${hasImageAndCentered || !hasImages && !video ? 'col-lg-12' : 'col-lg-6 mb-5 mb-lg-0'} ${
+            className={`${hasImageAndCentered || !hasMedia ? 'col-lg-12 mb-5' : 'col-lg-6 mb-5 mb-lg-0'} ${
               alignment === 'left' ? 'offset-lg-1' : ''
             } ${isAlignmentCenter ? 'center-content' : ''}`}
           >
@@ -57,23 +63,20 @@ export default function NarrativeBlock({ block }) {
             )}
           </div>
 
-          {isArray(image) || video && (
+          {/* Render image or video */}
+          {(isArray(image) || video) && (
             <div
-              className={`${alignment === 'center' ? 'col-lg-12' : 'col-lg-5'} ${
+              className={`${alignment === 'center' ? 'col-lg-12 text-center' : 'col-lg-5'} ${
                 alignment === 'right' ? 'offset-lg-1' : ''
               }`}
             >
-              {isArray(image) && !video && (
-                  <ImageWrapper image={image} objectFit="contain" />
+              {isArray(image) ? (
+                <ImageWrapper image={image} objectFit="contain" />
+              ) : (
+                video && <VideoPlayer video={video} />
               )}
-
-              {video && (
-                <VideoPlayer video={ video }/>
-              )}
-             
             </div>
           )}
-         
         </div>
       </div>
     </div>
