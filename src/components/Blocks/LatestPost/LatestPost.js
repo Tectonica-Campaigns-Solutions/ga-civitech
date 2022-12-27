@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { isArray } from '../../../utils/array.utils';
+import { isArray } from '../../../utils';
 import Cta from '../../Global/Cta/Cta';
 import BlogPostCard from '../../Global/BlogPostCard/BlogPostCard';
 

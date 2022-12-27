@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ImageWrapper from '../Image/ImageWrapper';
 
 import './index.scss';
 
@@ -9,8 +10,12 @@ function VideoPlayer({ video }) {
   const handleOnCloseVideo = () => setIsFullScreen(false);
 
   const getYoutubeVideoSrc = () => {
-    const videoId = video.url?.replace('https://www.youtube.com/watch?v=', '');
+    const videoId = video.source?.providerUid;
     return `https://www.youtube.com/embed/${videoId}`;
+  };
+
+  const getVideoThumbnail = () => {
+    return video.preview || { url: video.source?.thumbnailUrl };
   };
 
   return (
@@ -22,7 +27,7 @@ function VideoPlayer({ video }) {
         </div>
       ) : (
         <div className="thumbnail" onClick={handleOnPlayVideo}>
-          <img src={video.thumbnailUrl} />
+          <ImageWrapper image={getVideoThumbnail()} />
         </div>
       )}
     </div>

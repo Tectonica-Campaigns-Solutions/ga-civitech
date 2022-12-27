@@ -3,7 +3,7 @@ import React from 'react';
 import GlobalImage from '../Image/GlobalImage';
 import Tag from '../Tag/Tag';
 import { pathToModel } from '../../../utils';
-import { isArray } from '../../../utils/array.utils';
+import { isArray } from '../../../utils';
 
 import './index.scss';
 

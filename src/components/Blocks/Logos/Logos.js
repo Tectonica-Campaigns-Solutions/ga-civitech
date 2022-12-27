@@ -1,7 +1,7 @@
 import React from 'react';
 import CtaList from '../../Global/Cta/CtaList';
 import ImageWrapper from '../../Global/Image/ImageWrapper';
-import { isArray } from '../../../utils/array.utils';
+import { isArray } from '../../../utils';
 
 import './index.scss';
 

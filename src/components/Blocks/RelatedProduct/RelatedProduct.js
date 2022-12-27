@@ -1,5 +1,5 @@
 import React from 'react';
-import { isArray } from '../../../utils/array.utils';
+import { isArray } from '../../../utils';
 import Accordion from '../../Global/Accordion/Accordion';
 
 import './index.scss';

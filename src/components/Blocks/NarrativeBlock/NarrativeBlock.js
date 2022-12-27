@@ -1,5 +1,5 @@
 import React from 'react';
-import { isArray } from '../../../utils/array.utils';
+import { isArray } from '../../../utils';
 import CtaList from '../../Global/Cta/CtaList';
 import GlobalImage from '../../Global/Image/GlobalImage';
 import ImageWrapper from '../../Global/Image/ImageWrapper';

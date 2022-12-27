@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { getCtaTitle, getCtaUrl } from '../../../utils/cta.utils';
+import { getCtaTitle, getCtaUrl } from '../../../utils';
 
 import './index.scss';
 
