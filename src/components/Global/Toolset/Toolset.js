@@ -1,6 +1,6 @@
 import React from 'react';
 import ToolsetCta from './ToolsetCta';
-import { isArray } from '../../../utils/array.utils';
+import { isArray } from '../../../utils';
 
 import './index.scss';
 

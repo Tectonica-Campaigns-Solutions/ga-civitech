@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { isArray } from '../../../utils/array.utils';
+import { isArray } from '../../../utils';
 import TabTitles from '../Tabs/TabTitles/TabTitles';
 import BlogPostTab from './BlogPostTab';
 import Pagination, { PAGE_SIZE } from '../../Global/Pagination/Pagination';

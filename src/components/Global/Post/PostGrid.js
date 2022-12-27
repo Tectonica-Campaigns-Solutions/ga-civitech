@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { isArray } from '../../../utils/array.utils';
+import { isArray } from '../../../utils';
 import Tag from '../Tag/Tag';
 import StructuredTextDefault from '../../StructuredTextDefault';
 import RelatedProductGrid from '../RelatedProduct/RelatedProductGrid';

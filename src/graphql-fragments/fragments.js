@@ -12,8 +12,14 @@ export const DatoCMS = graphql`
     verticalCtas
     sectionTitle
     video {
-      thumbnailUrl
-      url
+      source {
+        url
+        thumbnailUrl
+        providerUid
+      }
+      preview {
+        gatsbyImageData
+      }
     }
     image {
       gatsbyImageData(width: 500, height: 500)

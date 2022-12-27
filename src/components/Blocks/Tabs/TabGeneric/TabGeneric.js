@@ -2,7 +2,7 @@ import React from 'react';
 import CtaList from '../../../Global/Cta/CtaList';
 import Toolset from '../../../Global/Toolset/Toolset';
 import GlobalImage from '../../../Global/Image/GlobalImage';
-import { isArray } from '../../../../utils/array.utils';
+import { isArray } from '../../../../utils';
 
 import './index.scss';
 

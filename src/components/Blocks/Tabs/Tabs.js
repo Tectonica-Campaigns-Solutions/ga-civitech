@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TabTitles from './TabTitles/TabTitles';
 import TabSelector from './TabSelector';
-import { isArray } from '../../../utils/array.utils';
+import { isArray } from '../../../utils';
 
 import './index.scss';
 

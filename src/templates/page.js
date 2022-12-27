@@ -38,9 +38,15 @@ export const PageQuery = graphql`
       heroVisual
       heroTitle
       backgroundColor
-      video{
-        thumbnailUrl
-        url
+      video {
+        source {
+          url
+          thumbnailUrl
+          providerUid
+        }
+        preview {
+          gatsbyImageData
+        }
       }
       ctas {
         title
