@@ -27,7 +27,7 @@ const DropdownItem = ({ link, label, children }) => {
 
   return (
     <li className="dropdown nav-item" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
-      <Link to={link} type="button" id="languageSelector" aria-expanded="false" data-bs-toggle="dropdown">
+      <Link to={link} type="button" aria-label="Expand" aria-expanded="false" data-bs-toggle="dropdown">
         {label}
       </Link>
 
@@ -84,7 +84,7 @@ export default function Nav({ navData, path }) {
       }`}
     >
       <Link className="navbar-brand" to={'/'}>
-        <img src={logo} />
+        <img src={logo} alt="logo civitech" />
       </Link>
 
       <button

@@ -49,7 +49,7 @@ const TopMessage = () => {
         </span>
 
         <div className="close-btn" onClick={handleToggleTopMessage}>
-          <img src={closeButton} />
+          <img src={closeButton} alt="close message icon"/>
         </div>
       </div>
     </div>

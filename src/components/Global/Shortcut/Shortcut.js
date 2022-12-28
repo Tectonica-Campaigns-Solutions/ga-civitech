@@ -19,9 +19,9 @@ export default function Shortcut({ title, description, btnLabel, btnUrl }) {
 
       {/* Arrow icons */}
       <div className="arrows">
-        <img src={arrow1} width="49" />
-        <img src={arrow2} width="38" />
-        <img src={arrow3} width="25" />
+        <img src={arrow1} width="49" alt="icon"/>
+        <img src={arrow2} width="38" alt="icon"/>
+        <img src={arrow3} width="25" alt="icon"/>
       </div>
     </div>
   );

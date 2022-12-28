@@ -40,7 +40,7 @@ function Footer() {
     <footer id="main-footer">
       <div className="container mb-4">
         <div className="row footer-ct-logo">
-          <img src={footer.logoFooter.image.url} />
+          <img src={footer.logoFooter.image.url} alt="Logo civitech"/>
         </div>
 
         {/* Menu navigation items */}
@@ -83,7 +83,7 @@ function Footer() {
                 return (
                   <li key={item.id}>
                     <Link to={item.mainLink} target="_blank">
-                      <img src={item.icon.url} />
+                      <img src={item.icon.url} alt="follow"/>
                     </Link>
                   </li>
                 );

@@ -21,6 +21,7 @@ export default function NarrativeBlock({ block }) {
     ctas,
     image,
     video,
+    alt,
   } = block;
 
   const hasImages = image?.length > 0;
@@ -71,7 +72,7 @@ export default function NarrativeBlock({ block }) {
               }`}
             >
               {isArray(image) ? (
-                <ImageWrapper image={image} objectFit="contain" />
+                <ImageWrapper alt={alt} image={image} objectFit="contain" />
               ) : (
                 video && <VideoPlayer video={video} />
               )}
