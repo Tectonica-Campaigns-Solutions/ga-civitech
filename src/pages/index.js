@@ -21,7 +21,7 @@ const IndexPage = ({ data: { page } }) => (
 
 export default IndexPage;
 
-export const Head = ({ data: {page} }) => <SeoDatoCms page={page} />
+export const Head = ({ data: { page } }) => <SeoDatoCms page={page} />;
 
 export const HomeQuery = graphql`
   query Home {
@@ -29,7 +29,7 @@ export const HomeQuery = graphql`
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
-      seo{
+      seo {
         title
         description
       }
