@@ -1,7 +1,17 @@
 const path = require(`path`);
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, createSlice } = actions;
+  //slices api
+  createSlice({
+    id:`header`,
+    component: require.resolve(`./src/components/Header.js`)
+  })
+  createSlice({
+    id:`footer`,
+    component: require.resolve(`./src/components/Global/Footer/Footer.js`)
+  })
+
   return new Promise((resolve, reject) => {
     const templates = {
       page: path.resolve('./src/templates/page.js'),
