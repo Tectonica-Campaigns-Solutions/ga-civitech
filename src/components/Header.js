@@ -14,6 +14,7 @@ const Header = ({ location }) => {
 
   return (
     <header>
+      {/* Force clean cache */}
       <Nav navData={mainMenu} path={location?.pathname} />
     </header>
   );
