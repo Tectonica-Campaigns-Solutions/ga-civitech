@@ -85,3 +85,9 @@
     padding-top: 0;
   }
 }
+
+.top-message-container + header + main {
+  .component-narrative-block {
+    padding-top: 150px;
+  }
+}
