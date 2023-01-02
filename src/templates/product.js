@@ -11,7 +11,6 @@ const Product = ({ location, pageContext, data: { page } }) => {
 
   return (
     <Layout location={location}>
-      <SeoDatoCms seo={page.seo} />
       <HeroProduct data={page} loginTitle={loginTitle.value} />
       <Blocks blocks={page.blocks}></Blocks>
     </Layout>
@@ -20,11 +19,17 @@ const Product = ({ location, pageContext, data: { page } }) => {
 
 export default Product;
 
+export const Head = ({ data: {page} }) => <SeoDatoCms page={page} />
+
 export const ProductQuery = graphql`
   query ProductById($id: String) {
     page: datoCmsProduct(id: { eq: $id }) {
-      seo: seoMetaTags {
+      seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
+      }
+      seo{
+        title
+        description
       }
       id
       title

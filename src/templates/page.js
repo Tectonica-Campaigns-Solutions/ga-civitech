@@ -8,7 +8,6 @@ import HeroSelector from '../components/Hero/HeroSelector';
 const Page = ({ location, data: { page } }) => {
   return (
     <Layout location={location}>
-      <SeoDatoCms seo={page.seo} />
       <HeroSelector page={page} />
       <Blocks blocks={page.blocks}></Blocks>
     </Layout>
@@ -17,11 +16,19 @@ const Page = ({ location, data: { page } }) => {
 
 export default Page;
 
+export const Head = ({ data: {page} }) => <SeoDatoCms page={page} />
+
+
+
 export const PageQuery = graphql`
   query PageById($id: String) {
     page: datoCmsPage(id: { eq: $id }) {
-      seo: seoMetaTags {
+      seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
+      }
+      seo{
+        title
+        description
       }
       id
       title

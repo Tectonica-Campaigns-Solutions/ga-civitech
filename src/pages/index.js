@@ -7,7 +7,6 @@ import Hero from '../components/Global/Hero/Hero';
 
 const IndexPage = ({ data: { page } }) => (
   <Layout>
-    <SeoDatoCms seo={page.seo} />
     <Hero
       ctas={page.ctas}
       title={page.title}
@@ -22,11 +21,17 @@ const IndexPage = ({ data: { page } }) => (
 
 export default IndexPage;
 
+export const Head = ({ data: {page} }) => <SeoDatoCms page={page} />
+
 export const HomeQuery = graphql`
   query Home {
     page: datoCmsHome {
-      seo: seoMetaTags {
+      seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
+      }
+      seo{
+        title
+        description
       }
       id
       title

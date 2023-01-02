@@ -1,18 +1,22 @@
 import React from 'react';
-import { HelmetDatoCms } from 'gatsby-source-datocms';
+import { HelmetDatoCms } from 'gatsby-source-datocms'
 
-const SeoDatoCMS = ({ seo }) => {
-  const sitename = 'Civitech';
-  const og_datocms_title = seo.tags?.find(tag => tag.attributes?.property === 'og:title');
-  const og_datocms_sitename = seo.tags?.findIndex(tag => tag.attributes?.property === 'og:site_name');
+const SeoDatoCMS = ({ page }) => {
+  const seo = page.seoMetaTags
+  const sitename = 'Civitech'
+  //override title from seo field
+  const titleIndex = seo.tags?.find((tag) => tag.tagName === 'title')
+  const overrideTitle = page.seo?.title ? page.seo.title :  titleIndex.content;
+  const overrideDescription = page.seo?.description ? page.seo?.description : ''
+  
+  seo.tags.map(item => {
+    if(item.tagName === 'title'){
+      item.content = `${overrideTitle} - ${sitename}`
+    }
+  })
 
-  // Override og:title because share same CMS
-  seo.tags[og_datocms_sitename].attributes.content = sitename;
-
-  // Override Title because share same CMS
-  const title = seo.tags?.findIndex(tag => tag.tagName === 'title');
-  seo.tags[title].content = `${og_datocms_title.attributes.content} | ${sitename}`;
-
-  return <HelmetDatoCms seo={seo} />;
+  //add description to seo tags
+  seo.tags.push({tagName:'meta', attributes: {property: 'description', content: overrideDescription}})
+  return <HelmetDatoCms seo={seo} />
 };
 export default SeoDatoCMS;

@@ -13,8 +13,6 @@ const Post = ({ location, pageContext, data: { post, relatedPost } }) => {
 
   return (
     <Layout location={location}>
-      <SeoDatoCms seo={post.seo} />
-
       <HeroBlogPost
         title={post.title}
         summary={post.summary}
@@ -35,11 +33,17 @@ const Post = ({ location, pageContext, data: { post, relatedPost } }) => {
 
 export default Post;
 
+export const Head = ({ data: {post} }) => <SeoDatoCms page={post} />
+
 export const PostQuery = graphql`
   query PostById($id: String, $topic: String) {
     post: datoCmsPost(id: { eq: $id }) {
-      seo: seoMetaTags {
+      seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
+      }
+      seo{
+        title
+        description
       }
       meta {
         createdAt(formatString: "MMMM D, YYYY")

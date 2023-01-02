@@ -8,8 +8,6 @@ function TextHubspotForm({ block }) {
   const { backgroundColor, text, title, whiteBox, titleInsideBox, descriptionInsideBox, visual } = block;
   const { formId, region, portalId } = block.hubspot;
 
-  console.log('Hubspot form visual: ', visual);
-
   useEffect(() => {
     const script = document.createElement('script');
     script.id = 'hubspot-contact-form';
