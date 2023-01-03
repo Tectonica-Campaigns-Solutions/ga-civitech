@@ -75,11 +75,11 @@ export default function Nav({ navData, path }) {
     setExpanded(!expanded);
   };
 
-  const isHome = !path || path === '/' || path === '/home';
+  const isHome = !path || path === '/';
 
   return (
     <nav
-      className={`navbar navbar-expand-lg ${isHome ? 'home-nav' : ''} ${expanded && 'expanded'} ${
+      className={`navbar navbar-expand-lg ${isHome ? 'home-nav' : ''} ${expanded ? 'expanded' : ''} ${
         scrollPosition > 75 ? 'sticky-nav' : ''
       }`}
     >
@@ -97,7 +97,7 @@ export default function Nav({ navData, path }) {
         aria-label="Toggle navigation"
         onClick={() => handleNavClick()}
       >
-        <span className={` ${expanded ? 'open-toggle ' : ''} navbar-toggler-icon`}></span>
+        <span className={`${expanded ? 'open-toggle ' : ''} navbar-toggler-icon`}></span>
       </button>
 
       <div className={` ${expanded ? 'show' : ''} collapse navbar-collapse`} id="navNav">

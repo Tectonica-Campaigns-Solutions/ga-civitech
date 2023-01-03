@@ -16,9 +16,7 @@ const Page = ({ location, data: { page } }) => {
 
 export default Page;
 
-export const Head = ({ data: {page} }) => <SeoDatoCms page={page} />
-
-
+export const Head = ({ data: { page } }) => <SeoDatoCms page={page} />;
 
 export const PageQuery = graphql`
   query PageById($id: String) {
@@ -26,7 +24,7 @@ export const PageQuery = graphql`
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
-      seo{
+      seo {
         title
         description
       }

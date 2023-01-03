@@ -1,6 +1,6 @@
 .navbar {
   top: 0;
-  min-height: 89px;
+  min-height: 90px;
   width: 100%;
   z-index: 999;
   background: var(--ct-white);
@@ -328,11 +328,9 @@ span.navbar-toggler-icon {
   }
 }
 
-.top-message-container {
-  + header {
-    nav {
-      position: absolute;
-      top: 44px;
-    }
+.top-message-container + header {
+  .navbar {
+    position: absolute;
+    top: 44px;
   }
 }

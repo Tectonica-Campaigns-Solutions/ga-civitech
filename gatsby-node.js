@@ -2,15 +2,16 @@ const path = require(`path`);
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createSlice } = actions;
+
   //slices api
   createSlice({
-    id:`header`,
-    component: require.resolve(`./src/components/Header.js`)
-  })
+    id: 'header',
+    component: path.resolve(`./src/components/Header.js`),
+  });
   createSlice({
-    id:`footer`,
-    component: require.resolve(`./src/components/Global/Footer/Footer.js`)
-  })
+    id: `footer`,
+    component: path.resolve(`./src/components/Global/Footer/Footer.js`),
+  });
 
   return new Promise((resolve, reject) => {
     const templates = {
@@ -18,6 +19,7 @@ exports.createPages = ({ graphql, actions }) => {
       post: path.resolve('./src/templates/post.js'),
       product: path.resolve('./src/templates/product.js'),
     };
+
     resolve(
       graphql(
         `
