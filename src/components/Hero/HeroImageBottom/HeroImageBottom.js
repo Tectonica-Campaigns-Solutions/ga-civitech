@@ -24,7 +24,7 @@ export default function HeroImageBottom({ heroTitle, description, image, ctas })
         </div>
       </div>
 
-      <img className="arrows" src={arrows} />
+      <img className="arrows" src={arrows} alt="Arrows effect" />
     </div>
   );
 }

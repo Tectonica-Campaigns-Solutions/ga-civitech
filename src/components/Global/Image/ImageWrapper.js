@@ -22,7 +22,7 @@ export default function ImageWrapper({ image, ...props }) {
 
       {image?.title && (
         <div className="caption">
-          <img src={pictureBtn} />
+          <img src={pictureBtn} alt="Caption icon" />
           <span className="image-caption">{image.title}</span>
         </div>
       )}

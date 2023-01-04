@@ -19,7 +19,7 @@ function Logos({ block }) {
           <div className="row logos-list justify-content-center g-5">
             {logos.map(logo => (
               <div className="col-lg-2 col-md-3 col-6">
-                <a href={logo.url} target="_blank">
+                <a href={logo.url} target="_blank" rel="noreferrer">
                   <ImageWrapper image={logo.icon} />
                 </a>
               </div>
