@@ -37,24 +37,24 @@ function ShareButtons() {
     <div className={`share-buttons-fixed ${isFixed}`}>
       <div className="telegram">
         <Link target={'_blank'} to={`https://t.me/share/url?url=${shareUrl}`}>
-          <img src={telegram} />
+          <img src={telegram} alt="Telegram icon" />
         </Link>
       </div>
 
       <div className="facebook">
         <Link target={'_blank'} to={`http://www.facebook.com/share.php?u=${shareUrl}`}>
-          <img src={facebook} />
+          <img src={facebook} alt="Facebook icon" />
         </Link>
       </div>
 
       <div className="twitter">
         <Link target={'_blank'} to={`http://twitter.com/share?url=${shareUrl}`}>
-          <img src={twitter} />
+          <img src={twitter} alt="Twitter icon" />
         </Link>
       </div>
 
       {/* todo: share text is a svg at the moment */}
-      <img src={share} style={{ height: '30%' }} />
+      <img src={share} style={{ height: '30%' }} alt="Share text icon" />
     </div>
   );
 }

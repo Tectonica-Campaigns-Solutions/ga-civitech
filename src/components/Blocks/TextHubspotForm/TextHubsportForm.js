@@ -5,7 +5,7 @@ import arrows from '../../Icons/form-union.svg';
 import './index.scss';
 
 function TextHubspotForm({ block }) {
-  const { backgroundColor, text, title, whiteBox, titleInsideBox, descriptionInsideBox, visual } = block;
+  const { id, backgroundColor, text, title, whiteBox, titleInsideBox, descriptionInsideBox, visual } = block;
   const { formId, region, portalId } = block.hubspot;
 
   useEffect(() => {
@@ -20,15 +20,15 @@ function TextHubspotForm({ block }) {
           region: region,
           portalId: portalId,
           formId: formId,
-          target: `#hubspotForm-${block.id}`,
+          target: `#hubspotForm-${id}`,
         });
       }
     });
-  }, [formId, region, portalId]);
+  }, [id, formId, region, portalId]);
 
   return (
     <div className={`text-hubspot-form ${backgroundColor} ${visual}`}>
-      {visual == 'small' && (
+      {visual === 'small' && (
         <div className="container">
           <img className="arrows" src={arrows} alt="Arrows effect" />
 
@@ -41,14 +41,14 @@ function TextHubspotForm({ block }) {
         </div>
       )}
 
-      {visual == 'two_columns' && (
+      {visual === 'two_columns' && (
         <div className="container">
           <div className="row gy-3">
             <div className="col-lg-5">
               {title && <h2>{title}</h2>}
               {text && <p dangerouslySetInnerHTML={{ __html: text }} />}
 
-              <img className="blue-arrows" src={blueArrows} />
+              <img className="blue-arrows" src={blueArrows} alt="Blue arrows effect" />
             </div>
 
             <div className={`form-content ${whiteBox ? 'col-lg-6 white-box' : 'col-lg-4'} offset-lg-1`}>
@@ -61,7 +61,7 @@ function TextHubspotForm({ block }) {
         </div>
       )}
 
-      {visual == 'one_column' && (
+      {visual === 'one_column' && (
         <div className="container">
           <div className="row align-items-center flex-column">
             <div className="col-lg-6">

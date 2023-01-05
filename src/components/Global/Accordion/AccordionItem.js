@@ -21,7 +21,7 @@ const AccordionItem = ({ title, content, slug, model, image, alignment, isActive
             } `}
           >
             <div className="icon" onClick={handleOnClickTab}>
-              <img src={isActive ? closeTab : openTab} />
+              <img src={isActive ? closeTab : openTab} alt="Open/close icon" />
             </div>
 
             <div>

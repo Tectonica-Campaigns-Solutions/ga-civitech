@@ -26,7 +26,7 @@ export default function HeroProduct({ data, loginTitle }) {
 
             <Link to={data.linkUrl} target="_blank">
               {loginTitle}
-              <img src={vector} />
+              <img src={vector} alt="Login vector" />
             </Link>
           </div>
         )}

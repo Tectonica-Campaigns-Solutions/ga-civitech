@@ -2,7 +2,6 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import TopMessage from './Global/TopMessage/TopMessage';
 import { Slice } from 'gatsby';
-import Header from './Header';
 
 import '../styles/main.scss';
 
