@@ -1,6 +1,7 @@
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import React from 'react';
 import ImageWrapper from '../Image/ImageWrapper';
+import AnimateLink from '../Link/AnimateLink';
 
 import closeIcon from '../../Icons/member-close.svg';
 import facebookIcon from '../../Icons/member-facebook.svg';
@@ -10,12 +11,15 @@ import linkedinIcon from '../../Icons/member-linkedin.svg';
 
 import './index.scss';
 
-const MemberDetail = ({ member }) => {
-  const { id, image, name, info, positionMember } = member;
+const MemberDetail = ({ member, location }) => {
+  const { image, name, info, positionMember } = member;
+  const memberListUrl = location.pathname.split('/')[1];
 
   return (
     <section className="member-detail">
-      <img src={closeIcon} alt="Close icon" onClick={() => navigate(-1)} className="close-icon" />
+      <AnimateLink to={`/${memberListUrl}`}>
+        <img src={closeIcon} alt="Close icon" className="close-icon" />
+      </AnimateLink>
 
       <div className="container">
         <div className="row">

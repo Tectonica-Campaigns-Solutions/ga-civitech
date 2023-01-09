@@ -12,6 +12,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,7 +29,7 @@ module.exports = {
         apiToken: process.env.DATO_API_TOKEN,
         preview: false,
         disableLiveReload: false,
-        environment: process.env.DATO_ENVIRONMENT ? process.env.DATO_ENVIRONMENT : '',
+        // environment: process.env.DATO_ENVIRONMENT ? process.env.DATO_ENVIRONMENT : '',
       },
     },
     {

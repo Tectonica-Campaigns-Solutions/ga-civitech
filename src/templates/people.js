@@ -7,7 +7,7 @@ import MemberDetail from '../components/Global/MemberDetail/MemberDetail';
 const People = ({ location, data: { page } }) => {
   return (
     <Layout location={location}>
-      <MemberDetail member={page} />
+      <MemberDetail member={page} location={location} />
     </Layout>
   );
 };

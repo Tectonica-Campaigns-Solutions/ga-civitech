@@ -1,8 +1,8 @@
-import { Link } from 'gatsby';
 import * as React from 'react';
 import { isArray, pathToModel } from '../../../utils';
 import CtaList from '../../Global/Cta/CtaList';
 import ImageWrapper from '../../Global/Image/ImageWrapper';
+import AnimateLink from '../../Global/Link/AnimateLink';
 
 import './index.scss';
 
@@ -16,14 +16,15 @@ export default function ListMembers({ block }) {
           {isArray(members) &&
             members.map((member, index) => (
               <div key={index} className="col-lg-20pg col-md-4 member-item">
-                <Link to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
+                <AnimateLink to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
                   <ImageWrapper image={member.image} objectFit="contain" />
-                </Link>
+                </AnimateLink>
 
                 <div className="description">
-                  <Link to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
+                  <AnimateLink to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
                     <h3>{member.name}</h3>
-                  </Link>
+                  </AnimateLink>
+
                   <span>{member.positionMember}</span>
                 </div>
               </div>
