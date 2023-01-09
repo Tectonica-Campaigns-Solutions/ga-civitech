@@ -1,24 +1,29 @@
+import { Link } from 'gatsby';
 import * as React from 'react';
-import { isArray } from '../../../utils';
+import { isArray, pathToModel } from '../../../utils';
 import CtaList from '../../Global/Cta/CtaList';
 import ImageWrapper from '../../Global/Image/ImageWrapper';
 
 import './index.scss';
 
 export default function ListMembers({ block }) {
-  const { members, ctas, backgroundColor } = block;
+  const { members, ctas, backgroundColor, model, detailedViewOfTheMembers = false } = block;
 
   return (
-    <div className={`list-members-container ${backgroundColor}`}>
+    <div className={`list-members-container ${backgroundColor} ${detailedViewOfTheMembers ? 'extra-pt' : ''}`}>
       <div className="container">
-        <div className="row">
+        <div className="row g-5">
           {isArray(members) &&
             members.map((member, index) => (
-              <div key={index} className="col-lg col-md-4 member-item">
-                <ImageWrapper image={member.image} objectFit="contain" />
+              <div key={index} className="col-lg-20pg col-md-4 member-item">
+                <Link to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
+                  <ImageWrapper image={member.image} objectFit="contain" />
+                </Link>
 
                 <div className="description">
-                  <h3>{member.name}</h3>
+                  <Link to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
+                    <h3>{member.name}</h3>
+                  </Link>
                   <span>{member.positionMember}</span>
                 </div>
               </div>
