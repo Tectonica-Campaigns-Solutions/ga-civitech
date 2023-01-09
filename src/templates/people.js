@@ -28,7 +28,7 @@ export const PeopleQuery = graphql`
       }
       id
       image {
-        gatsbyImageData
+        gatsbyImageData(width: 700)
       }
       name
       info

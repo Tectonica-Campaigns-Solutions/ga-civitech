@@ -22,9 +22,9 @@ const MemberDetail = ({ member, location }) => {
       </AnimateLink>
 
       <div className="container">
-        <div className="row">
+        <div className="row justify-content-between">
           {image && (
-            <div className="col-lg-6">
+            <div className="col-lg-5">
               <ImageWrapper image={image} />
             </div>
           )}

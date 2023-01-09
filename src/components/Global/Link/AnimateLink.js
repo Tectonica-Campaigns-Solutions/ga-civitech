@@ -5,9 +5,9 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 const AnimateLink = ({ to, children }) => {
   return (
     <AniLink
-      paintDrip={true}
-      swipe={false}
-      cover={false}
+      // paintDrip={false}
+      // swipe={true}
+      cover={true}
       fade={false}
       direction="bottom"
       hex="#001325"
