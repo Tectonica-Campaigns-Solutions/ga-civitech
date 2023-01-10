@@ -3,6 +3,8 @@ export const pathToModel = (model, slug = '') => {
     return `/product/${slug}`;
   } else if (model === 'post') {
     return `/post/${slug}`;
+  } else if (model === 'list_member') {
+    return `/people/${slug}`;
   } else {
     return '';
   }

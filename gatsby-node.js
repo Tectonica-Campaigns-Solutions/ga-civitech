@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
       page: path.resolve('./src/templates/page.js'),
       post: path.resolve('./src/templates/post.js'),
       product: path.resolve('./src/templates/product.js'),
+      people: path.resolve('./src/templates/people.js'),
     };
 
     resolve(
@@ -53,6 +54,12 @@ exports.createPages = ({ graphql, actions }) => {
                 id
               }
             }
+            members: allDatoCmsTeamMember {
+              nodes {
+                id
+                slug
+              }
+            }
             globalSettings: allDatoCmsGlobalSetting {
               nodes {
                 codeId
@@ -71,6 +78,7 @@ exports.createPages = ({ graphql, actions }) => {
         const pages = result.data.pages.nodes;
         const posts = result.data.posts.nodes;
         const products = result.data.products.nodes;
+        const members = result.data.members.nodes;
         const globalSettings = result.data.globalSettings.nodes;
 
         for (page of pages) {
@@ -106,6 +114,17 @@ exports.createPages = ({ graphql, actions }) => {
               slug: product.slug,
               id: product.id,
               globalSettings,
+            },
+          });
+        }
+
+        for (member of members) {
+          createPage({
+            path: `/people/${member.slug}`,
+            component: templates.people,
+            context: {
+              id: member.id,
+              slug: member.slug,
             },
           });
         }

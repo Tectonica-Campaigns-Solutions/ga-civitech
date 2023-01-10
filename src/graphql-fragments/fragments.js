@@ -218,7 +218,12 @@ export const DatoCMS = graphql`
     __typename
     id
     backgroundColor
+    detailedViewOfTheMembers
+    model {
+      apiKey
+    }
     members {
+      slug
       name
       positionMember
       image {
