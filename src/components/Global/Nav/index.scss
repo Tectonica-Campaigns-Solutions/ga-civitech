@@ -31,7 +31,22 @@
     }
   }
 
+  .megaMenuBox{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    .navMegaMenu{
+      width:100%;
+      display:flex;
+      > div{
+        margin:10px;
+      }
+    }
+  }
+
   .dropdown {
+    position:static;
     &-button {
       background: transparent;
       border: none;
@@ -44,7 +59,12 @@
       padding: 20px 20px;
 
       &.open {
-        display: block;
+        display: flex;
+        background-color:#E4F7FF;
+        justify-content: flex-start;
+        > li{
+          width:auto;
+        }
       }
     }
 
@@ -53,10 +73,6 @@
       &:hover {
         color: #1e2125;
         background-color: transparent;
-      }
-
-      &:not(:last-child) {
-        padding-bottom: 18px;
       }
     }
   }
@@ -314,6 +330,9 @@ span.navbar-toggler-icon {
     border-radius: 0px 4px 4px 4px;
     // box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
     border: none;
+    left:0;
+    width:100%;
+    top:100px;
   }
 }
 
@@ -322,9 +341,11 @@ span.navbar-toggler-icon {
     text-align: center;
   }
   li.dropdown ul.dropdown-menu {
+   
     background-color: transparent !important;
     border: none;
     text-align: center;
+    
   }
 }
 

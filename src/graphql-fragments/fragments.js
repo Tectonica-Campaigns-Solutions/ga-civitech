@@ -212,6 +212,30 @@ export const DatoCMS = graphql`
           }
         }
       }
+      megaMenu{
+        ... on DatoCmsMegaMenu{
+          tabs{
+            ... on DatoCmsMegaMenuTab{
+              title
+              description
+              groupLink{
+                title
+                links{
+                  ... on DatoCmsGlobalLink{
+                    label
+                    url
+                    content{
+                      ... on DatoCmsPage{
+                        slug
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
   fragment BlockListMember on DatoCmsListMember {
