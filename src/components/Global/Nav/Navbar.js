@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from '../Link';
-import DropdownItem from './DropdownItem';
-import DropdownMegaMenu from './DropdownMegaMenu';
-import LinkItem from './LinkItem';
-import logo from '../../Icons/logo.svg';
 import MegaMenu from './MegaMenu/MegaMenu';
+import logo from '../../Icons/logo.svg';
 
 const Navbar = ({ navData, path }) => {
   const { navigationItems = [] } = navData.datoCmsNavigation;
