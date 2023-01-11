@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Link from '../Link';
 import MegaMenu from './MegaMenu/MegaMenu';
 import logo from '../../Icons/logo.svg';
+import dropdownIcon from '../../Icons/nav-dropdown.svg';
+import dropdownActiveIcon from '../../Icons/nav-dropdown-active.svg';
+import { isArray } from '../../../utils';
+
+import './index.scss';
 
 const Navbar = ({ navData, path }) => {
   const { navigationItems = [] } = navData.datoCmsNavigation;
@@ -9,11 +14,7 @@ const Navbar = ({ navData, path }) => {
 
   const [expanded, setExpanded] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
-
-  // Main links
   const [activeLink, setActiveLink] = useState(null);
-
-  const [activeMainLink, setActiveMainLink] = useState(-1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,11 +32,11 @@ const Navbar = ({ navData, path }) => {
     }
   }, []);
 
-  // console.log({ navigationItems });
+  console.log({ navigationItems });
 
   return (
     <>
-      <div style={{ position: 'relative', backgroundColor: 'darkgoldenrod' }}>
+      <div>
         <nav
           className={`navbar navbar-expand-lg ${isHomePage ? 'home-nav' : ''} ${expanded ? 'expanded' : ''} ${
             scrollPosition > 75 ? 'sticky-nav' : ''
@@ -59,12 +60,28 @@ const Navbar = ({ navData, path }) => {
           </button>
 
           <div className={` ${expanded ? 'show' : ''} collapse navbar-collapse`} id="navNav">
-            <ul className="navbar-nav mr-auto">
-              {navigationItems?.map((link, index) => {
+            <ul className="navbar-nav mr-auto nav-c-group-items">
+              {navigationItems?.map(link => {
+                // If the link has children or is a mega menu we do not need to redirect to another page
+                if (isArray(link.links) || !!link.megaMenu) {
+                  return (
+                    <span
+                      onClick={() => setActiveLink(link)}
+                      className={`nav-c-item ${activeLink === link ? 'active' : ''}`}
+                    >
+                      {link.label}
+
+                      <span>
+                        <img src={activeLink === link ? dropdownActiveIcon : dropdownIcon} />
+                      </span>
+                    </span>
+                  );
+                }
+
                 return (
-                  <span onClick={() => setActiveLink(link)} style={{ marginRight: '1rem' }}>
+                  <Link to={link} className={link.isButton ? 'btn btn-primary' : ''}>
                     {link.label}
-                  </span>
+                  </Link>
                 );
               })}
             </ul>
