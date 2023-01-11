@@ -32,14 +32,12 @@ const Navbar = ({ navData, path }) => {
     }
   }, []);
 
-  console.log({ navigationItems });
-
   return (
     <>
       <div>
         <nav
           className={`navbar navbar-expand-lg ${isHomePage ? 'home-nav' : ''} ${expanded ? 'expanded' : ''} ${
-            scrollPosition > 75 ? 'sticky-nav' : ''
+            scrollPosition > 40 ? 'sticky-nav' : ''
           }`}
         >
           <Link className="navbar-brand" to={'/'}>
