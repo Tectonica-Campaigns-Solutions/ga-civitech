@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Nav from './Global/Nav/Nav';
 import { useStaticQuery } from 'gatsby';
 import { graphql } from 'gatsby';
+import Navbar from './Global/Nav/Navbar';
 
 const Header = ({ location }) => {
   const mainMenu = useStaticQuery(graphql`
@@ -14,8 +14,7 @@ const Header = ({ location }) => {
 
   return (
     <header>
-      {/* Force clean cache */}
-      <Nav navData={mainMenu} path={location?.pathname} />
+      <Navbar navData={mainMenu} path={location?.pathname} />
     </header>
   );
 };
