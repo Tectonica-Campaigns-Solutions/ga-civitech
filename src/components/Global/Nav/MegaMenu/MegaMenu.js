@@ -13,7 +13,7 @@ const MegaMenu = ({ link }) => {
 
   const megaMenuTabs = megaMenu?.tabs || [];
   const megaMenuActiveContent = megaMenu ? megaMenu.tabs[megaMenuActiveTab] : null;
-  const hasRelatedCard = megaMenuActiveContent.highlightedContent ? true : false;
+  const hasRelatedCard = megaMenuActiveContent?.highlightedContent ? true : false;
 
   const handleOnClickTabItem = newIndex => {
     if (megaMenuTabs) {
