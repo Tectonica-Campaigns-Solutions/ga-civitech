@@ -93,7 +93,7 @@ const Navbar = ({ navData, path }) => {
                     {link.label}
 
                     <span>
-                      <img src={activeLink === link ? dropdownActiveIcon : dropdownIcon} />
+                      <img src={activeLink === link ? dropdownActiveIcon : dropdownIcon} alt="dropdown menu icon"/>
                     </span>
                   </span>
                 );
