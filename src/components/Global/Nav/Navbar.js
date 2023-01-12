@@ -42,22 +42,20 @@ const Navbar = ({ navData, path }) => {
        */
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
-          setActiveLink(false)
+          setActiveLink(false);
         }
       }
       // Bind the event listener
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
       return () => {
         // Unbind the event listener on clean up
-        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener('mousedown', handleClickOutside);
       };
     }, [ref]);
   }
 
- 
-
   return (
-    <div className="navbar-container"  ref={wrapperRef}>
+    <div className="navbar-container" ref={wrapperRef}>
       <nav
         className={`navbar navbar-expand-lg ${isHomePage ? 'home-nav' : ''} ${expanded ? 'expanded' : ''} ${
           scrollPosition > 40 ? 'sticky-nav' : ''
@@ -86,23 +84,25 @@ const Navbar = ({ navData, path }) => {
               // If the link has children or is a mega menu we do not need to redirect to another page
               if (isArray(link.links) || !!link.megaMenu) {
                 return (
-                  <span
+                  <li
                     onClick={() => setActiveLink(link)}
                     className={`nav-c-item ${activeLink === link ? 'active' : ''}`}
                   >
                     {link.label}
 
                     <span>
-                      <img src={activeLink === link ? dropdownActiveIcon : dropdownIcon} alt="dropdown menu icon"/>
+                      <img src={activeLink === link ? dropdownActiveIcon : dropdownIcon} alt="dropdown menu icon" />
                     </span>
-                  </span>
+                  </li>
                 );
               }
 
               return (
-                <Link to={link} className={link.isButton ? 'btn btn-primary' : ''}>
-                  {link.label}
-                </Link>
+                <li>
+                  <Link to={link} className={link.isButton ? 'btn btn-primary' : ''}>
+                    {link.label}
+                  </Link>
+                </li>
               );
             })}
           </ul>
