@@ -45,7 +45,7 @@ const TopMessage = () => {
       <div className="d-flex h-100 align-items-center justify-content-center">
         <span className="information">
           <GlobalImage image={data.datoCmsTopMessage.icon} />
-          <h1>{data.datoCmsTopMessage.message}</h1>
+          <span>{data.datoCmsTopMessage.message}</span>
         </span>
 
         <div className="close-btn" onClick={handleToggleTopMessage}>
