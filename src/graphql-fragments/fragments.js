@@ -232,6 +232,32 @@ export const DatoCMS = graphql`
                   }
                 }
               }
+              highlightedContent{
+                ... on DatoCmsPage{
+                  title
+                  summary: description
+                  slug
+                  model{
+                    apiKey
+                  }
+                }
+                ... on DatoCmsPost{
+                  title
+                  summary: summary
+                  slug
+                  model{
+                    apiKey
+                  }
+                }
+                ... on DatoCmsProduct{
+                  title
+                  summary: description
+                  slug
+                  model{
+                    apiKey
+                  }
+                }
+              }
             }
           }
         }

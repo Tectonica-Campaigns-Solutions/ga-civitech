@@ -1,16 +1,19 @@
 import React from 'react';
 import ImageWrapper from '../../Image/ImageWrapper';
-import { Link } from 'gatsby-link';
+import Link from '../../Link';
+import { pathToModel } from '../../../../utils';
+
 
 import './index.scss';
 
-const MegaMenuCard = ({ meta, title, image, description }) => {
+const MegaMenuCard = ({ meta, title, image, description, slug, model }) => {
+  const linkPath = pathToModel(model.apiKey, slug);
   return (
     <div className="mega-menu-card">
       {meta && <span className="meta">{meta}</span>}
 
       {title && (
-        <Link>
+        <Link to={linkPath}>
           <h2>{title}</h2>
         </Link>
       )}

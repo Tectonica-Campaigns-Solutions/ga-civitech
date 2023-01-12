@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from '../Link';
 import MegaMenu from './MegaMenu/MegaMenu';
 import logo from '../../Icons/logo.svg';
@@ -16,6 +16,9 @@ const Navbar = ({ navData, path }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeLink, setActiveLink] = useState(null);
 
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
+
   useEffect(() => {
     const handleScroll = () => {
       if (typeof window !== 'undefined') {
@@ -32,8 +35,29 @@ const Navbar = ({ navData, path }) => {
     }
   }, []);
 
+  function useOutsideAlerter(ref) {
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setActiveLink(false)
+        }
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
+ 
+
   return (
-    <div className="navbar-container">
+    <div className="navbar-container"  ref={wrapperRef}>
       <nav
         className={`navbar navbar-expand-lg ${isHomePage ? 'home-nav' : ''} ${expanded ? 'expanded' : ''} ${
           scrollPosition > 40 ? 'sticky-nav' : ''

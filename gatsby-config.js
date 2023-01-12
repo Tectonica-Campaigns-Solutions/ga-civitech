@@ -14,6 +14,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-transition-link`,
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: ['https://fonts.gstatic.com', 'https://use.typekit.net'],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

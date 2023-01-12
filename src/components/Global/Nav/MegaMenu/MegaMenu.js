@@ -13,9 +13,7 @@ const MegaMenu = ({ link }) => {
 
   const megaMenuTabs = megaMenu?.tabs || [];
   const megaMenuActiveContent = megaMenu ? megaMenu.tabs[megaMenuActiveTab] : null;
-  const hasRelatedCard = true;
-
-  console.log({ megaMenu, megaMenuActiveTab });
+  const hasRelatedCard = megaMenuActiveContent.highlightedContent ? true : false;
 
   const handleOnClickTabItem = newIndex => {
     if (megaMenuTabs) {
@@ -80,11 +78,13 @@ const MegaMenu = ({ link }) => {
                 <div className="col-lg-3">
                   <MegaMenuCard
                     meta="you might like"
+                    slug={megaMenuActiveContent.highlightedContent.slug}
                     image={{
                       url: 'https://www.datocms-assets.com/79535/1666185543-graphic.png?auto=format&dpr=0.9&w=558',
                     }}
-                    title="Rust Belt Rising boosts vital Midwest turnout in 2020"
-                    description="A short description of the tools that are part of this specific toolset. Ipsum dolor sit amet, consectetur adipiscing elit."
+                    model={megaMenuActiveContent.highlightedContent.model}
+                    title={ megaMenuActiveContent.highlightedContent.title }
+                    description={  megaMenuActiveContent.highlightedContent.summary }
                   />
                 </div>
               )}
