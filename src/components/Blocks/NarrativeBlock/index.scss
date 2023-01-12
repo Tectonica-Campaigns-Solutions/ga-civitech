@@ -82,12 +82,18 @@
   }
 
   + .component-narrative-block {
-    padding-top: 0;
+    padding-top: 0 !important;
   }
 }
 
 .top-message-container + header + main {
   .component-narrative-block {
-    padding-top: 150px;
+    padding-top: 170px;
+  }
+}
+
+header + main {
+  .component-narrative-block:first-of-type {
+    padding-top: 170px;
   }
 }
