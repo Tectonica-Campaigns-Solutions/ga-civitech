@@ -54,7 +54,7 @@ const Navbar = ({ navData, path }) => {
     }, [ref]);
   }
 
-  const showStickyNav = scrollPosition > 20;
+  const showStickyNav = scrollPosition > 300;
 
   return (
     <div className={`navbar-container ${showStickyNav ? 'sticky' : ''}`} ref={wrapperRef}>

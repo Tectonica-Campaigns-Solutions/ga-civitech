@@ -82,19 +82,10 @@
   }
 
   + .component-narrative-block {
-    padding-top: 40px !important;
+    padding-top: 40px;
   }
 }
 
-// .top-message-container + header + main {
-//   .component-narrative-block:first-child {
-//     padding-top: 170px;
-//   }
-// }
-
-// main {
-//   .component-narrative-block:first-of-type {
-//     background-color: red;
-//     padding-top: 170px;
-//   }
-// }
+main > div.component-narrative-block:first-of-type {
+  padding-top: 150px;
+}

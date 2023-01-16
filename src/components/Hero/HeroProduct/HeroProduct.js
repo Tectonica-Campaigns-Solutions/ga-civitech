@@ -18,21 +18,19 @@ export default function HeroProduct({ data, loginTitle }) {
   };
 
   return (
-    <>
-      <div className="hero-single-product">
-        {data.textLink && data.linkUrl && (
-          <div className="login-product">
-            <span>{data.textLink}</span>
+    <div className="hero-single-product">
+      {data.textLink && data.linkUrl && (
+        <div className="login-product">
+          <span>{data.textLink}</span>
 
-            <Link to={data.linkUrl} target="_blank">
-              {loginTitle}
-              <img src={vector} alt="Login vector" />
-            </Link>
-          </div>
-        )}
+          <Link to={data.linkUrl} target="_blank">
+            {loginTitle}
+            <img src={vector} alt="Login vector" />
+          </Link>
+        </div>
+      )}
 
-        <NarrativeBlock block={productBlockData} />
-      </div>
-    </>
+      <NarrativeBlock block={productBlockData} />
+    </div>
   );
 }

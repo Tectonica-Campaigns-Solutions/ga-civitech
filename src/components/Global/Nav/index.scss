@@ -1,63 +1,80 @@
 .navbar-container {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 999;
-}
 
-.navbar {
-  min-height: 90px;
-  background: var(--ct-white);
-  padding: 31.5px 41px 32.5px 41px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
-
-  .navbar-brand > img {
-    width: 95%;
-  }
-
-  &.home-nav {
-    background: transparent;
-  }
-
-  &.sticky-nav {
+  .navbar {
+    min-height: 90px;
     background: var(--ct-white);
-  }
+    padding: 31.5px 41px 32.5px 41px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 
-  .collapse {
-    @media (max-width: 991px) {
-      background-color: var(--ct-white);
+    .navbar-brand > img {
+      width: 95%;
     }
-  }
 
-  #navNav {
-    align-items: center;
-    justify-content: flex-end;
+    &.home-nav {
+      background: transparent;
+    }
 
-    ul {
+    &.sticky-nav {
+      background: var(--ct-white);
+    }
+
+    .collapse {
+      @media (max-width: 991px) {
+        background-color: var(--ct-white);
+      }
+    }
+
+    #navNav {
       align-items: center;
+      justify-content: flex-end;
+
+      ul {
+        align-items: center;
+      }
+    }
+
+    .nav-c-group-items {
+      gap: 50px;
+
+      .nav-c-item {
+        cursor: pointer;
+        font-family: 'Public Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        color: var(--ct-dark-blue);
+
+        span {
+          margin-left: 5px;
+        }
+
+        &.active {
+          color: var(--ct-blue);
+        }
+      }
+    }
+
+    @media screen and (max-width: 991px) {
+      .navbar {
+        padding: 5px 0;
+        a.navbar-brand {
+          padding-left: 18px;
+        }
+        button {
+          padding-right: 18px;
+        }
+      }
     }
   }
 
-  .nav-c-group-items {
-    gap: 50px;
-
-    .nav-c-item {
-      cursor: pointer;
-      font-family: 'Public Sans';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 150%;
-      color: var(--ct-dark-blue);
-
-      span {
-        margin-left: 5px;
-      }
-
-      &.active {
-        color: var(--ct-blue);
-      }
-    }
+  &.sticky {
+    position: fixed;
+    top: 0;
   }
 }
 
@@ -118,30 +135,12 @@ span.navbar-toggler-icon {
   }
 }
 
-@media screen and (max-width: 991px) {
-  .navbar {
-    padding: 5px 0;
-    a.navbar-brand {
-      padding-left: 18px;
-    }
-    button {
-      padding-right: 18px;
-    }
-  }
-}
-
 .top-message-container + header {
   .navbar-container {
     top: 44px;
 
     &.sticky {
       top: 0;
-    }
-
-    .navbar {
-      &.sticky-nav {
-        top: 0;
-      }
     }
   }
 }

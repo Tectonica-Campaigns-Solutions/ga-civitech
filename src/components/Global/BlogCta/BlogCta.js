@@ -15,7 +15,7 @@ export default function BlogCta({ title, cta, image }) {
   };
 
   return (
-    <div className="blog-cta-container light-red">
+    <div className="blog-cta-container pale-red">
       <div className="row">
         {image && (
           <div className="col-lg-4 image">

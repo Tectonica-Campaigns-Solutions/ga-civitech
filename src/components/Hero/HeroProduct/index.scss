@@ -1,5 +1,7 @@
 .hero-single-product {
   .component-narrative-block {
+    padding-top: 50px;
+
     h2 {
       font-weight: 700;
       font-size: 61px;
@@ -30,5 +32,12 @@
         margin-left: 6px;
       }
     }
+  }
+}
+
+.top-message-container + header + main,
+header + main {
+  .hero-single-product {
+    padding-top: 110px;
   }
 }
