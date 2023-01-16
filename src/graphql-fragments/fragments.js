@@ -212,48 +212,49 @@ export const DatoCMS = graphql`
           }
         }
       }
-      megaMenu{
-        ... on DatoCmsMegaMenu{
-          tabs{
-            ... on DatoCmsMegaMenuTab{
+      megaMenu {
+        ... on DatoCmsMegaMenu {
+          tabs {
+            ... on DatoCmsMegaMenuTab {
               title
               description
-              groupLink{
+              groupLink {
                 title
-                links{
-                  ... on DatoCmsGlobalLink{
+                links {
+                  ... on DatoCmsGlobalLink {
                     label
                     url
-                    content{
-                      ... on DatoCmsPage{
+                    content {
+                      ... on DatoCmsPage {
                         slug
                       }
                     }
                   }
                 }
               }
-              highlightedContent{
-                ... on DatoCmsPage{
+              labelHighlight
+              highlightedContent {
+                ... on DatoCmsPage {
                   title
                   summary: description
                   slug
-                  model{
+                  model {
                     apiKey
                   }
                 }
-                ... on DatoCmsPost{
+                ... on DatoCmsPost {
                   title
                   summary: summary
                   slug
-                  model{
+                  model {
                     apiKey
                   }
                 }
-                ... on DatoCmsProduct{
+                ... on DatoCmsProduct {
                   title
                   summary: description
                   slug
-                  model{
+                  model {
                     apiKey
                   }
                 }

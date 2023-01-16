@@ -82,18 +82,19 @@
   }
 
   + .component-narrative-block {
-    padding-top: 0 !important;
+    padding-top: 40px !important;
   }
 }
 
-.top-message-container + header + main {
-  .component-narrative-block {
-    padding-top: 170px;
-  }
-}
+// .top-message-container + header + main {
+//   .component-narrative-block:first-child {
+//     padding-top: 170px;
+//   }
+// }
 
-header + main {
-  .component-narrative-block:first-of-type {
-    padding-top: 170px;
-  }
-}
+// main {
+//   .component-narrative-block:first-of-type {
+//     background-color: red;
+//     padding-top: 170px;
+//   }
+// }

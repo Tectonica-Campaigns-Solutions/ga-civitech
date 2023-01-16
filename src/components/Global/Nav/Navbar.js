@@ -54,11 +54,13 @@ const Navbar = ({ navData, path }) => {
     }, [ref]);
   }
 
+  const showStickyNav = scrollPosition > 20;
+
   return (
-    <div className="navbar-container" ref={wrapperRef}>
+    <div className={`navbar-container ${showStickyNav ? 'sticky' : ''}`} ref={wrapperRef}>
       <nav
         className={`navbar navbar-expand-lg ${isHomePage ? 'home-nav' : ''} ${expanded ? 'expanded' : ''} ${
-          scrollPosition > 40 ? 'sticky-nav' : ''
+          showStickyNav ? 'sticky-nav' : ''
         }`}
       >
         <Link className="navbar-brand" to={'/'}>

@@ -132,13 +132,14 @@ span.navbar-toggler-icon {
 
 .top-message-container + header {
   .navbar-container {
-    position: absolute;
     top: 44px;
+
+    &.sticky {
+      top: 0;
+    }
 
     .navbar {
       &.sticky-nav {
-        position: fixed;
-        width: 100%;
         top: 0;
       }
     }
