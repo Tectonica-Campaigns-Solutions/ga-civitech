@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { isArray } from '../../../utils';
-import CtaList from '../../Global/Cta/CtaList';
-import ImageWrapper from '../../Global/Image/ImageWrapper';
-import arrows from '../../Icons/Union.svg';
+import { isArray } from '../../../../utils';
+import CtaList from '../../Cta/CtaList';
+import ImageWrapper from '../../Image/ImageWrapper';
+import arrows from '../../../Icons/Union.svg';
 
 import './index.scss';
 

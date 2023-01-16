@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import NarrativeBlock from '../../Blocks/NarrativeBlock/NarrativeBlock';
-import vector from '../../Icons/login-vector.svg';
+import NarrativeBlock from '../../../Blocks/NarrativeBlock/NarrativeBlock';
+import vector from '../../../Icons/login-vector.svg';
 
 import './index.scss';
 

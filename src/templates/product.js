@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
-import HeroProduct from '../components/Hero/HeroProduct/HeroProduct';
+import HeroProduct from '../components/Global/Hero/HeroProduct/HeroProduct';
 
 const Product = ({ location, pageContext, data: { page } }) => {
   const { globalSettings } = pageContext;
@@ -19,7 +19,7 @@ const Product = ({ location, pageContext, data: { page } }) => {
 
 export default Product;
 
-export const Head = ({ data: {page} }) => <SeoDatoCms page={page} />
+export const Head = ({ data: { page } }) => <SeoDatoCms page={page} />;
 
 export const ProductQuery = graphql`
   query ProductById($id: String) {
@@ -27,7 +27,7 @@ export const ProductQuery = graphql`
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
-      seo{
+      seo {
         title
         description
       }

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Tag from '../../Global/Tag/Tag';
-import ImageWrapper from '../../Global/Image/ImageWrapper';
+import Tag from '../../Tag/Tag';
+import ImageWrapper from '../../Image/ImageWrapper';
 
 import './index.scss';
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import NarrativeBlock from '../../Blocks/NarrativeBlock/NarrativeBlock';
+import NarrativeBlock from '../../../Blocks/NarrativeBlock/NarrativeBlock';
 
 import './index.scss';
 
@@ -11,7 +11,7 @@ export default function HeroImageRight(data) {
     textContent: data.description,
     image: data.image ? [data.image] : null,
     ctas: data.ctas,
-    video:data.video,
+    video: data.video,
     classNames: 'pb-5',
   };
 
