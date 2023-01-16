@@ -87,7 +87,7 @@ const Navbar = ({ navData, path }) => {
               if (isArray(link.links) || !!link.megaMenu) {
                 return (
                   <li
-                    onClick={() => setActiveLink(link)}
+                    onClick={() => setActiveLink(prevLink => (prevLink === link ? null : link))}
                     className={`nav-c-item ${activeLink === link ? 'active' : ''}`}
                   >
                     {link.label}
