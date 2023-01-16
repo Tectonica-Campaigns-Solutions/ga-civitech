@@ -3,11 +3,11 @@ import ImageWrapper from '../../Image/ImageWrapper';
 import Link from '../../Link';
 import { pathToModel } from '../../../../utils';
 
-
 import './index.scss';
 
 const MegaMenuCard = ({ meta, title, image, description, slug, model }) => {
   const linkPath = pathToModel(model.apiKey, slug);
+
   return (
     <div className="mega-menu-card">
       {meta && <span className="meta">{meta}</span>}

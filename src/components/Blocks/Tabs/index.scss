@@ -1,9 +1,9 @@
 .tabs {
   padding: 130px 0 150px 0;
 
-  &.light-blue,
-  &.light-red,
-  &.light-yellow {
+  &.pale-blue,
+  &.pale-red,
+  &.pale-yellow {
     .titles {
       > div:not(.active) {
         color: var(--ct-dark-gray);

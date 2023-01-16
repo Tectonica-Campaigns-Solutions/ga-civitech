@@ -77,14 +77,12 @@ const MegaMenu = ({ link }) => {
               {hasRelatedCard && (
                 <div className="col-lg-3">
                   <MegaMenuCard
-                    meta="you might like"
+                    meta={megaMenuActiveContent.labelHighlight || ''}
                     slug={megaMenuActiveContent.highlightedContent.slug}
-                    image={{
-                      url: 'https://www.datocms-assets.com/79535/1666185543-graphic.png?auto=format&dpr=0.9&w=558',
-                    }}
+                    image={megaMenuActiveContent.highlightedContent.image}
                     model={megaMenuActiveContent.highlightedContent.model}
-                    title={ megaMenuActiveContent.highlightedContent.title }
-                    description={  megaMenuActiveContent.highlightedContent.summary }
+                    title={megaMenuActiveContent.highlightedContent.title}
+                    description={megaMenuActiveContent.highlightedContent.summary}
                   />
                 </div>
               )}

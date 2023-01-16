@@ -9,7 +9,7 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
   const heroData = { alignment: 'right', title, textContent: content, ctas, image };
 
   return (
-    <div className="hero pt-5 pb-3">
+    <div className="hero">
       <div className="container">
         <NarrativeBlock block={heroData} />
 

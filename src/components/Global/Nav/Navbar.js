@@ -54,11 +54,13 @@ const Navbar = ({ navData, path }) => {
     }, [ref]);
   }
 
+  const showStickyNav = scrollPosition > 300;
+
   return (
-    <div className="navbar-container" ref={wrapperRef}>
+    <div className={`navbar-container ${showStickyNav ? 'sticky' : ''}`} ref={wrapperRef}>
       <nav
         className={`navbar navbar-expand-lg ${isHomePage ? 'home-nav' : ''} ${expanded ? 'expanded' : ''} ${
-          scrollPosition > 40 ? 'sticky-nav' : ''
+          showStickyNav ? 'sticky-nav' : ''
         }`}
       >
         <Link className="navbar-brand" to={'/'}>
@@ -85,7 +87,7 @@ const Navbar = ({ navData, path }) => {
               if (isArray(link.links) || !!link.megaMenu) {
                 return (
                   <li
-                    onClick={() => setActiveLink(link)}
+                    onClick={() => setActiveLink(prevLink => (prevLink === link ? null : link))}
                     className={`nav-c-item ${activeLink === link ? 'active' : ''}`}
                   >
                     {link.label}

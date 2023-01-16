@@ -26,6 +26,10 @@ function TextHubspotForm({ block }) {
     });
   }, [id, formId, region, portalId]);
 
+  if (!visual) {
+    return <></>;
+  }
+
   return (
     <div className={`text-hubspot-form ${backgroundColor} ${visual}`}>
       {visual === 'small' && (

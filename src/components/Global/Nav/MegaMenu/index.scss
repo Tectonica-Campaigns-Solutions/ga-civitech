@@ -6,6 +6,7 @@
   .tabs {
     padding: 10px 0;
     background-color: #e4f7ff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
 
     .tabs-items {
       display: flex;
@@ -18,7 +19,7 @@
         font-family: 'Public Sans';
         font-style: normal;
         font-weight: 400;
-        // font-size: 20px;
+        font-size: 20px;
         line-height: 150%;
         color: #003366;
 

@@ -6,13 +6,13 @@ import arrow from '../../Icons/Triple-Union.svg';
 
 import './index.scss';
 
-const HeroImageCenter = ({ backgroundColor, title, description, image, ctas }) => {
+const HeroImageCenter = ({ backgroundColor, heroTitle, description, image, ctas }) => {
   return (
     <div className={`hero-image-center ${backgroundColor}`}>
       <img className="arrow-effect" src={arrow} alt="Arrow right" />
 
       <div className="container content">
-        {title && <h1>{title}</h1>}
+        {heroTitle && <h1>{heroTitle}</h1>}
 
         {image && (
           <div className="image">
