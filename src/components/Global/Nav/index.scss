@@ -76,61 +76,77 @@
     position: fixed;
     top: 0;
   }
-}
 
-// Check this...
-span.navbar-toggler-icon {
-  height: 4px;
-  background-color: #001e61;
-  position: relative;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    height: 4px;
-    background-color: #001e61;
-    width: 1.5em;
-    left: 0;
-    transition: 0.25s ease-in-out;
-  }
-  &:before {
-    top: -10px;
-  }
-  &:after {
-    bottom: -10px;
-  }
-  &.open-toggle {
-    background-color: #ffff;
-    opacity: 1;
-    top: 0px;
-    height: 4px;
-    -webkit-transform: rotate(132deg);
-    -moz-transform: rotate(132deg);
-    -o-transform: rotate(132deg);
-    transform: rotate(132deg);
-    &:before {
-      opacity: 0;
-      right: -60px;
-    }
-    &:after {
-      background-color: #ffff;
-      content: '';
-      opacity: 1;
-      top: 0px;
-      bottom: unset;
-      height: 4px;
-      -webkit-transform: rotate(-85deg);
-      -moz-transform: rotate(-85deg);
-      -o-transform: rotate(-85deg);
-      transform: rotate(-85deg);
+  @media screen and (max-width: 991px) {
+    .navbar {
+      padding: 19px;
+      background-color: var(--ct-white) !important;
+
+      .navbar-brand > img {
+        width: 70%;
+      }
+
+      .navbar-toggler-icon {
+        height: 4px;
+        background-color: var(--ct-blue);
+        position: relative;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.25s ease-in-out;
+        -moz-transition: 0.25s ease-in-out;
+        -o-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          height: 4px;
+          background-color: var(--ct-blue);
+          width: 1.5em;
+          left: 0;
+          transition: 0.25s ease-in-out;
+        }
+
+        &:before {
+          top: -10px;
+        }
+
+        &:after {
+          bottom: -10px;
+        }
+
+        &.open-toggle {
+          background-color: var(--ct-blue);
+          opacity: 1;
+          top: 0px;
+          height: 4px;
+          -webkit-transform: rotate(132deg);
+          -moz-transform: rotate(132deg);
+          -o-transform: rotate(132deg);
+          transform: rotate(132deg);
+
+          &:before {
+            opacity: 0;
+            right: -60px;
+          }
+
+          &:after {
+            background-color: var(--ct-blue);
+            content: '';
+            opacity: 1;
+            top: 0px;
+            bottom: unset;
+            height: 4px;
+            -webkit-transform: rotate(-85deg);
+            -moz-transform: rotate(-85deg);
+            -o-transform: rotate(-85deg);
+            transform: rotate(-85deg);
+          }
+        }
+      }
     }
   }
 }
