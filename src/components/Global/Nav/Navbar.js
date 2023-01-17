@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Link from '../Link';
+import Link from '../Link/Link';
 import MegaMenu from './MegaMenu/MegaMenu';
 import logo from '../../Icons/logo.svg';
 import dropdownIcon from '../../Icons/nav-dropdown.svg';

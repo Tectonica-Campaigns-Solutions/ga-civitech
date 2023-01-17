@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageWrapper from '../../Image/ImageWrapper';
-import Link from '../../Link';
+import Link from '../../Link/Link';
 import { pathToModel } from '../../../../utils';
 
 import './index.scss';

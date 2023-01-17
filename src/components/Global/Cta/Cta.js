@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '../Link';
+import Link from '../Link/Link';
 import { getCtaTitle, getCtaUrl } from '../../../utils';
 
 export default function Cta({ cta = null, url = '', label = '', isButton = false }) {

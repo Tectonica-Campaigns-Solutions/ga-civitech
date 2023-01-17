@@ -1,7 +1,6 @@
 import React from 'react';
-import { useStaticQuery } from 'gatsby';
-import { graphql } from 'gatsby';
-import Link from '../Link';
+import { useStaticQuery, graphql } from 'gatsby';
+import Link from '../Link/Link';
 import FooterGroupLinks from './FooterGroupLinks';
 import Divider from '../Divider/Divider';
 
@@ -40,7 +39,7 @@ function Footer() {
     <footer id="main-footer">
       <div className="container mb-4">
         <div className="row footer-ct-logo">
-          <img src={footer.logoFooter.image.url} alt="Logo civitech"/>
+          <img src={footer.logoFooter.image.url} alt="Logo civitech" />
         </div>
 
         {/* Menu navigation items */}
@@ -83,7 +82,7 @@ function Footer() {
                 return (
                   <li key={item.id}>
                     <Link to={item.mainLink} target="_blank">
-                      <img src={item.icon.url} alt="follow"/>
+                      <img src={item.icon.url} alt="follow" />
                     </Link>
                   </li>
                 );

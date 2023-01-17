@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from '../Link/Link';
 import GlobalImage from '../Image/GlobalImage';
 import openTab from '../../Icons/tab-plus.svg';
 import closeTab from '../../Icons/tab-minus.svg';

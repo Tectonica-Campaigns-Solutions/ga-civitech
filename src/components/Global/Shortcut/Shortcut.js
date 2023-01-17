@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from '../Link/Link';
 
 import arrow1 from '../../Icons/arrow1.svg';
 import arrow2 from '../../Icons/arrow2.svg';
@@ -19,9 +19,9 @@ export default function Shortcut({ title, description, btnLabel, btnUrl }) {
 
       {/* Arrow icons */}
       <div className="arrows">
-        <img src={arrow1} width="49" alt="icon"/>
-        <img src={arrow2} width="38" alt="icon"/>
-        <img src={arrow3} width="25" alt="icon"/>
+        <img src={arrow1} width="49" alt="icon" />
+        <img src={arrow2} width="38" alt="icon" />
+        <img src={arrow3} width="25" alt="icon" />
       </div>
     </div>
   );

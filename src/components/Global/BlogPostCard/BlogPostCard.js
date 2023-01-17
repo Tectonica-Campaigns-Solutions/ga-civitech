@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import Link from '../Link/Link';
 import GlobalImage from '../Image/GlobalImage';
 import Tag from '../Tag/Tag';
 import { pathToModel } from '../../../utils';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getCtaUrl, isArray } from '../../../../utils';
 import MegaMenuCard from '../MegaMenuCard/MegaMenuCard';
-import Link from '../../Link';
+import Link from '../../Link/Link';
 import Cta from '../../Cta/Cta';
 
 import './index.scss';
