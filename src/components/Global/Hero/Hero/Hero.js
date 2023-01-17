@@ -1,7 +1,7 @@
 import React from 'react';
-import Shortcut from '../Shortcut/Shortcut';
-import { isArray } from '../../../utils';
-import NarrativeBlock from '../../Blocks/NarrativeBlock/NarrativeBlock';
+import Shortcut from '../../Shortcut/Shortcut';
+import { isArray } from '../../../../utils';
+import NarrativeBlock from '../../../Blocks/NarrativeBlock/NarrativeBlock';
 
 import './index.scss';
 

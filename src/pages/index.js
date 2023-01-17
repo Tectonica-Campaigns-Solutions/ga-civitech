@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
-import Hero from '../components/Global/Hero/Hero';
+import Hero from '../components/Global/Hero/Hero/Hero';
 
 const IndexPage = ({ data: { page } }) => (
   <Layout>

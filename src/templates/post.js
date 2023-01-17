@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SeoDatoCms from '../components/SeoDatoCms';
-import HeroBlogPost from '../components/Hero/HeroBlogPost/HeroBlogPost';
+import HeroBlogPost from '../components/Global/Hero/HeroBlogPost/HeroBlogPost';
 import PostGrid from '../components/Global/Post/PostGrid';
 
 const Post = ({ location, pageContext, data: { post, relatedPost } }) => {
@@ -33,7 +33,7 @@ const Post = ({ location, pageContext, data: { post, relatedPost } }) => {
 
 export default Post;
 
-export const Head = ({ data: {post} }) => <SeoDatoCms page={post} />
+export const Head = ({ data: { post } }) => <SeoDatoCms page={post} />;
 
 export const PostQuery = graphql`
   query PostById($id: String, $topic: String) {
@@ -41,7 +41,7 @@ export const PostQuery = graphql`
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
-      seo{
+      seo {
         title
         description
       }
