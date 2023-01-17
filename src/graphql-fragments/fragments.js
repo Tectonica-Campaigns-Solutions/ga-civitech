@@ -218,6 +218,28 @@ export const DatoCMS = graphql`
             ... on DatoCmsMegaMenuTab {
               title
               description
+              mainlink{
+                ... on DatoCmsGlobalLink{
+                  url
+                  label
+                  content{
+                    ... on DatoCmsPage{
+                      title
+                      slug
+                      model{
+                        apiKey
+                      }
+                    }
+                    ... on DatoCmsProduct{
+                      title
+                      slug
+                      model{
+                        apiKey
+                      }
+                    }
+                  }
+                }
+              }
               groupLink {
                 title
                 links {

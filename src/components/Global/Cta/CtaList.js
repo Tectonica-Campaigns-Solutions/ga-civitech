@@ -7,8 +7,8 @@ import './index.scss';
 const CtaList = ({ ctas }) => {
   return (
     <div className="ctas">
-      {ctas.map(cta => (
-        <Cta key={cta.id} url={getCtaUrl(cta)} label={getCtaTitle(cta)} isButton={cta.isButton} />
+      {ctas.map((cta, index) => (
+        <Cta key={index} url={getCtaUrl(cta)} label={getCtaTitle(cta)} isButton={cta.isButton} />
       ))}
     </div>
   );

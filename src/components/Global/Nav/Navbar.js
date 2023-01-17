@@ -82,11 +82,12 @@ const Navbar = ({ navData, path }) => {
 
         <div className={` ${expanded ? 'show' : ''} collapse navbar-collapse`} id="navNav">
           <ul className="navbar-nav mr-auto nav-c-group-items">
-            {navigationItems?.map(link => {
+            {navigationItems?.map((link, index) => {
               // If the link has children or is a mega menu we do not need to redirect to another page
               if (isArray(link.links) || !!link.megaMenu) {
                 return (
                   <li
+                    key={index}
                     onClick={() => setActiveLink(prevLink => (prevLink === link ? null : link))}
                     className={`nav-c-item ${activeLink === link ? 'active' : ''}`}
                   >

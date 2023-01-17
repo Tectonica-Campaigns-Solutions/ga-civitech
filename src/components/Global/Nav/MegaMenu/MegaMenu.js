@@ -3,6 +3,7 @@ import { isArray } from '../../../../utils';
 import MegaMenuCard from '../MegaMenuCard/MegaMenuCard';
 import Link from '../../Link';
 import Cta from '../../Cta/Cta';
+import { pathToModel } from '../../../../utils';
 
 import './index.scss';
 
@@ -50,7 +51,11 @@ const MegaMenu = ({ link }) => {
               <div className="col-lg-4 primary-item">
                 <h4>{megaMenuActiveContent.title}</h4>
                 <div className="description" dangerouslySetInnerHTML={{ __html: megaMenuActiveContent.description }} />
-                <Cta label="Read more" isButton />
+                {
+    
+                  megaMenuActiveContent.mainlink && <Cta label={megaMenuActiveContent.mainlink.label } url={megaMenuActiveContent.content?.slug ? megaMenuActiveContent.content :  megaMenuActiveContent.url } isButton />
+                }
+                
               </div>
 
               {/* Secondary content */}
@@ -63,9 +68,12 @@ const MegaMenu = ({ link }) => {
 
                       {isArray(gLink.links) && (
                         <div className="links">
-                          {gLink.links.map(link => (
-                            <Link to={link}>{link.label}</Link>
-                          ))}
+                          {gLink.links.map(link => {
+                            const pathlink = link?.content ? pathToModel(link.content.model.apiKey, link.content.slug ) : link.url
+                            return (
+                              <Link to={ pathlink }>{link.label}</Link>
+                            )
+                          })}
                         </div>
                       )}
                     </div>

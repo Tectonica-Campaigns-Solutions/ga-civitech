@@ -17,7 +17,7 @@ function Tabs({ block }) {
     <div className={`tabs ${backgroundColor}`}>
       <div className="container">
         {isArray(items) && <TabTitles items={items} classes="col-lg-4" activeTab={activeTab} handleTab={handleTab} />}
-        {isArray(items) && items.map((item, index) => (index === activeTab ? <TabSelector item={item} /> : ''))}
+        {isArray(items) && items.map((item, index) => (index === activeTab ? <TabSelector item={item} key={index} /> : ''))}
       </div>
     </div>
   );
