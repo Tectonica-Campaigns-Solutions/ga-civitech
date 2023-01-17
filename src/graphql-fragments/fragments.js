@@ -192,7 +192,7 @@ export const DatoCMS = graphql`
       icon {
         url
       }
-      mainLink {
+      link: mainLink {
         id
         url
         label
@@ -218,7 +218,7 @@ export const DatoCMS = graphql`
             ... on DatoCmsMegaMenuTab {
               title
               description
-              mainLink {
+              link: mainLink {
                 ... on DatoCmsGlobalLink {
                   url
                   label

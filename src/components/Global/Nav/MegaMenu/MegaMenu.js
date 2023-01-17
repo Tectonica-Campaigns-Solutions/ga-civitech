@@ -51,7 +51,7 @@ const MegaMenu = ({ link }) => {
                 <h4>{megaMenuActiveContent.title}</h4>
                 <div className="description" dangerouslySetInnerHTML={{ __html: megaMenuActiveContent.description }} />
 
-                {megaMenuActiveContent.mainlink && <Cta cta={{ link: megaMenuActiveContent.mainlink }} isButton />}
+                {megaMenuActiveContent.link && <Cta cta={megaMenuActiveContent.link} isButton />}
               </div>
 
               {/* Secondary content */}

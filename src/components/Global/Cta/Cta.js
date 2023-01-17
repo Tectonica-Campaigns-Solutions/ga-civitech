@@ -5,7 +5,7 @@ import { getCtaTitle, getCtaUrl } from '../../../utils';
 export default function Cta({ cta = null, url = '', label = '', isButton = false }) {
   const ctaTitle = cta ? getCtaTitle(cta) : label;
   const ctaUrl = cta ? getCtaUrl(cta) : url;
-  const isCtaPrimaryButton = cta?.isButton ?? isButton;
+  const isCtaPrimaryButton = cta?.isButton || isButton;
 
   return (
     <div>

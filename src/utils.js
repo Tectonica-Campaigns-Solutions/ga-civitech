@@ -33,10 +33,5 @@ export const getCtaTitle = cta => {
     return cta;
   }
 
-  const basicTitle = cta.link.label ?? cta.link.content.title;
-  if (basicTitle) {
-    return basicTitle;
-  }
-
-  return cta.title ? cta.title : cta.link?.content?.label;
+  return cta.title ? cta.title : cta.link?.content ? cta.link.content.label : cta.label;
 };
