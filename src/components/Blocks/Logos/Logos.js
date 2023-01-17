@@ -6,7 +6,7 @@ import { isArray } from '../../../utils';
 import './index.scss';
 
 function Logos({ block }) {
-  const { title, intro, logos, ctas, backgroundColor } = block;
+  const { title, intro, logos, ctas = [], backgroundColor } = block;
 
   return (
     <div className={`logos-block ${backgroundColor}`}>

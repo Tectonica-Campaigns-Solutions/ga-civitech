@@ -1,4 +1,4 @@
-export const pathToModel = (model, slug = '') => {
+export const pathToModel = (model = null, slug = '') => {
   if (model === 'product') {
     return `/product/${slug}`;
   } else if (model === 'post') {
@@ -6,7 +6,7 @@ export const pathToModel = (model, slug = '') => {
   } else if (model === 'list_member') {
     return `/people/${slug}`;
   } else {
-    return '';
+    return `/${slug}`;
   }
 };
 
@@ -15,10 +15,28 @@ export const isArray = array => {
 };
 
 export const getCtaUrl = cta => {
-  const url = cta.link?.content ? cta.link?.content?.slug : cta.link?.url;
-  return '/' + url;
+  if (typeof cta === 'string') {
+    return cta;
+  }
+
+  if (cta.content?.model) {
+    const { apiKey: model } = cta.content?.model;
+    return pathToModel(model, cta.content?.slug);
+  }
+
+  const url = cta.link?.content ? '/' + cta.link?.content?.slug : cta.link?.url;
+  return url;
 };
 
 export const getCtaTitle = cta => {
+  if (typeof cta === 'string') {
+    return cta;
+  }
+
+  const basicTitle = cta.link.label ?? cta.link.content.title;
+  if (basicTitle) {
+    return basicTitle;
+  }
+
   return cta.title ? cta.title : cta.link?.content?.label;
 };

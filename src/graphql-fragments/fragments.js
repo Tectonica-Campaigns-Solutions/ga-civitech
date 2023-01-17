@@ -218,29 +218,29 @@ export const DatoCMS = graphql`
             ... on DatoCmsMegaMenuTab {
               title
               description
-              mainlink{
-                ... on DatoCmsGlobalLink{
+              mainLink {
+                ... on DatoCmsGlobalLink {
                   url
                   label
-                  content{
-                    ... on DatoCmsPage{
+                  content {
+                    ... on DatoCmsPage {
                       title
                       slug
-                      model{
+                      model {
                         apiKey
                       }
                     }
-                    ... on DatoCmsProduct{
+                    ... on DatoCmsProduct {
                       title
                       slug
-                      model{
+                      model {
                         apiKey
                       }
                     }
-                    ... on DatoCmsPost{
+                    ... on DatoCmsPost {
                       title
                       slug
-                      model{
+                      model {
                         apiKey
                       }
                     }
@@ -256,19 +256,19 @@ export const DatoCMS = graphql`
                     content {
                       ... on DatoCmsPage {
                         slug
-                        model{
+                        model {
                           apiKey
                         }
                       }
-                      ... on DatoCmsProduct{
+                      ... on DatoCmsProduct {
                         slug
-                        model{
+                        model {
                           apiKey
                         }
                       }
-                      ... on DatoCmsPost{
+                      ... on DatoCmsPost {
                         slug
-                        model{
+                        model {
                           apiKey
                         }
                       }

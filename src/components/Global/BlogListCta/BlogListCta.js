@@ -9,7 +9,7 @@ function BlogListCta({ text, cta, label }) {
           <div className="col-lg-8">{text && <h4>{text}</h4>}</div>
 
           <div className="col-lg-3 offset-lg-1 mb-3">
-            <Cta label={label} url={`/${cta.content.slug}`} isButton />
+            <Cta cta={cta} label={label} isButton />
           </div>
         </div>
       </div>

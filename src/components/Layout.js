@@ -7,12 +7,12 @@ import '../styles/main.scss';
 
 const Layout = ({ location, children }) => {
   return (
-    <>
+    <div className="pale-gray">
       <TopMessage />
       <Slice alias="header" location={location} />
       <main>{children}</main>
       <Slice alias="footer" />
-    </>
+    </div>
   );
 };
 
