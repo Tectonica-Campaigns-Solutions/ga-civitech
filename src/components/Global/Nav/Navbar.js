@@ -83,6 +83,7 @@ const Navbar = ({ navData, path }) => {
         <div className={` ${expanded ? 'show' : ''} collapse navbar-collapse`} id="navNav">
           <ul className="navbar-nav mr-auto nav-c-group-items">
             {navigationItems?.map((link, index) => {
+              console.log(link)
               // If the link has children or is a mega menu we do not need to redirect to another page
               if (isArray(link.links) || !!link.megaMenu) {
                 return (
@@ -102,7 +103,7 @@ const Navbar = ({ navData, path }) => {
 
               return (
                 <li>
-                  <Link to={link} className={link.isButton ? 'btn btn-primary' : ''}>
+                  <Link to={link.mainLink} className={link.isButton ? 'btn btn-primary' : ''}>
                     {link.label}
                   </Link>
                 </li>
