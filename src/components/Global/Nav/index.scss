@@ -79,11 +79,59 @@
 
   @media screen and (max-width: 991px) {
     .navbar {
-      padding: 19px;
+      padding: 0;
       background-color: var(--ct-white) !important;
 
-      .navbar-brand > img {
-        width: 70%;
+      .navbar-collapse {
+        background-color: var(--ct-pale-gray);
+      }
+
+      .navbar-brand {
+        padding: 0;
+        margin: 0;
+        max-width: 228px;
+
+        img {
+          padding: 19px;
+          width: 100%;
+        }
+      }
+
+      .show {
+        padding: 40px 0 55px 0;
+        box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-c-group-items {
+        gap: 0;
+
+        .nav-c-item {
+          padding: 14px 25px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          font-size: 18px;
+
+          span > img {
+            height: 8px;
+          }
+
+          &.active {
+            background-color: var(--ct-white);
+          }
+        }
+
+        .btn-container {
+          width: 100%;
+          padding: 0 25px;
+
+          .btn {
+            font-size: 20px;
+            width: inherit;
+            margin-top: 40px;
+          }
+        }
       }
 
       .navbar-toggler-icon {
