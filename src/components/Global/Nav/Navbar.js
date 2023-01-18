@@ -102,7 +102,7 @@ const Navbar = ({ navData, path }) => {
 
               return (
                 <li>
-                  <Link to={link.mainLink} className={link.isButton ? 'btn btn-primary' : ''}>
+                  <Link to={link.link} className={link.isButton ? 'btn btn-primary' : ''}>
                     {link.label}
                   </Link>
                 </li>

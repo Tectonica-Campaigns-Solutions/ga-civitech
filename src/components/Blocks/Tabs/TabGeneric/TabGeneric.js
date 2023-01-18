@@ -13,7 +13,7 @@ function TabGeneric({ item }) {
     <div className="tab-generic-content">
       <div className="row">
         {testimonial && (
-          <div className="col-lg-4 testimonial">
+          <div className="col-lg-4 testimonial order-1 order-md-0">
             {testimonial?.image && (
               <div className="content-image">
                 <GlobalImage image={testimonial.image} />
@@ -27,7 +27,7 @@ function TabGeneric({ item }) {
           </div>
         )}
 
-        <div className="col-lg-8 d-flex flex-column tab-information mt-5 mt-lg-0">
+        <div className="col-lg-8 d-flex flex-column tab-information mt-md-5 mt-lg-0  order-0 order-md-1">
           <div className="flex-grow-1 mb-5 mb-lg-0">
             <h2>{title}</h2>
             <div className="description" dangerouslySetInnerHTML={{ __html: text }} />

@@ -67,7 +67,7 @@ function Footer() {
               const isButton = item.isButton;
               return (
                 <div key={item.id}>
-                  <Link to={item.mainLink} className={isButton ? 'btn btn-primary' : ''}>
+                  <Link to={item.link} className={isButton ? 'btn btn-primary' : ''}>
                     {item.label}
                   </Link>
                 </div>
@@ -81,7 +81,7 @@ function Footer() {
               {footer.social.navigationItems.map(item => {
                 return (
                   <li key={item.id}>
-                    <Link to={item.mainLink} target="_blank">
+                    <Link to={item.link} target="_blank">
                       <img src={item.icon.url} alt="follow" />
                     </Link>
                   </li>

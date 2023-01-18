@@ -13,7 +13,7 @@ export default class Link extends React.Component {
       );
     } else {
       return (
-        <a href={to?.url} {...rest}>
+        <a href={to?.url} {...rest} target="_blank">
           {children}
         </a>
       );
