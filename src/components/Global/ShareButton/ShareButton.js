@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'gatsby';
+import Link from '../Link/Link';
 import telegram from '../../Icons/telegram.svg';
 import facebook from '../../Icons/facebook.svg';
 import twitter from '../../Icons/twitter.svg';

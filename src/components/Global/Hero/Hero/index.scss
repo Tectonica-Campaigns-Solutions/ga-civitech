@@ -39,4 +39,8 @@
       text-transform: uppercase;
     }
   }
+
+  @media screen and (max-width: 991px) {
+    padding-top: 50px;
+  }
 }

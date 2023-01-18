@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from '../Link/Link';
 import { pathToModel } from '../../../utils';
 import GlobalImage from '../Image/GlobalImage';
 import Cta from '../Cta/Cta';

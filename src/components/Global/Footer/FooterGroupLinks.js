@@ -1,7 +1,7 @@
 import React from 'react';
 import { isArray } from '../../../utils';
 import Divider from '../Divider/Divider';
-import Link from '../Link';
+import Link from '../Link/Link';
 
 const FooterGroupLinks = ({ item }) => {
   const isButton = item.isButton;

@@ -7,7 +7,7 @@ import AnimateLink from '../../Global/Link/AnimateLink';
 import './index.scss';
 
 export default function ListMembers({ block }) {
-  const { members, ctas, backgroundColor, model, detailedViewOfTheMembers = false } = block;
+  const { members, ctas = [], backgroundColor, model, detailedViewOfTheMembers = false } = block;
 
   return (
     <div className={`list-members-container ${backgroundColor} ${detailedViewOfTheMembers ? 'extra-pt' : ''}`}>

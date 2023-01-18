@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import Link from '../Link/Link';
 import ImageWrapper from '../Image/ImageWrapper';
 import AnimateLink from '../Link/AnimateLink';
 

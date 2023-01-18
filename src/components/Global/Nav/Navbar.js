@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Link from '../Link';
+import Link from '../Link/Link';
 import MegaMenu from './MegaMenu/MegaMenu';
 import logo from '../../Icons/logo.svg';
 import dropdownIcon from '../../Icons/nav-dropdown.svg';
@@ -83,7 +83,6 @@ const Navbar = ({ navData, path }) => {
         <div className={` ${expanded ? 'show' : ''} collapse navbar-collapse`} id="navNav">
           <ul className="navbar-nav mr-auto nav-c-group-items">
             {navigationItems?.map((link, index) => {
-              console.log(link)
               // If the link has children or is a mega menu we do not need to redirect to another page
               if (isArray(link.links) || !!link.megaMenu) {
                 return (

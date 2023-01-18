@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import Link from '../../Link/Link';
 import NarrativeBlock from '../../../Blocks/NarrativeBlock/NarrativeBlock';
 import vector from '../../../Icons/login-vector.svg';
 
