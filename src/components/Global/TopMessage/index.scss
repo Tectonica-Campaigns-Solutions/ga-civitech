@@ -1,22 +1,25 @@
 .top-message-container {
-  min-height: 32px;
+  min-height: 60px;
   padding: 9px 102px;
-  text-align: center;
   color: var(--ct-dark-blue);
   background-color: #f9dd87;
+  position: relative;
 
-  @media (max-width: 600px) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 700px) {
     padding: 0;
+    padding-right: 1rem;
   }
 
   .information {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-grow: 1;
 
     span {
-      margin-left: 5px;
+      margin-left: 10px;
       font-family: 'Public Sans';
       font-style: normal;
       font-weight: 500;
@@ -26,6 +29,14 @@
   }
 
   .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
     cursor: pointer;
+
+    @media screen and (max-width:530px) {
+      position: unset;
+      padding-left: 20px;
+    }
   }
 }
