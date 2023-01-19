@@ -13,6 +13,7 @@ const Navbar = ({ navData, path }) => {
   const isHomePage = !path || path === '/';
 
   const [expanded, setExpanded] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeLink, setActiveLink] = useState(null);
 
@@ -27,10 +28,20 @@ const Navbar = ({ navData, path }) => {
       }
     };
 
+    const handleCurrentWidth = () => {
+      if (typeof window !== 'undefined') {
+        const currentWidth = window.innerWidth;
+        setShowMobileMenu(currentWidth < 992);
+      }
+    };
+
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleCurrentWidth);
+
       return () => {
         window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('resize', handleCurrentWidth);
       };
     }
   }, []);
@@ -86,22 +97,25 @@ const Navbar = ({ navData, path }) => {
               // If the link has children or is a mega menu we do not need to redirect to another page
               if (isArray(link.links) || !!link.megaMenu) {
                 return (
-                  <li
-                    key={index}
-                    onClick={() => setActiveLink(prevLink => (prevLink === link ? null : link))}
-                    className={`nav-c-item ${activeLink === link ? 'active' : ''}`}
-                  >
-                    {link.label}
+                  <>
+                    <li
+                      key={index}
+                      onClick={() => setActiveLink(prevLink => (prevLink === link ? null : link))}
+                      className={`nav-c-item ${activeLink === link ? 'active' : ''}`}
+                    >
+                      {link.label}
 
-                    <span>
-                      <img src={activeLink === link ? dropdownActiveIcon : dropdownIcon} alt="dropdown menu icon" />
-                    </span>
-                  </li>
+                      <span>
+                        <img src={activeLink === link ? dropdownActiveIcon : dropdownIcon} alt="dropdown menu icon" />
+                      </span>
+                    </li>
+                    {showMobileMenu && activeLink === link && <MegaMenu link={activeLink} isMobile />}
+                  </>
                 );
               }
 
               return (
-                <li>
+                <li className="btn-container">
                   <Link to={link.link} className={link.isButton ? 'btn btn-primary' : ''}>
                     {link.label}
                   </Link>
@@ -112,7 +126,7 @@ const Navbar = ({ navData, path }) => {
         </div>
       </nav>
 
-      {activeLink && <MegaMenu link={activeLink} />}
+      {!showMobileMenu && activeLink && <MegaMenu link={activeLink} />}
     </div>
   );
 };
