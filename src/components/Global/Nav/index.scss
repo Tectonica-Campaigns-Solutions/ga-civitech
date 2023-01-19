@@ -10,7 +10,7 @@
     padding: 31.5px 41px 32.5px 41px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 
-    .navbar-brand > img {
+    .navbar-brand>img {
       width: 95%;
     }
 
@@ -62,9 +62,11 @@
     @media screen and (max-width: 991px) {
       .navbar {
         padding: 5px 0;
+
         a.navbar-brand {
           padding-left: 18px;
         }
+
         button {
           padding-right: 18px;
         }
@@ -113,7 +115,7 @@
           width: 100%;
           font-size: 18px;
 
-          span > img {
+          span>img {
             height: 8px;
           }
 
@@ -199,9 +201,9 @@
   }
 }
 
-.top-message-container + header {
+.top-message-container+header {
   .navbar-container {
-    top: 44px;
+    top: 60px;
 
     &.sticky {
       top: 0;

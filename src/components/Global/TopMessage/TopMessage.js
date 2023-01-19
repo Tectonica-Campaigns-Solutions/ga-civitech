@@ -42,15 +42,13 @@ const TopMessage = () => {
 
   return (
     <div className="top-message-container">
-      <div className="d-flex h-100 align-items-center justify-content-center">
-        <span className="information">
-          <GlobalImage image={data.datoCmsTopMessage.icon} />
-          <span>{data.datoCmsTopMessage.message}</span>
-        </span>
+      <span className="information">
+        <GlobalImage image={data.datoCmsTopMessage.icon} />
+        <span>{data.datoCmsTopMessage.message}</span>
+      </span>
 
-        <div className="close-btn" onClick={handleToggleTopMessage}>
-          <img src={closeButton} alt="close message icon" />
-        </div>
+      <div className="close-btn" onClick={handleToggleTopMessage}>
+        <img src={closeButton} alt="close message icon" />
       </div>
     </div>
   );
