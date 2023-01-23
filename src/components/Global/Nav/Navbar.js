@@ -39,6 +39,8 @@ const Navbar = ({ navData, path }) => {
       window.addEventListener('scroll', handleScroll);
       window.addEventListener('resize', handleCurrentWidth);
 
+      document.querySelector('body').classList.remove('scroll-menu');
+
       return () => {
         window.removeEventListener('scroll', handleScroll);
         window.removeEventListener('resize', handleCurrentWidth);
@@ -65,6 +67,17 @@ const Navbar = ({ navData, path }) => {
     }, [ref]);
   }
 
+  const handleOnClickMobileMenu = () => {
+    const currentValue = expanded;
+    if (!currentValue) {
+      document.querySelector('body').classList.add('scroll-menu');
+    } else {
+      document.querySelector('body').classList.remove('scroll-menu');
+    }
+
+    setExpanded(prev => !prev);
+  };
+
   const showStickyNav = scrollPosition > 300;
 
   return (
@@ -86,7 +99,7 @@ const Navbar = ({ navData, path }) => {
           data-toggle="collapse"
           className="navbar-toggler"
           aria-label="Toggle navigation"
-          onClick={() => setExpanded(prev => !prev)}
+          onClick={handleOnClickMobileMenu}
         >
           <span className={`${expanded ? 'open-toggle ' : ''} navbar-toggler-icon`}></span>
         </button>
