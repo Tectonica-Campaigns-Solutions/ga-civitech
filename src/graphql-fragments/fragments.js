@@ -96,6 +96,10 @@ export const DatoCMS = graphql`
             model {
               apiKey
             }
+            image{
+              gatsbyImageData(width: 400, height: 500)
+              url
+            }
           }
         }
       }
