@@ -51,6 +51,11 @@
 
         span {
           margin-left: 5px;
+
+          img.revert {
+            transform: rotate(180deg);
+          }
+
         }
 
         &.active {

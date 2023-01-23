@@ -106,7 +106,11 @@ const Navbar = ({ navData, path }) => {
                       {link.label}
 
                       <span>
-                        <img src={activeLink === link ? dropdownActiveIcon : dropdownIcon} alt="dropdown menu icon" />
+                        <img
+                          className={`${showMobileMenu && activeLink === link ? 'revert' : ''}`}
+                          src={activeLink === link ? dropdownActiveIcon : dropdownIcon}
+                          alt="dropdown menu icon"
+                        />
                       </span>
                     </li>
                     {showMobileMenu && activeLink === link && <MegaMenu link={activeLink} isMobile />}
