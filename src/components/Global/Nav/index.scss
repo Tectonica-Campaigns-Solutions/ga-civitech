@@ -51,6 +51,11 @@
 
         span {
           margin-left: 5px;
+
+          img.revert {
+            transform: rotate(180deg);
+          }
+
         }
 
         &.active {
@@ -207,6 +212,23 @@
 
     &.sticky {
       top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  body.scroll-menu {
+    overflow: hidden;
+
+    .navbar-collapse {
+      overflow: scroll;
+      overflow-x: hidden;
+      height: 100vh;
+      padding-bottom: 8rem !important;
+
+      .mega-menu {
+        box-shadow: none;
+      }
     }
   }
 }
