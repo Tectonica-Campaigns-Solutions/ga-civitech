@@ -97,7 +97,7 @@ export const DatoCMS = graphql`
               apiKey
             }
             image{
-              gatsbyImageData(width: 400, height: 500)
+              gatsbyImageData(width: 500, height: 430)
               url
             }
           }
@@ -116,7 +116,7 @@ export const DatoCMS = graphql`
             quote
             author
             image {
-              gatsbyImageData(width: 400, height: 500)
+              gatsbyImageData(width: 500, height: 430)
               url
             }
           }
