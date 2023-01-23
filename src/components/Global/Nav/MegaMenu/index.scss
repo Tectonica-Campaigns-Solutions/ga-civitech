@@ -2,12 +2,12 @@
   width: 100%;
   background-color: #fff;
   z-index: 1000;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
 
   .tabs {
     padding: 10px 0;
     background-color: #e4f7ff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
+    border-top: 1.5px solid #BDBED3;
+    border-bottom: 1.5px solid #BDBED3;
 
     .tabs-items {
       display: flex;
@@ -34,6 +34,7 @@
   .main-content {
     padding: 30px 0;
     padding-bottom: 60px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
 
     .primary-item {
       padding-right: 1rem;
@@ -98,6 +99,7 @@
     .tabs {
       padding: 0;
       box-shadow: none;
+      border: none;
 
       .container {
         max-width: 100%;
@@ -125,6 +127,7 @@
     .main-content {
       padding: 25px;
       background-color: var(--ct-white);
+      box-shadow: none;
 
       .container {
         max-width: 100%;
