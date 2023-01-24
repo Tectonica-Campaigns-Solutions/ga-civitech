@@ -83,9 +83,9 @@ const Navbar = ({ navData, path }) => {
   return (
     <div className={`navbar-container ${showStickyNav ? 'sticky' : ''}`} ref={wrapperRef}>
       <nav
-        className={`navbar navbar-expand-lg ${isHomePage ? 'home-nav' : ''} ${expanded ? 'expanded' : ''} ${
-          showStickyNav ? 'sticky-nav' : ''
-        }`}
+        className={`navbar navbar-expand-lg ${isHomePage ? 'home-nav' : ''} ${
+          expanded || activeLink ? 'expanded' : ''
+        } ${showStickyNav ? 'sticky-nav' : ''}`}
       >
         <Link className="navbar-brand" to={'/'}>
           <img src={logo} alt="logo civitech" />

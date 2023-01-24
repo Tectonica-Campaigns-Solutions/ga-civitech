@@ -22,6 +22,10 @@
       background: var(--ct-white);
     }
 
+    &.expanded {
+      box-shadow: none;
+    }
+
     .collapse {
       @media (max-width: 991px) {
         background-color: var(--ct-white);
