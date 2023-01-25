@@ -54,4 +54,19 @@
   .accordion-content h2 {
     cursor: pointer;
   }
+
+  @media screen and (max-width: 768px) {
+    .btn-item {
+      padding-left: 10px;
+      border: none;
+    }
+
+    .active {
+      border: none;
+    }
+
+    .image.active {
+      border: none;
+    }
+  }
 }
