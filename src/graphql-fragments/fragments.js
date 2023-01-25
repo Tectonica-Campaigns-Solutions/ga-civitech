@@ -96,7 +96,7 @@ export const DatoCMS = graphql`
             model {
               apiKey
             }
-            image{
+            image {
               gatsbyImageData(width: 500, height: 430)
               url
             }
@@ -289,6 +289,9 @@ export const DatoCMS = graphql`
                   model {
                     apiKey
                   }
+                  image {
+                    gatsbyImageData
+                  }
                 }
                 ... on DatoCmsPost {
                   title
@@ -297,6 +300,9 @@ export const DatoCMS = graphql`
                   model {
                     apiKey
                   }
+                  image {
+                    gatsbyImageData
+                  }
                 }
                 ... on DatoCmsProduct {
                   title
@@ -304,6 +310,9 @@ export const DatoCMS = graphql`
                   slug
                   model {
                     apiKey
+                  }
+                  image {
+                    gatsbyImageData
                   }
                 }
               }
