@@ -25,7 +25,7 @@ const TopMessage = () => {
 
   useLayoutEffect(() => {
     if (sessionStorage.getItem('show_top_message')) {
-      setShowTopMessageAccordingSession(sessionStorage.getItem('show_top_message') == 'true');
+      setShowTopMessageAccordingSession(sessionStorage.getItem('show_top_message') === 'true');
     }
   }, []);
 

@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-preconnect',
       options: {
-        domains: ['https://fonts.gstatic.com', 'https://use.typekit.net'],
+        domains: ['https://fonts.gstatic.com', 'https://use.typekit.net', 'https://forms-eu1.hsforms.com'],
       },
     },
     {
