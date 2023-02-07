@@ -20,4 +20,10 @@
       color: var(--ct-gray);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
