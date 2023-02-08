@@ -16,7 +16,7 @@ const Post = ({ location, pageContext, data: { post, relatedPost } }) => {
       <HeroBlogPost
         title={post.title}
         summary={post.summary}
-        createdAt={post.meta.createdAt}
+        createdAt={post.date}
         topic={post.topic}
         image={post.image}
       />
@@ -45,9 +45,7 @@ export const PostQuery = graphql`
         title
         description
       }
-      meta {
-        createdAt(formatString: "MMMM D, YYYY")
-      }
+      date(formatString: "MMM D YYYY")
       id
       title
       featured

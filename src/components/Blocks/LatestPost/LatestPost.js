@@ -11,7 +11,7 @@ const LatestPost = ({ block }) => {
     allDatoCmsPost: { nodes: latestsPosts },
   } = useStaticQuery(graphql`
     query latestPost {
-      allDatoCmsPost(limit: 3) {
+      allDatoCmsPost(limit: 3, sort: { date: ASC }) {
         nodes {
           ...PostCard
         }
@@ -31,16 +31,9 @@ const LatestPost = ({ block }) => {
 
         <div className="row gx-6">
           {isArray(latestsPosts) ? (
-            latestsPosts.map(({ image, meta, slug, tags, title, model }) => (
+            latestsPosts.map(({ image, slug, tags, title, model, date }) => (
               <div className="col-lg-4 mb-lg-0 mb-5">
-                <BlogPostCard
-                  slug={slug}
-                  image={image}
-                  date={meta.publishedAt}
-                  tags={tags}
-                  title={title}
-                  model={model}
-                />
+                <BlogPostCard slug={slug} image={image} date={date} tags={tags} title={title} model={model} />
               </div>
             ))
           ) : (
