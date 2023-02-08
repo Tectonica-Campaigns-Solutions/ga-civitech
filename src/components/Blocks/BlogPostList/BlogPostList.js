@@ -67,7 +67,7 @@ function BlogPostList({ block, topics }) {
   return (
     <div className="blog-post-list">
       <div className="container">
-        {isArray(topics) && (
+        {isArray(topics) && topics.length > 1 && (
           <TabTitles items={topics} classes="col-lg-3" activeTab={activeTab} handleTab={val => setActiveTab(val)} />
         )}
 
