@@ -18,7 +18,7 @@ export default function HeroBlogPost({ title, summary, createdAt, topic, image }
             </div>
 
             {title && <h2>{title}</h2>}
-            {summary && <p>{summary}</p>}
+            {summary && <div className="summary" dangerouslySetInnerHTML={{ __html: summary }} />}
           </div>
         </div>
       </div>
