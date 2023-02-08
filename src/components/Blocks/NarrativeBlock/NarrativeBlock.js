@@ -34,7 +34,7 @@ export default function NarrativeBlock({ block }) {
       <div className="container pb-5">
         {sectionTitle && (
           <div className="row">
-            <div className="col pb-3">
+            <div className={`col pb-3 ${isAlignmentCenter ? 'text-center' : ''}`}>
               <h2>{sectionTitle}</h2>
             </div>
           </div>
