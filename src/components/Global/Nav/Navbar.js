@@ -54,15 +54,20 @@ const Navbar = ({ navData, path, context }) => {
        * Alert if clicked on outside of element
        */
       //current id
-      const pageId = document.querySelector('.wrap-page').classList;
-      const navBar = document.querySelector('.nav-bar');
+      // const pageId = document.querySelector('.wrap-page').classList;
+      // const navBar = document.querySelector('.nav-bar');
+
+      // console.log({ pageId, navigationItems });
+
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
           setActiveLink(false);
         }
       }
+
       // Bind the event listener
       document.addEventListener('mousedown', handleClickOutside);
+
       return () => {
         // Unbind the event listener on clean up
         document.removeEventListener('mousedown', handleClickOutside);
@@ -82,6 +87,10 @@ const Navbar = ({ navData, path, context }) => {
   };
 
   const showStickyNav = scrollPosition > 300;
+  const pageId = document.querySelector('.wrap-page')?.classList;
+  const finalId = pageId ? pageId[2] : null;
+
+  console.log({ id: finalId });
 
   return (
     <div className={`navbar-container ${showStickyNav ? 'sticky' : ''}`} ref={wrapperRef}>
@@ -112,12 +121,16 @@ const Navbar = ({ navData, path, context }) => {
             {navigationItems?.map((link, index) => {
               // If the link has children or is a mega menu we do not need to redirect to another page
               if (isArray(link.links) || !!link.megaMenu) {
+                console.log('Link: ', link);
+
                 return (
                   <>
                     <li
                       key={index}
                       onClick={() => setActiveLink(prevLink => (prevLink === link ? null : link))}
-                      className={`nav-c-item ${activeLink === link ? 'active' : ''} ${link.link?.content ? link.link.content.id : ''}`}
+                      className={`nav-c-item ${activeLink === link ? 'active' : ''} ${
+                        link.link?.content ? link.link.content.id : ''
+                      } ${pageId === link?.link?.content?.id ? 'active' : ''}`}
                     >
                       {link.label}
 
@@ -129,6 +142,7 @@ const Navbar = ({ navData, path, context }) => {
                         />
                       </span>
                     </li>
+
                     {showMobileMenu && activeLink === link && <MegaMenu link={activeLink} isMobile />}
                   </>
                 );
@@ -146,7 +160,7 @@ const Navbar = ({ navData, path, context }) => {
         </div>
       </nav>
 
-      {!showMobileMenu && activeLink && <MegaMenu link={activeLink} />}
+      {!showMobileMenu && activeLink && <MegaMenu link={activeLink} mainPageId={finalId} />}
     </div>
   );
 };

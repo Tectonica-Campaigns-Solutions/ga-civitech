@@ -6,7 +6,7 @@ import Cta from '../../Cta/Cta';
 
 import './index.scss';
 
-const MegaMenu = ({ link, isMobile = false }) => {
+const MegaMenu = ({ link, mainPageId, isMobile = false }) => {
   const [megaMenuActiveTab, setMegaMenuActiveTab] = useState(0);
 
   const { links = [], megaMenu = null } = link;

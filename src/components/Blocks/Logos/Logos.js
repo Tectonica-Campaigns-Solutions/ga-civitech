@@ -2,6 +2,7 @@ import React from 'react';
 import CtaList from '../../Global/Cta/CtaList';
 import ImageWrapper from '../../Global/Image/ImageWrapper';
 import { isArray } from '../../../utils';
+import Link from '../../Global/Link/Link';
 
 import './index.scss';
 
@@ -19,9 +20,9 @@ function Logos({ block }) {
           <div className="row logos-list justify-content-center g-5">
             {logos.map((logo, index) => (
               <div className="col-lg-2 col-md-3 col-6" key={index}>
-                <a href={logo.url} target="_blank" rel="noreferrer">
+                <Link to={logo.url ? logo.url : null} target="_blank" rel="noreferrer">
                   <ImageWrapper image={logo.icon} />
-                </a>
+                </Link>
               </div>
             ))}
           </div>
