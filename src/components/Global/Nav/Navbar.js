@@ -8,7 +8,7 @@ import { isArray } from '../../../utils';
 
 import './index.scss';
 
-const Navbar = ({ navData, path }) => {
+const Navbar = ({ navData, path, context }) => {
   const { navigationItems = [] } = navData.datoCmsNavigation;
   const isHomePage = !path || path === '/';
 
@@ -53,6 +53,9 @@ const Navbar = ({ navData, path }) => {
       /**
        * Alert if clicked on outside of element
        */
+      //current id
+      const pageId = document.querySelector('.wrap-page').classList;
+      const navBar = document.querySelector('.nav-bar');
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
           setActiveLink(false);
@@ -114,7 +117,7 @@ const Navbar = ({ navData, path }) => {
                     <li
                       key={index}
                       onClick={() => setActiveLink(prevLink => (prevLink === link ? null : link))}
-                      className={`nav-c-item ${activeLink === link ? 'active' : ''}`}
+                      className={`nav-c-item ${activeLink === link ? 'active' : ''} ${link.link?.content ? link.link.content.id : ''}`}
                     >
                       {link.label}
 

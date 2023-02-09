@@ -5,9 +5,9 @@ import { Slice } from 'gatsby';
 
 import '../styles/main.scss';
 
-const Layout = ({ location, children }) => {
+const Layout = ({ location, children, currentId }) => {
   return (
-    <div className="pale-gray">
+    <div className={`pale-gray wrap-page ${currentId}`}>
       <TopMessage />
       <Slice alias="header" location={location} />
       <main>{children}</main>

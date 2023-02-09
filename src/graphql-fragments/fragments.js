@@ -18,7 +18,8 @@ export const DatoCMS = graphql`
         providerUid
       }
       preview {
-        gatsbyImageData
+        gatsbyImageData(width: 500, height: 500)
+        alt
       }
     }
     image {
@@ -166,8 +167,9 @@ export const DatoCMS = graphql`
         name
         url
         icon {
-          gatsbyImageData
+          gatsbyImageData(width:130)
           url
+          alt
         }
       }
     }
@@ -203,6 +205,7 @@ export const DatoCMS = graphql`
         content {
           ... on DatoCmsPage {
             slug
+            id
           }
         }
       }
@@ -213,6 +216,7 @@ export const DatoCMS = graphql`
         content {
           ... on DatoCmsPage {
             slug
+            id
           }
         }
       }
@@ -290,7 +294,8 @@ export const DatoCMS = graphql`
                     apiKey
                   }
                   image {
-                    gatsbyImageData
+                    gatsbyImageData(width:300, height: 150)
+                    alt
                   }
                 }
                 ... on DatoCmsPost {
@@ -301,7 +306,8 @@ export const DatoCMS = graphql`
                     apiKey
                   }
                   image {
-                    gatsbyImageData
+                    gatsbyImageData(width:300, height: 150)
+                    alt
                   }
                 }
                 ... on DatoCmsProduct {
@@ -312,7 +318,8 @@ export const DatoCMS = graphql`
                     apiKey
                   }
                   image {
-                    gatsbyImageData
+                    gatsbyImageData(width:300, height: 150)
+                    alt
                   }
                 }
               }
@@ -335,8 +342,9 @@ export const DatoCMS = graphql`
       name
       positionMember
       image {
-        gatsbyImageData
+        gatsbyImageData(width:240, height: 290)
         url
+        alt
       }
     }
     ctas {
