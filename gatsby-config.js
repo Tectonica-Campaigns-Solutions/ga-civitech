@@ -5,18 +5,19 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Civitech`,
-    description: ``,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    description: `Run for office. Register and turnout voters. Win elections. Political technology and data for today's leading nonprofits, causes, and Democratic campaigns`,
+    author: `Tectonica`,
+    siteUrl: `https://musical-dango-72c54d.netlify.app/`,
   },
   plugins: [
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-transition-link`,
     {
       resolve: 'gatsby-plugin-preconnect',
       options: {
-        domains: ['https://fonts.gstatic.com', 'https://use.typekit.net', 'https://forms-eu1.hsforms.com'],
+        domains: ['https://use.typekit.net', 'https://forms-eu1.hsforms.com'],
       },
     },
     {
