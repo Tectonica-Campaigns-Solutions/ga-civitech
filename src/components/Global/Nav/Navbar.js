@@ -87,10 +87,15 @@ const Navbar = ({ navData, path, context }) => {
   };
 
   const showStickyNav = scrollPosition > 300;
-  const pageId = document.querySelector('.wrap-page')?.classList;
-  const finalId = pageId ? pageId[2] : null;
 
-  console.log({ id: finalId });
+  // Testing
+  let pageId, finalId;
+  if (typeof window !== 'undefined') {
+    pageId = document.querySelector('.wrap-page')?.classList;
+    finalId = pageId ? pageId[2] : null;
+
+    console.log({ id: finalId });
+  }
 
   return (
     <div className={`navbar-container ${showStickyNav ? 'sticky' : ''}`} ref={wrapperRef}>
@@ -121,6 +126,7 @@ const Navbar = ({ navData, path, context }) => {
             {navigationItems?.map((link, index) => {
               // If the link has children or is a mega menu we do not need to redirect to another page
               if (isArray(link.links) || !!link.megaMenu) {
+                //
                 console.log('Link: ', link);
 
                 return (
