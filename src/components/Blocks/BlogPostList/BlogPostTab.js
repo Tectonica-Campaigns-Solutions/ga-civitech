@@ -17,7 +17,7 @@ function BlogPostTab({ title, items, textCta = null, cta = null }) {
                 slug={item.slug}
                 model={item.model}
                 image={item.image}
-                date={item.meta.createdAt}
+                date={item.date}
                 tags={item.tags}
                 title={item.title}
               />

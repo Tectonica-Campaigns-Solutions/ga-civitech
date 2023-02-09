@@ -12,11 +12,9 @@ function BlogPostList({ block, topics }) {
     posts: { nodes: blogList },
   } = useStaticQuery(graphql`
     query allPosts {
-      posts: allDatoCmsPost {
+      posts: allDatoCmsPost(sort: { date: ASC }) {
         nodes {
-          meta {
-            createdAt(formatString: "MMM D YYYY")
-          }
+          date(formatString: "MMM D YYYY")
           title
           slug
           model {

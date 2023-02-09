@@ -402,6 +402,7 @@ export const DatoCMS = graphql`
   fragment PostCard on DatoCmsPost {
     title
     slug
+    date(formatString: "MMM D YYYY")
     model {
       apiKey
     }
@@ -414,9 +415,6 @@ export const DatoCMS = graphql`
       ... on DatoCmsTag {
         name
       }
-    }
-    meta {
-      publishedAt(formatString: "MMM D YYYY")
     }
   }
 `;
