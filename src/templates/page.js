@@ -7,7 +7,7 @@ import HeroSelector from '../components/Global/Hero/HeroSelector';
 
 const Page = ({ pageContext, location, data: { page } }) => {
   return (
-    <Layout location={location} currentId={pageContext.id}>
+    <Layout location={location} currentSlug={page.slug}>
       <HeroSelector page={page} />
       <Blocks blocks={page.blocks}></Blocks>
     </Layout>

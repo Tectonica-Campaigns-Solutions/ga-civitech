@@ -8,7 +8,7 @@ import { isArray } from '../../../utils';
 
 import './index.scss';
 
-const Navbar = ({ navData, path, context }) => {
+const Navbar = ({ navData, path, context, pageSlug }) => {
   const { navigationItems = [] } = navData.datoCmsNavigation;
   const isHomePage = !path || path === '/';
 
@@ -88,14 +88,10 @@ const Navbar = ({ navData, path, context }) => {
 
   const showStickyNav = scrollPosition > 300;
 
-  // Testing
-  let pageId, finalId;
-  if (typeof window !== 'undefined') {
-    pageId = document.querySelector('.wrap-page')?.classList;
-    finalId = pageId ? pageId[2] : null;
-
-    console.log({ id: finalId });
-  }
+  const isLinkActive = link => {
+    const childLinks = link.links;
+    return childLinks?.some(link => link.content.slug === pageSlug);
+  };
 
   return (
     <div className={`navbar-container ${showStickyNav ? 'sticky' : ''}`} ref={wrapperRef}>
@@ -126,17 +122,12 @@ const Navbar = ({ navData, path, context }) => {
             {navigationItems?.map((link, index) => {
               // If the link has children or is a mega menu we do not need to redirect to another page
               if (isArray(link.links) || !!link.megaMenu) {
-                //
-                console.log('Link: ', link);
-
                 return (
                   <>
                     <li
                       key={index}
                       onClick={() => setActiveLink(prevLink => (prevLink === link ? null : link))}
-                      className={`nav-c-item ${activeLink === link ? 'active' : ''} ${
-                        link.link?.content ? link.link.content.id : ''
-                      } ${pageId === link?.link?.content?.id ? 'active' : ''}`}
+                      className={`nav-c-item ${activeLink === link || isLinkActive(link) ? 'active' : ''}`}
                     >
                       {link.label}
 
@@ -149,7 +140,9 @@ const Navbar = ({ navData, path, context }) => {
                       </span>
                     </li>
 
-                    {showMobileMenu && activeLink === link && <MegaMenu link={activeLink} isMobile />}
+                    {showMobileMenu && activeLink === link && (
+                      <MegaMenu link={activeLink} pageSlug={pageSlug} isMobile />
+                    )}
                   </>
                 );
               }
@@ -166,7 +159,7 @@ const Navbar = ({ navData, path, context }) => {
         </div>
       </nav>
 
-      {!showMobileMenu && activeLink && <MegaMenu link={activeLink} mainPageId={finalId} />}
+      {!showMobileMenu && activeLink && <MegaMenu link={activeLink} pageSlug={pageSlug} />}
     </div>
   );
 };

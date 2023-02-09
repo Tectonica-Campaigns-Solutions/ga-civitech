@@ -6,7 +6,7 @@ import Cta from '../../Cta/Cta';
 
 import './index.scss';
 
-const MegaMenu = ({ link, mainPageId, isMobile = false }) => {
+const MegaMenu = ({ link, pageSlug, isMobile = false }) => {
   const [megaMenuActiveTab, setMegaMenuActiveTab] = useState(0);
 
   const { links = [], megaMenu = null } = link;
@@ -73,6 +73,10 @@ const MegaMenu = ({ link, mainPageId, isMobile = false }) => {
       </div>
     );
 
+  const isLinkActive = link => {
+    return link.content.slug === pageSlug;
+  };
+
   return (
     <div className="mega-menu">
       {/* Tabs */}
@@ -92,7 +96,11 @@ const MegaMenu = ({ link, mainPageId, isMobile = false }) => {
                 </>
               ))
             : isArray(links)
-            ? links.map(link => <Link to={link}>{link.label}</Link>)
+            ? links.map(link => (
+                <Link to={link} className={`${isLinkActive(link) ? 'active' : ''}`}>
+                  {link.label}
+                </Link>
+              ))
             : null}
         </div>
       </div>
