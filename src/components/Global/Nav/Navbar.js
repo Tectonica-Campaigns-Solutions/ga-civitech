@@ -8,7 +8,7 @@ import { isArray } from '../../../utils';
 
 import './index.scss';
 
-const Navbar = ({ navData, path, context }) => {
+const Navbar = ({ navData, path, context, pageSlug }) => {
   const { navigationItems = [] } = navData.datoCmsNavigation;
   const isHomePage = !path || path === '/';
 
@@ -54,15 +54,20 @@ const Navbar = ({ navData, path, context }) => {
        * Alert if clicked on outside of element
        */
       //current id
-      const pageId = document.querySelector('.wrap-page').classList;
-      const navBar = document.querySelector('.nav-bar');
+      // const pageId = document.querySelector('.wrap-page').classList;
+      // const navBar = document.querySelector('.nav-bar');
+
+      // console.log({ pageId, navigationItems });
+
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
           setActiveLink(false);
         }
       }
+
       // Bind the event listener
       document.addEventListener('mousedown', handleClickOutside);
+
       return () => {
         // Unbind the event listener on clean up
         document.removeEventListener('mousedown', handleClickOutside);
@@ -82,6 +87,11 @@ const Navbar = ({ navData, path, context }) => {
   };
 
   const showStickyNav = scrollPosition > 300;
+
+  const isLinkActive = link => {
+    const childLinks = link.links;
+    return childLinks?.some(link => link.content.slug === pageSlug);
+  };
 
   return (
     <div className={`navbar-container ${showStickyNav ? 'sticky' : ''}`} ref={wrapperRef}>
@@ -117,7 +127,7 @@ const Navbar = ({ navData, path, context }) => {
                     <li
                       key={index}
                       onClick={() => setActiveLink(prevLink => (prevLink === link ? null : link))}
-                      className={`nav-c-item ${activeLink === link ? 'active' : ''} ${link.link?.content ? link.link.content.id : ''}`}
+                      className={`nav-c-item ${activeLink === link || isLinkActive(link) ? 'active' : ''}`}
                     >
                       {link.label}
 
@@ -129,7 +139,10 @@ const Navbar = ({ navData, path, context }) => {
                         />
                       </span>
                     </li>
-                    {showMobileMenu && activeLink === link && <MegaMenu link={activeLink} isMobile />}
+
+                    {showMobileMenu && activeLink === link && (
+                      <MegaMenu link={activeLink} pageSlug={pageSlug} isMobile />
+                    )}
                   </>
                 );
               }
@@ -146,7 +159,7 @@ const Navbar = ({ navData, path, context }) => {
         </div>
       </nav>
 
-      {!showMobileMenu && activeLink && <MegaMenu link={activeLink} />}
+      {!showMobileMenu && activeLink && <MegaMenu link={activeLink} pageSlug={pageSlug} />}
     </div>
   );
 };

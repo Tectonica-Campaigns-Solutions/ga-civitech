@@ -3,7 +3,7 @@ import { useStaticQuery } from 'gatsby';
 import { graphql } from 'gatsby';
 import Navbar from './Global/Nav/Navbar';
 
-const Header = ({ location }) => {
+const Header = ({ location, pageSlug }) => {
   const mainMenu = useStaticQuery(graphql`
     query {
       datoCmsNavigation(codeId: { eq: "main_menu" }) {
@@ -14,7 +14,7 @@ const Header = ({ location }) => {
 
   return (
     <header>
-      <Navbar navData={mainMenu} path={location?.pathname} />
+      <Navbar navData={mainMenu} path={location?.pathname} pageSlug={pageSlug} />
     </header>
   );
 };
