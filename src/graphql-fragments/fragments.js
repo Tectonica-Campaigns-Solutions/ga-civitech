@@ -167,7 +167,7 @@ export const DatoCMS = graphql`
         name
         url
         icon {
-          gatsbyImageData(width:130)
+          gatsbyImageData(width: 130)
           url
           alt
         }
@@ -294,7 +294,7 @@ export const DatoCMS = graphql`
                     apiKey
                   }
                   image {
-                    gatsbyImageData(width:300, height: 150)
+                    gatsbyImageData(width: 300, height: 150)
                     alt
                   }
                 }
@@ -306,7 +306,7 @@ export const DatoCMS = graphql`
                     apiKey
                   }
                   image {
-                    gatsbyImageData(width:300, height: 150)
+                    gatsbyImageData(width: 300, height: 150)
                     alt
                   }
                 }
@@ -318,7 +318,7 @@ export const DatoCMS = graphql`
                     apiKey
                   }
                   image {
-                    gatsbyImageData(width:300, height: 150)
+                    gatsbyImageData(width: 300, height: 150)
                     alt
                   }
                 }
@@ -342,7 +342,7 @@ export const DatoCMS = graphql`
       name
       positionMember
       image {
-        gatsbyImageData(width:240, height: 290)
+        gatsbyImageData(width: 240, height: 290)
         url
         alt
       }
@@ -424,5 +424,14 @@ export const DatoCMS = graphql`
         name
       }
     }
+  }
+  fragment BlockAccordion on DatoCmsAccordion {
+    id
+    items {
+      id
+      title
+      text
+    }
+    __typename
   }
 `;
