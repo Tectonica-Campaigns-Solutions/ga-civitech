@@ -38,6 +38,12 @@ export const DatoCMS = graphql`
             ... on DatoCmsPage {
               slug
             }
+            ... on DatoCmsProduct {
+              slug
+              model {
+                apiKey
+              }
+            }
           }
         }
       }
