@@ -24,6 +24,11 @@ export const getCtaUrl = cta => {
     return pathToModel(model, cta.content?.slug);
   }
 
+  if (cta.link?.content?.model) {
+    const { apiKey: model } = cta.link?.content?.model;
+    return pathToModel(model, cta.link?.content?.slug);
+  }
+
   const url = cta.link?.content ? '/' + cta.link?.content?.slug : cta.link?.url;
   return url;
 };

@@ -13,11 +13,17 @@ const FooterGroupLinks = ({ item }) => {
       }`}
       key={item.id}
     >
-      {item.label && (
-        <>
-          <h3>{item.label}</h3>
-          <Divider />
-        </>
+      {isButton ? (
+        <Link to={null} className={'btn btn-primary'}>
+          {item.label}
+        </Link>
+      ) : (
+        item.label && (
+          <>
+            <h3>{item.label}</h3>
+            <Divider />
+          </>
+        )
       )}
 
       {item.mainLink && (
