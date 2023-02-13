@@ -353,6 +353,10 @@ export const DatoCMS = graphql`
         url
         alt
       }
+      socialLinks {
+        url
+        socialNetwork
+      }
     }
     ctas {
       title

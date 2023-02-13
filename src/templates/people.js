@@ -36,6 +36,10 @@ export const PeopleQuery = graphql`
       model {
         apiKey
       }
+      socialLinks {
+        url
+        socialNetwork
+      }
     }
   }
 `;
