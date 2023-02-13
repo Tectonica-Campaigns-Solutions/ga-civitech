@@ -7,7 +7,7 @@ module.exports = {
     title: `Civitech`,
     description: `Run for office. Register and turnout voters. Win elections. Political technology and data for today's leading nonprofits, causes, and Democratic campaigns`,
     author: `Tectonica`,
-    siteUrl: `https://musical-dango-72c54d.netlify.app/`,
+    siteUrl: `https://clever-belekoy-d45eb9.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-advanced-sitemap`,
