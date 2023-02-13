@@ -5,6 +5,7 @@ export const DatoCMS = graphql`
     __typename
     id
     title
+    useTitleAsH1
     pretitle
     alignment
     textContent

@@ -4,12 +4,10 @@ import Layout from '../components/Layout';
 import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
 import HeroSelector from '../components/Global/Hero/HeroSelector';
-import { noBlocksWithPrimaryHeading } from '../utils';
+import { blockWithPrimaryHeading } from '../utils';
 
 const Page = ({ pageContext, location, data: { page } }) => {
-  const shouldRenderPrimaryHeading = !page.showHero && noBlocksWithPrimaryHeading(page.blocks);
-
-  console.log({ hero: page.showHero, shouldRenderPrimaryHeading });
+  const shouldRenderPrimaryHeading = !page.showHero && !blockWithPrimaryHeading(page.blocks);
 
   return (
     <Layout location={location} currentSlug={page.slug}>
@@ -21,7 +19,7 @@ const Page = ({ pageContext, location, data: { page } }) => {
         </div>
       ) : null}
 
-      <Blocks blocks={page.blocks} usePrimaryHeading={!shouldRenderPrimaryHeading} />
+      <Blocks blocks={page.blocks} />
     </Layout>
   );
 };

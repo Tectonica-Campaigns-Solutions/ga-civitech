@@ -17,6 +17,7 @@ export default function NarrativeBlock({ block, usePrimaryHeading }) {
     sectionTitle,
     pretitle,
     title,
+    useTitleAsH1,
     textContent,
     ctas,
     image,
@@ -28,6 +29,8 @@ export default function NarrativeBlock({ block, usePrimaryHeading }) {
   const isAlignmentCenter = alignment === 'center';
   const hasMedia = hasImages || video;
   const hasImageAndCentered = hasMedia && isAlignmentCenter;
+
+  const shouldUseH1 = usePrimaryHeading || useTitleAsH1;
 
   return (
     <div className={`component-narrative-block ${backgroundColor} ${classNames}`}>
@@ -51,7 +54,7 @@ export default function NarrativeBlock({ block, usePrimaryHeading }) {
             )}
 
             {pretitle && <h3>{pretitle}</h3>}
-            {title && (usePrimaryHeading ? <h1>{title}</h1> : <h2>{title}</h2>)}
+            {title && (shouldUseH1 ? <h1>{title}</h1> : <h2>{title}</h2>)}
 
             {textContent && <div className="text-content" dangerouslySetInnerHTML={{ __html: textContent }} />}
 
