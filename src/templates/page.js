@@ -4,11 +4,19 @@ import Layout from '../components/Layout';
 import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
 import HeroSelector from '../components/Global/Hero/HeroSelector';
+import { noBlocksWithPrimaryHeading } from '../utils';
 
 const Page = ({ pageContext, location, data: { page } }) => {
   return (
     <Layout location={location} currentSlug={page.slug}>
       <HeroSelector page={page} />
+
+      {!page.showHero && noBlocksWithPrimaryHeading(page.blocks) ? (
+        <div className="container" style={{ paddingTop: '200px' }}>
+          <h1>{page.title}</h1>
+        </div>
+      ) : null}
+
       <Blocks blocks={page.blocks}></Blocks>
     </Layout>
   );
@@ -31,6 +39,7 @@ export const PageQuery = graphql`
       id
       title
       slug
+      showHero
       image {
         gatsbyImageData
         url
