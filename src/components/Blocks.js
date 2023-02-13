@@ -8,6 +8,7 @@ import LatestPost from './Blocks/LatestPost/LatestPost';
 import ListMembers from './Blocks/ListMembers/ListMembers';
 import RelatedProduct from './Blocks/RelatedProduct/RelatedProduct';
 import BlogPostList from './Blocks/BlogPostList/BlogPostList';
+import BasicAccordion from './Blocks/BasicAccordion/BasicAccordion';
 
 export default function Blocks({ blocks }) {
   return (
@@ -32,6 +33,8 @@ export default function Blocks({ blocks }) {
             return <RelatedProduct block={block} key={block.id} />;
           case 'DatoCmsBlogPost':
             return <BlogPostList block={block} key={block.id} topics={block.tagsToFilter} />;
+          case 'DatoCmsAccordion':
+            return <BasicAccordion block={block} key={block.id} />;
           default:
             return '';
         }

@@ -94,6 +94,9 @@ export const PageQuery = graphql`
         ... on DatoCmsTab {
           ...BlockTab
         }
+        ... on DatoCmsAccordion {
+          ...BlockAccordion
+        }
       }
     }
   }
