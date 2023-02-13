@@ -40,3 +40,8 @@ export const getCtaTitle = cta => {
 
   return cta.title ? cta.title : cta.link?.content ? cta.link.content.label : cta.label;
 };
+
+export const noBlocksWithPrimaryHeading = blocks => {
+  const blocksWithH1 = ['DatoCmsNarrativeBlock'];
+  return blocks.some(b => !blocksWithH1.includes(b.__typename));
+};

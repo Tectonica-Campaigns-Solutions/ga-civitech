@@ -14,7 +14,7 @@ const FooterGroupLinks = ({ item }) => {
       key={item.id}
     >
       {isButton ? (
-        <Link to={null} className={'btn btn-primary'}>
+        <Link to={item.link} className={'btn btn-primary'}>
           {item.label}
         </Link>
       ) : (
