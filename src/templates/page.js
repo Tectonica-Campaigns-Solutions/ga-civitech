@@ -4,20 +4,22 @@ import Layout from '../components/Layout';
 import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
 import HeroSelector from '../components/Global/Hero/HeroSelector';
-import { noBlocksWithPrimaryHeading } from '../utils';
+import { blockWithPrimaryHeading } from '../utils';
 
 const Page = ({ pageContext, location, data: { page } }) => {
+  const shouldRenderPrimaryHeading = !page.showHero && !blockWithPrimaryHeading(page.blocks);
+
   return (
     <Layout location={location} currentSlug={page.slug}>
       <HeroSelector page={page} />
 
-      {!page.showHero && noBlocksWithPrimaryHeading(page.blocks) ? (
+      {/* {shouldRenderPrimaryHeading ? (
         <div className="container" style={{ paddingTop: '200px' }}>
           <h1>{page.title}</h1>
         </div>
-      ) : null}
+      ) : null} */}
 
-      <Blocks blocks={page.blocks}></Blocks>
+      <Blocks blocks={page.blocks} />
     </Layout>
   );
 };

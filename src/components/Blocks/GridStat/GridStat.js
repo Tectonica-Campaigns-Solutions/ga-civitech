@@ -8,6 +8,10 @@ function GridStat({ block }) {
   const { title, text, backgroundColor, stats = [] } = block;
   const isGridSizeGreaterThan3 = stats.length > 3;
 
+  if (!isArray(stats)) {
+    return null;
+  }
+
   return (
     <div className={`grid-stats ${backgroundColor}`}>
       <div className="container">

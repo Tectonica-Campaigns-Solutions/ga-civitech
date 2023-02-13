@@ -17,7 +17,7 @@ export default function HeroBlogPost({ title, summary, createdAt, topic, image }
               {topic ? <Tag title={topic.name} /> : null}
             </div>
 
-            {title && <h2>{title}</h2>}
+            {title && <h1>{title}</h1>}
             {summary && <div className="summary" dangerouslySetInnerHTML={{ __html: summary }} />}
           </div>
         </div>

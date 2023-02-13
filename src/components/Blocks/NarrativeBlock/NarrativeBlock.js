@@ -7,7 +7,7 @@ import VideoPlayer from '../../Global/VideoPlayer/VideoPlayer';
 
 import './index.scss';
 
-export default function NarrativeBlock({ block }) {
+export default function NarrativeBlock({ block, usePrimaryHeading }) {
   const {
     backgroundColor,
     verticalCtas = false,
@@ -17,6 +17,7 @@ export default function NarrativeBlock({ block }) {
     sectionTitle,
     pretitle,
     title,
+    useTitleAsH1,
     textContent,
     ctas,
     image,
@@ -29,14 +30,14 @@ export default function NarrativeBlock({ block }) {
   const hasMedia = hasImages || video;
   const hasImageAndCentered = hasMedia && isAlignmentCenter;
 
+  const shouldUseH1 = usePrimaryHeading || useTitleAsH1;
+
   return (
     <div className={`component-narrative-block ${backgroundColor} ${classNames}`}>
       <div className="container pb-5">
         {sectionTitle && (
           <div className="row">
-            <div className={`col pb-3 ${isAlignmentCenter ? 'text-center' : ''}`}>
-              <h2>{sectionTitle}</h2>
-            </div>
+            <div className={`col pb-3 ${isAlignmentCenter ? 'text-center' : ''}`}>{<h2>{sectionTitle}</h2>}</div>
           </div>
         )}
 
@@ -53,7 +54,7 @@ export default function NarrativeBlock({ block }) {
             )}
 
             {pretitle && <h3>{pretitle}</h3>}
-            {title && <h2>{title}</h2>}
+            {title && (shouldUseH1 ? <h1>{title}</h1> : <h2>{title}</h2>)}
 
             {textContent && <div className="text-content" dangerouslySetInnerHTML={{ __html: textContent }} />}
 

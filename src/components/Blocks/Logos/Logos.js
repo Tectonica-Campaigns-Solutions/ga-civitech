@@ -9,6 +9,10 @@ import './index.scss';
 function Logos({ block }) {
   const { title, intro, logos, ctas = [], backgroundColor } = block;
 
+  if (!isArray(logos)) {
+    return null;
+  }
+
   return (
     <div className={`logos-block ${backgroundColor}`}>
       <div className="container">

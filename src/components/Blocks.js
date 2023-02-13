@@ -10,13 +10,13 @@ import RelatedProduct from './Blocks/RelatedProduct/RelatedProduct';
 import BlogPostList from './Blocks/BlogPostList/BlogPostList';
 import BasicAccordion from './Blocks/BasicAccordion/BasicAccordion';
 
-export default function Blocks({ blocks }) {
+export default function Blocks({ blocks, usePrimaryHeading = false }) {
   return (
     <>
       {blocks.map(block => {
         switch (block.__typename) {
           case 'DatoCmsNarrativeBlock':
-            return <NarrativeBlock block={block} key={block.id} />;
+            return <NarrativeBlock block={block} key={block.id} usePrimaryHeading={usePrimaryHeading} />;
           case 'DatoCmsGridStat':
             return <GridStat block={block} key={block.id} />;
           case 'DatoCmsTab':
