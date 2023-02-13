@@ -30,7 +30,7 @@ export default function HeroProduct({ data, loginTitle }) {
         </div>
       )}
 
-      <NarrativeBlock block={productBlockData} />
+      <NarrativeBlock block={productBlockData} usePrimaryHeading />
     </div>
   );
 }

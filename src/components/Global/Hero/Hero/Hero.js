@@ -11,7 +11,7 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
   return (
     <div className="hero">
       <div className="container">
-        <NarrativeBlock block={heroData} />
+        <NarrativeBlock block={heroData} usePrimaryHeading />
 
         {/* Shortcuts lists */}
         {isArray(shortcuts) && (

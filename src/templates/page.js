@@ -7,17 +7,21 @@ import HeroSelector from '../components/Global/Hero/HeroSelector';
 import { noBlocksWithPrimaryHeading } from '../utils';
 
 const Page = ({ pageContext, location, data: { page } }) => {
+  const shouldRenderPrimaryHeading = !page.showHero && noBlocksWithPrimaryHeading(page.blocks);
+
+  console.log({ hero: page.showHero, shouldRenderPrimaryHeading });
+
   return (
     <Layout location={location} currentSlug={page.slug}>
       <HeroSelector page={page} />
 
-      {!page.showHero && noBlocksWithPrimaryHeading(page.blocks) ? (
+      {shouldRenderPrimaryHeading ? (
         <div className="container" style={{ paddingTop: '200px' }}>
           <h1>{page.title}</h1>
         </div>
       ) : null}
 
-      <Blocks blocks={page.blocks}></Blocks>
+      <Blocks blocks={page.blocks} usePrimaryHeading={!shouldRenderPrimaryHeading} />
     </Layout>
   );
 };

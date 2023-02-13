@@ -26,6 +26,7 @@
     text-transform: uppercase;
   }
 
+  h1,
   h2 {
     font-family: 'Laca';
     font-style: normal;
@@ -49,7 +50,7 @@
   .center-content {
     text-align: center;
 
-    & > p {
+    &>p {
       max-width: 60%;
       margin: auto;
 
@@ -81,11 +82,11 @@
     }
   }
 
-  + .component-narrative-block {
+  +.component-narrative-block {
     padding-top: 40px;
   }
 }
 
-main > div.component-narrative-block:first-of-type {
+main>div.component-narrative-block:first-of-type {
   padding-top: 150px;
 }
