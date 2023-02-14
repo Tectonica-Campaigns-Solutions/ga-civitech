@@ -1,2 +1,2 @@
 # ga-civitech
-## url main branch https://musical-dango-72c54d.netlify.app
+## url main branch https://clever-belekoy-d45eb9.netlify.app/
