@@ -472,4 +472,9 @@ export const DatoCMS = graphql`
     }
     __typename
   }
+  fragment BlockVideoEmbed on DatoCmsVideoEmbed {
+    id
+    iframe
+    baseUrl
+  }
 `;

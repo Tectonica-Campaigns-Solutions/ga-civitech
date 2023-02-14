@@ -108,6 +108,9 @@ export const PageQuery = graphql`
         ... on DatoCmsAccordion {
           ...BlockAccordion
         }
+        ... on DatoCmsVideoEmbed {
+          ...BlockVideoEmbed
+        }
       }
     }
   }
