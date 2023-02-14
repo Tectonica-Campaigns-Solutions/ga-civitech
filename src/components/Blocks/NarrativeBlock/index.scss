@@ -91,11 +91,15 @@ main>div.component-narrative-block:first-of-type {
   padding-top: 150px;
 }
 
-@media screen and (max-width:767px){
-  .component-narrative-block{
-    padding-top:60px;
-    h2, h1{
-      font-size:40px;
+
+
+@media screen and (max-width:767px) {
+  .component-narrative-block {
+    padding-top: 60px;
+
+    h2,
+    h1 {
+      font-size: 40px;
     }
   }
 }

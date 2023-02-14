@@ -12,7 +12,7 @@ function BlogPostList({ block, topics }) {
     posts: { nodes: blogList },
   } = useStaticQuery(graphql`
     query allPosts {
-      posts: allDatoCmsPost(sort: { date: ASC }) {
+      posts: allDatoCmsPost(sort: { date: DESC }) {
         nodes {
           date(formatString: "MMM D YYYY")
           title
