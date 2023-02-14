@@ -46,7 +46,9 @@ const MegaMenu = ({ link, pageSlug, isMobile = false }) => {
                     {isArray(gLink.links) && (
                       <div className="links">
                         {gLink.links.map(link => (
-                          <Link to={getCtaUrl(link)}>{link.label}</Link>
+                          <Link key={link.label} to={getCtaUrl(link)}>
+                            {link.label}
+                          </Link>
                         ))}
                       </div>
                     )}
@@ -86,6 +88,7 @@ const MegaMenu = ({ link, pageSlug, isMobile = false }) => {
             ? megaMenuTabs.map((megaLink, index) => (
                 <>
                   <span
+                    key={index}
                     onClick={() => handleOnClickTabItem(index)}
                     className={`${megaMenuActiveTab === index ? 'active' : ''}`}
                   >
@@ -96,8 +99,8 @@ const MegaMenu = ({ link, pageSlug, isMobile = false }) => {
                 </>
               ))
             : isArray(links)
-            ? links.map(link => (
-                <Link to={link} className={`${isLinkActive(link) ? 'active' : ''}`}>
+            ? links.map((link, index) => (
+                <Link key={index} to={link} className={`${isLinkActive(link) ? 'active' : ''}`}>
                   {link.label}
                 </Link>
               ))
