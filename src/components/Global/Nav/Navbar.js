@@ -12,10 +12,10 @@ const Navbar = ({ navData, path, context, pageSlug }) => {
   const { navigationItems = [] } = navData.datoCmsNavigation;
 
   const isHomePage = !path || path === '/';
-  const showMobile = typeof window !== 'undefined' ? window.innerWidth < 992 : false;
+  const showMobile = () => (typeof window !== 'undefined' ? window.innerWidth < 992 : false);
 
   const [expanded, setExpanded] = useState(false);
-  const [showMobileMenu, setShowMobileMenu] = useState(showMobile);
+  const [showMobileMenu, setShowMobileMenu] = useState(showMobile());
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeLink, setActiveLink] = useState(null);
 
@@ -32,7 +32,7 @@ const Navbar = ({ navData, path, context, pageSlug }) => {
 
     const handleCurrentWidth = () => {
       if (typeof window !== 'undefined') {
-        setShowMobileMenu(showMobile);
+        setShowMobileMenu(showMobile());
       }
     };
 
