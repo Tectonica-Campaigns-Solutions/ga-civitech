@@ -290,6 +290,32 @@ export const DatoCMS = graphql`
                     }
                   }
                 }
+                mainLink {
+                  ... on DatoCmsGlobalLink {
+                    label
+                    url
+                    content {
+                      ... on DatoCmsPage {
+                        slug
+                        model {
+                          apiKey
+                        }
+                      }
+                      ... on DatoCmsProduct {
+                        slug
+                        model {
+                          apiKey
+                        }
+                      }
+                      ... on DatoCmsPost {
+                        slug
+                        model {
+                          apiKey
+                        }
+                      }
+                    }
+                  }
+                }
               }
               labelHighlight
               highlightedContent {

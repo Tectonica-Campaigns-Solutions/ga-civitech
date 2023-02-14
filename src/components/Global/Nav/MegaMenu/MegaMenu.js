@@ -41,7 +41,9 @@ const MegaMenu = ({ link, pageSlug, isMobile = false }) => {
                 {/* Sub-nav items */}
                 {megaMenuActiveContent.groupLink.map(gLink => (
                   <div className="col-lg-6 sub-nav-items">
-                    <h5>{gLink.title}</h5>
+                    <h5>
+                      <Link to={gLink.mainLink ? getCtaUrl(gLink.mainLink) : null}>{gLink.title}</Link>
+                    </h5>
 
                     {isArray(gLink.links) && (
                       <div className="links">
