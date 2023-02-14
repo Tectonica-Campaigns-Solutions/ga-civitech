@@ -16,7 +16,7 @@ const AccordionItem = ({ title, content, slug, model, image, alignment, isActive
       <div className="accordion-content">
         <div className={`row ${!isAlignmentRight ? 'flex-row-reverse' : ''}`}>
           <div
-            className={`col-lg-6 d-flex gap-5 ${!isAlignmentRight ? 'offset-lg-1' : ''} btn-item ${
+            className={`col-lg-6 d-flex gap-lg-5 gap-3 ${!isAlignmentRight ? 'offset-lg-1' : ''} btn-item ${
               isActive ? 'active' : ''
             } `}
           >

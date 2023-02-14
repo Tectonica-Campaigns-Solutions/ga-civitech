@@ -1,7 +1,5 @@
 .hero-image-right {
   .component-narrative-block {
-    padding-top: 150px;
-
     h1 {
       font-size: 61px;
     }
@@ -10,4 +8,14 @@
 
 .hero-image-right+.component-narrative-block {
   padding-top: 30px;
+}
+
+@media screen and (max-width:767px){
+  .hero-image-right{
+    .component-narrative-block {
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
 }

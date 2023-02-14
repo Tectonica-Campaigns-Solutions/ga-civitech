@@ -174,7 +174,7 @@ export const DatoCMS = graphql`
         name
         url
         icon {
-          gatsbyImageData(width: 130)
+          gatsbyImageData(width: 300)
           url
           alt
         }

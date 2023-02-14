@@ -34,7 +34,7 @@ export default function NarrativeBlock({ block, usePrimaryHeading }) {
 
   return (
     <div className={`component-narrative-block ${backgroundColor} ${classNames}`}>
-      <div className="container pb-5">
+      <div className="container pb-lg-5">
         {sectionTitle && (
           <div className="row">
             <div className={`col pb-3 ${isAlignmentCenter ? 'text-center' : ''}`}>{<h2>{sectionTitle}</h2>}</div>
@@ -43,8 +43,8 @@ export default function NarrativeBlock({ block, usePrimaryHeading }) {
 
         <div className={`row align-items-center ${alignment === 'left' ? 'flex-row-reverse' : ''}`}>
           <div
-            className={`${hasImageAndCentered || !hasMedia ? 'col-lg-12 mb-5' : 'col-lg-6 mb-5 mb-lg-0'} ${
-              alignment === 'left' ? 'offset-lg-1' : ''
+            className={`${hasImageAndCentered || !hasMedia ? 'col-lg-12' : 'col-lg-6 mb-lg-0'} ${
+              alignment === 'left' ? 'offset-lg-1 mt-5 mt-lg-0' : ''
             } ${isAlignmentCenter ? 'center-content' : ''}`}
           >
             {logo && (
@@ -69,7 +69,7 @@ export default function NarrativeBlock({ block, usePrimaryHeading }) {
           {(isArray(image) || video) && (
             <div
               className={`${alignment === 'center' ? 'col-lg-12 text-center' : 'col-lg-5'} ${
-                alignment === 'right' ? 'offset-lg-1' : ''
+                alignment === 'right' ? 'offset-lg-1  mt-5 mt-lg-0' : ''
               }`}
             >
               {isArray(image) ? (

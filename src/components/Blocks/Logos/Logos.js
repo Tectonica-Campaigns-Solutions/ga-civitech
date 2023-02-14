@@ -21,7 +21,7 @@ function Logos({ block }) {
         {intro && <div className="intro" dangerouslySetInnerHTML={{ __html: intro }} />}
 
         {isArray(logos) && (
-          <div className="row logos-list justify-content-center g-5">
+          <div className="row g-0 logos-list justify-content-center">
             {logos.map((logo, index) => (
               <div className="col-lg-2 col-md-3 col-6" key={index}>
                 <Link to={logo.url ? logo.url : null} target="_blank" rel="noreferrer">

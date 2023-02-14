@@ -1,6 +1,6 @@
 .component-narrative-block {
   padding-top: 100px;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 
   .logo {
     margin-bottom: 35px;
@@ -89,4 +89,13 @@
 
 main>div.component-narrative-block:first-of-type {
   padding-top: 150px;
+}
+
+@media screen and (max-width:767px){
+  .component-narrative-block{
+    padding-top:60px;
+    h2, h1{
+      font-size:40px;
+    }
+  }
 }
