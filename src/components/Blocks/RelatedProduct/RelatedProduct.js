@@ -5,7 +5,7 @@ import Accordion from '../../Global/Accordion/Accordion';
 import './index.scss';
 
 function RelatedProduct({ block }) {
-  const { title, description, products, alignment, backgroundColor } = block;
+  const { title, toolSectionTitle = '', description, products, alignment, backgroundColor } = block;
 
   return (
     <div className={`related-products-tab ${backgroundColor}`}>
@@ -20,7 +20,7 @@ function RelatedProduct({ block }) {
         {isArray(products) && (
           <div>
             <div className="products">
-              <span>Related tools</span>
+              <span>{toolSectionTitle}</span>
               <Accordion content={products} alignment={alignment} />
             </div>
           </div>
