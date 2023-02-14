@@ -44,6 +44,17 @@
         padding: 4px 10px;
       }
     }
+
+    .post-content-image {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+
+      .image-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
   }
 
   .post-related-product-container {

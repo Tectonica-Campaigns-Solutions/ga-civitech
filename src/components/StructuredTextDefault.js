@@ -11,7 +11,7 @@ const StructuredTextDefault = ({ content }) => {
         switch (record.__typename) {
           case 'DatoCmsImage':
             return (
-              <div className="mb-4">
+              <div className="post-content-image">
                 <ImageWrapper image={record.image} />
               </div>
             );

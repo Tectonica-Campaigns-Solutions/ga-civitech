@@ -28,6 +28,10 @@
           color: var(--ct-blue);
         }
       }
+
+      @media screen and (max-width: 1200px) {
+        gap: 50px;
+      }
     }
   }
 
