@@ -10,10 +10,12 @@ import './index.scss';
 
 const Navbar = ({ navData, path, context, pageSlug }) => {
   const { navigationItems = [] } = navData.datoCmsNavigation;
+
   const isHomePage = !path || path === '/';
+  const showMobile = typeof window !== 'undefined' ? window.innerWidth < 992 : false;
 
   const [expanded, setExpanded] = useState(false);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(showMobile);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeLink, setActiveLink] = useState(null);
 
@@ -30,8 +32,7 @@ const Navbar = ({ navData, path, context, pageSlug }) => {
 
     const handleCurrentWidth = () => {
       if (typeof window !== 'undefined') {
-        const currentWidth = window.innerWidth;
-        setShowMobileMenu(currentWidth < 992);
+        setShowMobileMenu(showMobile);
       }
     };
 
@@ -53,12 +54,6 @@ const Navbar = ({ navData, path, context, pageSlug }) => {
       /**
        * Alert if clicked on outside of element
        */
-      //current id
-      // const pageId = document.querySelector('.wrap-page').classList;
-      // const navBar = document.querySelector('.nav-bar');
-
-      // console.log({ pageId, navigationItems });
-
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
           setActiveLink(false);
@@ -148,7 +143,7 @@ const Navbar = ({ navData, path, context, pageSlug }) => {
               }
 
               return (
-                <li className="btn-container">
+                <li className="btn-container" key={index}>
                   <Link to={link.link} className={link.isButton ? 'btn btn-primary' : ''}>
                     {link.label}
                   </Link>

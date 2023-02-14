@@ -378,6 +378,7 @@ export const DatoCMS = graphql`
     __typename
     id
     title
+    toolSectionTitle
     description
     alignment
     backgroundColor
