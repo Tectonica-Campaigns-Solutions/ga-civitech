@@ -12,8 +12,8 @@ const BasicAccordion = ({ block }) => {
   const handleOnChangeAccordion = newIndex => setActiveItem(newIndex);
 
   return (
-    <div className="container">
-      <div className="accordion">
+    <div className="accordion">
+      <div className="container">
         {items.map((item, index) => (
           <div
             key={index}

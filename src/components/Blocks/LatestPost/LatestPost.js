@@ -11,7 +11,7 @@ const LatestPost = ({ block }) => {
     allDatoCmsPost: { nodes: latestsPosts },
   } = useStaticQuery(graphql`
     query latestPost {
-      allDatoCmsPost(limit: 3, sort: { date: ASC }) {
+      allDatoCmsPost(limit: 3, sort: { date: DESC }) {
         nodes {
           ...PostCard
         }
