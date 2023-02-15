@@ -13,7 +13,7 @@ export default function TabPost({ pretitle = null, item }) {
   return (
     <div className="tab-case-study-item">
       <div className="container">
-        <div className="row">
+        <div className="row gy-4">
           <div className="col-lg-6">
             {pretitle && <h4>{pretitle}</h4>}
 

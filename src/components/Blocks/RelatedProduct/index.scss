@@ -23,7 +23,7 @@
   }
 
   .products {
-    & > span {
+    &>span {
       display: inline-block;
       font-family: 'Public Sans';
       font-style: normal;
@@ -38,11 +38,16 @@
   }
 }
 
-@media screen and (max-width:767px){
+@media screen and (max-width:767px) {
   .related-products-tab {
-    padding-top:50px;
-    h2{
-      font-size:40px;
+    padding-top: 50px;
+
+    h2 {
+      font-size: 40px;
+    }
+
+    .description {
+      margin-bottom: 0px;
     }
   }
 }

@@ -44,3 +44,19 @@ header+main {
     padding-top: 89px;
   }
 }
+
+@media screen and (max-width: 992px) {
+  header+main {
+    .hero-single-product {
+      padding-top: 60px;
+    }
+  }
+
+  .hero-single-product {
+    .component-narrative-block {
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+}

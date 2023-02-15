@@ -43,5 +43,5 @@ export const getCtaTitle = cta => {
 
 export const blockWithPrimaryHeading = blocks => {
   const blocksWithH1 = ['DatoCmsNarrativeBlock'];
-  return blocks.some(b => blocksWithH1.includes(b.__typename) && b.useTitleAsH1);
+  return blocks.some(b => blocksWithH1.includes(b.__typename));
 };
