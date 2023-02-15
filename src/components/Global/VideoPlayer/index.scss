@@ -36,9 +36,18 @@
     position: relative;
     cursor: pointer;
 
+    .image-wrapper {
+      width: 100%;
+
+      &>div {
+        width: 100%;
+      }
+    }
+
     img {
       width: 100%;
       border-radius: 10px;
+      object-fit: cover;
     }
 
     &::before {
