@@ -9,6 +9,7 @@ import ListMembers from './Blocks/ListMembers/ListMembers';
 import RelatedProduct from './Blocks/RelatedProduct/RelatedProduct';
 import BlogPostList from './Blocks/BlogPostList/BlogPostList';
 import BasicAccordion from './Blocks/BasicAccordion/BasicAccordion';
+import IframeEmbed from './Blocks/IframeEmbed/IframeEmbed';
 import VideoEmbed from './Blocks/VideoEmbed/VideoEmbed';
 
 export default function Blocks({ blocks, usePrimaryHeading = false }) {
@@ -37,7 +38,9 @@ export default function Blocks({ blocks, usePrimaryHeading = false }) {
           case 'DatoCmsAccordion':
             return <BasicAccordion block={block} key={block.id} />;
           case 'DatoCmsVideoEmbed':
-            return <VideoEmbed block={block} key={block.id} />;
+            return <VideoEmbed block={block} key={block.id}/>
+          case 'DatoCmsIframeEmbed':
+            return <IframeEmbed block={block} key={block.id}/>
           default:
             return '';
         }

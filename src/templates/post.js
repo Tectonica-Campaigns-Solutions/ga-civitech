@@ -101,6 +101,23 @@ export const PostQuery = graphql`
               }
             }
           }
+          ... on DatoCmsIframeEmbed{
+            id: originalId
+            iframe
+          }
+          ... on DatoCmsVideoEmbed{
+            id: originalId
+            video {
+              source {
+                url
+                thumbnailUrl
+                providerUid
+              }
+              preview {
+                gatsbyImageData
+              }
+            }
+          }
         }
       }
       image {

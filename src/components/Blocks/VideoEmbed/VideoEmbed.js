@@ -1,19 +1,12 @@
-import React from 'react';
+import React from 'react'
+import VideoPlayer from '../../Global/VideoPlayer/VideoPlayer'
 
-const VideoEmbed = ({ block }) => {
-  const { iframe, baseUrl } = block;
-
+function VideoEmbed({ block }) {
   return (
-    <div className="container pb-5">
-      <div className="mb-5">
-        <h2>Testing dangerouslySetInnerHTML</h2>
-        <div dangerouslySetInnerHTML={{ __html: iframe }} />
-      </div>
-
-      <h2>Testing only base url</h2>
-      <iframe src={baseUrl} />
+    <div>
+      <VideoPlayer video={block.video}/>
     </div>
-  );
-};
+  )
+}
 
-export default VideoEmbed;
+export default VideoEmbed

@@ -20,7 +20,7 @@ export default function PostGrid({ content, tags, relatedProduct, relatedPost, t
               <StructuredTextDefault content={content} />
 
               {isArray(tags) && (
-                <div className="tags">
+                <div className="tags mt-5">
                   {tags.map(item => (
                     <Tag title={item.name} />
                   ))}

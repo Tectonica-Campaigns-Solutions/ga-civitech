@@ -11,7 +11,7 @@ function VideoPlayer({ video }) {
 
   const getYoutubeVideoSrc = () => {
     const videoId = video.source?.providerUid;
-    return `https://www.youtube.com/embed/${videoId}`;
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
   };
 
   const getVideoThumbnail = () => {
