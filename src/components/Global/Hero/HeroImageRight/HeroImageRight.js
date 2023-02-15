@@ -16,7 +16,7 @@ export default function HeroImageRight(data) {
   };
 
   return (
-    <div className={`hero-image-right ${heroData.backgroundColor} py-5 mb-5`}>
+    <div className={`hero-image-right ${heroData.backgroundColor}`} style={{ paddingTop: '100px' }}>
       <NarrativeBlock block={heroData} usePrimaryHeading />
     </div>
   );

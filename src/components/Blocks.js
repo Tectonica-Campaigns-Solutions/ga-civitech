@@ -38,9 +38,9 @@ export default function Blocks({ blocks, usePrimaryHeading = false }) {
           case 'DatoCmsAccordion':
             return <BasicAccordion block={block} key={block.id} />;
           case 'DatoCmsVideoEmbed':
-            return <VideoEmbed block={block} key={block.id}/>
+            return <VideoEmbed block={block} key={block.id} />;
           case 'DatoCmsIframeEmbed':
-            return <IframeEmbed block={block} key={block.id}/>
+            return <IframeEmbed block={block} key={block.id} />;
           default:
             return '';
         }

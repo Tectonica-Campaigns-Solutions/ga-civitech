@@ -13,11 +13,11 @@ const Page = ({ pageContext, location, data: { page } }) => {
     <Layout location={location} currentSlug={page.slug}>
       <HeroSelector page={page} />
 
-      {/* {shouldRenderPrimaryHeading ? (
+      {shouldRenderPrimaryHeading ? (
         <div className="container" style={{ paddingTop: '200px' }}>
           <h1>{page.title}</h1>
         </div>
-      ) : null} */}
+      ) : null}
 
       <Blocks blocks={page.blocks} />
     </Layout>
