@@ -8,12 +8,13 @@ import { blockWithPrimaryHeading } from '../utils';
 
 const Page = ({ pageContext, location, data: { page } }) => {
   const shouldRenderPrimaryHeading = !page.showHero && !blockWithPrimaryHeading(page.blocks);
+  const shouldRemoveH1 = page.blocks.filter(item => item.__typename === 'DatoCmsBlogPost').length > 0
 
   return (
     <Layout location={location} currentSlug={page.slug}>
       <HeroSelector page={page} />
 
-      {shouldRenderPrimaryHeading ? (
+      {shouldRenderPrimaryHeading && !shouldRemoveH1 ? (
         <div className="container" style={{ paddingTop: '200px' }}>
           <h1>{page.title}</h1>
         </div>
