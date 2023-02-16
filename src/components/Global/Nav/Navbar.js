@@ -5,6 +5,7 @@ import logo from '../../Icons/logo.svg';
 import dropdownIcon from '../../Icons/nav-dropdown.svg';
 import dropdownActiveIcon from '../../Icons/nav-dropdown-active.svg';
 import { isArray } from '../../../utils';
+import menuArrow from '../../Icons/menu-arrow.svg';
 
 import './index.scss';
 
@@ -146,6 +147,7 @@ const Navbar = ({ navData, path, context, pageSlug }) => {
                 <li className="btn-container" key={index}>
                   <Link to={link.link} className={link.isButton ? 'btn btn-primary' : ''}>
                     {link.label}
+                    {link.isButton ? <img src={menuArrow} alt="Menu arrow" className="icon" /> : null}
                   </Link>
                 </li>
               );
