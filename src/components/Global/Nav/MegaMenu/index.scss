@@ -70,7 +70,9 @@
     }
 
     .sub-nav-items {
-      h5 {
+      h5 a {
+        display: block;
+        width: 100%;
         font-family: 'Laca';
         font-style: normal;
         font-weight: 600;

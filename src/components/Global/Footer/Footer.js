@@ -81,7 +81,7 @@ function Footer() {
               {footer.social.navigationItems.map(item => {
                 return (
                   <li key={item.id}>
-                    <Link to={item.link} target="_blank">
+                    <Link to={item.link} className="social-link-footer" target="_blank">
                       <img src={item.icon.url} alt="follow" />
                     </Link>
                   </li>

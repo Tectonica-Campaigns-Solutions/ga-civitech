@@ -41,6 +41,14 @@
     border-color: var(--ct-dark-blue);
     background-color: var(--ct-dark-blue);
   }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    padding-left: 10px;
+  }
 }
 
 // Secondary Button Styles
