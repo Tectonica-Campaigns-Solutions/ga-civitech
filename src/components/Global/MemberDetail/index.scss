@@ -47,3 +47,18 @@
     right: 36px;
   }
 }
+
+@media screen and (max-width:767px) {
+  .member-detail {
+    padding: 100px 0;
+
+    .image-wrapper {
+      margin-bottom: 1.5rem;
+    }
+
+    .close-icon {
+      top: 90px;
+      right: 10px;
+    }
+  }
+}

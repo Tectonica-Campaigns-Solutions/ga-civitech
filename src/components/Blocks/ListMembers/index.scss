@@ -51,3 +51,13 @@
     padding-top: 135px;
   }
 }
+
+@media screen and (max-width:767px) {
+  .list-members-container {
+    padding-bottom: 50px;
+
+    &.extra-pt {
+      padding-top: 50px;
+    }
+  }
+}

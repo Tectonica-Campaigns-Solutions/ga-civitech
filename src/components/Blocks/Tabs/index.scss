@@ -5,10 +5,17 @@
   &.pale-red,
   &.pale-yellow {
     .titles {
-      > div:not(.active) {
+      >div:not(.active) {
         color: var(--ct-dark-gray);
         border-color: var(--ct-dark-gray);
       }
     }
+  }
+}
+
+@media screen and (max-width:768px) {
+  .tabs {
+    padding-top: 50px;
+    padding-bottom: 70px;
   }
 }

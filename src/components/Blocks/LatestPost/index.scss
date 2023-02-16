@@ -33,7 +33,7 @@
     overflow: hidden;
     border-radius: 20px;
 
-    & > a > div {
+    &>a>div {
       width: 100%;
     }
 
@@ -43,5 +43,11 @@
         transform: scale(1.15);
       }
     }
+  }
+}
+
+@media screen and (max-width:767px) {
+  .latest-posts-container {
+    padding-bottom: 10px;
   }
 }
