@@ -45,6 +45,11 @@
     line-height: 150%;
     color: var(--ct-dark-blue);
     margin-bottom: 35px;
+
+    ul,
+    li {
+      list-style: initial;
+    }
   }
 
   .center-content {
