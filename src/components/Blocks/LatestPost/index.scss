@@ -49,5 +49,9 @@
 @media screen and (max-width:767px) {
   .latest-posts-container {
     padding-bottom: 10px;
+
+    h2 {
+      font-size: 20px;
+    }
   }
 }

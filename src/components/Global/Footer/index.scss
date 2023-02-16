@@ -2,6 +2,7 @@
   * {
     color: #fff;
   }
+
   background-color: var(--ct-alternative-black);
   padding: 30px 0;
 
@@ -32,6 +33,7 @@
   }
 
   .ct-footer-links {
+
     ol,
     ul {
       margin: 0;
@@ -67,6 +69,7 @@
 
   .ct-footer-social-icons-container {
     height: 100%;
+
     ul {
       display: flex;
       gap: 19.34px;
@@ -111,6 +114,22 @@
         background-color: var(--ct-dark-blue);
         border: 2px solid var(--ct-white);
       }
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  #main-footer {
+    h3 {
+      font-size: 14px !important;
+    }
+
+    ul li a {
+      font-size: 13px;
+    }
+
+    .footer-links {
+      font-size: 14px;
     }
   }
 }

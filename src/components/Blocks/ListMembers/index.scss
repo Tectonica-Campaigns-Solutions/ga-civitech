@@ -59,5 +59,15 @@
     &.extra-pt {
       padding-top: 50px;
     }
+
+    .member-item {
+      gap: 5px;
+
+      .description {
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
   }
 }
