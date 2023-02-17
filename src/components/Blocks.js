@@ -11,6 +11,7 @@ import BlogPostList from './Blocks/BlogPostList/BlogPostList';
 import BasicAccordion from './Blocks/BasicAccordion/BasicAccordion';
 import IframeEmbed from './Blocks/IframeEmbed/IframeEmbed';
 import VideoEmbed from './Blocks/VideoEmbed/VideoEmbed';
+import ListContent from './Blocks/ListContent/ListContent';
 
 export default function Blocks({ blocks, usePrimaryHeading = false }) {
   return (
@@ -41,6 +42,8 @@ export default function Blocks({ blocks, usePrimaryHeading = false }) {
             return <VideoEmbed block={block} key={block.id} />;
           case 'DatoCmsIframeEmbed':
             return <IframeEmbed block={block} key={block.id} />;
+          case 'DatoCmsListContent':
+            return <ListContent block={block} key={block.id} />;
           default:
             return '';
         }

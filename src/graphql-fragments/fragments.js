@@ -1,6 +1,14 @@
 import { graphql } from 'gatsby';
 
 export const DatoCMS = graphql`
+  fragment BlockListContent on DatoCmsListContent{
+    title
+    content{
+      ... on DatoCmsPage{
+        title
+      }
+    }
+  }
   fragment BlockNarrativeBlock on DatoCmsNarrativeBlock {
     __typename
     id

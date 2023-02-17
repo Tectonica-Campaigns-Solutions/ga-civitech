@@ -115,6 +115,9 @@ export const PageQuery = graphql`
         ... on DatoCmsVideoEmbed {
           ...BlockVideoEmbed
         }
+        ... on DatoCmsListContent {
+          ...BlockListContent
+        }
       }
     }
   }
