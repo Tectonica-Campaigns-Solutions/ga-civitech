@@ -31,7 +31,7 @@ export const DatoCMS = graphql`
       }
     }
     image {
-      gatsbyImageData(width: 500, height: 500)
+      gatsbyImageData(width: 800, height: 800)
       alt
       url
     }
