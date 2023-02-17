@@ -19,7 +19,7 @@ function GridStat({ block }) {
         {text && <div className="text" dangerouslySetInnerHTML={{ __html: text }} />}
 
         {isArray(stats) && (
-          <div className="row justify-content-center gy-5">
+          <div className="row justify-content-center align-items-start gy-5">
             {stats.map((item, index) => (
               <div
                 className={`${isGridSizeGreaterThan3 ? 'col-lg-3' : 'col-lg-4'} col-md-4 col-sm-6 stat-item`}
