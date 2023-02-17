@@ -16,16 +16,20 @@ export default function ListMembers({ block }) {
           {isArray(members) &&
             members.map((member, index) => (
               <div key={index} className="col-lg-20pg col-md-4 member-item">
-                <AnimateLink to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
-                  <ImageWrapper image={member.image} objectFit="contain" />
-                </AnimateLink>
+                {member.image && (
+                  <AnimateLink to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
+                    <ImageWrapper image={member.image} objectFit="contain" />
+                  </AnimateLink>
+                )}
 
                 <div className="description">
-                  <AnimateLink to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
-                    <h3>{member.name}</h3>
-                  </AnimateLink>
+                  {member.name && (
+                    <AnimateLink to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
+                      <h3>{member.name}</h3>
+                    </AnimateLink>
+                  )}
 
-                  <span>{member.positionMember}</span>
+                  {member.positionMember && <span>{member.positionMember}</span>}
                 </div>
               </div>
             ))}

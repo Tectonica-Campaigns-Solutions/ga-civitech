@@ -12,11 +12,13 @@ export default function BlogPostCard({ slug, model, image, date, tags, title }) 
 
   return (
     <div className="blog-post-card">
-      <div className="image">
-        <Link to={link}>
-          <GlobalImage image={image} />
-        </Link>
-      </div>
+      {image && (
+        <div className="image">
+          <Link to={link}>
+            <GlobalImage image={image} />
+          </Link>
+        </div>
+      )}
 
       <div className="meta">
         {date && <span className="date">{date}</span>}

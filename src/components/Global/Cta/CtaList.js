@@ -3,7 +3,7 @@ import Cta from './Cta';
 
 import './index.scss';
 
-const CtaList = ({ ctas }) => {
+const CtaList = ({ ctas = [] }) => {
   return (
     <div className="ctas">
       {ctas.map((cta, index) => (
