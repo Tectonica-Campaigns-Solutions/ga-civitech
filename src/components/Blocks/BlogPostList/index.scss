@@ -55,5 +55,11 @@
 @media screen and (max-width:768px) {
   .blog-post-list {
     padding-top: 100px;
+
+    h2 {
+      font-size: 40px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
   }
 }
