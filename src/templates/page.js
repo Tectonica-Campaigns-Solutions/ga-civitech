@@ -6,6 +6,8 @@ import Blocks from '../components/Blocks';
 import HeroSelector from '../components/Global/Hero/HeroSelector';
 import { blockWithPrimaryHeading } from '../utils';
 
+import * as styles from './page.module.scss';
+
 const Page = ({ pageContext, location, data: { page } }) => {
   const shouldRenderPrimaryHeading = !page.showHero && !blockWithPrimaryHeading(page.blocks);
   const shouldRemoveH1 = page.blocks.filter(item => item.__typename === 'DatoCmsBlogPost').length > 0;
@@ -15,8 +17,8 @@ const Page = ({ pageContext, location, data: { page } }) => {
       <HeroSelector page={page} />
 
       {shouldRenderPrimaryHeading && !shouldRemoveH1 ? (
-        <div className="container mt-5 mt-md-5 pt-5 pt-md-5">
-          <h1>{page.title}</h1>
+        <div className="container">
+          <h1 className={styles.pageTitle}>{page.title}</h1>
         </div>
       ) : null}
 
