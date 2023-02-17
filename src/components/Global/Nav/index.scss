@@ -9,7 +9,7 @@
     background: var(--ct-white);
     padding: 31.5px 41px 32.5px 41px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
-
+    transition: all .3s;
     .navbar-brand>img {
       width: 95%;
     }
@@ -20,6 +20,21 @@
 
     &.sticky-nav {
       background: var(--ct-white);
+      @media screen and (min-width:991px){
+
+        padding: 10px 41px 10px 41px;
+        height:auto;
+        .navbar-brand{
+          max-width:200px;
+        }
+        .btn{
+          padding:5px 10px;
+          font-size:16px;
+        }
+        .nav-c-group-items .nav-c-item{
+          font-size:16px;
+        }
+      }
     }
 
     &.expanded {
