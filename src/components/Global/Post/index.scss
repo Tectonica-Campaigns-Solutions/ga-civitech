@@ -70,3 +70,14 @@
     }
   }
 }
+
+@media screen and (max-width:768px) {
+  .post-content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .content {
+      font-size: 16px;
+    }
+  }
+}

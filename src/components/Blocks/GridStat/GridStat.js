@@ -16,10 +16,10 @@ function GridStat({ block }) {
     <div className={`grid-stats ${backgroundColor}`}>
       <div className="container">
         {title && <h2>{title}</h2>}
-        {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
+        {text && <div className="text" dangerouslySetInnerHTML={{ __html: text }} />}
 
         {isArray(stats) && (
-          <div className="row gy-5">
+          <div className="row justify-content-center gy-5">
             {stats.map((item, index) => (
               <div
                 className={`${isGridSizeGreaterThan3 ? 'col-lg-3' : 'col-lg-4'} col-md-4 col-sm-6 stat-item`}
@@ -29,8 +29,8 @@ function GridStat({ block }) {
                   <GlobalImage image={item.icon} />
                 </div>
 
-                <h3 className={`${isGridSizeGreaterThan3 ? 'sm-title' : 'lg-title'}`}>{item.title}</h3>
-                <span className={`${isGridSizeGreaterThan3 ? 'sm-text' : 'lg-text'}`}>{item.text}</span>
+                {item.title && <h3 className={`${isGridSizeGreaterThan3 ? 'sm-title' : 'lg-title'}`}>{item.title}</h3>}
+                {item.text && <span className={`${isGridSizeGreaterThan3 ? 'sm-text' : 'lg-text'}`}>{item.text}</span>}
               </div>
             ))}
           </div>

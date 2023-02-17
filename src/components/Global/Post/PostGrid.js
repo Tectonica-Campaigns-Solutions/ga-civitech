@@ -17,7 +17,7 @@ export default function PostGrid({ content, tags, relatedProduct, relatedPost, t
         <div className="container">
           <div className={`row ${!hasRelatedProducts ? 'justify-content-center' : ''}`}>
             <div className={`content ${hasRelatedProducts ? 'col-lg-7' : 'col-lg-10'}`}>
-              <StructuredTextDefault content={content} />
+              {content && <StructuredTextDefault content={content} />}
 
               {isArray(tags) && (
                 <div className="tags mt-5">

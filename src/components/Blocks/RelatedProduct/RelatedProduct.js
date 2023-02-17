@@ -20,7 +20,7 @@ function RelatedProduct({ block }) {
         {isArray(products) && (
           <div>
             <div className="products">
-              <span>{toolSectionTitle}</span>
+              {toolSectionTitle && <span>{toolSectionTitle}</span>}
               <Accordion content={products} alignment={alignment} />
             </div>
           </div>

@@ -25,10 +25,11 @@ const AccordionItem = ({ title, content, slug, model, image, alignment, isActive
             </div>
 
             <div>
-              <h2 onClick={handleOnClickTab}>{title}</h2>
+              {title && <h2 onClick={handleOnClickTab}>{title}</h2>}
+
               {isActive && (
                 <>
-                  <div className="content" dangerouslySetInnerHTML={{ __html: content }} />
+                  {content && <div className="content" dangerouslySetInnerHTML={{ __html: content }} />}
 
                   {link && (
                     <Link className="btn btn-primary mb-5" to={link}>

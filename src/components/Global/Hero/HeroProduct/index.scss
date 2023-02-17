@@ -51,12 +51,17 @@ header+main {
       padding-top: 60px;
     }
   }
+}
 
+@media screen and (max-width:768px) {
   .hero-single-product {
     .component-narrative-block {
-      h1 {
-        font-size: 40px;
-      }
+      font-size: 40px;
+    }
+
+    .login-product {
+      font-size: 16px;
+      padding: 10px;
     }
   }
 }

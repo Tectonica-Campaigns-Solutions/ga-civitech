@@ -21,16 +21,18 @@ function TabGeneric({ item }) {
             )}
 
             <div className="quote-information">
-              <div className="quote">{testimonial?.quote}</div>
-              <div className="author">{testimonial?.author}</div>
+              {testimonial.quote && <div className="quote" dangerouslySetInnerHTML={{ __html: testimonial.quote }} />}
+              {testimonial.author && (
+                <div className="author" dangerouslySetInnerHTML={{ __html: testimonial.author }} />
+              )}
             </div>
           </div>
         )}
 
         <div className="col-lg-8 d-flex flex-column tab-information mt-md-5 mt-lg-0  order-0 order-md-1">
           <div className="flex-grow-1 mb-5 mb-lg-0">
-            <h2>{title}</h2>
-            <div className="description" dangerouslySetInnerHTML={{ __html: text }} />
+            {title && <h2>{title}</h2>}
+            {text && <div className="description" dangerouslySetInnerHTML={{ __html: text }} />}
 
             {isArray(ctas) && (
               <div className="mb-5">
@@ -39,7 +41,7 @@ function TabGeneric({ item }) {
             )}
           </div>
 
-          <Toolset toolset={item} />
+          {item && <Toolset toolset={item} />}
         </div>
       </div>
     </div>

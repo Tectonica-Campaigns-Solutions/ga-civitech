@@ -21,11 +21,11 @@ const BasicAccordion = ({ block }) => {
             onClick={() => handleOnChangeAccordion(index)}
           >
             <div className="ac-title">
-              <h3>{item?.title}</h3>
+              {item.title && <h3>{item?.title}</h3>}
               <img src={activeItem === index ? accordionClose : accordionOpen} alt="Accordion close/open icon" />
             </div>
 
-            <div className="ac-content" dangerouslySetInnerHTML={{ __html: item.text }} />
+            {item.text && <div className="ac-content" dangerouslySetInnerHTML={{ __html: item.text }} />}
           </div>
         ))}
       </div>

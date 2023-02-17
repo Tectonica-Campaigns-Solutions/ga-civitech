@@ -1,0 +1,19 @@
+.pageTitle {
+  font-family: "Laca";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 49px;
+  line-height: 100%;
+  color: var(--ct-dark-blue);
+  margin-bottom: 25px;
+
+  padding-top: 200px;
+
+  @media screen and (max-width: 992px) {
+    padding-top: 100px;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 40px;
+  }
+}

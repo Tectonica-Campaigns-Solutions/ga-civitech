@@ -45,6 +45,7 @@
     position: absolute;
     top: 168px;
     right: 36px;
+    z-index: 999;
   }
 }
 
@@ -59,6 +60,15 @@
     .close-icon {
       top: 90px;
       right: 10px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 5px;
+    }
+
+    .description {
+      font-size: 16px;
     }
   }
 }
