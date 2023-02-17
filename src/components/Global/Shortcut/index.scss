@@ -23,7 +23,7 @@
     margin-bottom: 13px;
   }
 
-  .description {
+  .description p {
     font-family: 'Public Sans';
     font-style: normal;
     font-weight: 400;
@@ -47,7 +47,7 @@
 
     h4,
     p,
-    p > span,
+    p>span,
     a {
       color: var(--ct-white);
     }
@@ -66,6 +66,23 @@
     img:nth-child(2) {
       position: relative;
       left: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .shortcut {
+    h4 {
+      font-size: 20px;
+    }
+
+    .description p,
+    .description span {
+      font-size: 16px;
+    }
+
+    a {
+      font-size: 16px;
     }
   }
 }

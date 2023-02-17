@@ -68,8 +68,17 @@
     .image.active {
       border: none;
     }
-    .accordion-content h2{
-      font-size:26px;
+
+    .accordion-content h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
     }
+
+    .accordion-content {
+      .content {
+        font-size: 16px;
+      }
+    }
+
   }
 }
