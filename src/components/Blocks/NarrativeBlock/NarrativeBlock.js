@@ -20,6 +20,7 @@ export default function NarrativeBlock({ block, usePrimaryHeading }) {
     textContent,
     ctas,
     image,
+    xlImage,
     video,
     alt,
   } = block;
@@ -65,14 +66,14 @@ export default function NarrativeBlock({ block, usePrimaryHeading }) {
           </div>
 
           {/* Render image or video */}
-          {(isArray(image) || video) && (
+          {(isArray(image || xlImage) || video) && (
             <div
-              className={`${alignment === 'center' ? 'col-lg-12 text-center' : 'col-lg-5 mt-5 mt-lg-0'} ${
+              className={`${isAlignmentCenter ? 'col-lg-12 text-center pt-4' : 'col-lg-5 mt-5 mt-lg-0'} ${
                 alignment === 'right' ? 'offset-lg-1  mt-5 mt-lg-0' : ''
               }`}
             >
-              {isArray(image) ? (
-                <ImageWrapper alt={alt} image={image} objectFit="contain" />
+              {isArray(image || xlImage) ? (
+                <ImageWrapper alt={alt} image={isAlignmentCenter ? xlImage : image} objectFit="contain" />
               ) : (
                 video && <VideoPlayer video={video} />
               )}
