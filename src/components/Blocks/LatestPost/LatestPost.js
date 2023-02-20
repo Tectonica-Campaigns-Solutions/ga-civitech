@@ -31,8 +31,8 @@ const LatestPost = ({ block }) => {
 
         <div className="row gx-6">
           {isArray(latestsPosts) ? (
-            latestsPosts.map(({ image, slug, tags, title, model, date }) => (
-              <div className="col-lg-4 mb-lg-0 mb-5">
+            latestsPosts.map(({ id, image, slug, tags, title, model, date }) => (
+              <div className="col-lg-4 mb-lg-0 mb-5" key={id}>
                 <BlogPostCard slug={slug} image={image} date={date} tags={tags} title={title} model={model} />
               </div>
             ))

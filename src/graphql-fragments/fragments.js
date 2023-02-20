@@ -68,7 +68,8 @@ export const DatoCMS = graphql`
     title
     titleAlignment
     backgroundColor
-    columns{
+    columns {
+      id
       title
       text
     }
@@ -433,6 +434,7 @@ export const DatoCMS = graphql`
     backgroundColor
     products {
       ... on DatoCmsProduct {
+        id
         model {
           apiKey
         }
@@ -469,6 +471,7 @@ export const DatoCMS = graphql`
     }
   }
   fragment PostCard on DatoCmsPost {
+    id
     title
     slug
     date(formatString: "MMM D YYYY")
