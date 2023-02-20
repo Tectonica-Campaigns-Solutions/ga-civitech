@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby';
 
 export const DatoCMS = graphql`
-  fragment BlockListContent on DatoCmsListContent{
+  fragment BlockListContent on DatoCmsListContent {
     title
-    content{
-      ... on DatoCmsPage{
+    content {
+      ... on DatoCmsPage {
         title
       }
     }
@@ -32,6 +32,11 @@ export const DatoCMS = graphql`
     }
     image {
       gatsbyImageData(width: 800, height: 800)
+      alt
+      url
+    }
+    xlImage: image {
+      gatsbyImageData(width: 900)
       alt
       url
     }
