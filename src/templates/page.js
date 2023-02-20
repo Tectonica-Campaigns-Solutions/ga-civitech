@@ -120,6 +120,9 @@ export const PageQuery = graphql`
         ... on DatoCmsListContent {
           ...BlockListContent
         }
+        ... on DatoCmsTextColumn {
+          ... BlockTextColumn
+        }
       }
     }
   }

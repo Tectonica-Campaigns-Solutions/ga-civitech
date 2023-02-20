@@ -62,6 +62,17 @@ export const DatoCMS = graphql`
       }
     }
   }
+  fragment BlockTextColumn on DatoCmsTextColumn {
+    __typename
+    id
+    title
+    titleAlignment
+    backgroundColor
+    columns{
+      title
+      text
+    }
+  }
   fragment BlockGridStat on DatoCmsGridStat {
     __typename
     id

@@ -12,6 +12,7 @@ import BasicAccordion from './Blocks/BasicAccordion/BasicAccordion';
 import IframeEmbed from './Blocks/IframeEmbed/IframeEmbed';
 import VideoEmbed from './Blocks/VideoEmbed/VideoEmbed';
 import ListContent from './Blocks/ListContent/ListContent';
+import TextColumn from './Blocks/TextColumn/TextColumn';
 
 export default function Blocks({ blocks, usePrimaryHeading = false }) {
   return (
@@ -44,6 +45,8 @@ export default function Blocks({ blocks, usePrimaryHeading = false }) {
             return <IframeEmbed block={block} key={block.id} />;
           case 'DatoCmsListContent':
             return <ListContent block={block} key={block.id} />;
+          case 'DatoCmsTextColumn':
+            return <TextColumn block={block} key={block.id} />;
           default:
             return '';
         }
