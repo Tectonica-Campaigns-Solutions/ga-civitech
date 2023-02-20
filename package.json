@@ -25,7 +25,8 @@
     "react-helmet": "^6.1.0",
     "react-slick": "^0.29.0",
     "sass": "^1.57.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "devDependencies": {
     "@datocms/cli": "^1.0.21",
