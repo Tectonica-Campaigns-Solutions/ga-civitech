@@ -94,9 +94,9 @@ const HubspotHardcodedTest = () => (
     <form
       id="hsForm_3eb4259d-97a6-4a8c-af05-330d2089f7ca"
       method="POST"
-      accept-charset="UTF-8"
-      enctype="multipart/form-data"
-      novalidate=""
+      acceptCharset="UTF-8"
+      encType="multipart/form-data"
+      noValidate=""
       action="https://forms-eu1.hsforms.com/submissions/v3/public/submit/formsnext/multipart/26289884/3eb4259d-97a6-4a8c-af05-330d2089f7ca"
       className="hs-form-private hsForm_3eb4259d-97a6-4a8c-af05-330d2089f7ca hs-form-3eb4259d-97a6-4a8c-af05-330d2089f7ca hs-form-3eb4259d-97a6-4a8c-af05-330d2089f7ca_082fa578-1e4b-4b51-8eca-3d4dde01bf18 hs-form stacked"
       target="target_iframe_3eb4259d-97a6-4a8c-af05-330d2089f7ca"
@@ -110,7 +110,7 @@ const HubspotHardcodedTest = () => (
             id="label-email-3eb4259d-97a6-4a8c-af05-330d2089f7ca"
             className=""
             placeholder="Enter your Correo"
-            for="email-3eb4259d-97a6-4a8c-af05-330d2089f7ca"
+            htmlFor="email-3eb4259d-97a6-4a8c-af05-330d2089f7ca"
           >
             <span>Correo</span>
             <span className="hs-form-required">*</span>
@@ -127,8 +127,8 @@ const HubspotHardcodedTest = () => (
               placeholder="Email"
               type="email"
               className="hs-input"
-              inputmode="email"
-              autocomplete="email"
+              inputMode="email"
+              autoComplete="email"
               value=""
             />
             <div
@@ -142,7 +142,7 @@ const HubspotHardcodedTest = () => (
             id="label-lastname-3eb4259d-97a6-4a8c-af05-330d2089f7ca"
             className=""
             placeholder="Enter your Apellido"
-            for="lastname-3eb4259d-97a6-4a8c-af05-330d2089f7ca"
+            htmlFor="lastname-3eb4259d-97a6-4a8c-af05-330d2089f7ca"
           >
             <span>Apellido</span>
           </label>
@@ -157,8 +157,8 @@ const HubspotHardcodedTest = () => (
               placeholder="lastname"
               type="text"
               className="hs-input"
-              inputmode="text"
-              autocomplete="family-name"
+              inputMode="text"
+              autoComplete="family-name"
               value=""
             />
           </div>

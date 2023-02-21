@@ -115,18 +115,16 @@ const Navbar = ({ navData, path, context, pageSlug }) => {
 
         <div className={` ${expanded ? 'show' : ''} collapse navbar-collapse`} id="navNav">
           <ul className="navbar-nav mr-auto nav-c-group-items">
-            {navigationItems?.map((link, index) => {
+            {navigationItems?.map(link => {
               // If the link has children or is a mega menu we do not need to redirect to another page
               if (isArray(link.links) || !!link.megaMenu) {
                 return (
-                  <>
+                  <React.Fragment key={link.id}>
                     <li
-                      key={index}
                       onClick={() => setActiveLink(prevLink => (prevLink === link ? null : link))}
                       className={`nav-c-item ${activeLink === link || isLinkActive(link) ? 'active' : ''}`}
                     >
                       {link.label}
-
                       <span>
                         <img
                           className={`${showMobileMenu && activeLink === link ? 'revert' : ''}`}
@@ -139,12 +137,12 @@ const Navbar = ({ navData, path, context, pageSlug }) => {
                     {showMobileMenu && activeLink === link && (
                       <MegaMenu link={activeLink} pageSlug={pageSlug} isMobile />
                     )}
-                  </>
+                  </React.Fragment>
                 );
               }
 
               return (
-                <li className="btn-container" key={index}>
+                <li className="btn-container" key={link.id}>
                   <Link to={link.link} className={link.isButton ? 'btn btn-primary' : ''}>
                     {link.label}
                     {link.isButton ? <img src={menuArrow} alt="Menu arrow" className="icon" /> : null}

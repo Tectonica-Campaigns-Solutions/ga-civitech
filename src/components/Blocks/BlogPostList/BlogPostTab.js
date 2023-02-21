@@ -11,8 +11,8 @@ function BlogPostTab({ title, items, textCta = null, cta = null }) {
 
       <div className="row gy-5">
         {items.map((item, index) => (
-          <>
-            <div className="col-lg-4" key={index}>
+          <React.Fragment key={item.id}>
+            <div className="col-lg-4">
               <BlogPostCard
                 slug={item.slug}
                 model={item.model}
@@ -24,7 +24,7 @@ function BlogPostTab({ title, items, textCta = null, cta = null }) {
             </div>
 
             {shouldRenderCta && index === 5 && <BlogListCta text={textCta} cta={cta} label={cta.label} />}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </>

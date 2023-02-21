@@ -38,6 +38,7 @@ export const HomeQuery = graphql`
       contentText
       shortcuts {
         ... on DatoCmsPage {
+          id
           title
           slug
           description

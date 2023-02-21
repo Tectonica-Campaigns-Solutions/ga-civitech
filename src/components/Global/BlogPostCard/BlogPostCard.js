@@ -26,7 +26,7 @@ export default function BlogPostCard({ slug, model, image, date, tags, title }) 
         {isArray(tags) && (
           <div className="tags">
             {tags.map(tag => (
-              <Tag title={tag.name} />
+              <Tag key={tag.id} title={tag.name} />
             ))}
           </div>
         )}
