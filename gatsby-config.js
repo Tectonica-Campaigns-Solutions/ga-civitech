@@ -10,6 +10,17 @@ module.exports = {
     siteUrl: `https://clever-belekoy-d45eb9.netlify.app/`,
   },
   plugins: [
+    { 
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID', // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-analytics', // default
+          anonymize: true, // default
+          allowAdFeatures: false // default
+        }
+      }
+    },
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-sass`,

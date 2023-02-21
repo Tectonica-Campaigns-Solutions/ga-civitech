@@ -41,7 +41,7 @@ export default function NarrativeBlock({ block, usePrimaryHeading }) {
           </div>
         )}
 
-        <div className={`row align-items-center ${alignment === 'left' ? 'flex-row-reverse' : ''}`}>
+        <div className={`row align-items-center ${alignment === 'left' ? 'flex-row-reverse' : ''} ${alignment === 'center' ? 'justify-content-center' : ''}`}>
           <div
             className={`${hasImageAndCentered || !hasMedia ? 'col-lg-12' : 'col-lg-6 mb-lg-0'} ${
               alignment === 'left' ? 'offset-lg-1 mt-5 mt-lg-0' : ''
@@ -68,7 +68,7 @@ export default function NarrativeBlock({ block, usePrimaryHeading }) {
           {/* Render image or video */}
           {(isArray(image || xlImage) || video) && (
             <div
-              className={`${isAlignmentCenter ? 'col-lg-12 text-center pt-4' : 'col-lg-5 mt-5 mt-lg-0'} ${
+              className={`${isAlignmentCenter ? 'col-lg-8 text-center pt-4' : 'col-lg-5 mt-5 mt-lg-0'} ${
                 alignment === 'right' ? 'offset-lg-1  mt-5 mt-lg-0' : ''
               }`}
             >
