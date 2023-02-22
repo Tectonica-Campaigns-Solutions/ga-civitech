@@ -14,11 +14,12 @@ module.exports = {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID', // leave empty if you want to disable the tracker
+          trackingId: 'G-E3TJX5HR88', // leave empty if you want to disable the tracker
           cookieName: 'gatsby-gdpr-google-analytics', // default
           anonymize: true, // default
           allowAdFeatures: false // default
-        }
+        },
+        environments: ['production']
       }
     },
     `gatsby-plugin-advanced-sitemap`,
