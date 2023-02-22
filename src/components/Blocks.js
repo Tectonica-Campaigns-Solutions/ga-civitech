@@ -48,7 +48,7 @@ export default function Blocks({ blocks, usePrimaryHeading = false }) {
           case 'DatoCmsTextColumn':
             return <TextColumn block={block} key={block.id} />;
           default:
-            return '';
+            return null;
         }
       })}
     </>

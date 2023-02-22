@@ -14,6 +14,7 @@ function BlogPostList({ block, topics }) {
     query allPosts {
       posts: allDatoCmsPost(sort: { date: DESC }) {
         nodes {
+          id
           date(formatString: "MMM D YYYY")
           title
           slug
@@ -28,6 +29,7 @@ function BlogPostList({ block, topics }) {
           }
           tags {
             ... on DatoCmsTag {
+              id
               name
             }
           }

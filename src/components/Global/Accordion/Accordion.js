@@ -10,8 +10,9 @@ const Accordion = ({ content, alignment }) => {
 
   return (
     <div>
-      {content.map(({ title, descriptionPreview, slug, imagePreview, model }, index) => (
+      {content.map(({ id, title, descriptionPreview, slug, imagePreview, model }, index) => (
         <AccordionItem
+          key={id}
           title={title}
           content={descriptionPreview}
           model={model}

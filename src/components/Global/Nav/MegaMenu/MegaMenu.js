@@ -40,7 +40,7 @@ const MegaMenu = ({ link, pageSlug, isMobile = false }) => {
               <div className="row gy-5">
                 {/* Sub-nav items */}
                 {megaMenuActiveContent.groupLink.map(gLink => (
-                  <div className="col-lg-6 sub-nav-items">
+                  <div className="col-lg-6 sub-nav-items" key={gLink.id}>
                     <h5>
                       <Link to={gLink.mainLink ? getCtaUrl(gLink.mainLink) : null}>{gLink.title}</Link>
                     </h5>
@@ -48,7 +48,7 @@ const MegaMenu = ({ link, pageSlug, isMobile = false }) => {
                     {isArray(gLink.links) && (
                       <div className="links">
                         {gLink.links.map(link => (
-                          <Link key={link.label} to={getCtaUrl(link)}>
+                          <Link key={link.id} to={getCtaUrl(link)}>
                             {link.label}
                           </Link>
                         ))}
@@ -101,8 +101,8 @@ const MegaMenu = ({ link, pageSlug, isMobile = false }) => {
                 </>
               ))
             : isArray(links)
-            ? links.map((link, index) => (
-                <Link key={index} to={link} className={`${isLinkActive(link) ? 'active' : ''}`}>
+            ? links.map(link => (
+                <Link key={link.id} to={link} className={`${isLinkActive(link) ? 'active' : ''}`}>
                   {link.label}
                 </Link>
               ))

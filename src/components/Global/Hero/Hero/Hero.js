@@ -20,15 +20,9 @@ function Hero({ ctas, title, content, image, shortcuts, titleShortcuts }) {
               <h3>{titleShortcuts}</h3>
             </div>
 
-            {shortcuts.map((item, index) => (
-              <div className="col-lg-4 mb-3">
-                <Shortcut
-                  key={index}
-                  title={item.title}
-                  description={item.description}
-                  btnLabel="Learn more"
-                  btnUrl={item.slug}
-                />
+            {shortcuts.map(item => (
+              <div className="col-lg-4 mb-3" key={item.id}>
+                <Shortcut title={item.title} description={item.description} btnLabel="Learn more" btnUrl={item.slug} />
               </div>
             ))}
           </div>

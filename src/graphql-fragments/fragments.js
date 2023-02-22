@@ -36,7 +36,7 @@ export const DatoCMS = graphql`
       url
     }
     xlImage: image {
-      gatsbyImageData(width: 900)
+      gatsbyImageData(width: 1200)
       alt
       url
     }
@@ -68,9 +68,14 @@ export const DatoCMS = graphql`
     title
     titleAlignment
     backgroundColor
-    columns{
+    introduction
+    columns {
+      id
       title
       text
+      icon{
+        url
+      }
     }
   }
   fragment BlockGridStat on DatoCmsGridStat {
@@ -433,6 +438,7 @@ export const DatoCMS = graphql`
     backgroundColor
     products {
       ... on DatoCmsProduct {
+        id
         model {
           apiKey
         }
@@ -469,6 +475,7 @@ export const DatoCMS = graphql`
     }
   }
   fragment PostCard on DatoCmsPost {
+    id
     title
     slug
     date(formatString: "MMM D YYYY")
