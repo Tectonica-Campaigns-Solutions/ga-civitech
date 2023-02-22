@@ -78,10 +78,13 @@
         font-weight: 600;
         font-size: 25px;
         line-height: 120%;
-        color: var(--ct-dark-blue);
+        color: var(--ct-blue);
         padding-bottom: 12px;
         border-bottom: 1px solid var(--ct-pearl);
         margin-bottom: 16px;
+        &:hover{
+          color: var(--ct-dark-blue);
+        }
       }
 
       .links {
@@ -96,6 +99,9 @@
           font-size: 16px;
           line-height: 150%;
           color: var(--ct-blue);
+          &:hover{
+            color: var(--ct-dark-blue);
+          }
         }
       }
     }
