@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-iubenda-cookie-footer',
       options: {
-        iubendaOptions: {"askConsentAtCookiePolicyUpdate":true,"countryDetection":true,"enableLgpd":true,"enableUspr":true,"floatingPreferencesButtonDisplay":"bottom-right","gdprAppliesGlobally":false,"lang":"en","lgpdAppliesGlobally":false,"perPurposeConsent":true,"siteId":2999283,"whitelabel":false,"cookiePolicyId":45114282, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-top-center","rejectButtonDisplay":true,"showPurposesToggles":true }},
+        iubendaOptions: {"localConsentDomain": "clever-belekoy-d45eb9.netlify.app","askConsentAtCookiePolicyUpdate":true,"countryDetection":true,"enableLgpd":true,"enableUspr":true,"floatingPreferencesButtonDisplay":"bottom-right","gdprAppliesGlobally":false,"lang":"en","lgpdAppliesGlobally":false,"perPurposeConsent":true,"siteId":2999283,"whitelabel":false,"cookiePolicyId":45114282, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-top-center","rejectButtonDisplay":true,"showPurposesToggles":true }},
       }
     },
     `gatsby-plugin-advanced-sitemap`,
