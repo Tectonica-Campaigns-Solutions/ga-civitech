@@ -11,9 +11,9 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'G-E3TJX5HR88'
+        trackingIds: ['G-E3TJX5HR88']
       }
     },
     `gatsby-plugin-advanced-sitemap`,
