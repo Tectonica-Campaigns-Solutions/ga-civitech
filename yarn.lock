@@ -5780,6 +5780,13 @@ gatsby-plugin-image@^3.0.0:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.8.1"
 
+gatsby-plugin-iubenda-cookie-footer@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-iubenda-cookie-footer/-/gatsby-plugin-iubenda-cookie-footer-1.4.0.tgz#601924f3d2dd0aa807091c979d009bced6555d56"
+  integrity sha512-NKYfklZbrOeslS0WuV+J4a2q4VaG5Mf+v4sY7sjpCI0QBdy1Fpuxu9wMEH/bQWwn5uYSothVbw0Rs+XTmnK6Qg==
+  dependencies:
+    "@babel/runtime" "^7.4.3"
+
 gatsby-plugin-manifest@^5.0.0:
   version "5.3.1"
   resolved "https://registry.npmjs.org/gatsby-plugin-manifest/-/gatsby-plugin-manifest-5.3.1.tgz"
