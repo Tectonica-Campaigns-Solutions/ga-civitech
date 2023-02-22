@@ -75,6 +75,25 @@
       gap: 19.34px;
       padding: 0;
       margin: 0;
+      a{
+        background-color:#fff;
+        border-radius:20px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:30px;
+        height:30px;
+        img{
+          
+          filter: invert(100%);
+        }
+        &:hover{
+          background-color:var(--ct-blue);
+          img{
+            filter: invert(0%);
+          }
+        }
+      }
     }
   }
 
