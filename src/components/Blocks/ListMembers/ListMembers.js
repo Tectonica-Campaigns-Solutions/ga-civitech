@@ -12,7 +12,7 @@ export default function ListMembers({ block }) {
   return (
     <div className={`list-members-container ${backgroundColor} ${detailedViewOfTheMembers ? 'extra-pt' : ''}`}>
       <div className="container">
-        <div className="row g-5">
+        <div className="row justify-content-center g-5">
           {isArray(members) &&
             members.map((member, index) => (
               <div key={index} className="col-lg-20pg col-md-4 member-item">
