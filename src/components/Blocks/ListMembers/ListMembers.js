@@ -7,12 +7,13 @@ import AnimateLink from '../../Global/Link/AnimateLink';
 import './index.scss';
 
 export default function ListMembers({ block }) {
-  const { members, ctas = [], backgroundColor, model, detailedViewOfTheMembers = false } = block;
+  const { members, ctas = [], backgroundColor, model, detailedViewOfTheMembers = false, title = false } = block;
 
   return (
     <div className={`list-members-container ${backgroundColor} ${detailedViewOfTheMembers ? 'extra-pt' : ''}`}>
       <div className="container">
         <div className="row justify-content-center g-5">
+          { title && <h2>{ title }</h2>}
           {isArray(members) &&
             members.map((member, index) => (
               <div key={index} className="col-lg-20pg col-md-4 member-item">

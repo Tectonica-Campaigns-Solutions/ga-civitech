@@ -6,6 +6,15 @@ export const DatoCMS = graphql`
     content {
       ... on DatoCmsPage {
         title
+        slug
+        model{
+          apiKey
+        }
+        descriptionCard
+        imageCard {
+          gatsbyImageData(width: 500, height: 430)
+          url
+        }
       }
     }
   }
@@ -395,6 +404,7 @@ export const DatoCMS = graphql`
     id
     backgroundColor
     detailedViewOfTheMembers
+    title
     model {
       apiKey
     }

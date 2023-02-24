@@ -1,0 +1,43 @@
+.list-content{
+  h2{
+    font-family: "Laca";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 49px;
+    line-height: 100%;
+    color: var(--ct-dark-blue);
+    margin-bottom: 25px;
+  }
+  h3 {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 130%;
+    color: var(--ct-dark-blue);
+    text-decoration: underline rgba(0, 0, 0, 0);
+    transition: text-decoration-color 300ms;
+
+    &:hover {
+      text-decoration-color: var(--ct-dark-blue);
+    }
+  }
+  .image {
+    div {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+
+      &:hover {
+        transition: all 0.3s ease-in-out;
+        transform: scale(1.15);
+      }
+    }
+  }
+  .descr{
+    font-size:20px;
+    line-height:22px;
+  }
+}

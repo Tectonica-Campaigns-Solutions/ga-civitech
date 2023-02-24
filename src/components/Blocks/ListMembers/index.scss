@@ -1,4 +1,13 @@
 .list-members-container {
+  h2{
+    font-family: "Laca";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 49px;
+    line-height: 100%;
+    color: var(--ct-dark-blue);
+    margin-bottom: 25px;
+  }
   padding-bottom: 160px;
 
   .ctas {
@@ -10,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 20px;
     margin-bottom: 20px;
 
