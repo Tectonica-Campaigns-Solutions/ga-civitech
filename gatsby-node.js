@@ -132,7 +132,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         for (member of members) {
           createPage({
-            path: `/people/${member.slug}`,
+            path: `/leadership/${member.slug}`,
             component: templates.people,
             context: {
               id: member.id,
