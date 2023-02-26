@@ -1,4 +1,16 @@
 .text-hubspot-form {
+  .hs_error_rollup{
+    ul{
+      padding-left:0;
+      li{
+        list-style: none;
+        label{
+          display:block!important;
+          color:red;
+        }
+      }
+    }
+  }
   padding: 145px 0;
 
   h2 {
@@ -39,6 +51,7 @@
       display: block;
     }
   }
+  
 
   .form-content {
     &.white-box {
