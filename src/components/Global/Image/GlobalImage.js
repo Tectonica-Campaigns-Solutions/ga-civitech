@@ -6,7 +6,7 @@ const GlobalImage = ({ image, ...props }) => {
   if (image?.gatsbyImageData) {
     return <GatsbyImage alt={altimage} image={{ ...image.gatsbyImageData }} {...props} />;
   } else if (image?.url) {
-    return <img src={image.url} alt={altimage} />;
+    return <img src={image.url} alt={altimage} loading="lazy"/>;
   } else {
     return '';
   }
