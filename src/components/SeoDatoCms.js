@@ -1,5 +1,4 @@
 import React from 'react';
-import { HelmetDatoCms } from 'gatsby-source-datocms';
 
 const SeoDatoCMS = ({ page }) => {
   const seo = page.seoMetaTags;
@@ -12,7 +11,11 @@ const SeoDatoCMS = ({ page }) => {
       return item.content = `${overrideTitle} - ${sitename}`;
     }
   });
-
-  return <HelmetDatoCms seo={seo} />;
+  return (
+    <>
+      <title>{overrideTitle}</title>
+    </>
+  )  
+  // return <HelmetDatoCms seo={seo} />;
 };
 export default SeoDatoCMS;
