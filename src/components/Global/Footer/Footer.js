@@ -56,7 +56,7 @@ function Footer() {
         <div className="row align-items-center">
           {/* Logo B Corporation */}
           <div className="col-sm-6 col-lg-2 logo-container">
-            <img src={footer.certified.image.url} alt="B Corporation" />
+            <img src={footer.certified.image.url} alt="B Corporation" loading="lazy" />
           </div>
 
           {/* Links */}
