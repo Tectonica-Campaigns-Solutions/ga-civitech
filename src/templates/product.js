@@ -55,8 +55,17 @@ export const ProductQuery = graphql`
             content {
               ... on DatoCmsPage {
                 slug
+                model {
+                  apiKey
+                }
               }
               ... on DatoCmsProduct {
+                slug
+                model {
+                  apiKey
+                }
+              }
+              ... on DatoCmsPost {
                 slug
                 model {
                   apiKey

@@ -59,8 +59,17 @@ export const DatoCMS = graphql`
           content {
             ... on DatoCmsPage {
               slug
+              model {
+                apiKey
+              }
             }
             ... on DatoCmsProduct {
+              slug
+              model {
+                apiKey
+              }
+            }
+            ... on DatoCmsPost {
               slug
               model {
                 apiKey
@@ -176,6 +185,21 @@ export const DatoCMS = graphql`
               content {
                 ... on DatoCmsPage {
                   slug
+                  model {
+                    apiKey
+                  }
+                }
+                ... on DatoCmsProduct {
+                  slug
+                  model {
+                    apiKey
+                  }
+                }
+                ... on DatoCmsPost {
+                  slug
+                  model {
+                    apiKey
+                  }
                 }
               }
             }
@@ -191,6 +215,21 @@ export const DatoCMS = graphql`
               content {
                 ... on DatoCmsPage {
                   slug
+                  model {
+                    apiKey
+                  }
+                }
+                ... on DatoCmsProduct {
+                  slug
+                  model {
+                    apiKey
+                  }
+                }
+                ... on DatoCmsPost {
+                  slug
+                  model {
+                    apiKey
+                  }
                 }
               }
             }
@@ -227,6 +266,21 @@ export const DatoCMS = graphql`
           content {
             ... on DatoCmsPage {
               slug
+              model {
+                apiKey
+              }
+            }
+            ... on DatoCmsProduct {
+              slug
+              model {
+                apiKey
+              }
+            }
+            ... on DatoCmsPost {
+              slug
+              model {
+                apiKey
+              }
             }
           }
         }
@@ -432,6 +486,21 @@ export const DatoCMS = graphql`
           content {
             ... on DatoCmsPage {
               slug
+              model {
+                apiKey
+              }
+            }
+            ... on DatoCmsProduct {
+              slug
+              model {
+                apiKey
+              }
+            }
+            ... on DatoCmsPost {
+              slug
+              model {
+                apiKey
+              }
             }
           }
         }
@@ -474,6 +543,21 @@ export const DatoCMS = graphql`
         content {
           ... on DatoCmsPage {
             slug
+            model {
+              apiKey
+            }
+          }
+          ... on DatoCmsProduct {
+            slug
+            model {
+              apiKey
+            }
+          }
+          ... on DatoCmsPost {
+            slug
+            model {
+              apiKey
+            }
           }
         }
       }
