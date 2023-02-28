@@ -25,7 +25,6 @@ module.exports = {
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-transition-link`,
     {
       resolve: 'gatsby-plugin-preconnect',
       options: {

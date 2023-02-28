@@ -1,9 +1,9 @@
 import React from 'react';
 import ImageWrapper from '../Image/ImageWrapper';
-import AnimateLink from '../Link/AnimateLink';
 import SocialLink from '../SocialLink/SocialLink';
 import { isArray } from '../../../utils';
 import closeIcon from '../../Icons/member-close.svg';
+import Link from '../Link/Link';
 
 import './index.scss';
 
@@ -13,9 +13,9 @@ const MemberDetail = ({ member, location }) => {
 
   return (
     <section className="member-detail">
-      <AnimateLink to={`/${memberListUrl}`}>
+      <Link to={`/${memberListUrl}`}>
         <img src={closeIcon} alt="Close icon" className="close-icon" />
-      </AnimateLink>
+      </Link>
 
       <div className="container">
         <div className="row justify-content-between">

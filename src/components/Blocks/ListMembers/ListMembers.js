@@ -2,7 +2,7 @@ import * as React from 'react';
 import { isArray, pathToModel } from '../../../utils';
 import CtaList from '../../Global/Cta/CtaList';
 import ImageWrapper from '../../Global/Image/ImageWrapper';
-import AnimateLink from '../../Global/Link/AnimateLink';
+import Link from '../../Global/Link/Link';
 
 import './index.scss';
 
@@ -18,16 +18,16 @@ export default function ListMembers({ block }) {
             members.map((member, index) => (
               <div key={index} className="col-lg-20pg col-md-4 member-item">
                 {member.image && (
-                  <AnimateLink to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
+                  <Link to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
                     <ImageWrapper image={member.image} objectFit="contain" />
-                  </AnimateLink>
+                  </Link>
                 )}
 
                 <div className="description">
                   {member.name && (
-                    <AnimateLink to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
+                    <Link to={detailedViewOfTheMembers ? pathToModel(model.apiKey, member.slug) : null}>
                       <h3>{member.name}</h3>
-                    </AnimateLink>
+                    </Link>
                   )}
 
                   {member.positionMember && <span>{member.positionMember}</span>}
