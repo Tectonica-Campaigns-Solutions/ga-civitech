@@ -32,6 +32,9 @@ export const HomeQuery = graphql`
       seo {
         title
         description
+        image {
+          url
+        }
       }
       id
       title

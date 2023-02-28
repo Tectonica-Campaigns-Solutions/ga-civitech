@@ -25,6 +25,9 @@ export const PeopleQuery = graphql`
       seo {
         title
         description
+        image {
+          url
+        }
       }
       id
       image {

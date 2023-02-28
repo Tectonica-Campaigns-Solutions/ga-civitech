@@ -30,6 +30,9 @@ export const ProductQuery = graphql`
       seo {
         title
         description
+        image {
+          url
+        }
       }
       id
       title

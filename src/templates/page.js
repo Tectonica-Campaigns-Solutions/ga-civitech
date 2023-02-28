@@ -40,6 +40,9 @@ export const PageQuery = graphql`
       seo {
         title
         description
+        image {
+          url
+        }
       }
       id
       title
@@ -77,19 +80,19 @@ export const PageQuery = graphql`
             content {
               ... on DatoCmsPage {
                 slug
-                model{
+                model {
                   apiKey
                 }
               }
               ... on DatoCmsProduct {
                 slug
-                model{
+                model {
                   apiKey
                 }
               }
               ... on DatoCmsPost {
                 slug
-                model{
+                model {
                   apiKey
                 }
               }
@@ -136,7 +139,7 @@ export const PageQuery = graphql`
           ...BlockListContent
         }
         ... on DatoCmsTextColumn {
-          ... BlockTextColumn
+          ...BlockTextColumn
         }
       }
     }
