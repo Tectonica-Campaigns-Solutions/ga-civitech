@@ -44,6 +44,9 @@ export const PostQuery = graphql`
       seo {
         title
         description
+        image {
+          url
+        }
       }
       date(formatString: "MMM D YYYY")
       id
@@ -116,11 +119,11 @@ export const PostQuery = graphql`
               }
             }
           }
-          ... on DatoCmsIframeEmbed{
+          ... on DatoCmsIframeEmbed {
             id: originalId
             iframe
           }
-          ... on DatoCmsVideoEmbed{
+          ... on DatoCmsVideoEmbed {
             id: originalId
             video {
               source {
