@@ -7,12 +7,22 @@ import { pathToModel } from '../../../utils';
 
 import './index.scss';
 
-const AccordionItem = ({ title, content, slug, model, image, alignment, isActive, handleOnClickTab }) => {
+const AccordionItem = ({
+  title,
+  content,
+  slug,
+  model,
+  image,
+  alignment,
+  isActive,
+  handleOnClickTab,
+  hideCollapse = false,
+}) => {
   const isAlignmentRight = alignment === 'right';
   const link = pathToModel(model.apiKey, slug);
 
   return (
-    <div className={'cv-accordion-item'}>
+    <div className={`cv-accordion-item ${hideCollapse ? 'hide-collapse' : ''}`}>
       <div className="accordion-content">
         <div className={`row ${!isAlignmentRight ? 'flex-row-reverse' : ''}`}>
           <div
@@ -20,9 +30,11 @@ const AccordionItem = ({ title, content, slug, model, image, alignment, isActive
               isActive ? 'active' : ''
             } `}
           >
-            <div className="icon" onClick={handleOnClickTab}>
-              <img src={isActive ? closeTab : openTab} alt="Open/close icon" />
-            </div>
+            {!hideCollapse && (
+              <div className="icon" onClick={handleOnClickTab}>
+                <img src={isActive ? closeTab : openTab} alt="Open/close icon" />
+              </div>
+            )}
 
             <div>
               {title && <h2 onClick={handleOnClickTab}>{title}</h2>}

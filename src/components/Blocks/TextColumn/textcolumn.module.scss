@@ -1,6 +1,12 @@
-.component_columns{
-  padding:60px 0 80px 0;
-  h2{
+.component_columns {
+  padding: 60px 0 80px 0;
+
+  p {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+  }
+
+  h2 {
     font-family: "Laca";
     font-style: normal;
     font-weight: 600;
@@ -9,16 +15,19 @@
     color: var(--ct-dark-blue);
     margin-bottom: 25px;
     text-align: center;
-    padding-bottom:20px;
+    padding-bottom: 20px;
   }
-  h3{
-    font-size:25px;
+
+  h3 {
+    font-size: 25px;
   }
-  .icon{
-    max-width:70px;
-    padding-bottom:15px;
+
+  .icon {
+    max-width: 70px;
+    padding-bottom: 15px;
   }
-  .intro{
-    padding-bottom:30px;
+
+  .intro {
+    padding-bottom: 30px;
   }
 }

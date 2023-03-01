@@ -55,6 +55,17 @@
     cursor: pointer;
   }
 
+  &.hide-collapse {
+    .accordion-content {
+
+      .btn-item,
+      .active,
+      .image.active {
+        border-left: none !important;
+      }
+    }
+  }
+
   @media screen and (max-width: 768px) {
     margin-bottom: 20px;
 

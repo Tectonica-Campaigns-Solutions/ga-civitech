@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from '../Link/Link';
-import { getCtaTitle, getCtaUrl } from '../../../utils';
+import { getCtaTitle } from '../../../utils';
 
 import './index.scss';
 
 const ToolsetCta = ({ cta }) => {
   return (
-    <Link className="link-cta" to={getCtaUrl(cta)}>
+    <Link className="link-cta" to={cta}>
       {getCtaTitle(cta)}
     </Link>
   );

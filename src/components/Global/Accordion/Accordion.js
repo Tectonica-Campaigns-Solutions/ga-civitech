@@ -21,6 +21,7 @@ const Accordion = ({ content, alignment }) => {
           alignment={alignment}
           isActive={activeTab === index}
           handleOnClickTab={() => handleOnClickTab(index)}
+          hideCollapse={content.length === 1}
         />
       ))}
     </div>

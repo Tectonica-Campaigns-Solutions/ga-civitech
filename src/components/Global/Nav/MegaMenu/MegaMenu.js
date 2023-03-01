@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getCtaUrl, isArray } from '../../../../utils';
+import { isArray } from '../../../../utils';
 import MegaMenuCard from '../MegaMenuCard/MegaMenuCard';
 import Link from '../../Link/Link';
 import Cta from '../../Cta/Cta';
@@ -42,13 +42,13 @@ const MegaMenu = ({ link, pageSlug, isMobile = false }) => {
                 {megaMenuActiveContent.groupLink.map(gLink => (
                   <div className="col-lg-6 sub-nav-items" key={gLink.id}>
                     <h5>
-                      <Link to={gLink.mainLink ? getCtaUrl(gLink.mainLink) : null}>{gLink.title}</Link>
+                      <Link to={gLink.mainLink}>{gLink.title}</Link>
                     </h5>
 
                     {isArray(gLink.links) && (
                       <div className="links">
                         {gLink.links.map(link => (
-                          <Link key={link.id} to={getCtaUrl(link)}>
+                          <Link key={link.id} to={link}>
                             {link.label}
                           </Link>
                         ))}
