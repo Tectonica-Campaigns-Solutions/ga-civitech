@@ -10,20 +10,25 @@ const Accordion = ({ content, alignment }) => {
 
   return (
     <div>
-      {content.map(({ id, title, descriptionPreview, slug, imagePreview, model }, index) => (
-        <AccordionItem
-          key={id}
-          title={title}
-          content={descriptionPreview}
-          model={model}
-          slug={slug}
-          image={imagePreview}
-          alignment={alignment}
-          isActive={activeTab === index}
-          handleOnClickTab={() => handleOnClickTab(index)}
-          hideCollapse={content.length === 1}
-        />
-      ))}
+      {content.map(
+        (
+          { id, title, descriptionPreview, slug, imagePreview, model, description = null, image = null, link = null },
+          index
+        ) => (
+          <AccordionItem
+            key={id}
+            title={title}
+            content={description ?? descriptionPreview}
+            model={link ? link.model : model}
+            slug={link ? link.slug : slug}
+            image={image ?? imagePreview}
+            alignment={alignment}
+            isActive={activeTab === index}
+            handleOnClickTab={() => handleOnClickTab(index)}
+            hideCollapse={content.length === 1}
+          />
+        )
+      )}
     </div>
   );
 };

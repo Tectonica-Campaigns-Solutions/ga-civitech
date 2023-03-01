@@ -22,7 +22,7 @@ export default Product;
 
 export const ProductQuery = graphql`
   query ProductById($id: String) {
-    favicon: datoCmsSite{
+    favicon: datoCmsSite {
       faviconMetaTags {
         ...GatsbyDatoCmsFaviconMetaTags
       }
@@ -53,6 +53,12 @@ export const ProductQuery = graphql`
             label
             url
             content {
+              ... on DatoCmsTeamMember {
+                slug
+                model {
+                  apiKey
+                }
+              }
               ... on DatoCmsPage {
                 slug
                 model {

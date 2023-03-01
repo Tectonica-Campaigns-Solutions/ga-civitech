@@ -7,7 +7,7 @@ import Hero from '../components/Global/Hero/Hero/Hero';
 
 const IndexPage = ({ data: { page, favicon } }) => (
   <Layout>
-    <SeoDatoCms seo={page.seo} favicon={favicon}/>
+    <SeoDatoCms seo={page.seo} favicon={favicon} />
     <Hero
       ctas={page.ctas}
       title={page.title}
@@ -24,7 +24,7 @@ export default IndexPage;
 
 export const HomeQuery = graphql`
   query Home {
-    favicon: datoCmsSite{
+    favicon: datoCmsSite {
       faviconMetaTags {
         ...GatsbyDatoCmsFaviconMetaTags
       }
@@ -58,6 +58,12 @@ export const HomeQuery = graphql`
             label
             url
             content {
+              ... on DatoCmsTeamMember {
+                slug
+                model {
+                  apiKey
+                }
+              }
               ... on DatoCmsPage {
                 slug
                 model {
