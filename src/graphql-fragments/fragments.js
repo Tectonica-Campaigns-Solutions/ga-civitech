@@ -578,6 +578,34 @@ export const DatoCMS = graphql`
         }
         descriptionPreview
       }
+      ... on DatoCmsTabProduct {
+        id
+        internalName
+        title
+        description
+        model {
+          apiKey
+        }
+        image {
+          gatsbyImageData
+          url
+        }
+        link {
+          ... on DatoCmsProduct {
+            id
+            model {
+              apiKey
+            }
+            title
+            slug
+            imagePreview {
+              gatsbyImageData
+              url
+            }
+            descriptionPreview
+          }
+        }
+      }
     }
   }
   fragment BlockBlogPost on DatoCmsBlogPost {
