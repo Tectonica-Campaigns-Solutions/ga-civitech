@@ -3,7 +3,7 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 
 const SeoDatoCMS = ({ seo, favicon }) => {
   // override values if necessary
-  seo.tags.map(seoTag => {
+  seo?.tags.map(seoTag => {
     if (seoTag.tagName === 'title') {
        seoTag.content = seoTag.content + ' - Civitech'
     }
