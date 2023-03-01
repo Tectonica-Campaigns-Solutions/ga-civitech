@@ -18,16 +18,14 @@ export const Head = ({ data: { page } }) => <SeoDatoCms page={page} />;
 
 export const PeopleQuery = graphql`
   query PeopleBySlug($slug: String) {
-    page: datoCmsTeamMember(slug: { eq: $slug }) {
-      seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
+    favicon: datoCmsSite{
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
       }
-      seo {
-        title
-        description
-        image {
-          url
-        }
+    }
+    page: datoCmsTeamMember(slug: { eq: $slug }) {
+      seo: seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
       }
       id
       image {

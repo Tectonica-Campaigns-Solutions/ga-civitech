@@ -5,8 +5,9 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
 import Hero from '../components/Global/Hero/Hero/Hero';
 
-const IndexPage = ({ data: { page } }) => (
+const IndexPage = ({ data: { page, favicon } }) => (
   <Layout>
+    <SeoDatoCms seo={page.seo} favicon={favicon}/>
     <Hero
       ctas={page.ctas}
       title={page.title}
@@ -21,20 +22,16 @@ const IndexPage = ({ data: { page } }) => (
 
 export default IndexPage;
 
-export const Head = ({ data: { page } }) => <SeoDatoCms page={page} />;
-
 export const HomeQuery = graphql`
   query Home {
-    page: datoCmsHome {
-      seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
+    favicon: datoCmsSite{
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
       }
-      seo {
-        title
-        description
-        image {
-          url
-        }
+    }
+    page: datoCmsHome {
+      seo: seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
       }
       id
       title

@@ -8,12 +8,13 @@ import { blockWithPrimaryHeading } from '../utils';
 
 import * as styles from './page.module.scss';
 
-const Page = ({ pageContext, location, data: { page } }) => {
+const Page = ({ pageContext, location, data: { page, favicon } }) => {
   const shouldRenderPrimaryHeading = !page.showHero && !blockWithPrimaryHeading(page.blocks);
   const shouldRemoveH1 = page.blocks.filter(item => item.__typename === 'DatoCmsBlogPost').length > 0;
 
   return (
     <Layout location={location} currentSlug={page.slug}>
+      <SeoDatoCms seo={page.seo} favicon={favicon} />
       <HeroSelector page={page} />
 
       {shouldRenderPrimaryHeading && !shouldRemoveH1 ? (
@@ -29,20 +30,16 @@ const Page = ({ pageContext, location, data: { page } }) => {
 
 export default Page;
 
-export const Head = ({ data: { page } }) => <SeoDatoCms page={page} />;
-
 export const PageQuery = graphql`
   query PageById($id: String) {
-    page: datoCmsPage(id: { eq: $id }) {
-      seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
+    favicon: datoCmsSite{
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
       }
-      seo {
-        title
-        description
-        image {
-          url
-        }
+    }
+    page: datoCmsPage(id: { eq: $id }) {
+      seo: seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
       }
       id
       title

@@ -17,9 +17,9 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-iubenda-cookie-footer',
+      resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
-        iubendaOptions: {"localConsentDomain": "clever-belekoy-d45eb9.netlify.app","askConsentAtCookiePolicyUpdate":true,"countryDetection":true,"enableLgpd":true,"enableUspr":true,"floatingPreferencesButtonDisplay":"bottom-right","gdprAppliesGlobally":false,"lang":"en","lgpdAppliesGlobally":false,"perPurposeConsent":true,"siteId":2999283,"whitelabel":false,"cookiePolicyId":45114282, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-top-center","rejectButtonDisplay":true,"showPurposesToggles":true }},
+        environments: ['production', 'development']
       }
     },
     `gatsby-plugin-advanced-sitemap`,
@@ -48,20 +48,6 @@ module.exports = {
         preview: false,
         disableLiveReload: false,
         // environment: process.env.DATO_ENVIRONMENT ? process.env.DATO_ENVIRONMENT : '',
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
   ],

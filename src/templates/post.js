@@ -5,7 +5,7 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import HeroBlogPost from '../components/Global/Hero/HeroBlogPost/HeroBlogPost';
 import PostGrid from '../components/Global/Post/PostGrid';
 
-const Post = ({ location, pageContext, data: { post, relatedPost } }) => {
+const Post = ({ location, pageContext, data: { post, relatedPost, favicon } }) => {
   const { globalSettings } = pageContext;
 
   let titleLatestPosts = globalSettings.find(setting => setting.codeId === 'text_latest_posts');
@@ -13,6 +13,7 @@ const Post = ({ location, pageContext, data: { post, relatedPost } }) => {
 
   return (
     <Layout location={location}>
+      <SeoDatoCms seo={post.seo} favicon={favicon} />
       <HeroBlogPost
         title={post.title}
         summary={post.summary}
@@ -33,20 +34,16 @@ const Post = ({ location, pageContext, data: { post, relatedPost } }) => {
 
 export default Post;
 
-export const Head = ({ data: { post } }) => <SeoDatoCms page={post} />;
-
 export const PostQuery = graphql`
   query PostById($id: String, $topic: String) {
-    post: datoCmsPost(id: { eq: $id }) {
-      seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
+    favicon: datoCmsSite{
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
       }
-      seo {
-        title
-        description
-        image {
-          url
-        }
+    }
+    post: datoCmsPost(id: { eq: $id }) {
+      seo: seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
       }
       date(formatString: "MMM D YYYY")
       id

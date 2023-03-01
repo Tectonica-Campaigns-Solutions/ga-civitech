@@ -5,12 +5,13 @@ import SeoDatoCms from '../components/SeoDatoCms';
 import Blocks from '../components/Blocks';
 import HeroProduct from '../components/Global/Hero/HeroProduct/HeroProduct';
 
-const Product = ({ location, pageContext, data: { page } }) => {
+const Product = ({ location, pageContext, data: { page, favicon } }) => {
   const { globalSettings } = pageContext;
   let loginTitle = globalSettings.find(setting => setting.codeId === 'text_login_tool');
 
   return (
     <Layout location={location}>
+      <SeoDatoCms seo={page.seo} favicon={favicon} />
       <HeroProduct data={page} loginTitle={loginTitle.value} />
       <Blocks blocks={page.blocks}></Blocks>
     </Layout>
@@ -19,20 +20,16 @@ const Product = ({ location, pageContext, data: { page } }) => {
 
 export default Product;
 
-export const Head = ({ data: { page } }) => <SeoDatoCms page={page} />;
-
 export const ProductQuery = graphql`
   query ProductById($id: String) {
-    page: datoCmsProduct(id: { eq: $id }) {
-      seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
+    favicon: datoCmsSite{
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
       }
-      seo {
-        title
-        description
-        image {
-          url
-        }
+    }
+    page: datoCmsProduct(id: { eq: $id }) {
+      seo: seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
       }
       id
       title
