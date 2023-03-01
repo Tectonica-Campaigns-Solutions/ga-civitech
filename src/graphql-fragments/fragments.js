@@ -244,6 +244,7 @@ export const DatoCMS = graphql`
     title
     intro
     backgroundColor
+    alignment
     logos {
       ... on DatoCmsLogo {
         id

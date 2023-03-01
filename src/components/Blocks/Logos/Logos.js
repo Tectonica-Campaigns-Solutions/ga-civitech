@@ -7,7 +7,7 @@ import Link from '../../Global/Link/Link';
 import './index.scss';
 
 function Logos({ block }) {
-  const { title, intro, logos, ctas = [], backgroundColor } = block;
+  const { title, intro, logos, ctas = [], backgroundColor, alignment = null } = block;
 
   if (!isArray(logos)) {
     return null;
@@ -16,7 +16,7 @@ function Logos({ block }) {
   return (
     <div className={`logos-block ${backgroundColor}`}>
       <div className="container">
-        {title && <h2>{title}</h2>}
+        {title && <h2 className={`text-${alignment}`}>{title}</h2>}
 
         {intro && <div className="intro" dangerouslySetInnerHTML={{ __html: intro }} />}
 
