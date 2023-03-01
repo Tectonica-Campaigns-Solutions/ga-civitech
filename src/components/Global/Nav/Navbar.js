@@ -9,7 +9,8 @@ import menuArrow from '../../Icons/menu-arrow.svg';
 
 import './index.scss';
 
-const Navbar = ({ navData, path, context, pageSlug }) => {
+const Navbar = ({ navData, path, pageSlug }) => {
+  
   const { navigationItems = [] } = navData.datoCmsNavigation;
 
   const isHomePage = !path || path === '/';
@@ -56,8 +57,14 @@ const Navbar = ({ navData, path, context, pageSlug }) => {
        * Alert if clicked on outside of element
        */
       function handleClickOutside(event) {
+        
         if (ref.current && !ref.current.contains(event.target)) {
           setActiveLink(false);
+        }
+        if(event.target.getAttribute('aria-current') == 'page'){
+          if(path == event.target.getAttribute('href')){
+            setActiveLink(false);
+          }
         }
       }
 
