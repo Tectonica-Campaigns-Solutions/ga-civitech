@@ -29,6 +29,10 @@ export const getCtaUrl = cta => {
     return pathToModel(model, cta.link?.content?.slug);
   }
 
+  if (cta.content?.slug) {
+    return `/${cta.content.slug}`;
+  }
+
   const url = cta.link?.content ? '/' + cta.link?.content?.slug : cta.link?.url;
   return url;
 };
