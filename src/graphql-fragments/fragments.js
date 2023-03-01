@@ -7,7 +7,7 @@ export const DatoCMS = graphql`
       ... on DatoCmsPage {
         title
         slug
-        model{
+        model {
           apiKey
         }
         descriptionCard
@@ -57,6 +57,12 @@ export const DatoCMS = graphql`
           label
           url
           content {
+            ... on DatoCmsTeamMember {
+              slug
+              model {
+                apiKey
+              }
+            }
             ... on DatoCmsPage {
               slug
               model {
@@ -91,7 +97,7 @@ export const DatoCMS = graphql`
       id
       title
       text
-      icon{
+      icon {
         url
       }
     }
@@ -183,6 +189,12 @@ export const DatoCMS = graphql`
               label
               url
               content {
+                ... on DatoCmsTeamMember {
+                  slug
+                  model {
+                    apiKey
+                  }
+                }
                 ... on DatoCmsPage {
                   slug
                   model {
@@ -213,6 +225,12 @@ export const DatoCMS = graphql`
               label
               url
               content {
+                ... on DatoCmsTeamMember {
+                  slug
+                  model {
+                    apiKey
+                  }
+                }
                 ... on DatoCmsPage {
                   slug
                   model {
@@ -265,6 +283,12 @@ export const DatoCMS = graphql`
           label
           url
           content {
+            ... on DatoCmsTeamMember {
+              slug
+              model {
+                apiKey
+              }
+            }
             ... on DatoCmsPage {
               slug
               model {
@@ -330,6 +354,12 @@ export const DatoCMS = graphql`
                   url
                   label
                   content {
+                    ... on DatoCmsTeamMember {
+                      slug
+                      model {
+                        apiKey
+                      }
+                    }
                     ... on DatoCmsPage {
                       title
                       slug
@@ -361,6 +391,12 @@ export const DatoCMS = graphql`
                     label
                     url
                     content {
+                      ... on DatoCmsTeamMember {
+                        slug
+                        model {
+                          apiKey
+                        }
+                      }
                       ... on DatoCmsPage {
                         slug
                         model {
@@ -387,6 +423,12 @@ export const DatoCMS = graphql`
                     label
                     url
                     content {
+                      ... on DatoCmsTeamMember {
+                        slug
+                        model {
+                          apiKey
+                        }
+                      }
                       ... on DatoCmsPage {
                         slug
                         model {
@@ -485,6 +527,12 @@ export const DatoCMS = graphql`
           label
           url
           content {
+            ... on DatoCmsTeamMember {
+              slug
+              model {
+                apiKey
+              }
+            }
             ... on DatoCmsPage {
               slug
               model {
@@ -542,6 +590,12 @@ export const DatoCMS = graphql`
       ... on DatoCmsGlobalLink {
         url
         content {
+          ... on DatoCmsTeamMember {
+            slug
+            model {
+              apiKey
+            }
+          }
           ... on DatoCmsPage {
             slug
             model {

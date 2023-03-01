@@ -32,7 +32,7 @@ export default Page;
 
 export const PageQuery = graphql`
   query PageById($id: String) {
-    favicon: datoCmsSite{
+    favicon: datoCmsSite {
       faviconMetaTags {
         ...GatsbyDatoCmsFaviconMetaTags
       }
@@ -75,6 +75,12 @@ export const PageQuery = graphql`
             label
             url
             content {
+              ... on DatoCmsTeamMember {
+                slug
+                model {
+                  apiKey
+                }
+              }
               ... on DatoCmsPage {
                 slug
                 model {

@@ -36,7 +36,7 @@ export default Post;
 
 export const PostQuery = graphql`
   query PostById($id: String, $topic: String) {
-    favicon: datoCmsSite{
+    favicon: datoCmsSite {
       faviconMetaTags {
         ...GatsbyDatoCmsFaviconMetaTags
       }
@@ -93,6 +93,12 @@ export const PostQuery = graphql`
                   label
                   url
                   content {
+                    ... on DatoCmsTeamMember {
+                      slug
+                      model {
+                        apiKey
+                      }
+                    }
                     ... on DatoCmsPage {
                       slug
                       model {
