@@ -13,13 +13,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: ['G-E3TJX5HR88']
+        trackingIds: ['GTM-PHN3G58']
       }
     },
     {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
-        environments: ['production', 'development']
+        environments: ['production']
       }
     },
     `gatsby-plugin-advanced-sitemap`,
@@ -45,9 +45,8 @@ module.exports = {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATO_API_TOKEN,
-        preview: false,
-        disableLiveReload: false,
-        // environment: process.env.DATO_ENVIRONMENT ? process.env.DATO_ENVIRONMENT : '',
+        previewMode: process.env.DATO_PREVIEW ? process.env.DATO_PREVIEW : false,
+        disableLiveReload: process.env.DATO_PREVIEW ? process.env.DATO_PREVIEW : false,
       },
     },
   ],
