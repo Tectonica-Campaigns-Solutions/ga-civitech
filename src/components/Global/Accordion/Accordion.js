@@ -12,7 +12,19 @@ const Accordion = ({ content, alignment }) => {
     <div>
       {content.map(
         (
-          { id, title, descriptionPreview, slug, imagePreview, model, description = null, image = null, link = null },
+          {
+            id,
+            title,
+            descriptionPreview,
+            slug,
+            imagePreview,
+            model,
+            description = null,
+            image = null,
+            link = null,
+            externalUrl = false,
+            url = null,
+          },
           index
         ) => (
           <AccordionItem
@@ -26,6 +38,7 @@ const Accordion = ({ content, alignment }) => {
             isActive={activeTab === index}
             handleOnClickTab={() => handleOnClickTab(index)}
             hideCollapse={content.length === 1}
+            externalUrl={externalUrl ? url : null}
           />
         )
       )}

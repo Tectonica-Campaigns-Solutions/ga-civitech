@@ -590,6 +590,8 @@ export const DatoCMS = graphql`
           gatsbyImageData
           url
         }
+        externalUrl
+        url
         link {
           ... on DatoCmsProduct {
             id
