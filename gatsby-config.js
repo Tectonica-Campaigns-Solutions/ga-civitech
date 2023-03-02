@@ -46,7 +46,7 @@ module.exports = {
       options: {
         apiToken: process.env.DATO_API_TOKEN,
         previewMode: process.env.DATO_PREVIEW ? process.env.DATO_PREVIEW : false,
-        disableLiveReload: process.env.DATO_PREVIEW ? process.env.DATO_PREVIEW : false,
+        disableLiveReload: false,
       },
     },
   ],
