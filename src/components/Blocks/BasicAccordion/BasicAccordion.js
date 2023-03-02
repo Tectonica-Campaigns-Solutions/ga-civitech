@@ -9,7 +9,7 @@ const BasicAccordion = ({ block }) => {
 
   const [activeItem, setActiveItem] = useState(0);
 
-  const handleOnChangeAccordion = newIndex => setActiveItem(newIndex);
+  const handleOnChangeAccordion = newIndex => setActiveItem(prev => (prev === newIndex ? null : newIndex));
 
   return (
     <div className="accordion">
