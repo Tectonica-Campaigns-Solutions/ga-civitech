@@ -17,6 +17,7 @@ const AccordionItem = ({
   isActive,
   handleOnClickTab,
   hideCollapse = false,
+  externalUrl = null,
 }) => {
   const isAlignmentRight = alignment === 'right';
   const link = pathToModel(model.apiKey, slug);
@@ -43,8 +44,8 @@ const AccordionItem = ({
                 <>
                   {content && <div className="content" dangerouslySetInnerHTML={{ __html: content }} />}
 
-                  {link && (
-                    <Link className="btn btn-primary mb-5" to={link}>
+                  {(externalUrl || link) && (
+                    <Link className="btn btn-primary mb-5" to={externalUrl ? { url: externalUrl } : link}>
                       Learn more
                     </Link>
                   )}
