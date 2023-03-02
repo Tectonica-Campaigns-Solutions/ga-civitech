@@ -20,7 +20,7 @@ const AccordionItem = ({
   externalUrl = null,
 }) => {
   const isAlignmentRight = alignment === 'right';
-  const link = pathToModel(model.apiKey, slug);
+  const link = slug ? pathToModel(model.apiKey, slug) : null;
 
   return (
     <div className={`cv-accordion-item ${hideCollapse ? 'hide-collapse' : ''}`}>
