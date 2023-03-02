@@ -583,6 +583,9 @@ export const DatoCMS = graphql`
         internalName
         title
         description
+        logo {
+          url
+        }
         model {
           apiKey
         }
