@@ -18,6 +18,7 @@ const AccordionItem = ({
   handleOnClickTab,
   hideCollapse = false,
   externalUrl = null,
+  logo = null,
 }) => {
   const isAlignmentRight = alignment === 'right';
   const link = slug ? pathToModel(model.apiKey, slug) : null;
@@ -38,7 +39,14 @@ const AccordionItem = ({
             )}
 
             <div>
-              {title && <h2 onClick={handleOnClickTab}>{title}</h2>}
+              {isActive ? (
+                <>
+                  {logo?.url && <img className="logo" src={logo.url} alt={`${title} logo`} />}
+                  {title && <h2 onClick={handleOnClickTab}>{title}</h2>}
+                </>
+              ) : (
+                title && <h2 onClick={handleOnClickTab}>{title}</h2>
+              )}
 
               {isActive && (
                 <>

@@ -24,6 +24,7 @@ const Accordion = ({ content, alignment }) => {
             link = null,
             externalUrl = false,
             url = null,
+            logo = null,
           },
           index
         ) => (
@@ -39,6 +40,7 @@ const Accordion = ({ content, alignment }) => {
             handleOnClickTab={() => handleOnClickTab(index)}
             hideCollapse={content.length === 1}
             externalUrl={externalUrl ? url : null}
+            logo={logo}
           />
         )
       )}
