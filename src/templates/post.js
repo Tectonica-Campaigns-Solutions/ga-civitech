@@ -62,6 +62,22 @@ export const PostQuery = graphql`
           }
           descriptionPreview
         }
+        ... on DatoCmsTabProduct {
+          title
+          description
+          image {
+            gatsbyImageData(width: 374, height: 211)
+            url
+          }
+          link {
+            ... on DatoCmsProduct {
+              model {
+                apiKey
+              }
+              slug
+            }
+          }
+        }
       }
       slug
       content {

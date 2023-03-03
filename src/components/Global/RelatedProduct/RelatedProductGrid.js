@@ -7,11 +7,11 @@ export default function RelatedProductGrid({ relatedProduct, relatedPost }) {
       {relatedProduct && (
         <RelatedProductCard
           preTitle="Related product"
-          title={relatedProduct.title}
-          slug={relatedProduct.slug}
-          image={relatedProduct.imagePreview}
-          description={relatedProduct.descriptionPreview}
-          model={relatedProduct.model}
+          title={relatedProduct.title || relatedProduct.title}
+          slug={relatedProduct.slug || relatedProduct.link?.slug}
+          image={relatedProduct.imagePreview || relatedProduct.image}
+          description={relatedProduct.descriptionPreview || relatedProduct.description}
+          model={relatedProduct.model || relatedProduct.link?.model}
         />
       )}
 
