@@ -1,7 +1,28 @@
 .component-narrative-block {
   padding-top: 100px;
   padding-bottom: 50px;
-
+  table{
+    border:0;
+    width:100%;
+    *{
+      vertical-align: middle;
+    }
+    th{
+      padding:5px;
+      margin:0;
+      color:var(--ct-blue);
+      font-weight: bold;
+      text-align: center;
+    }
+    tr{
+      border-bottom:1px solid #ccc;
+      td{
+        padding:5px;
+        text-align: center;
+      }
+    }
+    
+  }
   .logo {
     margin-bottom: 35px;
   }
