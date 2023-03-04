@@ -63,6 +63,11 @@ export const DatoCMS = graphql`
                 apiKey
               }
             }
+            ... on DatoCmsHome {
+              model {
+                apiKey
+              }
+            }
             ... on DatoCmsPage {
               slug
               model {
@@ -201,6 +206,11 @@ export const DatoCMS = graphql`
                     apiKey
                   }
                 }
+                ... on DatoCmsHome {
+                  model {
+                    apiKey
+                  }
+                }
                 ... on DatoCmsProduct {
                   slug
                   model {
@@ -233,6 +243,11 @@ export const DatoCMS = graphql`
                 }
                 ... on DatoCmsPage {
                   slug
+                  model {
+                    apiKey
+                  }
+                }
+                ... on DatoCmsHome {
                   model {
                     apiKey
                   }
@@ -291,6 +306,11 @@ export const DatoCMS = graphql`
             }
             ... on DatoCmsPage {
               slug
+              model {
+                apiKey
+              }
+            }
+            ... on DatoCmsHome {
               model {
                 apiKey
               }

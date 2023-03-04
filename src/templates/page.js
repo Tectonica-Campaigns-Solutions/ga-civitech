@@ -93,6 +93,11 @@ export const PageQuery = graphql`
                   apiKey
                 }
               }
+              ... on DatoCmsHome {
+                model {
+                  apiKey
+                }
+              }
               ... on DatoCmsPost {
                 slug
                 model {

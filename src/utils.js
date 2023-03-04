@@ -4,8 +4,10 @@ export const pathToModel = (model = null, slug = '') => {
   } else if (model === 'post') {
     return `/post/${slug}`;
   } else if (model === 'list_member') {
-    return `/leadership/${slug}`;
-  } else {
+    return `/leadership/${slug}`; 
+  } else if (model === 'home') {
+    return `/`;
+  }else {
     return `/${slug}`;
   }
 };

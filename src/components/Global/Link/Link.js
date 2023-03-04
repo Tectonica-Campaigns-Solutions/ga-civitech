@@ -4,8 +4,9 @@ import { getCtaUrl } from '../../../utils';
 
 export default class Link extends React.Component {
   render() {
-    const { to, children, ...rest } = this.props;
 
+    const { to, children, ...rest } = this.props;
+    
     //check for string in case link recieve hardoced link on templates ex: logo
     if (typeof to === 'string') {
       return (
@@ -14,8 +15,8 @@ export default class Link extends React.Component {
         </GatsbyLink>
       );
     } else if (to?.content?.slug || to?.link?.content) {
+      
       const url = getCtaUrl(to);
-
       return (
         <GatsbyLink to={url} {...rest}>
           {children}
