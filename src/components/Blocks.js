@@ -14,7 +14,7 @@ import VideoEmbed from './Blocks/VideoEmbed/VideoEmbed';
 import ListContent from './Blocks/ListContent/ListContent';
 import TextColumn from './Blocks/TextColumn/TextColumn';
 
-export default function Blocks({ blocks, usePrimaryHeading = false }) {
+export default function Blocks({ blocks, usePrimaryHeading = false, location = null }) {
   return (
     <>
       {blocks.map(block => {
@@ -36,7 +36,7 @@ export default function Blocks({ blocks, usePrimaryHeading = false }) {
           case 'DatoCmsRelatedProduct':
             return <RelatedProduct block={block} key={block.id} />;
           case 'DatoCmsBlogPost':
-            return <BlogPostList block={block} key={block.id} topics={block.tagsToFilter} />;
+            return <BlogPostList block={block} key={block.id} topics={block.tagsToFilter} location={location} />;
           case 'DatoCmsAccordion':
             return <BasicAccordion block={block} key={block.id} />;
           case 'DatoCmsVideoEmbed':
