@@ -90,6 +90,20 @@ const Navbar = ({ navData, path, pageSlug }) => {
   const showStickyNav = scrollPosition > 300;
 
   const isLinkActive = link => {
+    if (!pageSlug) return false;
+
+    if (link.megaMenu) {
+      const megaMenuTabs = link.megaMenu.tabs;
+
+      return (
+        megaMenuTabs.some(t => t.link.content.slug === pageSlug) ||
+        megaMenuTabs.some(t => t.groupLink?.some(l => l.mainLink.content.slug === pageSlug)) ||
+        megaMenuTabs.some(t =>
+          t.groupLink?.some(l => l.links.some(internalLink => internalLink?.content?.slug === pageSlug))
+        )
+      );
+    }
+
     const childLinks = link.links;
     return childLinks?.some(link => link.content.slug === pageSlug);
   };

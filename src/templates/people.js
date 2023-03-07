@@ -6,7 +6,7 @@ import MemberDetail from '../components/Global/MemberDetail/MemberDetail';
 
 const People = ({ location, data: { page } }) => {
   return (
-    <Layout location={location}>
+    <Layout location={location} currentSlug={page.slug}>
       <MemberDetail member={page} location={location} />
     </Layout>
   );
@@ -18,7 +18,7 @@ export const Head = ({ data: { page } }) => <SeoDatoCms page={page} />;
 
 export const PeopleQuery = graphql`
   query PeopleBySlug($slug: String) {
-    favicon: datoCmsSite{
+    favicon: datoCmsSite {
       faviconMetaTags {
         ...GatsbyDatoCmsFaviconMetaTags
       }
@@ -31,6 +31,7 @@ export const PeopleQuery = graphql`
       image {
         gatsbyImageData(width: 700)
       }
+      slug
       name
       info
       positionMember
