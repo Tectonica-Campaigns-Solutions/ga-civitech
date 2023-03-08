@@ -23,7 +23,7 @@ const Page = ({ pageContext, location, data: { page, favicon } }) => {
         </div>
       ) : null}
 
-      <Blocks blocks={page.blocks} />
+      <Blocks blocks={page.blocks} location={location} />
     </Layout>
   );
 };

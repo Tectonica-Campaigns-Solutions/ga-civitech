@@ -10,7 +10,7 @@ const Product = ({ location, pageContext, data: { page, favicon } }) => {
   let loginTitle = globalSettings.find(setting => setting.codeId === 'text_login_tool');
 
   return (
-    <Layout location={location}>
+    <Layout location={location} currentSlug={page.slug}>
       <SeoDatoCms seo={page.seo} favicon={favicon} />
       <HeroProduct data={page} loginTitle={loginTitle.value} />
       <Blocks blocks={page.blocks}></Blocks>
@@ -32,6 +32,7 @@ export const ProductQuery = graphql`
         ...GatsbyDatoCmsSeoMetaTags
       }
       id
+      slug
       title
       backgroundColor
       alignment

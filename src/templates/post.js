@@ -12,7 +12,7 @@ const Post = ({ location, pageContext, data: { post, relatedPost, favicon } }) =
   titleLatestPosts = titleLatestPosts ? titleLatestPosts?.value : 'Latest from the community';
 
   return (
-    <Layout location={location}>
+    <Layout location={location} currentSlug={post.slug}>
       <SeoDatoCms seo={post.seo} favicon={favicon} />
       <HeroBlogPost
         title={post.title}

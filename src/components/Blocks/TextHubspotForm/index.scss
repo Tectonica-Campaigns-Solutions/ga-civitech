@@ -1,35 +1,41 @@
 .text-hubspot-form {
-  .legal-consent-container{
+  .legal-consent-container {
     * {
-      font-size:13px;
+      font-size: 13px;
     }
   }
-  select{
+
+  select {
     border: 1px solid #D2D5DC !important;
-    padding:15px 10px;
+    padding: 15px 10px;
     border-radius: 8px;
-    max-width:100%;
+    max-width: 100%;
     margin-bottom: 16px;
-    color:#000;
-    font-size:16px;
+    color: #000;
+    font-size: 16px;
   }
-  input::placeholder{
-    color:#000;
-    font-size:16px;
-   font-weight: bold;
+
+  input::placeholder {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
   }
-  .hs_error_rollup{
-    ul{
-      padding-left:0;
-      li{
+
+  .hs_error_rollup {
+    ul {
+      padding-left: 0;
+
+      li {
         list-style: none;
-        label{
-          display:block!important;
-          color:red;
+
+        label {
+          display: block !important;
+          color: red;
         }
       }
     }
   }
+
   padding: 145px 0;
 
   h2 {
@@ -70,14 +76,11 @@
       display: block;
     }
   }
-  
 
   .form-content {
-    
-    .hs_recaptcha{
-      margin:10px 0;
+    .hs_recaptcha {
+      margin: 10px 0;
     }
-    
 
     .hubspot-form-block {
       label {
@@ -98,7 +101,7 @@
 
       .actions {
         input {
-          
+
           margin-top: 20px;
           width: 100%;
           height: 100%;
@@ -117,27 +120,30 @@
           color: var(--ct-white);
           border: 2px solid var(--ct-blue);
           transition: 0.15s ease-in-out all;
-          &:hover{
-            border:2px solid #fff;
-            background:transparent;
+
+          &:hover {
+            border: 2px solid #fff;
+            background: transparent;
           }
-          
+
         }
       }
     }
+
     &.white-box {
       padding: 50px 69px;
       background-color: var(--ct-white);
       border-radius: 5px;
 
-      .actions{
-        input{
-          border: none!important;
-          background-color: var(--ct-blue)!important;
+      .actions {
+        input {
+          border: none !important;
+          background-color: var(--ct-blue) !important;
           transition: 0.15s ease-in-out all;
+
           &:hover {
-            color: var(--ct-white)!important;
-            background-color: var(--ct-dark-blue)!important;
+            color: var(--ct-white) !important;
+            background-color: var(--ct-dark-blue) !important;
           }
         }
       }
@@ -151,7 +157,7 @@
         color: var(--ct-dark-blue);
         margin-bottom: 25px;
       }
-     
+
       p {
         font-family: 'Public Sans';
         font-style: normal;
@@ -161,14 +167,15 @@
         color: var(--ct-dark-blue);
         margin-bottom: 36px;
       }
-      .hs-richtext p{
+
+      .hs-richtext p {
         font-size: 16px;
-        margin-bottom:15px;
+        margin-bottom: 15px;
       }
 
-      input{
-        background-color:#fff!important;
-        border:1px solid #D2D5DC!important;
+      input {
+        background-color: #fff !important;
+        border: 1px solid #D2D5DC !important;
       }
 
       #hubspotForm {
@@ -190,7 +197,7 @@
           padding: 0;
         }
       }
-      
+
     }
   }
 
@@ -200,6 +207,7 @@
     min-height: 200px;
     display: flex;
     align-items: center;
+    overflow: hidden;
 
     h3 {
       z-index: 10;
@@ -224,6 +232,9 @@
     }
 
     .hubspot-form-block {
+      position: relative;
+      z-index: 10;
+
       label {
         display: none;
       }
@@ -301,6 +312,29 @@
     &.small {
       h3 {
         font-size: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    &.small {
+      .hubspot-form-block {
+        form {
+          flex-direction: column;
+          align-items: flex-start;
+
+          &>div {
+            width: 100%;
+          }
+
+          .input {
+            width: 100%;
+
+            input {
+              width: 100%;
+            }
+          }
+        }
       }
     }
   }

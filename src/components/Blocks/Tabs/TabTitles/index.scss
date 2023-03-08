@@ -7,6 +7,11 @@
   line-height: 130%;
   margin: 10px 0;
 
+  a {
+    display: block;
+    color: inherit;
+  }
+
   >div {
     cursor: pointer;
     color: #b7b7c9;
